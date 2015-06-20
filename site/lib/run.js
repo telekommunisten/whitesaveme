@@ -1,7 +1,6 @@
 "use strict"
 
 var $ = require('jquery');
-require('hammer');
 require('materialize');
 
 require('style.css!css');
