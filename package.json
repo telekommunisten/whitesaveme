@@ -29,7 +29,8 @@
     "jspm": "^0.15.7"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "jspm install"
   },
   "author": "Dmytri Kleiner <dk@telekommunisten.net>",
   "license": "WTFPL"
