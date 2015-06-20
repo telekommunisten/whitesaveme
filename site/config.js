@@ -20,6 +20,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.5.8",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.12",
+    "hammer": "github:hammerjs/hammer.js@2.0.4",
     "jquery": "github:components/jquery@2.1.4",
     "materialize": "github:Dogfalo/materialize@0.96.1",
     "text": "github:systemjs/plugin-text@0.0.2",

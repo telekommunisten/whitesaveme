@@ -5,6 +5,7 @@
     },
     "dependencies": {
       "css": "github:systemjs/plugin-css@^0.1.12",
+      "hammer": "github:hammerjs/hammer.js@^2.0.4",
       "jquery": "github:components/jquery@^2.1.4",
       "materialize": "github:Dogfalo/materialize@^0.96.1",
       "text": "github:systemjs/plugin-text@^0.0.2"
@@ -18,16 +19,13 @@
     }
   },
   "dependencies": {
+    "http-server": "^0.8.0",
     "jspm": "^0.15.7"
   },
   "name": "whitesaveme",
   "version": "0.1.0",
   "description": "Whitesplainin' as a Service",
   "main": "config.js",
-  "dependencies": {
-    "http-server": "^0.8.0",
-    "jspm": "^0.15.7"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "jspm install"
