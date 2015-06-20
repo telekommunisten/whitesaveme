@@ -17,7 +17,7 @@
       "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
     }
   },
-  "devDependencies": {
+  "dependencies": {
     "jspm": "^0.15.7"
   },
   "name": "whitesaveme",
