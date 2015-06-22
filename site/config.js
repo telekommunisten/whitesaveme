@@ -1,5 +1,4 @@
 System.config({
-  "baseURL": "/",
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -15,10 +14,11 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.6.3",
-    "babel-runtime": "npm:babel-runtime@5.6.3",
+    "babel": "npm:babel-core@5.6.4",
+    "babel-runtime": "npm:babel-runtime@5.6.4",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.12",
+    "hammer": "github:hammerjs/hammer.js@2.0.4",
     "jquery": "github:components/jquery@2.1.4",
     "materialize": "github:Dogfalo/materialize@0.96.1",
     "riot": "npm:riot@2.1.0",
@@ -122,7 +122,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.6.3": {
+    "npm:babel-runtime@5.6.4": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:binary-extensions@1.3.1": {
