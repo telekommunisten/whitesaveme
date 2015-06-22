@@ -1,0 +1,13 @@
+<nav class="light-blue lighten-1" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">whitesave.me | { opts.pageTitle }</a>
+    <ul class="right hide-on-med-and-down">
+      <li each="{ name, page in opts.siteMap }"><a href="#{ name }">{ name }</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li each="{ name, page in opts.siteMap }"><a href="#{ name }">{ name }</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  </div>
+</nav>

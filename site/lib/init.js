@@ -1,7 +1,15 @@
-(function($){
-  $(function(){
+/* jshint esnext: true, asi: true */
 
-    $('.button-collapse').sideNav();
+import 'materialize'
+import 'css/syle.css!css'
 
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
+import $ from 'jquery'
+import layout from 'lib/layout'
+
+$(document).ready(function () {
+	$(function(){
+		$('.button-collapse').sideNav()
+	})
+  layout();
+})
+

@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<!doctype html>
+<html>
+  <head>
     <title>whitesave.me</title>
-    <script src="//cdn.jsdelivr.net/g/riot@2.0.14(riot.min.js+compiler.min.js)"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/jspm_packages/system.js"></script>
     <script src="/config.js"></script>
     <script>
-      //System.import('lib/run');
+      System.import('lib/init');
     </script>
-</head>
-<body>
-  <script type="riot/tag">
-  <riotnav>
-    <nav class="light-blue lighten-1" role="navigation">
-      <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">whitesave.me</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-
-        <ul id="nav-mobile" class="side-nav">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-      </div>
-    </nav>
-  </riotnav>
-  </script>
-<riotnav></riotnav>
-<riot-content></riot-content>
-<riot-footer></riot-footer>
-<script>
-  riot.mount('riot-nav', {});
-</script>
-</body>
+  </head>
+  <body>
+    <x-header></x-header>
+    <x-main></x-main>
+    <br><br>
+    <x-footer></x-footer>
+  </body>
 </html>
