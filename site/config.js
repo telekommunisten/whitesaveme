@@ -8,16 +8,15 @@ System.config({
   },
   "paths": {
     "*": "*.js",
-    "github:*": "https://github.jspm.io/*.js",
-    "npm:*": "https://npm.jspm.io/*.js"
-  },
-  "blacklist": {}
+    "github:*": "jspm_packages/github/*.js",
+    "npm:*": "jspm_packages/npm/*.js"
+  }
 });
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.5.8",
-    "babel-runtime": "npm:babel-runtime@5.5.8",
+    "babel": "npm:babel-core@5.6.3",
+    "babel-runtime": "npm:babel-runtime@5.6.3",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.12",
     "jquery": "github:components/jquery@2.1.4",
@@ -123,7 +122,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.5.8": {
+    "npm:babel-runtime@5.6.3": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:binary-extensions@1.3.1": {

@@ -1,23 +1,4 @@
 {
-  "jspm": {
-    "directories": {
-      "baseURL": "site"
-    },
-    "dependencies": {
-      "css": "github:systemjs/plugin-css@^0.1.12",
-      "jquery": "github:components/jquery@^2.1.4",
-      "materialize": "github:Dogfalo/materialize@^0.96.1",
-      "riot": "npm:riot@^2.1.0",
-      "text": "github:systemjs/plugin-text@^0.0.2"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.1.13",
-      "babel-runtime": "npm:babel-runtime@^5.1.13",
-      "core-js": "npm:core-js@^0.9.4",
-      "traceur": "github:jmcriffey/bower-traceur@0.0.88",
-      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
-    }
-  },
   "dependencies": {
     "http-server": "^0.8.0",
     "jspm": "^0.15.7"
@@ -31,5 +12,22 @@
     "postinstall": "jspm install"
   },
   "author": "Dmytri Kleiner <dk@telekommunisten.net>",
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "jspm": {
+    "directories": {
+      "baseURL": "site"
+    },
+    "dependencies": {
+      "css": "github:systemjs/plugin-css@^0.1.12",
+      "jquery": "github:components/jquery@^2.1.4",
+      "materialize": "github:Dogfalo/materialize@0.96.1",
+      "riot": "npm:riot@^2.1.0",
+      "text": "github:systemjs/plugin-text@^0.0.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
 }
