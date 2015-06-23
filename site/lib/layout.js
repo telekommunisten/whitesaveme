@@ -36,17 +36,24 @@ addToSiteMap('contact', pageContact)
 import pageAbout from 'pages/about.html!text'
 addToSiteMap('about', pageAbout)
 
+import pageStart from 'pages/app.html!text'
+addToSiteMap('start', pageStart)
+
 let siteOptions = { siteMap: siteMap, pageTitle: 'home', pageBody: pageHome }
 
-// route
 
-riot.route(function(collection, id, action) {
-  console.log('clicked ' + collection);
-  if (siteMap[collection]) {
-    siteOptions['pageTitle'] = collection
-    siteOptions['pageBody'] = siteMap[collection]
+// route
+import start from 'lib/app';
+
+riot.route(function(page, id, action) {
+  if (siteMap[page]) {
+    siteOptions['pageTitle'] = page
+    siteOptions['pageBody'] = siteMap[page]
     riot.update()
-  } 
+    if (page == 'start') {
+      start();
+    }
+  }
 })
 
 // mount
