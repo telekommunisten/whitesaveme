@@ -1,13 +1,11 @@
 /* jshint esnext: true, asi: true */
 
-import Riot from 'riot'
-
 // components
 
 import xHeader from 'components/header.html!text'
-Riot.tag('x-header', xHeader)
+riot.tag('x-header', xHeader)
 
-Riot.tag('x-main',
+riot.tag('x-main',
   `<div id="main"></div>`,
   function(opts) {
     this.on('update',function () {
@@ -17,7 +15,7 @@ Riot.tag('x-main',
 )
 
 import xFooter from 'components/footer.html!text'
-Riot.tag('x-footer', xFooter)
+riot.tag('x-footer', xFooter)
 
 // pages
 
@@ -42,19 +40,19 @@ let siteOptions = { siteMap: siteMap, pageTitle: 'home', pageBody: pageHome }
 
 // route
 
-Riot.route(function(collection, id, action) {
+riot.route(function(collection, id, action) {
   console.log('clicked ' + collection);
   if (siteMap[collection]) {
     siteOptions['pageTitle'] = collection
     siteOptions['pageBody'] = siteMap[collection]
-    Riot.update()
+    riot.update()
   } 
 })
 
 // mount
 export default function() {
-  Riot.mount('*', siteOptions)
-  Riot.route('home');
-  Riot.update();
+  riot.mount('*', siteOptions)
+  riot.route('home');
+  riot.update();
 }
 
