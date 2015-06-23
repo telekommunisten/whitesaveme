@@ -22,6 +22,7 @@
       "baseURL": "site"
     },
     "dependencies": {
+      "clean-css": "npm:clean-css@^3.3.3",
       "css": "github:systemjs/plugin-css@^0.1.13",
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
