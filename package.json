@@ -1,11 +1,8 @@
 {
-  "engines": {
-    "node": "=0.12.4",
-    "npm": "2.11.3"
-  },
   "dependencies": {
     "http-server": "^0.8.0",
-    "jspm": "^0.15.7"
+    "jspm": "^0.15.7",
+    "uglify": "^0.1.5"
   },
   "name": "whitesaveme",
   "version": "0.1.0",
@@ -13,7 +10,7 @@
   "main": "config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "jspm install"
+    "postinstall": "jspm install && jspm bundle-sfx 'lib/init' && uglify -s site/build.js -o site/whitesaveme.js && uglify -cs site/whitesaveme.css -o site/whitesaveme.min.css"
   },
   "author": "Dmytri Kleiner <dk@telekommunisten.net>",
   "license": "WTFPL",
