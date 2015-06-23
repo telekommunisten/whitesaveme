@@ -500,6 +500,6 @@ System.register("lib/init", ["whitesaveme.css!github:systemjs/plugin-css@0.1.13"
 
 System.register('whitesaveme.css!github:systemjs/plugin-css@0.1.13', [], false, function() {});
 (function(c){var d=document,a='appendChild',i='styleSheet',s=d.createElement('style');s.type='text/css';d.getElementsByTagName('head')[0][a](s);s[i]?s[i].cssText=c:s[a](d.createTextNode(c));})
-(".icon-block{padding:0 15px}");
+("html{overflow-y:scroll;overflow-x:hidden}x-header{position:fixed;top:0;width:100%;z-index:999}#main{padding-top:64px}.icon-block{padding:0 15px}");
 });
 //# sourceMappingURL=build.js.map
