@@ -1,6 +1,8 @@
 <nav class="light-blue lighten-1" role="navigation">
   <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo">whitesave.me | { opts.pageTitle }</a>
+    <a id="logo-container" href="#" class="brand-logo">
+      <span class="hide-on-small-and-down">whitesave.me&nbsp;|&nbsp;</span>
+      { opts.pageTitle }</a>
     <ul class="right hide-on-med-and-down">
       <li each="{ name, page in opts.siteMap }"><a href="#{ name }">{ name }</a></li>
     </ul>
