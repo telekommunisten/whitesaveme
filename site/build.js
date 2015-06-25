@@ -415,7 +415,7 @@ System.register("pages/about.html!github:systemjs/plugin-text@0.0.2", [], true, 
   return module.exports;
 });
 
-System.register("pages/app.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
+System.register("pages/start.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
   var global = System.global,
       __define = global.define;
   global.define = undefined;
@@ -18034,9 +18034,9 @@ System.register("components/pages.html!github:systemjs/plugin-text@0.0.2", [], t
   return module.exports;
 });
 
-System.register("lib/app", ["lib/headtrackr"], function($__export) {
+System.register("lib/start", ["lib/headtrackr"], function($__export) {
   "use strict";
-  var __moduleName = "lib/app";
+  var __moduleName = "lib/start";
   var headtrackr;
   return {
     setters: [function($__m) {
@@ -18084,10 +18084,9 @@ System.register("lib/app", ["lib/headtrackr"], function($__export) {
           } else {
             var yellowness = "Not too yellow!";
           }
-          console.log("hello?");
           document.getElementById('dark').innerHTML = darkness;
           document.getElementById('yellow').innerHTML = yellowness;
-          return !dark && !yellow;
+          return (!dark) && (!yellow);
         };
         var medianColourFromFace = function(event) {
           var Htrim = event.width * 0.4;
@@ -18168,7 +18167,7 @@ System.register("lib/app", ["lib/headtrackr"], function($__export) {
   };
 });
 
-System.register("lib/layout", ["components/header.html!github:systemjs/plugin-text@0.0.2", "components/footer.html!github:systemjs/plugin-text@0.0.2", "pages/home.html!github:systemjs/plugin-text@0.0.2", "pages/story.html!github:systemjs/plugin-text@0.0.2", "pages/contact.html!github:systemjs/plugin-text@0.0.2", "pages/about.html!github:systemjs/plugin-text@0.0.2", "pages/app.html!github:systemjs/plugin-text@0.0.2", "lib/app"], function($__export) {
+System.register("lib/layout", ["components/header.html!github:systemjs/plugin-text@0.0.2", "components/footer.html!github:systemjs/plugin-text@0.0.2", "pages/home.html!github:systemjs/plugin-text@0.0.2", "pages/story.html!github:systemjs/plugin-text@0.0.2", "pages/contact.html!github:systemjs/plugin-text@0.0.2", "pages/about.html!github:systemjs/plugin-text@0.0.2", "pages/start.html!github:systemjs/plugin-text@0.0.2", "lib/start"], function($__export) {
   "use strict";
   var __moduleName = "lib/layout";
   var xHeader,
@@ -18258,6 +18257,10 @@ System.register("lib/init", ["whitesaveme.css!github:systemjs/plugin-css@0.1.13"
           $('.button-collapse').sideNav();
         });
         $('body').html(xPages);
+        var socket = io(window.socketUrl);
+        socket.on('connect', function() {
+          socket.emit('hello', {white: true});
+        });
         layout();
       });
     }
