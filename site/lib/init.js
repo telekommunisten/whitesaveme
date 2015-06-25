@@ -7,6 +7,7 @@ import xPages from 'components/pages.html!text'
 $(document).ready(function () {
 	$(function(){
 		$('.button-collapse').sideNav()
+    $('.slider').slider({full_width: true});
 	})
   $('body').html(xPages)
   var socket = io(window.socketUrl)
