@@ -19,9 +19,21 @@ x-header {
 }
 
 #main {
-  padding-top: 64px;
+  padding-top: 40px;
 }
 
 .icon-block {
   padding: 0 15px;
 }
+
+.card-panel {
+	padding:15px;
+ 	opacity:.65;
+}
+
+.slider .slides li .caption {
+	top:40%;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #000000; }
