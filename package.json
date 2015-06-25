@@ -1,7 +1,9 @@
 {
   "dependencies": {
-    "http-server": "^0.8.0",
     "jspm": "^0.15.7",
+    "koa": "^0.21.0",
+    "koa-static": "^1.4.9",
+    "socket.io": "^1.3.5",
     "uglify": "^0.1.5"
   },
   "name": "whitesaveme",

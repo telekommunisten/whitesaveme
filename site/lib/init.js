@@ -9,6 +9,10 @@ $(document).ready(function () {
 		$('.button-collapse').sideNav()
 	})
   $('body').html(xPages)
+  var socket = io(window.socketUrl)
+  socket.on('connect', function () {
+    socket.emit('hello', { white: true })
+  })
   layout();
 })
 

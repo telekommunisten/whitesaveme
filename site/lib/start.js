@@ -48,11 +48,10 @@ export default function() {
       var yellowness = "Not too yellow!"
     }
 
-    console.log("hello?")
     document.getElementById('dark').innerHTML = darkness
     document.getElementById('yellow').innerHTML = yellowness
 
-    return !dark && !yellow
+    return (!dark) && (!yellow)
 
   }
 

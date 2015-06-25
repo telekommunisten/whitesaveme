@@ -36,14 +36,14 @@ addToSiteMap('contact', pageContact)
 import pageAbout from 'pages/about.html!text'
 addToSiteMap('about', pageAbout)
 
-import pageStart from 'pages/app.html!text'
+import pageStart from 'pages/start.html!text'
 addToSiteMap('start', pageStart)
 
 let siteOptions = { siteMap: siteMap, pageTitle: 'home', pageBody: pageHome }
 
 
 // route
-import start from 'lib/app';
+import start from 'lib/start';
 
 riot.route(function(page, id, action) {
   if (siteMap[page]) {
