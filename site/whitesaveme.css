@@ -26,10 +26,6 @@ x-header {
   padding: 0 15px;
 }
 
-.card-panel {
-	padding:15px;
- 	opacity:.65;
-}
 
 .slider .slides li .caption {
 	top:40%;
@@ -37,3 +33,4 @@ x-header {
 
 .slider .indicators .indicator-item.active {
     background-color: #000000; }
+
