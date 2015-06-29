@@ -27,9 +27,10 @@ x-header {
 }
 
 
-.slider .slides li .caption {
-	top:40%;
+.slider {
+  height: 200px;
 }
+
 
 .slider .indicators .indicator-item.active {
     background-color: #000000; }
