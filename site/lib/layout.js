@@ -1,4 +1,4 @@
-/* jshint esnext: true, asi: true */
+/* global $, riot */
 
 // components
 
@@ -49,14 +49,14 @@ riot.route(function (page, id, action) {
     siteOptions['pageTitle'] = page
     siteOptions['pageBody'] = siteMap[page]
     riot.update()
-    if (page == 'start') {
+    if (page === 'start') {
       start()
     }
   }
 })
 
 // mount
-export default function() {
+export default function () {
   riot.mount('*', siteOptions)
   riot.route('home')
   riot.update()

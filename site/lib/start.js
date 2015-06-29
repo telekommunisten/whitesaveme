@@ -1,6 +1,6 @@
 import headtrackr from 'lib/headtrackr'
 
-export default function() {
+export default function () {
   var videoInput = document.getElementById('inputVideo')
   var canvasInput = document.getElementById('inputCanvas')
   var ctx = canvasInput.getContext('2d')
@@ -22,9 +22,9 @@ export default function() {
 
     k = Math.min(1 - r, 1 - g, 1 - b)
 
-    c = ( 1 - r - k) / ( 1 - k)
-    m = ( 1 - g - k) / ( 1 - k)
-    y = ( 1 - b - k) / ( 1 - k)
+    c = (1 - r - k) / (1 - k)
+    m = (1 - g - k) / (1 - k)
+    y = (1 - b - k) / (1 - k)
 
     c = Math.round(c * 100.0)
     m = Math.round(m * 100.0)
@@ -34,17 +34,19 @@ export default function() {
     console.log('cmyk:' + [c, m, y, k].join(', '))
 
     var dark = y + m > 90 || c > 10
+    var darkness
     if (dark) {
-      var darkness = 'Too dark'
+      darkness = 'Too dark'
     } else {
-      var darkness = 'Not too dark!'
+      darkness = 'Not too dark!'
     }
 
     var yellow = Math.abs(y - m) > 20
+    var yellowness
     if (yellow) {
-      var yellowness = 'Too yellow'
+      yellowness = 'Too yellow'
     } else {
-      var yellowness = 'Not too yellow!'
+      yellowness = 'Not too yellow!'
     }
 
     document.getElementById('dark').innerHTML = darkness
@@ -81,7 +83,7 @@ export default function() {
     }
 
     function median (values) {
-      values.sort(function (a, b) {return a - b;})
+      values.sort(function (a, b) {return a - b})
       var half = Math.floor(values.length / 2)
       if (values.length % 2) {
         return values[half]
@@ -114,7 +116,7 @@ export default function() {
   var tries = 10
   var matches = 0
   document.addEventListener('facetrackingEvent', function (event) {
-    if (event.width > 100, event.height > 100) {
+    if (event.width > 100 && event.height > 100) {
       var white = document.getElementById('white')
       var colour = medianColourFromFace(event)
       var isWhite = whitenessFromColour(colour)
