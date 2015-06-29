@@ -11,7 +11,7 @@
   "description": "Whitesplainin' as a Service",
   "main": "config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "standard",
     "postinstall": "jspm install && ./build.sh"
   },
   "author": "Dmytri Kleiner <dk@telekommunisten.net>",
@@ -32,9 +32,13 @@
   },
   "standard": {
     "ignore": [
+      "site/config.js",
       "site/build.js",
       "site/whitesaveme.js",
       "site/lib/headtrackr.js"
     ]
+  },
+  "devDependencies": {
+    "standard": "^4.4.1"
   }
 }
