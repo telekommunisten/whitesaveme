@@ -27,11 +27,9 @@ x-header {
 }
 
 
-.slider {
-  height: 200px;
-}
-
-
 .slider .indicators .indicator-item.active {
     background-color: #000000; }
+	
+	
+
 
