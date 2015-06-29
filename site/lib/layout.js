@@ -1,4 +1,4 @@
-/* jshint esnext: true, asi: true */
+/* global $, riot */
 
 // components
 
@@ -7,8 +7,8 @@ riot.tag('x-header', xHeader)
 
 riot.tag('x-main',
   `<div id="main"></div>`,
-  function(opts) {
-    this.on('update',function () {
+  function (opts) {
+    this.on('update', function () {
       $('#main').html(opts.pageBody)
     })
   }
@@ -20,8 +20,8 @@ riot.tag('x-footer', xFooter)
 // pages
 
 let siteMap = {}
-let addToSiteMap = function(name, page) {
-  siteMap[name]= page
+let addToSiteMap = function (name, page) {
+  siteMap[name] = page
 }
 
 import pageHome from 'pages/home.html!text'
@@ -41,25 +41,23 @@ addToSiteMap('start', pageStart)
 
 let siteOptions = { siteMap: siteMap, pageTitle: 'home', pageBody: pageHome }
 
-
 // route
-import start from 'lib/start';
+import start from 'lib/start'
 
-riot.route(function(page, id, action) {
+riot.route(function (page, id, action) {
   if (siteMap[page]) {
     siteOptions['pageTitle'] = page
     siteOptions['pageBody'] = siteMap[page]
     riot.update()
-    if (page == 'start') {
-      start();
+    if (page === 'start') {
+      start()
     }
   }
 })
 
 // mount
-export default function() {
+export default function () {
   riot.mount('*', siteOptions)
-  riot.route('home');
-  riot.update();
+  riot.route('home')
+  riot.update()
 }
-
