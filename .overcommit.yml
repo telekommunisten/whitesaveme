@@ -1,3 +1,7 @@
 PreCommit:
   Standard:
     enabled: true
+
+  HtmlHint:
+    enabled: true
+

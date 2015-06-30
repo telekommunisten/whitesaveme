@@ -1,4 +1,14 @@
 {
+  "name": "whitesaveme",
+  "version": "0.1.0",
+  "description": "Whitesplainin' as a Service",
+  "author": "Dmytri Kleiner <dk@telekommunisten.net>",
+  "license": "WTFPL",
+  "main": "app.js",
+  "scripts": {
+    "test": "standard && htmlhinti site/",
+    "postinstall": "jspm install && ./build.sh"
+  },
   "dependencies": {
     "jspm": "^0.15.7",
     "koa": "^0.21.0",
@@ -6,16 +16,18 @@
     "socket.io": "^1.3.5",
     "uglify": "^0.1.5"
   },
-  "name": "whitesaveme",
-  "version": "0.1.0",
-  "description": "Whitesplainin' as a Service",
-  "main": "config.js",
-  "scripts": {
-    "test": "standard",
-    "postinstall": "jspm install && ./build.sh"
+  "devDependencies": {
+    "htmlhint": "^0.9.7",
+    "standard": "^4.4.1"
   },
-  "author": "Dmytri Kleiner <dk@telekommunisten.net>",
-  "license": "WTFPL",
+  "standard": {
+    "ignore": [
+      "site/config.js",
+      "site/build.js",
+      "site/whitesaveme.js",
+      "site/lib/headtrackr.js"
+    ]
+  },
   "jspm": {
     "directories": {
       "baseURL": "site"
@@ -29,16 +41,5 @@
       "traceur": "github:jmcriffey/bower-traceur@0.0.88",
       "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
     }
-  },
-  "standard": {
-    "ignore": [
-      "site/config.js",
-      "site/build.js",
-      "site/whitesaveme.js",
-      "site/lib/headtrackr.js"
-    ]
-  },
-  "devDependencies": {
-    "standard": "^4.4.1"
   }
 }
