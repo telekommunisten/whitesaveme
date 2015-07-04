@@ -1,5 +1,4 @@
-;(function () {
-  'use strict'
+(function () {
   var serve = require('koa-static')
   var koa = require('koa')
   var app = koa()
@@ -24,13 +23,13 @@
       if (!data.white || (connections.white.size && !connections.not.size)) {
         console.log('new non white user')
         connections.not.set(socket.id, true)
-        let e = connections.white.entries().next()
-        if (typeof e['value'] !== 'undefined') initCall(e['value'][0], socket.id)
+        var w = connections.white.entries().next()
+        if (typeof w['value'] !== 'undefined') initCall(w['value'][0], socket.id)
       } else {
         console.log('new white user')
         connections.white.set(socket.id, true)
-        let e = connections.not.entries().next()
-        if (typeof e['value'] !== 'undefined') initCall(socket.id, e['value'][0])
+        var n = connections.not.entries().next()
+        if (typeof n['value'] !== 'undefined') initCall(socket.id, n['value'][0])
       }
       console.log('connected ' + socket.id)
     })
