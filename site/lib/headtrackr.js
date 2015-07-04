@@ -409,6 +409,12 @@ headtrackr.Tracker = function(params) {
 			this.stream.stop();
 		}
 	}
+
+	this.getStream = function() {
+		if (this.stream !== undefined) {
+			return this.stream
+		}
+	}
 	
 	this.getFOV = function() {
 		return fov;

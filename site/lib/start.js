@@ -1,4 +1,5 @@
 import headtrackr from 'lib/headtrackr'
+import call from 'lib/call'
 
 export default function () {
   var videoInput = document.getElementById('inputVideo')
@@ -115,8 +116,9 @@ export default function () {
   var samples = 1
   var tries = 10
   var matches = 0
+  var running = true
   document.addEventListener('facetrackingEvent', function (event) {
-    if (event.width > 100 && event.height > 100) {
+    if (running && event.width > 80 && event.height > 80) {
       var white = document.getElementById('white')
       var colour = medianColourFromFace(event)
       var isWhite = whitenessFromColour(colour)
@@ -131,7 +133,9 @@ export default function () {
         } else {
           white.innerHTML = 'Sorry, you are not white!'
         }
-        htracker.stop()
+        running = false
+        call(htracker.getStream(), samples > tries)
+        // htracker.stop()
       }
     }
   })

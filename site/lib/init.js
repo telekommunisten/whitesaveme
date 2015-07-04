@@ -1,4 +1,4 @@
-/* global $, io */
+/* global $ */
 
 import 'whitesaveme.css!css'
 import layout from 'lib/layout'
@@ -10,9 +10,5 @@ $(document).ready(function () {
     $('.slider').slider({full_width: true})
   })
   $('body').html(xPages)
-  var socket = io(window.socketUrl)
-  socket.on('connect', function () {
-    socket.emit('hello', { white: true })
-  })
   layout()
 })

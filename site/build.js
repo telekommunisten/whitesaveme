@@ -374,7 +374,7 @@ System.register("components/footer.html!github:systemjs/plugin-text@0.0.2", [], 
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<footer class=\"page-footer #795548 brown\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col l6 s12\">\n        <h5 class=\"white-text\">Our solution</h5>\n        <p class=\"grey-text text-lighten-4\">We match the privileged and the under-privileged in a sustainable and profitable way that fully achieves the coveted and elusive triple bottom line people, profit, planet.</p>\n\n\n      </div>\n      <div class=\"col l3 s6\">\n        <h5 class=\"white-text\">Learn more</h5>\n        <ul>\n          <li><a class=\"white-text\" href=\"#!\">Our Story</a></li>\n          <li><a class=\"white-text\" href=\"#!\">About</a></li>\n          <li><a class=\"white-text\" href=\"#!\">FAQ's</a></li>\n          <li><a class=\"white-text\" href=\"#!\"></a></li>\n        </ul>\n      </div>\n      <div class=\"col l3 s6\">\n        <h5 class=\"white-text\">Connect</h5>\n        <ul>\n          <li><a class=\"white-text\" href=\"#!\">Facebook</a></li>\n          <li><a class=\"white-text\" href=\"#!\">Twitter</a></li>\n          <li><a class=\"white-text\" href=\"#!\">Contact us</a></li>\n          <li><a class=\"white-text\" href=\"#!\"></a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"footer-copyright\">\n    <div class=\"container\">\n      Made with <a class=\"#3e2723\" href=\"http://materializecss.com\">Materialize</a>\n    </div>\n  </div>\n</footer>\n";
+  module.exports = "<footer class=\"page-footer #795548 brown\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col l6 s12\">\n        <h5 class=\"white-text\">Our solution</h5>\n        <p class=\"grey-text text-lighten-4\">We match the privileged and the under-privileged in a sustainable and profitable way that fully achieves the coveted and elusive triple bottom line people, profit, planet.</p>\n\n\n      </div>\n      <div class=\"col l3 s6\">\n        <h5 class=\"white-text\">Learn more</h5>\n        <ul>\n          <li><a class=\"white-text\" href=\"#about\">About</a></li>\n          <li><a class=\"white-text\" href=\"#story\">Our Story</a></li>\n          <li><a class=\"white-text\" href=\"#faq\">FAQ's</a></li>\n          <li><a class=\"white-text\" href=\"#terms\">Terms</a></li>\n        </ul>\n      </div>\n      <div class=\"col l3 s6\">\n        <h5 class=\"white-text\">Connect</h5>\n        <ul>\n          <li><a class=\"white-text\" href=\"#!\">Facebook</a></li>\n          <li><a class=\"white-text\" href=\"#!\">Twitter</a></li>\n          <li><a class=\"white-text\" href=\"#!\">Contact us</a></li>\n          <li><a class=\"white-text\" href=\"#!\"></a></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n  <div class=\"footer-copyright\">\n    <div class=\"container\">\n      Made with <a class=\"#3e2723\" href=\"http://materializecss.com\">Materialize</a>\n    </div>\n  </div>\n</footer>\n";
   global.define = __define;
   return module.exports;
 });
@@ -383,7 +383,7 @@ System.register("pages/home.html!github:systemjs/plugin-text@0.0.2", [], true, f
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"slider\">\n    <ul class=\"slides\">\n      <li>\n        <img src=\"/img/home-1.jpg\"> <!-- random image -->\n        <div class=\"caption left-align\">             \n        <span class=\"brown-text text-darken-4\">\n        \t<h3>We match the privileged <br>with the under-privileged.</h3>\n            <h5></h5>\n        \t\t  \n        </div>\n      </li>\n      \n      \n      <li>\n        <img src=\"/img/home-2.jpg\"> <!-- random image -->\n        <div class=\"caption right-align\">\n        <span class=\"orange-text text-lighten-5\">\n        <h3>Ask a white guy for advice.</h3> \n        <h5></h5>\n       \n        </div>\n      </li>\n      \n      \n      \n      <li>\n        <img src=\"/img/home-3.jpg\"> <!-- random image -->\n        <div class=\"caption left-align\">\n        <span class=\"orange-text text-lighten-5\">\n        \t<h3>Get connected. Get Help.</h3> \n            <h5></h5>\n        \t\t\t\n        \n        </div>\n        \n      </li>\n      \n    </ul>\n  </div>\n\n\n\n\n  <div class=\"container\">\n  \n  <h3 class=\"header center\">Check your privilege</strong></h3>\n  <div class=\"row center\">\n    <h5 class=\"header col s12 light\">Our <strong>‘app’ </strong>enables white men to <strong>deliver privilege to the underprivileged </strong>without disrupting existing systems and long-standing traditions. The advice helps those in need for a reasonable price.</h5>\n  </div>\n\n  \n   <table class=\"centered\">\n  \t\t<tr>\n        <td><a href=\"#start\" id=\"download-button\" class=\"btn-large waves-effect waves-#000000 black\">Learn More</a></td>\n        <td><a href=\"#start\" id=\"download-button\" class=\"btn-large waves-effect waves-#000000 black\">Launch Beta</a></td>\n        \n        </tr>\n        \n        <tr>\n        <td></td>\n        <td>*web cam required</td>\n        \n        </tr>\n\n        \n   \t\t\n   </table>\n   \n\n  <br><br>\n   \n \n\n<div class=\"divider\"></div>\n\n\n  <div class=\"section\">\n\n    <!--   Icon Section   -->\n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <h2 class=\"center\"><i class=\"mdi-social-people\"></i></h2>\n          <h5 class=\"center\">How it works</h5>\n\n          <p class=\"light\">Our innovative solution uses tech to expand and deliver privilege where it’s needed most&mdash;and everyone wins! White men earn “Savior Stars” for providing free expert advice and mentoring from their unique perspective as long-standing privilege holders. </p>\n          <p class=\"light\">Non-whites access white privilege and use white advice, knowledge and skills to their advantage. They earn “Savee Stars” based on the worthiness of their problems and their work and motivation to resolve them.</p>\n          <p class=\"light\">Our different levels of service enable anyone to use the service -- from the poor in emerging economies (freemium), to the poor in the first world (basic model) to people anywhere who have succeeded despite skin color (premium model), but who could still use a hand up and some mentoring from those generous folk who have held power since the dawn of our glorious country. We offer a special discount (77% of the cost) on our basic and premium models for advice from a white woman.</p>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <h2 class=\"center\"><i class=\"mdi-action-get-app\"></i></h2>\n          <h5 class=\"center\">Try it now</h5>\n\n          <p class=\"light\">Our innovative algorithm determines your skin color using our patented facial color recognition (™) software. Based on whether your skin is white or not, you’ll be guided through the process as a privilege deliverer (“Savior”) or privilege recipient (“Savee”).</p> \n          <p class=\"light\">Click now to immediately start sharing your privilege or to receive expert advice and mentoring for your specific problem or case.\n </p>\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"responsive-img\" src=\"img/hardtimes.jpg\">\n          <h5 class=\"center\">Our Story</h5>\n\n          <p class=\"light\">Dmytri, Linda and Juan met on the Inca trail following the 2013 Latin American social innovation summit and soon realized that regardless of the continent, lack of innovative thinking was a problem the world over, just like was inequality. </p>\n          <p class=\"light\">After a weekend of post-it notes and cold brew coffee, WhiteSave.me was born. The team’s ah-ha moment came with the realization that the key to resolving inequality has nothing to do with revolution. Rather, it’s about “yes… and” thinking and re-imagining privilege as an infinite resource.</p>\n          <p class=\"light\">Everyone can share in privilege, and those with more privilege can be a part of delivering it to the less fortunate, using the world’s new-found mobile and digital connectivity as a strategic enabler. White people want to share their privilege -- and non-white people are waiting to receive it. They just haven’t had an app to help them do it!\n</p>\n        </div>\n      </div>\n    </div>\n\n  </div>\n  <br><br>\n\n  <div class=\"section\">\n\n\n\n\n\n  </div>\n</div>\n\n\n";
+  module.exports = "<div class=\"section no-pad-bot\" id=\"index-banner\">\n\n  <div class=\"container\">\n  \n  <h2 class=\"header center\">The app that delivers privilege.</strong></h2>\n  <div class=\"row center\">\n    <h5 class=\"header col s12 light\"><strong>White</strong>Save.me enables white men to help non-whites to succeed in life without disrupting existing systems and long-standing traditions.</h5>\n  </div>\n\n  \n   <table class=\"centered\">\n  \t\t<tr>\n        <td><a href=\"#about\" id=\"download-button\" class=\"btn-large waves-effect waves-#000000 black\">Learn More</a></td>\n        <td><a href=\"#start\" id=\"download-button\" class=\"btn-large waves-effect waves-#000000 black\">Launch Beta</a></td>\n        \n        </tr>\n        \n        <tr>\n        <td></td>\n        <td>*web cam required</td>\n        \n        </tr>\n\n        \n   \t\t\n   </table>\n   \n\n  <br><br>\n   \n \n\n<div class=\"divider\"></div>\n\n    <!--   Icon Section   -->\n    \n      <div class=\"section\"> \n\t  <div class=\"row\">\n      \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/white-save-1.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<p><strong>Lack of privilege getting you down?</strong><br>\n                 The privilege you need is just a tap away.</p>\n             \t</div>\n          \t</div>\n         </div>\n         \n         \n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/white-save-2.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<p><strong>Connect with a white guy.</strong><br>\n                Get privileged, life-saving advice.</p>\n             \t</div>\n          \t</div>\n         </div>\n         \n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/white-save-3.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<p><strong>Problem solved!</strong><br>\n                Privilege delivered, and you can move on.\n                \n                </p>\n             \t</div>\n          \t</div>\n         </div>\n\t </div>\n  \n\n \n  \n  </div>\n    \n    \n \n  <br><br>\n\n</div>\n\n\n";
   global.define = __define;
   return module.exports;
 });
@@ -392,7 +392,7 @@ System.register("pages/story.html!github:systemjs/plugin-text@0.0.2", [], true, 
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro brown white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m8 s12\">\n                <span class=\"orange-text text-lighten-5\">\n                <p></p><h2 class=\"m12\">Saving one person at a time, at scale and for a profit!</h2>\n                <h5></h5></span>\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"col m12 s12\">\n  \t<div class=\"container\">\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <div class=\"rich-text\"><h4>We connect saviors with savees.</h4>\n            \n            <p class=\"light\">Dmytri, Linda and Juan met while backpacking on the Inca trail following the 2013 Latin American social innovation summit. They soon realized that regardless of the continent, lack of innovative thinking was a problem the world over, as was inequality. <p>\n            <p class=\"light\"> After a weekend of post-it notes and cold brew coffee, WhiteSave.me was born. The team’s ah-ha moment came with the realization that the key to resolving inequality has nothing to do with revolution. Rather, it’s about “yes… and” thinking and re-imagining privilege as an infinite resource. \n            <p class=\"light\">Everyone can share in privilege, and those with more privilege can be a part of delivering it to the less fortunate, using the world’s new-found mobile and digital connectivity as a strategic enabler. White people want to share their privilege -- they just haven’t had an app to help them do it! WhiteSave.me - delivering privilege right through your device.</p>\n\n         \n            \n                \n                \t</div>\n                </div>\n            </div>\n            \n\t<div class=\"section\">\n\n    <div class=\"row\">\n        \t<div class=\"col m12 s12\">\n            <div class=\"rich-text\"><h4>Founders</h4>\n            <p class=\"light\">Our fresh and extensive experience in marketing, innovative technology solutions and the social good sector make us uniquely placed to extract the value of generosity, good and privilege from one target demographic, deliver it to another, all the while tapping into available revenue from small pockets of cash that the underprivileged currently have but don’t invest wisely.</p></div>\n            </div>\n            </div>\n\n   \n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"responsive-img\" src=\"img/dmytri.jpg\">\n          <h5 class=\"center\">dmytri</h5>\n\n         </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"responsive-img\" src=\"img/linda.jpg\">\n          <h5 class=\"center\">linda</h5>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"responsive-img\" src=\"img/juan.jpg\">\n          <h5 class=\"center\">juan</h5>\n\n            </div>\n      </div>\n      \n      \n    </div>\n    \n      \n  \n      \n      \n      \n      \n\n\n  </div>\n            \n            \n            \n       </div>\n   </div>\n</div>\n";
+  module.exports = "<div class=\"page-intro brown white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"orange-text text-lighten-5\">\n                <p></p><h2 class=\"m12\">Saving one person at a time, at scale and for a profit!</h2>\n                <h5></h5></span>\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"col m12 s12\">\n  \t<div class=\"container\">\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <div class=\"rich-text\"><h4>We connect saviors with savees.</h4>\n            \n            <p class=\"light\">The <strong>white</strong>save.me team met while backpacking on the Inca trail following the 2013 Latin American social innovation summit. They soon realized that regardless of the continent, lack of innovative thinking was a problem the world over, as was inequality. <p>\n            <p class=\"light\"> After a weekend of post-it notes and cold brew coffee, WhiteSave.me was born. The team’s ah-ha moment came with the realization that the key to resolving inequality has nothing to do with revolution. Rather, it’s about “yes… and” thinking and re-imagining privilege as an infinite resource. \n            <p class=\"light\">Everyone can share in privilege, and those with more privilege can be a part of delivering it to the less fortunate, using the world’s new-found mobile and digital connectivity as a strategic enabler. White people want to share their privilege -- they just haven’t had an app to help them do it! WhiteSave.me - delivering privilege right through your device.</p>\n\n         \n            \n                \n                \t</div>\n                </div>\n            </div>\n            \n\t<div class=\"section\">\n\n    <div class=\"row\">\n        \t<div class=\"col m12 s12\">\n            <div class=\"rich-text\"><h4>Founders</h4>\n            <p class=\"light\">Our fresh and extensive experience in marketing, innovative technology solutions and the social good sector make us uniquely placed to extract the value of generosity, good and privilege from one target demographic, deliver it to another, all the while tapping into available revenue from small pockets of cash that the underprivileged currently have but don’t invest wisely.</p></div>\n            </div>\n            </div>\n\n   \n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/dmytri.jpg\">\n          <h5 class=\"center\">dmytri</h5>\n\n         </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/linda.jpg\">\n          <h5 class=\"center\">linda</h5>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/juan.jpg\">\n          <h5 class=\"center\">juan</h5>\n\n            </div>\n      </div>\n      \n      \n    </div>\n    \n      \n  \n      \n      \n      \n      \n\n\n  </div>\n            \n            \n            \n       </div>\n   </div>\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -401,7 +401,7 @@ System.register("pages/contact.html!github:systemjs/plugin-text@0.0.2", [], true
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "    <div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m8 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">We're here to help!</h2>\n                <h5>Our nation has become obsessed with white privilege over the past 15 years.</h5></span>\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"container\">\n\n\n <div class=\"row\">\n    <form class=\"col s12\">\n      <div class=\"row\">\n        <div class=\"input-field col s6\">\n          <input placeholder=\"\" id=\"first_name\" type=\"text\" class=\"validate\">\n          <label for=\"first_name\">First Name</label>\n        </div>\n        <div class=\"input-field col s6\">\n          <input id=\"last_name\" type=\"text\" class=\"validate\">\n          <label for=\"last_name\">Last Name</label>\n        </div>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <input id=\"email\" type=\"email\" class=\"validate\">\n          <label for=\"email\">Email</label>\n        </div>\n      </div>\n      <div class=\"row\">\n   \n    \n        <div class=\"input-field col s12\">\n          <textarea id=\"textarea1\" class=\"materialize-textarea\"></textarea>\n          <label for=\"textarea1\">Message</label>\n        </div>\n     \n  \n  </div>\n    </form>\n  </div>\n</div>\n</div>";
+  module.exports = "    <div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Questions about privilege?</h2>\n                <h5>We're here to help.</h5></span>\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"container\">\n  \t<div class=\"row\">\n    <form class=\"col s12\">\n      <div class=\"row\">\n        <div class=\"input-field col s6\">\n          <input placeholder=\"\" id=\"first_name\" type=\"text\" class=\"validate\">\n          <label for=\"first_name\">First Name</label>\n        </div>\n        <div class=\"input-field col s6\">\n          <input id=\"last_name\" type=\"text\" class=\"validate\">\n          <label for=\"last_name\">Last Name</label>\n        </div>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <input id=\"email\" type=\"email\" class=\"validate\">\n          <label for=\"email\">Email</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s12\">\n          <textarea id=\"textarea1\" class=\"materialize-textarea\"></textarea>\n          <label for=\"textarea1\">Message</label>\n        </div>\n     </div>\n\n<!-- NEED TO ADD BUTTON FUNCTIONALITY -->\n  \t<!--<div class=\"row\">\n   \t\t<button class=\"btn waves-effect waves-#000000 black\" type=\"submit\" name=\"action\">Submit\n   \t\t</button>\n   \t\t</div>-->\n    \n    </form>\n  </div>\n</div>\n</div>";
   global.define = __define;
   return module.exports;
 });
@@ -410,7 +410,7 @@ System.register("pages/about.html!github:systemjs/plugin-text@0.0.2", [], true, 
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m8 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Check your privilege!</h2>\n                <h5>Our nation has become obsessed with white privilege over the past 15 years.</h5></span>\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"col m12 s12\">\n  \t<div class=\"container\">\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Launching this Fall!</h4>\n                <hr><h5>Our app taps into whites’ desire to help people of color learn to be more hard working and motivated. \t</h5>\n                </div>\n            </div>\n         </div>\n            \n            \n          \n            \n            \n            <h4>Our pricing model</h4>\n            \n             \n            \n              <div class=\"section\">\n\n   \n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <h2 class=\"center\"><i class=\"mdi-social-people\"></i></h2>\n          <h5 class=\"center\">Freemium</h5>\n\n          <p class=\"light\">For our least privileged users, we offer an SMS-based Freemium model.\nWe know that many of our least privileged users will not speak English, but our solution integrates Google Translate, enabling Saviors and Savees to easily converse via SMS to share problems and expert privileged advice despite any global language, culture or life experience barriers.\nWorking through our Non Profit Champion, World Aid Corps, we will engage with the most excluded people in the most far off places. That enables us to reach those people who have with the biggest problems. SMS provides us a quick and easy way to reach these beneficiaries in any language. After all, there are more mobile phones than toilets now, according to the World Bank, so reaching the poorest of the poor is no longer an issue! \nOur white saviors will be able to provide their life-saving advice and deliver privilege with the touch of a button! Ending global poverty and ending lack of privilege has never been so easy.\n</p>\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <h2 class=\"center\"><i class=\"mdi-action-get-app\"></i></h2>\n          <h5 class=\"center\">Basic</h5>\n\n          <p class=\"light\">Our Basic service is designed for those who are not privileged themselves yet who are surrounded by the vast privilege of others, especially white privilege.\nBasic users pay a small fee to access white savior advice via SMS, video chat or voice. \nSay a non-white person being pulled over by the police and needs some quick advice on how to avoid being shot, beaten or choked to death. A quick click to start up the app and the non-white person can access any available white savior who he can provide advice on the right attitude and the best way to leave the situation alive and unharmed. In dire situations, basic users can quickly upgrade to Premium and have a white savior delivered to them in person to serve as an intermediary or witness.\nOur Skype API means that this service is available in multiple languages. \nVideo chat allows the user to hand the phone over to an authority figure for white savior intermediation services.\nAll for $9/month.\n </p>\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"responsive-img\" src=\"img/hardtimes.jpg\">\n          <h5 class=\"center\">Premium</h5>\n\n          <p class=\"light\">The premium service is for the non-white person who has made it, but still needs a white savior who can intervene or offer one-on-one advice and mentorship.\nWhen there’s a promotion to be had, a Premium user can call on a white savior to accompany him or her to a meeting to put in a good word. Women often need someone to whitemansplain what their superiors are saying so that they can grasp the true meaning in white man terms.\nIn an emergency situation, our Premium customers can request a white savior who will arrive directly to them. Using Uber’s patented business model and based on their kitten delivery service, we’ll ensure that the white savior that is closest to you will arrive quickly. You can track his arrival right on your phone for easy identification.\nAll for $29/month\n</p>\n        </div>\n      </div>\n    </div>\n\n  </div>\n            \n         \n \n\n\n  <div class=\"col s12\">\n            <ul data-collapsible=\"accordion\" class=\"collapsible\">\n                  <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>Why do you need access to my camera?</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>We just need momentary access to your webcam in order to determine whether you are white or not. Once we’ve determined that through our patented facial color recognition software (™) the camera will turn off. We do not share any of the images that we collect.</p></div>\n                  </li>\n                  <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>How does the white-not white algorithm work?</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>Our patented innovative software determines what color you are based on a custom face recognition algorithm. This solution provides accurate reading every time for enhanced security and privacy. </p></div>\n                  </li>\n                  <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>Why does it say I’m not white? I’m definitely white.</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>While you may think you are white, computers and algorithms developed by those in the field of innovative technology are like more equipped to detect aspects of whiteness or non-whiteness then the average person. Sometimes mistakes happen, but this is not a problem for the majority and can be chalked up to minute errors in the code.</p></div>\n                  </li>\n                  <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>Why does it say I’m white? I’m definitely not white.</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>While you may think you are not white, computers and algorithms developed by those in the field of innovative technology are like more equipped to detect aspects of whiteness or non-whiteness then the average person. Sometimes mistakes happen, but this is not a problem for the majority and can be chalked up to minute errors in the code.</p></div>\n                  </li>\n                  <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>Why do you assume that white people have privilege?</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>We are fans of Buzzfeed and other media sources that confirm white privilege is a “thing.” But we also know from attending start-up conferences and reviewing news stories emanating from Silicon Valley (and from studying our start-up heroes like Uber) that digital tools can save the world from inequalities and deliver privilege to those who don’t have it. This has been proven many times by presentations at start-up conferences and international development conferences.</p></div>\n                  </li>\n                  <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>Why is there a discount for advice from white women?</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>We all know that women are only worth 77% of men, based on the average pay gap between women and men in the US, so it’s only fair that our services offer a discounted rate for advice from white women. </p></div>\n                  </li>\n                  <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>What makes you think that white men can offer worthwhile advice to non-white people?\n</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>White people have been running the world for centuries and have a lot of experience doing things within the system -- they did set it up and make sure it worked for them exclusively, after all! It’s only logical that they have the inside scoop on how to succeed in that system. In addition, white man have been running the vast majority of US corporations, foundations, start-ups and nonprofit organizations,  so clearly they know how to create socio-economic change as well as how to develop underprivileged countries and neighborhoods. They’re specially equipped to determine where investments should go to enable non-white communities to thrive. And white men are not bad people - they really do want to help. Our app simply offers white men a way to do that directly, and for people of color to access white men directly for immediate help and support. </p></div>\n                  </li>\n                    <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>What do you do with my data? Do you share it?</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>Don't worry. We'll contact you about the situation, and we will leave you time you need to decide what to do. No hard stops</p></div>\n                  </li>\n                  \n                   <li>\n                    <div class=\"collapsible-header\"><i class=\"mdi-navigation-expand-more\"></i> <h6>Who “owns” my data?</h6></div>\n                    <div class=\"collapsible-body\" style=\"\"><p>We don't store your data, we only XXXXXXXXX </p></div>\n                  </li>\n                  \n                </ul>\n            </div>\n\n\n\n\n\t\t</div>\n\n\t</div>\n</div>\n\n\n\n";
+  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Check your privilege!</h2>\n          \n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"col m12 s12\">\n  \t<div class=\"container\">\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>How it works.</h4>\n                <hr><h5>Our app taps into whites’ desire to help people of color learn to be more hard working and motivated. \t</h5>\n               \t<p class=\"light\">Our innovative solution uses tech to expand and deliver privilege where it’s needed most&mdash;and everyone wins! White men earn “Savior Stars” for providing free expert advice and mentoring from their unique perspective as long-standing privilege holders. </p>\n          \t\t<p class=\"light\">Non-whites access white privilege and use white advice, knowledge and skills to their advantage. They earn “Savee Stars” based on the worthiness of their problems and their work and motivation to resolve them.</p>\n          \t\t                \n                </div>\n            </div>\n         </div>\n            \n            \n          \n            \n            \n             <h5>Our pricing model.</h5>\n            <p class=\"light\">Our different levels of service enable anyone to use the service&mdash;from the poor in emerging economies (freemium), to the poor in the first world (basic model) to people anywhere who have succeeded despite skin color (premium model), but who could still use a hand up and some mentoring from those generous folk who have held power since the dawn of our glorious country. We offer a special discount (77% of the cost) on our basic and premium models for advice from a white woman.</p>\n\n            \n             \n            \n         \n  \n  \n  \n  \n  <div class=\"section\"> \n\t  <div class=\"row\">\n      \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-4.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">FREEMIUM</span>\n                <p>For our least privileged users, we offer an SMS-based Freemium model.<br><br>\nWe know that many of our least privileged users will not speak English, but our solution integrates Google Translate, enabling Saviors and Savees to easily converse via SMS to share problems and expert privileged advice despite any global language, culture or life experience barriers.<br><br>\nWorking through our Non Profit Champion, <a href=\"https://www.facebook.com/WorldAidCorps\">World Aid Corps</a>, we will engage with the most excluded people in the most far off places. That enables us to reach those people who have with the biggest problems. SMS provides us a quick and easy way to reach these beneficiaries in any language. After all, there are more mobile phones than toilets now, according to the World Bank, so reaching the poorest of the poor is no longer an issue! <br><br>\nOur white saviors will be able to provide their life-saving advice and deliver privilege with the touch of a button! Ending global poverty and ending lack of privilege has never been so easy.<br><br>\n<strong>Free</strong></p>\n             \t</div>\n          \t</div>\n         </div>\n         \n         \n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-5.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">BASIC</span>\n                <p>Our Basic service is designed for those who are not privileged themselves yet who are surrounded by the vast privilege of others, especially white privilege.<br><br>\nBasic users pay a small fee to access white savior advice via SMS, video chat or voice. Say a non-white person being pulled over by the police and needs some quick advice on how to avoid being shot, beaten or choked to death. A quick click to start up the app and the non-white person can access any available white savior. He will provide advice on the right attitude and the best way to leave the situation alive and unharmed. <br><br>\nIn dire situations, basic users can quickly upgrade to Premium and have a white savior delivered to them in person to serve as an intermediary or witness.<br><br>\nOur Skype API means that this service is available in multiple languages.<br><br> \nVideo chat allows the user to hand the phone over to an authority figure for white savior intermediation services.<br><br>\n<strong>All for $9/month.</strong></p>\n             \t</div>\n          \t</div>\n         </div>\n         \n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-2.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">PREMIUM</span>\n                <p>The premium service is for the non-white person who has made it, but still needs a white savior who can intervene or offer one-on-one advice and mentorship.<br><br> \n                Even successful non-white people need a hand at some point.<br><br>\n                \nWhen there’s a promotion to be had, a Premium user can call on a white savior to accompany him or her to a meeting to put in a good word. <br><br>\nWomen often need someone to whitemansplain what their superiors are saying so that they can grasp the true meaning in white man terms.<br><br>\nIn an emergency situation, our Premium customers can request a white savior who will arrive directly to them. Using Uber’s patented business model and based on their kitten delivery service, we’ll ensure that the white savior that is closest to you will arrive quickly. You can track his arrival right on your phone for easy identification.<br><br>\n<strong>All for $29/month.</strong>\n                </p>\n             \t</div>\n          \t</div>\n         </div>\n\t </div>\n  \n\n \n  \n  </div>\n         \n<!-- Success Stories Section -->         \n         \n   <div class=\"section\">           \n         \n\t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Success Stories.</h4>\n                <hr><h5>Our fast growth has changed the lives of many. Below are just a few stories in which privileged white men have helped the underprivileged.</h5>\n           \t</div>\n            </div>\n         </div>\n        \n         \n     <div class=\"row\">   \n      \n      \n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable grey lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-1.jpg\" alt=\"\" class=\"circle responsive-img\" > \n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                \"I could see that my lack of access to privilege was going to be a real problem for life, but I didn't know where to turn... until WhiteSave.me! Volunteers like Parker and Maddox generously donated their time to help me get ahead.\" \n               <br><br><em>Jamal was just another 28-year-old hustler, somewhere between high school and jail. </em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable grey lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-2.jpg\" alt=\"\" class=\"circle responsive-img\" > \n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                \"I didn't believe in this when I saw it, but once I reached out to see what a white man would do in my situation I immediately realized how much I had been missing. Now I have access to privilege when and where I need it.\" \n               <br><br><em>Ethan was stuck on a minimum wage job for way too long.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      </div>\n      \n       <div class=\"row\">   \n      \n      \n      \n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable grey lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-1.jpg\" alt=\"\" class=\"circle responsive-img\" > \n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.\" \n               <br><br><em>Jamal was just another 28-year-old hustler, somewhere between high school and jail. </em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable grey lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-2.jpg\" alt=\"\" class=\"circle responsive-img\" > \n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.\" \n               <br><br><em>Jamal was just another 28-year-old hustler, somewhere between high school and jail. </em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      </div>\n      \n       <div class=\"row\">   \n    \n      \n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable grey lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-1.jpg\" alt=\"\" class=\"circle responsive-img\" > \n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.\" \n               <br><br><em>Jamal was just another 28-year-old hustler, somewhere between high school and jail. </em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable grey lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-1.jpg\" alt=\"\" class=\"circle responsive-img\" > \n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.\" \n               <br><br><em>Jamal was just another 28-year-old hustler, somewhere between high school and jail. </em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\t</div>      \n      \n      </div>\n      \n\n         \n         \n          \n    </div>\n\n\n\n\n\n\n\t\t</div>\n\n\t</div>\n</div>\n\n\n\n";
   global.define = __define;
   return module.exports;
 });
@@ -419,7 +419,7 @@ System.register("pages/start.html!github:systemjs/plugin-text@0.0.2", [], true, 
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"container\">\n    <br><br>\n    <h3 class=\"header center brown-text\" id=\"white\">Determining Whiteness</h3>\n    <div class=\"center-align\" style=\"height: 500px\">\n      <div>\n        <canvas id=\"inputCanvas\" width=\"280\" height=\"200\" style=\"display:inline\"></canvas>\n      </div>\n      <strong class=\"brown-text\" id=\"dark\"></strong>\n      <strong class=\"yellow-text\" id=\"yellow\"></strong>\n    </div>\n    <canvas id=\"outputCanvas\" class=\"responsive-img\" width=\"280\" height=\"200\" style=\"display:none\"></canvas>\n    <video id=\"inputVideo\" autoplay loop style=\"display:none\"></video>\n  </div>\n</div>\n";
+  module.exports = "<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"container\">\n    <br><br>\n    <h3 class=\"header center brown-text\" id=\"white\">Determining Whiteness</h3>\n    <div class=\"row center\">\n    <h5 class=\"header col s12 light\"> Please allow <strong>white</strong>save.me to access your camera.<br><br>\nOur patented facial color recognition software&#8482; will determine your whiteness.<br><br>\nBased on your results we will link you with a White Savior or a non-White Savee via a chat session.<br><br>\nYou can end the chat session at any time..</h5>\n    \n    <div class=\"center-align\" style=\"height: 500px\">\n      <div>\n        <canvas id=\"inputCanvas\" width=\"280\" height=\"200\" style=\"display:inline\"></canvas>\n      </div>\n      <strong class=\"brown-text\" id=\"dark\"></strong>\n      <strong class=\"yellow-text\" id=\"yellow\"></strong>\n    </div>\n    <canvas id=\"outputCanvas\" class=\"responsive-img\" width=\"280\" height=\"200\" style=\"display:none\"></canvas>\n    <video id=\"inputVideo\" autoplay loop style=\"display:none\"></video>\n    <video id=\"peerVideo\" poster=\"img/loader.gif\"></video>\n  </div>\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -724,6 +724,11 @@ function define(){};  define.amd = {};
     this.stopStream = function() {
       if (this.stream !== undefined) {
         this.stream.stop();
+      }
+    };
+    this.getStream = function() {
+      if (this.stream !== undefined) {
+        return this.stream;
       }
     };
     this.getFOV = function() {
@@ -18025,6 +18030,1156 @@ function define(){};  define.amd = {};
   return headtrackr;
 }));
 })();
+System.register("npm:ms@0.7.1/index", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  var s = 1000;
+  var m = s * 60;
+  var h = m * 60;
+  var d = h * 24;
+  var y = d * 365.25;
+  module.exports = function(val, options) {
+    options = options || {};
+    if ('string' == typeof val)
+      return parse(val);
+    return options.long ? long(val) : short(val);
+  };
+  function parse(str) {
+    str = '' + str;
+    if (str.length > 10000)
+      return ;
+    var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str);
+    if (!match)
+      return ;
+    var n = parseFloat(match[1]);
+    var type = (match[2] || 'ms').toLowerCase();
+    switch (type) {
+      case 'years':
+      case 'year':
+      case 'yrs':
+      case 'yr':
+      case 'y':
+        return n * y;
+      case 'days':
+      case 'day':
+      case 'd':
+        return n * d;
+      case 'hours':
+      case 'hour':
+      case 'hrs':
+      case 'hr':
+      case 'h':
+        return n * h;
+      case 'minutes':
+      case 'minute':
+      case 'mins':
+      case 'min':
+      case 'm':
+        return n * m;
+      case 'seconds':
+      case 'second':
+      case 'secs':
+      case 'sec':
+      case 's':
+        return n * s;
+      case 'milliseconds':
+      case 'millisecond':
+      case 'msecs':
+      case 'msec':
+      case 'ms':
+        return n;
+    }
+  }
+  function short(ms) {
+    if (ms >= d)
+      return Math.round(ms / d) + 'd';
+    if (ms >= h)
+      return Math.round(ms / h) + 'h';
+    if (ms >= m)
+      return Math.round(ms / m) + 'm';
+    if (ms >= s)
+      return Math.round(ms / s) + 's';
+    return ms + 'ms';
+  }
+  function long(ms) {
+    return plural(ms, d, 'day') || plural(ms, h, 'hour') || plural(ms, m, 'minute') || plural(ms, s, 'second') || ms + ' ms';
+  }
+  function plural(ms, n, name) {
+    if (ms < n)
+      return ;
+    if (ms < n * 1.5)
+      return Math.floor(ms / n) + ' ' + name;
+    return Math.ceil(ms / n) + ' ' + name + 's';
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:get-browser-rtc@1.0.0/index", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = function getBrowserRTC() {
+    if (typeof window === 'undefined')
+      return null;
+    var wrtc = {
+      RTCPeerConnection: window.mozRTCPeerConnection || window.RTCPeerConnection || window.webkitRTCPeerConnection,
+      RTCSessionDescription: window.mozRTCSessionDescription || window.RTCSessionDescription || window.webkitRTCSessionDescription,
+      RTCIceCandidate: window.mozRTCIceCandidate || window.RTCIceCandidate || window.webkitRTCIceCandidate
+    };
+    if (!wrtc.RTCPeerConnection)
+      return null;
+    return wrtc;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:hat@0.0.3/index", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  var hat = module.exports = function(bits, base) {
+    if (!base)
+      base = 16;
+    if (bits === undefined)
+      bits = 128;
+    if (bits <= 0)
+      return '0';
+    var digits = Math.log(Math.pow(2, bits)) / Math.log(base);
+    for (var i = 2; digits === Infinity; i *= 2) {
+      digits = Math.log(Math.pow(2, bits / i)) / Math.log(base) * i;
+    }
+    var rem = digits - Math.floor(digits);
+    var res = '';
+    for (var i = 0; i < Math.floor(digits); i++) {
+      var x = Math.floor(Math.random() * base).toString(base);
+      res = x + res;
+    }
+    if (rem) {
+      var b = Math.pow(base, rem);
+      var x = Math.floor(Math.random() * b).toString(base);
+      res = x + res;
+    }
+    var parsed = parseInt(res, base);
+    if (parsed !== Infinity && parsed >= Math.pow(2, bits)) {
+      return hat(bits, base);
+    } else
+      return res;
+  };
+  hat.rack = function(bits, base, expandBy) {
+    var fn = function(data) {
+      var iters = 0;
+      do {
+        if (iters++ > 10) {
+          if (expandBy)
+            bits += expandBy;
+          else
+            throw new Error('too many ID collisions, use more bits');
+        }
+        var id = hat(bits, base);
+      } while (Object.hasOwnProperty.call(hats, id));
+      hats[id] = data;
+      return id;
+    };
+    var hats = fn.hats = {};
+    fn.get = function(id) {
+      return fn.hats[id];
+    };
+    fn.set = function(id, value) {
+      fn.hats[id] = value;
+      return fn;
+    };
+    fn.bits = bits || 128;
+    fn.base = base || 16;
+    return fn;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:inherits@2.0.1/inherits_browser", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  if (typeof Object.create === 'function') {
+    module.exports = function inherits(ctor, superCtor) {
+      ctor.super_ = superCtor;
+      ctor.prototype = Object.create(superCtor.prototype, {constructor: {
+          value: ctor,
+          enumerable: false,
+          writable: true,
+          configurable: true
+        }});
+    };
+  } else {
+    module.exports = function inherits(ctor, superCtor) {
+      ctor.super_ = superCtor;
+      var TempCtor = function() {};
+      TempCtor.prototype = superCtor.prototype;
+      ctor.prototype = new TempCtor();
+      ctor.prototype.constructor = ctor;
+    };
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:is-typedarray@1.0.0/index", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = isTypedArray;
+  isTypedArray.strict = isStrictTypedArray;
+  isTypedArray.loose = isLooseTypedArray;
+  var toString = Object.prototype.toString;
+  var names = {
+    '[object Int8Array]': true,
+    '[object Int16Array]': true,
+    '[object Int32Array]': true,
+    '[object Uint8Array]': true,
+    '[object Uint8ClampedArray]': true,
+    '[object Uint16Array]': true,
+    '[object Uint32Array]': true,
+    '[object Float32Array]': true,
+    '[object Float64Array]': true
+  };
+  function isTypedArray(arr) {
+    return (isStrictTypedArray(arr) || isLooseTypedArray(arr));
+  }
+  function isStrictTypedArray(arr) {
+    return (arr instanceof Int8Array || arr instanceof Int16Array || arr instanceof Int32Array || arr instanceof Uint8Array || arr instanceof Uint8ClampedArray || arr instanceof Uint16Array || arr instanceof Uint32Array || arr instanceof Float32Array || arr instanceof Float64Array);
+  }
+  function isLooseTypedArray(arr) {
+    return names[toString.call(arr)];
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:wrappy@1.0.1/wrappy", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = wrappy;
+  function wrappy(fn, cb) {
+    if (fn && cb)
+      return wrappy(fn)(cb);
+    if (typeof fn !== 'function')
+      throw new TypeError('need wrapper function');
+    Object.keys(fn).forEach(function(k) {
+      wrapper[k] = fn[k];
+    });
+    return wrapper;
+    function wrapper() {
+      var args = new Array(arguments.length);
+      for (var i = 0; i < args.length; i++) {
+        args[i] = arguments[i];
+      }
+      var ret = fn.apply(this, args);
+      var cb = args[args.length - 1];
+      if (typeof ret === 'function' && ret !== cb) {
+        Object.keys(cb).forEach(function(k) {
+          ret[k] = cb[k];
+        });
+      }
+      return ret;
+    }
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:events@1.0.2/events", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  function EventEmitter() {
+    this._events = this._events || {};
+    this._maxListeners = this._maxListeners || undefined;
+  }
+  module.exports = EventEmitter;
+  EventEmitter.EventEmitter = EventEmitter;
+  EventEmitter.prototype._events = undefined;
+  EventEmitter.prototype._maxListeners = undefined;
+  EventEmitter.defaultMaxListeners = 10;
+  EventEmitter.prototype.setMaxListeners = function(n) {
+    if (!isNumber(n) || n < 0 || isNaN(n))
+      throw TypeError('n must be a positive number');
+    this._maxListeners = n;
+    return this;
+  };
+  EventEmitter.prototype.emit = function(type) {
+    var er,
+        handler,
+        len,
+        args,
+        i,
+        listeners;
+    if (!this._events)
+      this._events = {};
+    if (type === 'error') {
+      if (!this._events.error || (isObject(this._events.error) && !this._events.error.length)) {
+        er = arguments[1];
+        if (er instanceof Error) {
+          throw er;
+        }
+        throw TypeError('Uncaught, unspecified "error" event.');
+      }
+    }
+    handler = this._events[type];
+    if (isUndefined(handler))
+      return false;
+    if (isFunction(handler)) {
+      switch (arguments.length) {
+        case 1:
+          handler.call(this);
+          break;
+        case 2:
+          handler.call(this, arguments[1]);
+          break;
+        case 3:
+          handler.call(this, arguments[1], arguments[2]);
+          break;
+        default:
+          len = arguments.length;
+          args = new Array(len - 1);
+          for (i = 1; i < len; i++)
+            args[i - 1] = arguments[i];
+          handler.apply(this, args);
+      }
+    } else if (isObject(handler)) {
+      len = arguments.length;
+      args = new Array(len - 1);
+      for (i = 1; i < len; i++)
+        args[i - 1] = arguments[i];
+      listeners = handler.slice();
+      len = listeners.length;
+      for (i = 0; i < len; i++)
+        listeners[i].apply(this, args);
+    }
+    return true;
+  };
+  EventEmitter.prototype.addListener = function(type, listener) {
+    var m;
+    if (!isFunction(listener))
+      throw TypeError('listener must be a function');
+    if (!this._events)
+      this._events = {};
+    if (this._events.newListener)
+      this.emit('newListener', type, isFunction(listener.listener) ? listener.listener : listener);
+    if (!this._events[type])
+      this._events[type] = listener;
+    else if (isObject(this._events[type]))
+      this._events[type].push(listener);
+    else
+      this._events[type] = [this._events[type], listener];
+    if (isObject(this._events[type]) && !this._events[type].warned) {
+      var m;
+      if (!isUndefined(this._maxListeners)) {
+        m = this._maxListeners;
+      } else {
+        m = EventEmitter.defaultMaxListeners;
+      }
+      if (m && m > 0 && this._events[type].length > m) {
+        this._events[type].warned = true;
+        console.error('(node) warning: possible EventEmitter memory ' + 'leak detected. %d listeners added. ' + 'Use emitter.setMaxListeners() to increase limit.', this._events[type].length);
+        if (typeof console.trace === 'function') {
+          console.trace();
+        }
+      }
+    }
+    return this;
+  };
+  EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+  EventEmitter.prototype.once = function(type, listener) {
+    if (!isFunction(listener))
+      throw TypeError('listener must be a function');
+    var fired = false;
+    function g() {
+      this.removeListener(type, g);
+      if (!fired) {
+        fired = true;
+        listener.apply(this, arguments);
+      }
+    }
+    g.listener = listener;
+    this.on(type, g);
+    return this;
+  };
+  EventEmitter.prototype.removeListener = function(type, listener) {
+    var list,
+        position,
+        length,
+        i;
+    if (!isFunction(listener))
+      throw TypeError('listener must be a function');
+    if (!this._events || !this._events[type])
+      return this;
+    list = this._events[type];
+    length = list.length;
+    position = -1;
+    if (list === listener || (isFunction(list.listener) && list.listener === listener)) {
+      delete this._events[type];
+      if (this._events.removeListener)
+        this.emit('removeListener', type, listener);
+    } else if (isObject(list)) {
+      for (i = length; i-- > 0; ) {
+        if (list[i] === listener || (list[i].listener && list[i].listener === listener)) {
+          position = i;
+          break;
+        }
+      }
+      if (position < 0)
+        return this;
+      if (list.length === 1) {
+        list.length = 0;
+        delete this._events[type];
+      } else {
+        list.splice(position, 1);
+      }
+      if (this._events.removeListener)
+        this.emit('removeListener', type, listener);
+    }
+    return this;
+  };
+  EventEmitter.prototype.removeAllListeners = function(type) {
+    var key,
+        listeners;
+    if (!this._events)
+      return this;
+    if (!this._events.removeListener) {
+      if (arguments.length === 0)
+        this._events = {};
+      else if (this._events[type])
+        delete this._events[type];
+      return this;
+    }
+    if (arguments.length === 0) {
+      for (key in this._events) {
+        if (key === 'removeListener')
+          continue;
+        this.removeAllListeners(key);
+      }
+      this.removeAllListeners('removeListener');
+      this._events = {};
+      return this;
+    }
+    listeners = this._events[type];
+    if (isFunction(listeners)) {
+      this.removeListener(type, listeners);
+    } else {
+      while (listeners.length)
+        this.removeListener(type, listeners[listeners.length - 1]);
+    }
+    delete this._events[type];
+    return this;
+  };
+  EventEmitter.prototype.listeners = function(type) {
+    var ret;
+    if (!this._events || !this._events[type])
+      ret = [];
+    else if (isFunction(this._events[type]))
+      ret = [this._events[type]];
+    else
+      ret = this._events[type].slice();
+    return ret;
+  };
+  EventEmitter.listenerCount = function(emitter, type) {
+    var ret;
+    if (!emitter._events || !emitter._events[type])
+      ret = 0;
+    else if (isFunction(emitter._events[type]))
+      ret = 1;
+    else
+      ret = emitter._events[type].length;
+    return ret;
+  };
+  function isFunction(arg) {
+    return typeof arg === 'function';
+  }
+  function isNumber(arg) {
+    return typeof arg === 'number';
+  }
+  function isObject(arg) {
+    return typeof arg === 'object' && arg !== null;
+  }
+  function isUndefined(arg) {
+    return arg === void 0;
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:isarray@0.0.1/index", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = Array.isArray || function(arr) {
+    return Object.prototype.toString.call(arr) == '[object Array]';
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:base64-js@0.0.8/lib/b64", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  ;
+  (function(exports) {
+    'use strict';
+    var Arr = (typeof Uint8Array !== 'undefined') ? Uint8Array : Array;
+    var PLUS = '+'.charCodeAt(0);
+    var SLASH = '/'.charCodeAt(0);
+    var NUMBER = '0'.charCodeAt(0);
+    var LOWER = 'a'.charCodeAt(0);
+    var UPPER = 'A'.charCodeAt(0);
+    var PLUS_URL_SAFE = '-'.charCodeAt(0);
+    var SLASH_URL_SAFE = '_'.charCodeAt(0);
+    function decode(elt) {
+      var code = elt.charCodeAt(0);
+      if (code === PLUS || code === PLUS_URL_SAFE)
+        return 62;
+      if (code === SLASH || code === SLASH_URL_SAFE)
+        return 63;
+      if (code < NUMBER)
+        return -1;
+      if (code < NUMBER + 10)
+        return code - NUMBER + 26 + 26;
+      if (code < UPPER + 26)
+        return code - UPPER;
+      if (code < LOWER + 26)
+        return code - LOWER + 26;
+    }
+    function b64ToByteArray(b64) {
+      var i,
+          j,
+          l,
+          tmp,
+          placeHolders,
+          arr;
+      if (b64.length % 4 > 0) {
+        throw new Error('Invalid string. Length must be a multiple of 4');
+      }
+      var len = b64.length;
+      placeHolders = '=' === b64.charAt(len - 2) ? 2 : '=' === b64.charAt(len - 1) ? 1 : 0;
+      arr = new Arr(b64.length * 3 / 4 - placeHolders);
+      l = placeHolders > 0 ? b64.length - 4 : b64.length;
+      var L = 0;
+      function push(v) {
+        arr[L++] = v;
+      }
+      for (i = 0, j = 0; i < l; i += 4, j += 3) {
+        tmp = (decode(b64.charAt(i)) << 18) | (decode(b64.charAt(i + 1)) << 12) | (decode(b64.charAt(i + 2)) << 6) | decode(b64.charAt(i + 3));
+        push((tmp & 0xFF0000) >> 16);
+        push((tmp & 0xFF00) >> 8);
+        push(tmp & 0xFF);
+      }
+      if (placeHolders === 2) {
+        tmp = (decode(b64.charAt(i)) << 2) | (decode(b64.charAt(i + 1)) >> 4);
+        push(tmp & 0xFF);
+      } else if (placeHolders === 1) {
+        tmp = (decode(b64.charAt(i)) << 10) | (decode(b64.charAt(i + 1)) << 4) | (decode(b64.charAt(i + 2)) >> 2);
+        push((tmp >> 8) & 0xFF);
+        push(tmp & 0xFF);
+      }
+      return arr;
+    }
+    function uint8ToBase64(uint8) {
+      var i,
+          extraBytes = uint8.length % 3,
+          output = "",
+          temp,
+          length;
+      function encode(num) {
+        return lookup.charAt(num);
+      }
+      function tripletToBase64(num) {
+        return encode(num >> 18 & 0x3F) + encode(num >> 12 & 0x3F) + encode(num >> 6 & 0x3F) + encode(num & 0x3F);
+      }
+      for (i = 0, length = uint8.length - extraBytes; i < length; i += 3) {
+        temp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2]);
+        output += tripletToBase64(temp);
+      }
+      switch (extraBytes) {
+        case 1:
+          temp = uint8[uint8.length - 1];
+          output += encode(temp >> 2);
+          output += encode((temp << 4) & 0x3F);
+          output += '==';
+          break;
+        case 2:
+          temp = (uint8[uint8.length - 2] << 8) + (uint8[uint8.length - 1]);
+          output += encode(temp >> 10);
+          output += encode((temp >> 4) & 0x3F);
+          output += encode((temp << 2) & 0x3F);
+          output += '=';
+          break;
+      }
+      return output;
+    }
+    exports.toByteArray = b64ToByteArray;
+    exports.fromByteArray = uint8ToBase64;
+  }(typeof exports === 'undefined' ? (this.base64js = {}) : exports));
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:ieee754@1.1.6/index", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  exports.read = function(buffer, offset, isLE, mLen, nBytes) {
+    var e,
+        m;
+    var eLen = nBytes * 8 - mLen - 1;
+    var eMax = (1 << eLen) - 1;
+    var eBias = eMax >> 1;
+    var nBits = -7;
+    var i = isLE ? (nBytes - 1) : 0;
+    var d = isLE ? -1 : 1;
+    var s = buffer[offset + i];
+    i += d;
+    e = s & ((1 << (-nBits)) - 1);
+    s >>= (-nBits);
+    nBits += eLen;
+    for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+    m = e & ((1 << (-nBits)) - 1);
+    e >>= (-nBits);
+    nBits += mLen;
+    for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+    if (e === 0) {
+      e = 1 - eBias;
+    } else if (e === eMax) {
+      return m ? NaN : ((s ? -1 : 1) * Infinity);
+    } else {
+      m = m + Math.pow(2, mLen);
+      e = e - eBias;
+    }
+    return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
+  };
+  exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
+    var e,
+        m,
+        c;
+    var eLen = nBytes * 8 - mLen - 1;
+    var eMax = (1 << eLen) - 1;
+    var eBias = eMax >> 1;
+    var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0);
+    var i = isLE ? 0 : (nBytes - 1);
+    var d = isLE ? 1 : -1;
+    var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0;
+    value = Math.abs(value);
+    if (isNaN(value) || value === Infinity) {
+      m = isNaN(value) ? 1 : 0;
+      e = eMax;
+    } else {
+      e = Math.floor(Math.log(value) / Math.LN2);
+      if (value * (c = Math.pow(2, -e)) < 1) {
+        e--;
+        c *= 2;
+      }
+      if (e + eBias >= 1) {
+        value += rt / c;
+      } else {
+        value += rt * Math.pow(2, 1 - eBias);
+      }
+      if (value * c >= 2) {
+        e++;
+        c /= 2;
+      }
+      if (e + eBias >= eMax) {
+        m = 0;
+        e = eMax;
+      } else if (e + eBias >= 1) {
+        m = (value * c - 1) * Math.pow(2, mLen);
+        e = e + eBias;
+      } else {
+        m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen);
+        e = 0;
+      }
+    }
+    for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
+    e = (e << mLen) | m;
+    eLen += mLen;
+    for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
+    buffer[offset + i - d] |= s * 128;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:is-array@1.0.1/index", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  var isArray = Array.isArray;
+  var str = Object.prototype.toString;
+  module.exports = isArray || function(val) {
+    return !!val && '[object Array]' == str.call(val);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:core-util-is@1.0.1/lib/util", ["github:jspm/nodelibs-buffer@0.1.0"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(Buffer) {
+    function isArray(ar) {
+      return Array.isArray(ar);
+    }
+    exports.isArray = isArray;
+    function isBoolean(arg) {
+      return typeof arg === 'boolean';
+    }
+    exports.isBoolean = isBoolean;
+    function isNull(arg) {
+      return arg === null;
+    }
+    exports.isNull = isNull;
+    function isNullOrUndefined(arg) {
+      return arg == null;
+    }
+    exports.isNullOrUndefined = isNullOrUndefined;
+    function isNumber(arg) {
+      return typeof arg === 'number';
+    }
+    exports.isNumber = isNumber;
+    function isString(arg) {
+      return typeof arg === 'string';
+    }
+    exports.isString = isString;
+    function isSymbol(arg) {
+      return typeof arg === 'symbol';
+    }
+    exports.isSymbol = isSymbol;
+    function isUndefined(arg) {
+      return arg === void 0;
+    }
+    exports.isUndefined = isUndefined;
+    function isRegExp(re) {
+      return isObject(re) && objectToString(re) === '[object RegExp]';
+    }
+    exports.isRegExp = isRegExp;
+    function isObject(arg) {
+      return typeof arg === 'object' && arg !== null;
+    }
+    exports.isObject = isObject;
+    function isDate(d) {
+      return isObject(d) && objectToString(d) === '[object Date]';
+    }
+    exports.isDate = isDate;
+    function isError(e) {
+      return isObject(e) && (objectToString(e) === '[object Error]' || e instanceof Error);
+    }
+    exports.isError = isError;
+    function isFunction(arg) {
+      return typeof arg === 'function';
+    }
+    exports.isFunction = isFunction;
+    function isPrimitive(arg) {
+      return arg === null || typeof arg === 'boolean' || typeof arg === 'number' || typeof arg === 'string' || typeof arg === 'symbol' || typeof arg === 'undefined';
+    }
+    exports.isPrimitive = isPrimitive;
+    function isBuffer(arg) {
+      return Buffer.isBuffer(arg);
+    }
+    exports.isBuffer = isBuffer;
+    function objectToString(o) {
+      return Object.prototype.toString.call(o);
+    }
+  })(require("github:jspm/nodelibs-buffer@0.1.0").Buffer);
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:process@0.10.1/browser", [], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  var process = module.exports = {};
+  var queue = [];
+  var draining = false;
+  function drainQueue() {
+    if (draining) {
+      return ;
+    }
+    draining = true;
+    var currentQueue;
+    var len = queue.length;
+    while (len) {
+      currentQueue = queue;
+      queue = [];
+      var i = -1;
+      while (++i < len) {
+        currentQueue[i]();
+      }
+      len = queue.length;
+    }
+    draining = false;
+  }
+  process.nextTick = function(fun) {
+    queue.push(fun);
+    if (!draining) {
+      setTimeout(drainQueue, 0);
+    }
+  };
+  process.title = 'browser';
+  process.browser = true;
+  process.env = {};
+  process.argv = [];
+  process.version = '';
+  process.versions = {};
+  function noop() {}
+  process.on = noop;
+  process.addListener = noop;
+  process.once = noop;
+  process.off = noop;
+  process.removeListener = noop;
+  process.removeAllListeners = noop;
+  process.emit = noop;
+  process.binding = function(name) {
+    throw new Error('process.binding is not supported');
+  };
+  process.cwd = function() {
+    return '/';
+  };
+  process.chdir = function(dir) {
+    throw new Error('process.chdir is not supported');
+  };
+  process.umask = function() {
+    return 0;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:string_decoder@0.10.31/index", ["github:jspm/nodelibs-buffer@0.1.0", "github:jspm/nodelibs-buffer@0.1.0"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(Buffer) {
+    var Buffer = require("github:jspm/nodelibs-buffer@0.1.0").Buffer;
+    var isBufferEncoding = Buffer.isEncoding || function(encoding) {
+      switch (encoding && encoding.toLowerCase()) {
+        case 'hex':
+        case 'utf8':
+        case 'utf-8':
+        case 'ascii':
+        case 'binary':
+        case 'base64':
+        case 'ucs2':
+        case 'ucs-2':
+        case 'utf16le':
+        case 'utf-16le':
+        case 'raw':
+          return true;
+        default:
+          return false;
+      }
+    };
+    function assertEncoding(encoding) {
+      if (encoding && !isBufferEncoding(encoding)) {
+        throw new Error('Unknown encoding: ' + encoding);
+      }
+    }
+    var StringDecoder = exports.StringDecoder = function(encoding) {
+      this.encoding = (encoding || 'utf8').toLowerCase().replace(/[-_]/, '');
+      assertEncoding(encoding);
+      switch (this.encoding) {
+        case 'utf8':
+          this.surrogateSize = 3;
+          break;
+        case 'ucs2':
+        case 'utf16le':
+          this.surrogateSize = 2;
+          this.detectIncompleteChar = utf16DetectIncompleteChar;
+          break;
+        case 'base64':
+          this.surrogateSize = 3;
+          this.detectIncompleteChar = base64DetectIncompleteChar;
+          break;
+        default:
+          this.write = passThroughWrite;
+          return ;
+      }
+      this.charBuffer = new Buffer(6);
+      this.charReceived = 0;
+      this.charLength = 0;
+    };
+    StringDecoder.prototype.write = function(buffer) {
+      var charStr = '';
+      while (this.charLength) {
+        var available = (buffer.length >= this.charLength - this.charReceived) ? this.charLength - this.charReceived : buffer.length;
+        buffer.copy(this.charBuffer, this.charReceived, 0, available);
+        this.charReceived += available;
+        if (this.charReceived < this.charLength) {
+          return '';
+        }
+        buffer = buffer.slice(available, buffer.length);
+        charStr = this.charBuffer.slice(0, this.charLength).toString(this.encoding);
+        var charCode = charStr.charCodeAt(charStr.length - 1);
+        if (charCode >= 0xD800 && charCode <= 0xDBFF) {
+          this.charLength += this.surrogateSize;
+          charStr = '';
+          continue;
+        }
+        this.charReceived = this.charLength = 0;
+        if (buffer.length === 0) {
+          return charStr;
+        }
+        break;
+      }
+      this.detectIncompleteChar(buffer);
+      var end = buffer.length;
+      if (this.charLength) {
+        buffer.copy(this.charBuffer, 0, buffer.length - this.charReceived, end);
+        end -= this.charReceived;
+      }
+      charStr += buffer.toString(this.encoding, 0, end);
+      var end = charStr.length - 1;
+      var charCode = charStr.charCodeAt(end);
+      if (charCode >= 0xD800 && charCode <= 0xDBFF) {
+        var size = this.surrogateSize;
+        this.charLength += size;
+        this.charReceived += size;
+        this.charBuffer.copy(this.charBuffer, size, 0, size);
+        buffer.copy(this.charBuffer, 0, 0, size);
+        return charStr.substring(0, end);
+      }
+      return charStr;
+    };
+    StringDecoder.prototype.detectIncompleteChar = function(buffer) {
+      var i = (buffer.length >= 3) ? 3 : buffer.length;
+      for (; i > 0; i--) {
+        var c = buffer[buffer.length - i];
+        if (i == 1 && c >> 5 == 0x06) {
+          this.charLength = 2;
+          break;
+        }
+        if (i <= 2 && c >> 4 == 0x0E) {
+          this.charLength = 3;
+          break;
+        }
+        if (i <= 3 && c >> 3 == 0x1E) {
+          this.charLength = 4;
+          break;
+        }
+      }
+      this.charReceived = i;
+    };
+    StringDecoder.prototype.end = function(buffer) {
+      var res = '';
+      if (buffer && buffer.length)
+        res = this.write(buffer);
+      if (this.charReceived) {
+        var cr = this.charReceived;
+        var buf = this.charBuffer;
+        var enc = this.encoding;
+        res += buf.slice(0, cr).toString(enc);
+      }
+      return res;
+    };
+    function passThroughWrite(buffer) {
+      return buffer.toString(this.encoding);
+    }
+    function utf16DetectIncompleteChar(buffer) {
+      this.charReceived = buffer.length % 2;
+      this.charLength = this.charReceived ? 2 : 0;
+    }
+    function base64DetectIncompleteChar(buffer) {
+      this.charReceived = buffer.length % 3;
+      this.charLength = this.charReceived ? 3 : 0;
+    }
+  })(require("github:jspm/nodelibs-buffer@0.1.0").Buffer);
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/lib/_stream_transform", ["npm:readable-stream@1.1.13/lib/_stream_duplex", "npm:core-util-is@1.0.1", "npm:inherits@2.0.1", "github:jspm/nodelibs-process@0.1.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(process) {
+    module.exports = Transform;
+    var Duplex = require("npm:readable-stream@1.1.13/lib/_stream_duplex");
+    var util = require("npm:core-util-is@1.0.1");
+    util.inherits = require("npm:inherits@2.0.1");
+    util.inherits(Transform, Duplex);
+    function TransformState(options, stream) {
+      this.afterTransform = function(er, data) {
+        return afterTransform(stream, er, data);
+      };
+      this.needTransform = false;
+      this.transforming = false;
+      this.writecb = null;
+      this.writechunk = null;
+    }
+    function afterTransform(stream, er, data) {
+      var ts = stream._transformState;
+      ts.transforming = false;
+      var cb = ts.writecb;
+      if (!cb)
+        return stream.emit('error', new Error('no writecb in Transform class'));
+      ts.writechunk = null;
+      ts.writecb = null;
+      if (!util.isNullOrUndefined(data))
+        stream.push(data);
+      if (cb)
+        cb(er);
+      var rs = stream._readableState;
+      rs.reading = false;
+      if (rs.needReadable || rs.length < rs.highWaterMark) {
+        stream._read(rs.highWaterMark);
+      }
+    }
+    function Transform(options) {
+      if (!(this instanceof Transform))
+        return new Transform(options);
+      Duplex.call(this, options);
+      this._transformState = new TransformState(options, this);
+      var stream = this;
+      this._readableState.needReadable = true;
+      this._readableState.sync = false;
+      this.once('prefinish', function() {
+        if (util.isFunction(this._flush))
+          this._flush(function(er) {
+            done(stream, er);
+          });
+        else
+          done(stream);
+      });
+    }
+    Transform.prototype.push = function(chunk, encoding) {
+      this._transformState.needTransform = false;
+      return Duplex.prototype.push.call(this, chunk, encoding);
+    };
+    Transform.prototype._transform = function(chunk, encoding, cb) {
+      throw new Error('not implemented');
+    };
+    Transform.prototype._write = function(chunk, encoding, cb) {
+      var ts = this._transformState;
+      ts.writecb = cb;
+      ts.writechunk = chunk;
+      ts.writeencoding = encoding;
+      if (!ts.transforming) {
+        var rs = this._readableState;
+        if (ts.needTransform || rs.needReadable || rs.length < rs.highWaterMark)
+          this._read(rs.highWaterMark);
+      }
+    };
+    Transform.prototype._read = function(n) {
+      var ts = this._transformState;
+      if (!util.isNull(ts.writechunk) && ts.writecb && !ts.transforming) {
+        ts.transforming = true;
+        this._transform(ts.writechunk, ts.writeencoding, ts.afterTransform);
+      } else {
+        ts.needTransform = true;
+      }
+    };
+    function done(stream, er) {
+      if (er)
+        return stream.emit('error', er);
+      var ws = stream._writableState;
+      var ts = stream._transformState;
+      if (ws.length)
+        throw new Error('calling transform done when ws.length != 0');
+      if (ts.transforming)
+        throw new Error('calling transform done when still transforming');
+      return stream.push(null);
+    }
+  })(require("github:jspm/nodelibs-process@0.1.1"));
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/lib/_stream_passthrough", ["npm:readable-stream@1.1.13/lib/_stream_transform", "npm:core-util-is@1.0.1", "npm:inherits@2.0.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = PassThrough;
+  var Transform = require("npm:readable-stream@1.1.13/lib/_stream_transform");
+  var util = require("npm:core-util-is@1.0.1");
+  util.inherits = require("npm:inherits@2.0.1");
+  util.inherits(PassThrough, Transform);
+  function PassThrough(options) {
+    if (!(this instanceof PassThrough))
+      return new PassThrough(options);
+    Transform.call(this, options);
+  }
+  PassThrough.prototype._transform = function(chunk, encoding, cb) {
+    cb(null, chunk);
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/writable", ["npm:readable-stream@1.1.13/lib/_stream_writable"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:readable-stream@1.1.13/lib/_stream_writable");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/duplex", ["npm:readable-stream@1.1.13/lib/_stream_duplex"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:readable-stream@1.1.13/lib/_stream_duplex");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/transform", ["npm:readable-stream@1.1.13/lib/_stream_transform"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:readable-stream@1.1.13/lib/_stream_transform");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/passthrough", ["npm:readable-stream@1.1.13/lib/_stream_passthrough"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:readable-stream@1.1.13/lib/_stream_passthrough");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:typedarray-to-buffer@3.0.3/index", ["npm:is-typedarray@1.0.0", "github:jspm/nodelibs-buffer@0.1.0"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(Buffer) {
+    var isTypedArray = require("npm:is-typedarray@1.0.0").strict;
+    module.exports = function(arr) {
+      var constructor = Buffer.TYPED_ARRAY_SUPPORT ? Buffer._augment : function(arr) {
+        return new Buffer(arr);
+      };
+      if (arr instanceof Uint8Array) {
+        return constructor(arr);
+      } else if (arr instanceof ArrayBuffer) {
+        return constructor(new Uint8Array(arr));
+      } else if (isTypedArray(arr)) {
+        return constructor(new Uint8Array(arr.buffer, arr.byteOffset, arr.byteLength));
+      } else {
+        return new Buffer(arr);
+      }
+    };
+  })(require("github:jspm/nodelibs-buffer@0.1.0").Buffer);
+  global.define = __define;
+  return module.exports;
+});
+
 System.register("components/pages.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
   var global = System.global,
       __define = global.define;
@@ -18034,13 +19189,3259 @@ System.register("components/pages.html!github:systemjs/plugin-text@0.0.2", [], t
   return module.exports;
 });
 
-System.register("lib/start", ["lib/headtrackr"], function($__export) {
+System.register("npm:ms@0.7.1", ["npm:ms@0.7.1/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:ms@0.7.1/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:get-browser-rtc@1.0.0", ["npm:get-browser-rtc@1.0.0/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:get-browser-rtc@1.0.0/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:hat@0.0.3", ["npm:hat@0.0.3/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:hat@0.0.3/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:inherits@2.0.1", ["npm:inherits@2.0.1/inherits_browser"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:inherits@2.0.1/inherits_browser");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:is-typedarray@1.0.0", ["npm:is-typedarray@1.0.0/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:is-typedarray@1.0.0/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:wrappy@1.0.1", ["npm:wrappy@1.0.1/wrappy"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:wrappy@1.0.1/wrappy");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:events@1.0.2", ["npm:events@1.0.2/events"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:events@1.0.2/events");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:isarray@0.0.1", ["npm:isarray@0.0.1/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:isarray@0.0.1/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:base64-js@0.0.8", ["npm:base64-js@0.0.8/lib/b64"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:base64-js@0.0.8/lib/b64");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:ieee754@1.1.6", ["npm:ieee754@1.1.6/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:ieee754@1.1.6/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:is-array@1.0.1", ["npm:is-array@1.0.1/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:is-array@1.0.1/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:core-util-is@1.0.1", ["npm:core-util-is@1.0.1/lib/util"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:core-util-is@1.0.1/lib/util");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:process@0.10.1", ["npm:process@0.10.1/browser"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:process@0.10.1/browser");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:string_decoder@0.10.31", ["npm:string_decoder@0.10.31/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:string_decoder@0.10.31/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:typedarray-to-buffer@3.0.3", ["npm:typedarray-to-buffer@3.0.3/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:typedarray-to-buffer@3.0.3/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:debug@2.2.0/debug", ["npm:ms@0.7.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  exports = module.exports = debug;
+  exports.coerce = coerce;
+  exports.disable = disable;
+  exports.enable = enable;
+  exports.enabled = enabled;
+  exports.humanize = require("npm:ms@0.7.1");
+  exports.names = [];
+  exports.skips = [];
+  exports.formatters = {};
+  var prevColor = 0;
+  var prevTime;
+  function selectColor() {
+    return exports.colors[prevColor++ % exports.colors.length];
+  }
+  function debug(namespace) {
+    function disabled() {}
+    disabled.enabled = false;
+    function enabled() {
+      var self = enabled;
+      var curr = +new Date();
+      var ms = curr - (prevTime || curr);
+      self.diff = ms;
+      self.prev = prevTime;
+      self.curr = curr;
+      prevTime = curr;
+      if (null == self.useColors)
+        self.useColors = exports.useColors();
+      if (null == self.color && self.useColors)
+        self.color = selectColor();
+      var args = Array.prototype.slice.call(arguments);
+      args[0] = exports.coerce(args[0]);
+      if ('string' !== typeof args[0]) {
+        args = ['%o'].concat(args);
+      }
+      var index = 0;
+      args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+        if (match === '%%')
+          return match;
+        index++;
+        var formatter = exports.formatters[format];
+        if ('function' === typeof formatter) {
+          var val = args[index];
+          match = formatter.call(self, val);
+          args.splice(index, 1);
+          index--;
+        }
+        return match;
+      });
+      if ('function' === typeof exports.formatArgs) {
+        args = exports.formatArgs.apply(self, args);
+      }
+      var logFn = enabled.log || exports.log || console.log.bind(console);
+      logFn.apply(self, args);
+    }
+    enabled.enabled = true;
+    var fn = exports.enabled(namespace) ? enabled : disabled;
+    fn.namespace = namespace;
+    return fn;
+  }
+  function enable(namespaces) {
+    exports.save(namespaces);
+    var split = (namespaces || '').split(/[\s,]+/);
+    var len = split.length;
+    for (var i = 0; i < len; i++) {
+      if (!split[i])
+        continue;
+      namespaces = split[i].replace(/\*/g, '.*?');
+      if (namespaces[0] === '-') {
+        exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+      } else {
+        exports.names.push(new RegExp('^' + namespaces + '$'));
+      }
+    }
+  }
+  function disable() {
+    exports.enable('');
+  }
+  function enabled(name) {
+    var i,
+        len;
+    for (i = 0, len = exports.skips.length; i < len; i++) {
+      if (exports.skips[i].test(name)) {
+        return false;
+      }
+    }
+    for (i = 0, len = exports.names.length; i < len; i++) {
+      if (exports.names[i].test(name)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  function coerce(val) {
+    if (val instanceof Error)
+      return val.stack || val.message;
+    return val;
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:once@1.3.2/once", ["npm:wrappy@1.0.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  var wrappy = require("npm:wrappy@1.0.1");
+  module.exports = wrappy(once);
+  once.proto = once(function() {
+    Object.defineProperty(Function.prototype, 'once', {
+      value: function() {
+        return once(this);
+      },
+      configurable: true
+    });
+  });
+  function once(fn) {
+    var f = function() {
+      if (f.called)
+        return f.value;
+      f.called = true;
+      return f.value = fn.apply(this, arguments);
+    };
+    f.called = false;
+    return f;
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-events@0.1.1/index", ["npm:events@1.0.2"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = System._nodeRequire ? System._nodeRequire('events') : require("npm:events@1.0.2");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:buffer@3.3.0/index", ["npm:base64-js@0.0.8", "npm:ieee754@1.1.6", "npm:is-array@1.0.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  var base64 = require("npm:base64-js@0.0.8");
+  var ieee754 = require("npm:ieee754@1.1.6");
+  var isArray = require("npm:is-array@1.0.1");
+  exports.Buffer = Buffer;
+  exports.SlowBuffer = SlowBuffer;
+  exports.INSPECT_MAX_BYTES = 50;
+  Buffer.poolSize = 8192;
+  var rootParent = {};
+  Buffer.TYPED_ARRAY_SUPPORT = (function() {
+    try {
+      var buf = new ArrayBuffer(0);
+      var arr = new Uint8Array(buf);
+      arr.foo = function() {
+        return 42;
+      };
+      return arr.foo() === 42 && typeof arr.subarray === 'function' && new Uint8Array(1).subarray(1, 1).byteLength === 0;
+    } catch (e) {
+      return false;
+    }
+  })();
+  function kMaxLength() {
+    return Buffer.TYPED_ARRAY_SUPPORT ? 0x7fffffff : 0x3fffffff;
+  }
+  function Buffer(arg) {
+    if (!(this instanceof Buffer)) {
+      if (arguments.length > 1)
+        return new Buffer(arg, arguments[1]);
+      return new Buffer(arg);
+    }
+    this.length = 0;
+    this.parent = undefined;
+    if (typeof arg === 'number') {
+      return fromNumber(this, arg);
+    }
+    if (typeof arg === 'string') {
+      return fromString(this, arg, arguments.length > 1 ? arguments[1] : 'utf8');
+    }
+    return fromObject(this, arg);
+  }
+  function fromNumber(that, length) {
+    that = allocate(that, length < 0 ? 0 : checked(length) | 0);
+    if (!Buffer.TYPED_ARRAY_SUPPORT) {
+      for (var i = 0; i < length; i++) {
+        that[i] = 0;
+      }
+    }
+    return that;
+  }
+  function fromString(that, string, encoding) {
+    if (typeof encoding !== 'string' || encoding === '')
+      encoding = 'utf8';
+    var length = byteLength(string, encoding) | 0;
+    that = allocate(that, length);
+    that.write(string, encoding);
+    return that;
+  }
+  function fromObject(that, object) {
+    if (Buffer.isBuffer(object))
+      return fromBuffer(that, object);
+    if (isArray(object))
+      return fromArray(that, object);
+    if (object == null) {
+      throw new TypeError('must start with number, buffer, array or string');
+    }
+    if (typeof ArrayBuffer !== 'undefined' && object.buffer instanceof ArrayBuffer) {
+      return fromTypedArray(that, object);
+    }
+    if (object.length)
+      return fromArrayLike(that, object);
+    return fromJsonObject(that, object);
+  }
+  function fromBuffer(that, buffer) {
+    var length = checked(buffer.length) | 0;
+    that = allocate(that, length);
+    buffer.copy(that, 0, 0, length);
+    return that;
+  }
+  function fromArray(that, array) {
+    var length = checked(array.length) | 0;
+    that = allocate(that, length);
+    for (var i = 0; i < length; i += 1) {
+      that[i] = array[i] & 255;
+    }
+    return that;
+  }
+  function fromTypedArray(that, array) {
+    var length = checked(array.length) | 0;
+    that = allocate(that, length);
+    for (var i = 0; i < length; i += 1) {
+      that[i] = array[i] & 255;
+    }
+    return that;
+  }
+  function fromArrayLike(that, array) {
+    var length = checked(array.length) | 0;
+    that = allocate(that, length);
+    for (var i = 0; i < length; i += 1) {
+      that[i] = array[i] & 255;
+    }
+    return that;
+  }
+  function fromJsonObject(that, object) {
+    var array;
+    var length = 0;
+    if (object.type === 'Buffer' && isArray(object.data)) {
+      array = object.data;
+      length = checked(array.length) | 0;
+    }
+    that = allocate(that, length);
+    for (var i = 0; i < length; i += 1) {
+      that[i] = array[i] & 255;
+    }
+    return that;
+  }
+  function allocate(that, length) {
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      that = Buffer._augment(new Uint8Array(length));
+    } else {
+      that.length = length;
+      that._isBuffer = true;
+    }
+    var fromPool = length !== 0 && length <= Buffer.poolSize >>> 1;
+    if (fromPool)
+      that.parent = rootParent;
+    return that;
+  }
+  function checked(length) {
+    if (length >= kMaxLength()) {
+      throw new RangeError('Attempt to allocate Buffer larger than maximum ' + 'size: 0x' + kMaxLength().toString(16) + ' bytes');
+    }
+    return length | 0;
+  }
+  function SlowBuffer(subject, encoding) {
+    if (!(this instanceof SlowBuffer))
+      return new SlowBuffer(subject, encoding);
+    var buf = new Buffer(subject, encoding);
+    delete buf.parent;
+    return buf;
+  }
+  Buffer.isBuffer = function isBuffer(b) {
+    return !!(b != null && b._isBuffer);
+  };
+  Buffer.compare = function compare(a, b) {
+    if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
+      throw new TypeError('Arguments must be Buffers');
+    }
+    if (a === b)
+      return 0;
+    var x = a.length;
+    var y = b.length;
+    var i = 0;
+    var len = Math.min(x, y);
+    while (i < len) {
+      if (a[i] !== b[i])
+        break;
+      ++i;
+    }
+    if (i !== len) {
+      x = a[i];
+      y = b[i];
+    }
+    if (x < y)
+      return -1;
+    if (y < x)
+      return 1;
+    return 0;
+  };
+  Buffer.isEncoding = function isEncoding(encoding) {
+    switch (String(encoding).toLowerCase()) {
+      case 'hex':
+      case 'utf8':
+      case 'utf-8':
+      case 'ascii':
+      case 'binary':
+      case 'base64':
+      case 'raw':
+      case 'ucs2':
+      case 'ucs-2':
+      case 'utf16le':
+      case 'utf-16le':
+        return true;
+      default:
+        return false;
+    }
+  };
+  Buffer.concat = function concat(list, length) {
+    if (!isArray(list))
+      throw new TypeError('list argument must be an Array of Buffers.');
+    if (list.length === 0) {
+      return new Buffer(0);
+    } else if (list.length === 1) {
+      return list[0];
+    }
+    var i;
+    if (length === undefined) {
+      length = 0;
+      for (i = 0; i < list.length; i++) {
+        length += list[i].length;
+      }
+    }
+    var buf = new Buffer(length);
+    var pos = 0;
+    for (i = 0; i < list.length; i++) {
+      var item = list[i];
+      item.copy(buf, pos);
+      pos += item.length;
+    }
+    return buf;
+  };
+  function byteLength(string, encoding) {
+    if (typeof string !== 'string')
+      string = '' + string;
+    var len = string.length;
+    if (len === 0)
+      return 0;
+    var loweredCase = false;
+    for (; ; ) {
+      switch (encoding) {
+        case 'ascii':
+        case 'binary':
+        case 'raw':
+        case 'raws':
+          return len;
+        case 'utf8':
+        case 'utf-8':
+          return utf8ToBytes(string).length;
+        case 'ucs2':
+        case 'ucs-2':
+        case 'utf16le':
+        case 'utf-16le':
+          return len * 2;
+        case 'hex':
+          return len >>> 1;
+        case 'base64':
+          return base64ToBytes(string).length;
+        default:
+          if (loweredCase)
+            return utf8ToBytes(string).length;
+          encoding = ('' + encoding).toLowerCase();
+          loweredCase = true;
+      }
+    }
+  }
+  Buffer.byteLength = byteLength;
+  Buffer.prototype.length = undefined;
+  Buffer.prototype.parent = undefined;
+  function slowToString(encoding, start, end) {
+    var loweredCase = false;
+    start = start | 0;
+    end = end === undefined || end === Infinity ? this.length : end | 0;
+    if (!encoding)
+      encoding = 'utf8';
+    if (start < 0)
+      start = 0;
+    if (end > this.length)
+      end = this.length;
+    if (end <= start)
+      return '';
+    while (true) {
+      switch (encoding) {
+        case 'hex':
+          return hexSlice(this, start, end);
+        case 'utf8':
+        case 'utf-8':
+          return utf8Slice(this, start, end);
+        case 'ascii':
+          return asciiSlice(this, start, end);
+        case 'binary':
+          return binarySlice(this, start, end);
+        case 'base64':
+          return base64Slice(this, start, end);
+        case 'ucs2':
+        case 'ucs-2':
+        case 'utf16le':
+        case 'utf-16le':
+          return utf16leSlice(this, start, end);
+        default:
+          if (loweredCase)
+            throw new TypeError('Unknown encoding: ' + encoding);
+          encoding = (encoding + '').toLowerCase();
+          loweredCase = true;
+      }
+    }
+  }
+  Buffer.prototype.toString = function toString() {
+    var length = this.length | 0;
+    if (length === 0)
+      return '';
+    if (arguments.length === 0)
+      return utf8Slice(this, 0, length);
+    return slowToString.apply(this, arguments);
+  };
+  Buffer.prototype.equals = function equals(b) {
+    if (!Buffer.isBuffer(b))
+      throw new TypeError('Argument must be a Buffer');
+    if (this === b)
+      return true;
+    return Buffer.compare(this, b) === 0;
+  };
+  Buffer.prototype.inspect = function inspect() {
+    var str = '';
+    var max = exports.INSPECT_MAX_BYTES;
+    if (this.length > 0) {
+      str = this.toString('hex', 0, max).match(/.{2}/g).join(' ');
+      if (this.length > max)
+        str += ' ... ';
+    }
+    return '<Buffer ' + str + '>';
+  };
+  Buffer.prototype.compare = function compare(b) {
+    if (!Buffer.isBuffer(b))
+      throw new TypeError('Argument must be a Buffer');
+    if (this === b)
+      return 0;
+    return Buffer.compare(this, b);
+  };
+  Buffer.prototype.indexOf = function indexOf(val, byteOffset) {
+    if (byteOffset > 0x7fffffff)
+      byteOffset = 0x7fffffff;
+    else if (byteOffset < -0x80000000)
+      byteOffset = -0x80000000;
+    byteOffset >>= 0;
+    if (this.length === 0)
+      return -1;
+    if (byteOffset >= this.length)
+      return -1;
+    if (byteOffset < 0)
+      byteOffset = Math.max(this.length + byteOffset, 0);
+    if (typeof val === 'string') {
+      if (val.length === 0)
+        return -1;
+      return String.prototype.indexOf.call(this, val, byteOffset);
+    }
+    if (Buffer.isBuffer(val)) {
+      return arrayIndexOf(this, val, byteOffset);
+    }
+    if (typeof val === 'number') {
+      if (Buffer.TYPED_ARRAY_SUPPORT && Uint8Array.prototype.indexOf === 'function') {
+        return Uint8Array.prototype.indexOf.call(this, val, byteOffset);
+      }
+      return arrayIndexOf(this, [val], byteOffset);
+    }
+    function arrayIndexOf(arr, val, byteOffset) {
+      var foundIndex = -1;
+      for (var i = 0; byteOffset + i < arr.length; i++) {
+        if (arr[byteOffset + i] === val[foundIndex === -1 ? 0 : i - foundIndex]) {
+          if (foundIndex === -1)
+            foundIndex = i;
+          if (i - foundIndex + 1 === val.length)
+            return byteOffset + foundIndex;
+        } else {
+          foundIndex = -1;
+        }
+      }
+      return -1;
+    }
+    throw new TypeError('val must be string, number or Buffer');
+  };
+  Buffer.prototype.get = function get(offset) {
+    console.log('.get() is deprecated. Access using array indexes instead.');
+    return this.readUInt8(offset);
+  };
+  Buffer.prototype.set = function set(v, offset) {
+    console.log('.set() is deprecated. Access using array indexes instead.');
+    return this.writeUInt8(v, offset);
+  };
+  function hexWrite(buf, string, offset, length) {
+    offset = Number(offset) || 0;
+    var remaining = buf.length - offset;
+    if (!length) {
+      length = remaining;
+    } else {
+      length = Number(length);
+      if (length > remaining) {
+        length = remaining;
+      }
+    }
+    var strLen = string.length;
+    if (strLen % 2 !== 0)
+      throw new Error('Invalid hex string');
+    if (length > strLen / 2) {
+      length = strLen / 2;
+    }
+    for (var i = 0; i < length; i++) {
+      var parsed = parseInt(string.substr(i * 2, 2), 16);
+      if (isNaN(parsed))
+        throw new Error('Invalid hex string');
+      buf[offset + i] = parsed;
+    }
+    return i;
+  }
+  function utf8Write(buf, string, offset, length) {
+    return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length);
+  }
+  function asciiWrite(buf, string, offset, length) {
+    return blitBuffer(asciiToBytes(string), buf, offset, length);
+  }
+  function binaryWrite(buf, string, offset, length) {
+    return asciiWrite(buf, string, offset, length);
+  }
+  function base64Write(buf, string, offset, length) {
+    return blitBuffer(base64ToBytes(string), buf, offset, length);
+  }
+  function ucs2Write(buf, string, offset, length) {
+    return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length);
+  }
+  Buffer.prototype.write = function write(string, offset, length, encoding) {
+    if (offset === undefined) {
+      encoding = 'utf8';
+      length = this.length;
+      offset = 0;
+    } else if (length === undefined && typeof offset === 'string') {
+      encoding = offset;
+      length = this.length;
+      offset = 0;
+    } else if (isFinite(offset)) {
+      offset = offset | 0;
+      if (isFinite(length)) {
+        length = length | 0;
+        if (encoding === undefined)
+          encoding = 'utf8';
+      } else {
+        encoding = length;
+        length = undefined;
+      }
+    } else {
+      var swap = encoding;
+      encoding = offset;
+      offset = length | 0;
+      length = swap;
+    }
+    var remaining = this.length - offset;
+    if (length === undefined || length > remaining)
+      length = remaining;
+    if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
+      throw new RangeError('attempt to write outside buffer bounds');
+    }
+    if (!encoding)
+      encoding = 'utf8';
+    var loweredCase = false;
+    for (; ; ) {
+      switch (encoding) {
+        case 'hex':
+          return hexWrite(this, string, offset, length);
+        case 'utf8':
+        case 'utf-8':
+          return utf8Write(this, string, offset, length);
+        case 'ascii':
+          return asciiWrite(this, string, offset, length);
+        case 'binary':
+          return binaryWrite(this, string, offset, length);
+        case 'base64':
+          return base64Write(this, string, offset, length);
+        case 'ucs2':
+        case 'ucs-2':
+        case 'utf16le':
+        case 'utf-16le':
+          return ucs2Write(this, string, offset, length);
+        default:
+          if (loweredCase)
+            throw new TypeError('Unknown encoding: ' + encoding);
+          encoding = ('' + encoding).toLowerCase();
+          loweredCase = true;
+      }
+    }
+  };
+  Buffer.prototype.toJSON = function toJSON() {
+    return {
+      type: 'Buffer',
+      data: Array.prototype.slice.call(this._arr || this, 0)
+    };
+  };
+  function base64Slice(buf, start, end) {
+    if (start === 0 && end === buf.length) {
+      return base64.fromByteArray(buf);
+    } else {
+      return base64.fromByteArray(buf.slice(start, end));
+    }
+  }
+  function utf8Slice(buf, start, end) {
+    var res = '';
+    var tmp = '';
+    end = Math.min(buf.length, end);
+    for (var i = start; i < end; i++) {
+      if (buf[i] <= 0x7F) {
+        res += decodeUtf8Char(tmp) + String.fromCharCode(buf[i]);
+        tmp = '';
+      } else {
+        tmp += '%' + buf[i].toString(16);
+      }
+    }
+    return res + decodeUtf8Char(tmp);
+  }
+  function asciiSlice(buf, start, end) {
+    var ret = '';
+    end = Math.min(buf.length, end);
+    for (var i = start; i < end; i++) {
+      ret += String.fromCharCode(buf[i] & 0x7F);
+    }
+    return ret;
+  }
+  function binarySlice(buf, start, end) {
+    var ret = '';
+    end = Math.min(buf.length, end);
+    for (var i = start; i < end; i++) {
+      ret += String.fromCharCode(buf[i]);
+    }
+    return ret;
+  }
+  function hexSlice(buf, start, end) {
+    var len = buf.length;
+    if (!start || start < 0)
+      start = 0;
+    if (!end || end < 0 || end > len)
+      end = len;
+    var out = '';
+    for (var i = start; i < end; i++) {
+      out += toHex(buf[i]);
+    }
+    return out;
+  }
+  function utf16leSlice(buf, start, end) {
+    var bytes = buf.slice(start, end);
+    var res = '';
+    for (var i = 0; i < bytes.length; i += 2) {
+      res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256);
+    }
+    return res;
+  }
+  Buffer.prototype.slice = function slice(start, end) {
+    var len = this.length;
+    start = ~~start;
+    end = end === undefined ? len : ~~end;
+    if (start < 0) {
+      start += len;
+      if (start < 0)
+        start = 0;
+    } else if (start > len) {
+      start = len;
+    }
+    if (end < 0) {
+      end += len;
+      if (end < 0)
+        end = 0;
+    } else if (end > len) {
+      end = len;
+    }
+    if (end < start)
+      end = start;
+    var newBuf;
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      newBuf = Buffer._augment(this.subarray(start, end));
+    } else {
+      var sliceLen = end - start;
+      newBuf = new Buffer(sliceLen, undefined);
+      for (var i = 0; i < sliceLen; i++) {
+        newBuf[i] = this[i + start];
+      }
+    }
+    if (newBuf.length)
+      newBuf.parent = this.parent || this;
+    return newBuf;
+  };
+  function checkOffset(offset, ext, length) {
+    if ((offset % 1) !== 0 || offset < 0)
+      throw new RangeError('offset is not uint');
+    if (offset + ext > length)
+      throw new RangeError('Trying to access beyond buffer length');
+  }
+  Buffer.prototype.readUIntLE = function readUIntLE(offset, byteLength, noAssert) {
+    offset = offset | 0;
+    byteLength = byteLength | 0;
+    if (!noAssert)
+      checkOffset(offset, byteLength, this.length);
+    var val = this[offset];
+    var mul = 1;
+    var i = 0;
+    while (++i < byteLength && (mul *= 0x100)) {
+      val += this[offset + i] * mul;
+    }
+    return val;
+  };
+  Buffer.prototype.readUIntBE = function readUIntBE(offset, byteLength, noAssert) {
+    offset = offset | 0;
+    byteLength = byteLength | 0;
+    if (!noAssert) {
+      checkOffset(offset, byteLength, this.length);
+    }
+    var val = this[offset + --byteLength];
+    var mul = 1;
+    while (byteLength > 0 && (mul *= 0x100)) {
+      val += this[offset + --byteLength] * mul;
+    }
+    return val;
+  };
+  Buffer.prototype.readUInt8 = function readUInt8(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 1, this.length);
+    return this[offset];
+  };
+  Buffer.prototype.readUInt16LE = function readUInt16LE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 2, this.length);
+    return this[offset] | (this[offset + 1] << 8);
+  };
+  Buffer.prototype.readUInt16BE = function readUInt16BE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 2, this.length);
+    return (this[offset] << 8) | this[offset + 1];
+  };
+  Buffer.prototype.readUInt32LE = function readUInt32LE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 4, this.length);
+    return ((this[offset]) | (this[offset + 1] << 8) | (this[offset + 2] << 16)) + (this[offset + 3] * 0x1000000);
+  };
+  Buffer.prototype.readUInt32BE = function readUInt32BE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 4, this.length);
+    return (this[offset] * 0x1000000) + ((this[offset + 1] << 16) | (this[offset + 2] << 8) | this[offset + 3]);
+  };
+  Buffer.prototype.readIntLE = function readIntLE(offset, byteLength, noAssert) {
+    offset = offset | 0;
+    byteLength = byteLength | 0;
+    if (!noAssert)
+      checkOffset(offset, byteLength, this.length);
+    var val = this[offset];
+    var mul = 1;
+    var i = 0;
+    while (++i < byteLength && (mul *= 0x100)) {
+      val += this[offset + i] * mul;
+    }
+    mul *= 0x80;
+    if (val >= mul)
+      val -= Math.pow(2, 8 * byteLength);
+    return val;
+  };
+  Buffer.prototype.readIntBE = function readIntBE(offset, byteLength, noAssert) {
+    offset = offset | 0;
+    byteLength = byteLength | 0;
+    if (!noAssert)
+      checkOffset(offset, byteLength, this.length);
+    var i = byteLength;
+    var mul = 1;
+    var val = this[offset + --i];
+    while (i > 0 && (mul *= 0x100)) {
+      val += this[offset + --i] * mul;
+    }
+    mul *= 0x80;
+    if (val >= mul)
+      val -= Math.pow(2, 8 * byteLength);
+    return val;
+  };
+  Buffer.prototype.readInt8 = function readInt8(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 1, this.length);
+    if (!(this[offset] & 0x80))
+      return (this[offset]);
+    return ((0xff - this[offset] + 1) * -1);
+  };
+  Buffer.prototype.readInt16LE = function readInt16LE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 2, this.length);
+    var val = this[offset] | (this[offset + 1] << 8);
+    return (val & 0x8000) ? val | 0xFFFF0000 : val;
+  };
+  Buffer.prototype.readInt16BE = function readInt16BE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 2, this.length);
+    var val = this[offset + 1] | (this[offset] << 8);
+    return (val & 0x8000) ? val | 0xFFFF0000 : val;
+  };
+  Buffer.prototype.readInt32LE = function readInt32LE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 4, this.length);
+    return (this[offset]) | (this[offset + 1] << 8) | (this[offset + 2] << 16) | (this[offset + 3] << 24);
+  };
+  Buffer.prototype.readInt32BE = function readInt32BE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 4, this.length);
+    return (this[offset] << 24) | (this[offset + 1] << 16) | (this[offset + 2] << 8) | (this[offset + 3]);
+  };
+  Buffer.prototype.readFloatLE = function readFloatLE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 4, this.length);
+    return ieee754.read(this, offset, true, 23, 4);
+  };
+  Buffer.prototype.readFloatBE = function readFloatBE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 4, this.length);
+    return ieee754.read(this, offset, false, 23, 4);
+  };
+  Buffer.prototype.readDoubleLE = function readDoubleLE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 8, this.length);
+    return ieee754.read(this, offset, true, 52, 8);
+  };
+  Buffer.prototype.readDoubleBE = function readDoubleBE(offset, noAssert) {
+    if (!noAssert)
+      checkOffset(offset, 8, this.length);
+    return ieee754.read(this, offset, false, 52, 8);
+  };
+  function checkInt(buf, value, offset, ext, max, min) {
+    if (!Buffer.isBuffer(buf))
+      throw new TypeError('buffer must be a Buffer instance');
+    if (value > max || value < min)
+      throw new RangeError('value is out of bounds');
+    if (offset + ext > buf.length)
+      throw new RangeError('index out of range');
+  }
+  Buffer.prototype.writeUIntLE = function writeUIntLE(value, offset, byteLength, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    byteLength = byteLength | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0);
+    var mul = 1;
+    var i = 0;
+    this[offset] = value & 0xFF;
+    while (++i < byteLength && (mul *= 0x100)) {
+      this[offset + i] = (value / mul) & 0xFF;
+    }
+    return offset + byteLength;
+  };
+  Buffer.prototype.writeUIntBE = function writeUIntBE(value, offset, byteLength, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    byteLength = byteLength | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0);
+    var i = byteLength - 1;
+    var mul = 1;
+    this[offset + i] = value & 0xFF;
+    while (--i >= 0 && (mul *= 0x100)) {
+      this[offset + i] = (value / mul) & 0xFF;
+    }
+    return offset + byteLength;
+  };
+  Buffer.prototype.writeUInt8 = function writeUInt8(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 1, 0xff, 0);
+    if (!Buffer.TYPED_ARRAY_SUPPORT)
+      value = Math.floor(value);
+    this[offset] = value;
+    return offset + 1;
+  };
+  function objectWriteUInt16(buf, value, offset, littleEndian) {
+    if (value < 0)
+      value = 0xffff + value + 1;
+    for (var i = 0,
+        j = Math.min(buf.length - offset, 2); i < j; i++) {
+      buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>> (littleEndian ? i : 1 - i) * 8;
+    }
+  }
+  Buffer.prototype.writeUInt16LE = function writeUInt16LE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 2, 0xffff, 0);
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset] = value;
+      this[offset + 1] = (value >>> 8);
+    } else {
+      objectWriteUInt16(this, value, offset, true);
+    }
+    return offset + 2;
+  };
+  Buffer.prototype.writeUInt16BE = function writeUInt16BE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 2, 0xffff, 0);
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset] = (value >>> 8);
+      this[offset + 1] = value;
+    } else {
+      objectWriteUInt16(this, value, offset, false);
+    }
+    return offset + 2;
+  };
+  function objectWriteUInt32(buf, value, offset, littleEndian) {
+    if (value < 0)
+      value = 0xffffffff + value + 1;
+    for (var i = 0,
+        j = Math.min(buf.length - offset, 4); i < j; i++) {
+      buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff;
+    }
+  }
+  Buffer.prototype.writeUInt32LE = function writeUInt32LE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 4, 0xffffffff, 0);
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset + 3] = (value >>> 24);
+      this[offset + 2] = (value >>> 16);
+      this[offset + 1] = (value >>> 8);
+      this[offset] = value;
+    } else {
+      objectWriteUInt32(this, value, offset, true);
+    }
+    return offset + 4;
+  };
+  Buffer.prototype.writeUInt32BE = function writeUInt32BE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 4, 0xffffffff, 0);
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset] = (value >>> 24);
+      this[offset + 1] = (value >>> 16);
+      this[offset + 2] = (value >>> 8);
+      this[offset + 3] = value;
+    } else {
+      objectWriteUInt32(this, value, offset, false);
+    }
+    return offset + 4;
+  };
+  Buffer.prototype.writeIntLE = function writeIntLE(value, offset, byteLength, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert) {
+      var limit = Math.pow(2, 8 * byteLength - 1);
+      checkInt(this, value, offset, byteLength, limit - 1, -limit);
+    }
+    var i = 0;
+    var mul = 1;
+    var sub = value < 0 ? 1 : 0;
+    this[offset] = value & 0xFF;
+    while (++i < byteLength && (mul *= 0x100)) {
+      this[offset + i] = ((value / mul) >> 0) - sub & 0xFF;
+    }
+    return offset + byteLength;
+  };
+  Buffer.prototype.writeIntBE = function writeIntBE(value, offset, byteLength, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert) {
+      var limit = Math.pow(2, 8 * byteLength - 1);
+      checkInt(this, value, offset, byteLength, limit - 1, -limit);
+    }
+    var i = byteLength - 1;
+    var mul = 1;
+    var sub = value < 0 ? 1 : 0;
+    this[offset + i] = value & 0xFF;
+    while (--i >= 0 && (mul *= 0x100)) {
+      this[offset + i] = ((value / mul) >> 0) - sub & 0xFF;
+    }
+    return offset + byteLength;
+  };
+  Buffer.prototype.writeInt8 = function writeInt8(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 1, 0x7f, -0x80);
+    if (!Buffer.TYPED_ARRAY_SUPPORT)
+      value = Math.floor(value);
+    if (value < 0)
+      value = 0xff + value + 1;
+    this[offset] = value;
+    return offset + 1;
+  };
+  Buffer.prototype.writeInt16LE = function writeInt16LE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 2, 0x7fff, -0x8000);
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset] = value;
+      this[offset + 1] = (value >>> 8);
+    } else {
+      objectWriteUInt16(this, value, offset, true);
+    }
+    return offset + 2;
+  };
+  Buffer.prototype.writeInt16BE = function writeInt16BE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 2, 0x7fff, -0x8000);
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset] = (value >>> 8);
+      this[offset + 1] = value;
+    } else {
+      objectWriteUInt16(this, value, offset, false);
+    }
+    return offset + 2;
+  };
+  Buffer.prototype.writeInt32LE = function writeInt32LE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000);
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset] = value;
+      this[offset + 1] = (value >>> 8);
+      this[offset + 2] = (value >>> 16);
+      this[offset + 3] = (value >>> 24);
+    } else {
+      objectWriteUInt32(this, value, offset, true);
+    }
+    return offset + 4;
+  };
+  Buffer.prototype.writeInt32BE = function writeInt32BE(value, offset, noAssert) {
+    value = +value;
+    offset = offset | 0;
+    if (!noAssert)
+      checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000);
+    if (value < 0)
+      value = 0xffffffff + value + 1;
+    if (Buffer.TYPED_ARRAY_SUPPORT) {
+      this[offset] = (value >>> 24);
+      this[offset + 1] = (value >>> 16);
+      this[offset + 2] = (value >>> 8);
+      this[offset + 3] = value;
+    } else {
+      objectWriteUInt32(this, value, offset, false);
+    }
+    return offset + 4;
+  };
+  function checkIEEE754(buf, value, offset, ext, max, min) {
+    if (value > max || value < min)
+      throw new RangeError('value is out of bounds');
+    if (offset + ext > buf.length)
+      throw new RangeError('index out of range');
+    if (offset < 0)
+      throw new RangeError('index out of range');
+  }
+  function writeFloat(buf, value, offset, littleEndian, noAssert) {
+    if (!noAssert) {
+      checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38);
+    }
+    ieee754.write(buf, value, offset, littleEndian, 23, 4);
+    return offset + 4;
+  }
+  Buffer.prototype.writeFloatLE = function writeFloatLE(value, offset, noAssert) {
+    return writeFloat(this, value, offset, true, noAssert);
+  };
+  Buffer.prototype.writeFloatBE = function writeFloatBE(value, offset, noAssert) {
+    return writeFloat(this, value, offset, false, noAssert);
+  };
+  function writeDouble(buf, value, offset, littleEndian, noAssert) {
+    if (!noAssert) {
+      checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308);
+    }
+    ieee754.write(buf, value, offset, littleEndian, 52, 8);
+    return offset + 8;
+  }
+  Buffer.prototype.writeDoubleLE = function writeDoubleLE(value, offset, noAssert) {
+    return writeDouble(this, value, offset, true, noAssert);
+  };
+  Buffer.prototype.writeDoubleBE = function writeDoubleBE(value, offset, noAssert) {
+    return writeDouble(this, value, offset, false, noAssert);
+  };
+  Buffer.prototype.copy = function copy(target, targetStart, start, end) {
+    if (!start)
+      start = 0;
+    if (!end && end !== 0)
+      end = this.length;
+    if (targetStart >= target.length)
+      targetStart = target.length;
+    if (!targetStart)
+      targetStart = 0;
+    if (end > 0 && end < start)
+      end = start;
+    if (end === start)
+      return 0;
+    if (target.length === 0 || this.length === 0)
+      return 0;
+    if (targetStart < 0) {
+      throw new RangeError('targetStart out of bounds');
+    }
+    if (start < 0 || start >= this.length)
+      throw new RangeError('sourceStart out of bounds');
+    if (end < 0)
+      throw new RangeError('sourceEnd out of bounds');
+    if (end > this.length)
+      end = this.length;
+    if (target.length - targetStart < end - start) {
+      end = target.length - targetStart + start;
+    }
+    var len = end - start;
+    if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
+      for (var i = 0; i < len; i++) {
+        target[i + targetStart] = this[i + start];
+      }
+    } else {
+      target._set(this.subarray(start, start + len), targetStart);
+    }
+    return len;
+  };
+  Buffer.prototype.fill = function fill(value, start, end) {
+    if (!value)
+      value = 0;
+    if (!start)
+      start = 0;
+    if (!end)
+      end = this.length;
+    if (end < start)
+      throw new RangeError('end < start');
+    if (end === start)
+      return ;
+    if (this.length === 0)
+      return ;
+    if (start < 0 || start >= this.length)
+      throw new RangeError('start out of bounds');
+    if (end < 0 || end > this.length)
+      throw new RangeError('end out of bounds');
+    var i;
+    if (typeof value === 'number') {
+      for (i = start; i < end; i++) {
+        this[i] = value;
+      }
+    } else {
+      var bytes = utf8ToBytes(value.toString());
+      var len = bytes.length;
+      for (i = start; i < end; i++) {
+        this[i] = bytes[i % len];
+      }
+    }
+    return this;
+  };
+  Buffer.prototype.toArrayBuffer = function toArrayBuffer() {
+    if (typeof Uint8Array !== 'undefined') {
+      if (Buffer.TYPED_ARRAY_SUPPORT) {
+        return (new Buffer(this)).buffer;
+      } else {
+        var buf = new Uint8Array(this.length);
+        for (var i = 0,
+            len = buf.length; i < len; i += 1) {
+          buf[i] = this[i];
+        }
+        return buf.buffer;
+      }
+    } else {
+      throw new TypeError('Buffer.toArrayBuffer not supported in this browser');
+    }
+  };
+  var BP = Buffer.prototype;
+  Buffer._augment = function _augment(arr) {
+    arr.constructor = Buffer;
+    arr._isBuffer = true;
+    arr._set = arr.set;
+    arr.get = BP.get;
+    arr.set = BP.set;
+    arr.write = BP.write;
+    arr.toString = BP.toString;
+    arr.toLocaleString = BP.toString;
+    arr.toJSON = BP.toJSON;
+    arr.equals = BP.equals;
+    arr.compare = BP.compare;
+    arr.indexOf = BP.indexOf;
+    arr.copy = BP.copy;
+    arr.slice = BP.slice;
+    arr.readUIntLE = BP.readUIntLE;
+    arr.readUIntBE = BP.readUIntBE;
+    arr.readUInt8 = BP.readUInt8;
+    arr.readUInt16LE = BP.readUInt16LE;
+    arr.readUInt16BE = BP.readUInt16BE;
+    arr.readUInt32LE = BP.readUInt32LE;
+    arr.readUInt32BE = BP.readUInt32BE;
+    arr.readIntLE = BP.readIntLE;
+    arr.readIntBE = BP.readIntBE;
+    arr.readInt8 = BP.readInt8;
+    arr.readInt16LE = BP.readInt16LE;
+    arr.readInt16BE = BP.readInt16BE;
+    arr.readInt32LE = BP.readInt32LE;
+    arr.readInt32BE = BP.readInt32BE;
+    arr.readFloatLE = BP.readFloatLE;
+    arr.readFloatBE = BP.readFloatBE;
+    arr.readDoubleLE = BP.readDoubleLE;
+    arr.readDoubleBE = BP.readDoubleBE;
+    arr.writeUInt8 = BP.writeUInt8;
+    arr.writeUIntLE = BP.writeUIntLE;
+    arr.writeUIntBE = BP.writeUIntBE;
+    arr.writeUInt16LE = BP.writeUInt16LE;
+    arr.writeUInt16BE = BP.writeUInt16BE;
+    arr.writeUInt32LE = BP.writeUInt32LE;
+    arr.writeUInt32BE = BP.writeUInt32BE;
+    arr.writeIntLE = BP.writeIntLE;
+    arr.writeIntBE = BP.writeIntBE;
+    arr.writeInt8 = BP.writeInt8;
+    arr.writeInt16LE = BP.writeInt16LE;
+    arr.writeInt16BE = BP.writeInt16BE;
+    arr.writeInt32LE = BP.writeInt32LE;
+    arr.writeInt32BE = BP.writeInt32BE;
+    arr.writeFloatLE = BP.writeFloatLE;
+    arr.writeFloatBE = BP.writeFloatBE;
+    arr.writeDoubleLE = BP.writeDoubleLE;
+    arr.writeDoubleBE = BP.writeDoubleBE;
+    arr.fill = BP.fill;
+    arr.inspect = BP.inspect;
+    arr.toArrayBuffer = BP.toArrayBuffer;
+    return arr;
+  };
+  var INVALID_BASE64_RE = /[^+\/0-9A-z\-]/g;
+  function base64clean(str) {
+    str = stringtrim(str).replace(INVALID_BASE64_RE, '');
+    if (str.length < 2)
+      return '';
+    while (str.length % 4 !== 0) {
+      str = str + '=';
+    }
+    return str;
+  }
+  function stringtrim(str) {
+    if (str.trim)
+      return str.trim();
+    return str.replace(/^\s+|\s+$/g, '');
+  }
+  function toHex(n) {
+    if (n < 16)
+      return '0' + n.toString(16);
+    return n.toString(16);
+  }
+  function utf8ToBytes(string, units) {
+    units = units || Infinity;
+    var codePoint;
+    var length = string.length;
+    var leadSurrogate = null;
+    var bytes = [];
+    var i = 0;
+    for (; i < length; i++) {
+      codePoint = string.charCodeAt(i);
+      if (codePoint > 0xD7FF && codePoint < 0xE000) {
+        if (leadSurrogate) {
+          if (codePoint < 0xDC00) {
+            if ((units -= 3) > -1)
+              bytes.push(0xEF, 0xBF, 0xBD);
+            leadSurrogate = codePoint;
+            continue;
+          } else {
+            codePoint = leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00 | 0x10000;
+            leadSurrogate = null;
+          }
+        } else {
+          if (codePoint > 0xDBFF) {
+            if ((units -= 3) > -1)
+              bytes.push(0xEF, 0xBF, 0xBD);
+            continue;
+          } else if (i + 1 === length) {
+            if ((units -= 3) > -1)
+              bytes.push(0xEF, 0xBF, 0xBD);
+            continue;
+          } else {
+            leadSurrogate = codePoint;
+            continue;
+          }
+        }
+      } else if (leadSurrogate) {
+        if ((units -= 3) > -1)
+          bytes.push(0xEF, 0xBF, 0xBD);
+        leadSurrogate = null;
+      }
+      if (codePoint < 0x80) {
+        if ((units -= 1) < 0)
+          break;
+        bytes.push(codePoint);
+      } else if (codePoint < 0x800) {
+        if ((units -= 2) < 0)
+          break;
+        bytes.push(codePoint >> 0x6 | 0xC0, codePoint & 0x3F | 0x80);
+      } else if (codePoint < 0x10000) {
+        if ((units -= 3) < 0)
+          break;
+        bytes.push(codePoint >> 0xC | 0xE0, codePoint >> 0x6 & 0x3F | 0x80, codePoint & 0x3F | 0x80);
+      } else if (codePoint < 0x200000) {
+        if ((units -= 4) < 0)
+          break;
+        bytes.push(codePoint >> 0x12 | 0xF0, codePoint >> 0xC & 0x3F | 0x80, codePoint >> 0x6 & 0x3F | 0x80, codePoint & 0x3F | 0x80);
+      } else {
+        throw new Error('Invalid code point');
+      }
+    }
+    return bytes;
+  }
+  function asciiToBytes(str) {
+    var byteArray = [];
+    for (var i = 0; i < str.length; i++) {
+      byteArray.push(str.charCodeAt(i) & 0xFF);
+    }
+    return byteArray;
+  }
+  function utf16leToBytes(str, units) {
+    var c,
+        hi,
+        lo;
+    var byteArray = [];
+    for (var i = 0; i < str.length; i++) {
+      if ((units -= 2) < 0)
+        break;
+      c = str.charCodeAt(i);
+      hi = c >> 8;
+      lo = c % 256;
+      byteArray.push(lo);
+      byteArray.push(hi);
+    }
+    return byteArray;
+  }
+  function base64ToBytes(str) {
+    return base64.toByteArray(base64clean(str));
+  }
+  function blitBuffer(src, dst, offset, length) {
+    for (var i = 0; i < length; i++) {
+      if ((i + offset >= dst.length) || (i >= src.length))
+        break;
+      dst[i + offset] = src[i];
+    }
+    return i;
+  }
+  function decodeUtf8Char(str) {
+    try {
+      return decodeURIComponent(str);
+    } catch (err) {
+      return String.fromCharCode(0xFFFD);
+    }
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-process@0.1.1/index", ["npm:process@0.10.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = System._nodeRequire ? process : require("npm:process@0.10.1");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:debug@2.2.0/browser", ["npm:debug@2.2.0/debug"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  exports = module.exports = require("npm:debug@2.2.0/debug");
+  exports.log = log;
+  exports.formatArgs = formatArgs;
+  exports.save = save;
+  exports.load = load;
+  exports.useColors = useColors;
+  exports.storage = 'undefined' != typeof chrome && 'undefined' != typeof chrome.storage ? chrome.storage.local : localstorage();
+  exports.colors = ['lightseagreen', 'forestgreen', 'goldenrod', 'dodgerblue', 'darkorchid', 'crimson'];
+  function useColors() {
+    return ('WebkitAppearance' in document.documentElement.style) || (window.console && (console.firebug || (console.exception && console.table))) || (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+  }
+  exports.formatters.j = function(v) {
+    return JSON.stringify(v);
+  };
+  function formatArgs() {
+    var args = arguments;
+    var useColors = this.useColors;
+    args[0] = (useColors ? '%c' : '') + this.namespace + (useColors ? ' %c' : ' ') + args[0] + (useColors ? '%c ' : ' ') + '+' + exports.humanize(this.diff);
+    if (!useColors)
+      return args;
+    var c = 'color: ' + this.color;
+    args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+    var index = 0;
+    var lastC = 0;
+    args[0].replace(/%[a-z%]/g, function(match) {
+      if ('%%' === match)
+        return ;
+      index++;
+      if ('%c' === match) {
+        lastC = index;
+      }
+    });
+    args.splice(lastC, 0, c);
+    return args;
+  }
+  function log() {
+    return 'object' === typeof console && console.log && Function.prototype.apply.call(console.log, console, arguments);
+  }
+  function save(namespaces) {
+    try {
+      if (null == namespaces) {
+        exports.storage.removeItem('debug');
+      } else {
+        exports.storage.debug = namespaces;
+      }
+    } catch (e) {}
+  }
+  function load() {
+    var r;
+    try {
+      r = exports.storage.debug;
+    } catch (e) {}
+    return r;
+  }
+  exports.enable(load());
+  function localstorage() {
+    try {
+      return window.localStorage;
+    } catch (e) {}
+  }
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:once@1.3.2", ["npm:once@1.3.2/once"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:once@1.3.2/once");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-events@0.1.1", ["github:jspm/nodelibs-events@0.1.1/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("github:jspm/nodelibs-events@0.1.1/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:buffer@3.3.0", ["npm:buffer@3.3.0/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:buffer@3.3.0/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-process@0.1.1", ["github:jspm/nodelibs-process@0.1.1/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("github:jspm/nodelibs-process@0.1.1/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:debug@2.2.0", ["npm:debug@2.2.0/browser"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:debug@2.2.0/browser");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-buffer@0.1.0/index", ["npm:buffer@3.3.0"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = System._nodeRequire ? System._nodeRequire('buffer') : require("npm:buffer@3.3.0");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/lib/_stream_writable", ["github:jspm/nodelibs-buffer@0.1.0", "npm:core-util-is@1.0.1", "npm:inherits@2.0.1", "npm:stream-browserify@1.0.0/index", "npm:readable-stream@1.1.13/lib/_stream_duplex", "npm:readable-stream@1.1.13/lib/_stream_duplex", "github:jspm/nodelibs-buffer@0.1.0", "github:jspm/nodelibs-process@0.1.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(Buffer, process) {
+    module.exports = Writable;
+    var Buffer = require("github:jspm/nodelibs-buffer@0.1.0").Buffer;
+    Writable.WritableState = WritableState;
+    var util = require("npm:core-util-is@1.0.1");
+    util.inherits = require("npm:inherits@2.0.1");
+    var Stream = require("npm:stream-browserify@1.0.0/index");
+    util.inherits(Writable, Stream);
+    function WriteReq(chunk, encoding, cb) {
+      this.chunk = chunk;
+      this.encoding = encoding;
+      this.callback = cb;
+    }
+    function WritableState(options, stream) {
+      var Duplex = require("npm:readable-stream@1.1.13/lib/_stream_duplex");
+      options = options || {};
+      var hwm = options.highWaterMark;
+      var defaultHwm = options.objectMode ? 16 : 16 * 1024;
+      this.highWaterMark = (hwm || hwm === 0) ? hwm : defaultHwm;
+      this.objectMode = !!options.objectMode;
+      if (stream instanceof Duplex)
+        this.objectMode = this.objectMode || !!options.writableObjectMode;
+      this.highWaterMark = ~~this.highWaterMark;
+      this.needDrain = false;
+      this.ending = false;
+      this.ended = false;
+      this.finished = false;
+      var noDecode = options.decodeStrings === false;
+      this.decodeStrings = !noDecode;
+      this.defaultEncoding = options.defaultEncoding || 'utf8';
+      this.length = 0;
+      this.writing = false;
+      this.corked = 0;
+      this.sync = true;
+      this.bufferProcessing = false;
+      this.onwrite = function(er) {
+        onwrite(stream, er);
+      };
+      this.writecb = null;
+      this.writelen = 0;
+      this.buffer = [];
+      this.pendingcb = 0;
+      this.prefinished = false;
+      this.errorEmitted = false;
+    }
+    function Writable(options) {
+      var Duplex = require("npm:readable-stream@1.1.13/lib/_stream_duplex");
+      if (!(this instanceof Writable) && !(this instanceof Duplex))
+        return new Writable(options);
+      this._writableState = new WritableState(options, this);
+      this.writable = true;
+      Stream.call(this);
+    }
+    Writable.prototype.pipe = function() {
+      this.emit('error', new Error('Cannot pipe. Not readable.'));
+    };
+    function writeAfterEnd(stream, state, cb) {
+      var er = new Error('write after end');
+      stream.emit('error', er);
+      process.nextTick(function() {
+        cb(er);
+      });
+    }
+    function validChunk(stream, state, chunk, cb) {
+      var valid = true;
+      if (!util.isBuffer(chunk) && !util.isString(chunk) && !util.isNullOrUndefined(chunk) && !state.objectMode) {
+        var er = new TypeError('Invalid non-string/buffer chunk');
+        stream.emit('error', er);
+        process.nextTick(function() {
+          cb(er);
+        });
+        valid = false;
+      }
+      return valid;
+    }
+    Writable.prototype.write = function(chunk, encoding, cb) {
+      var state = this._writableState;
+      var ret = false;
+      if (util.isFunction(encoding)) {
+        cb = encoding;
+        encoding = null;
+      }
+      if (util.isBuffer(chunk))
+        encoding = 'buffer';
+      else if (!encoding)
+        encoding = state.defaultEncoding;
+      if (!util.isFunction(cb))
+        cb = function() {};
+      if (state.ended)
+        writeAfterEnd(this, state, cb);
+      else if (validChunk(this, state, chunk, cb)) {
+        state.pendingcb++;
+        ret = writeOrBuffer(this, state, chunk, encoding, cb);
+      }
+      return ret;
+    };
+    Writable.prototype.cork = function() {
+      var state = this._writableState;
+      state.corked++;
+    };
+    Writable.prototype.uncork = function() {
+      var state = this._writableState;
+      if (state.corked) {
+        state.corked--;
+        if (!state.writing && !state.corked && !state.finished && !state.bufferProcessing && state.buffer.length)
+          clearBuffer(this, state);
+      }
+    };
+    function decodeChunk(state, chunk, encoding) {
+      if (!state.objectMode && state.decodeStrings !== false && util.isString(chunk)) {
+        chunk = new Buffer(chunk, encoding);
+      }
+      return chunk;
+    }
+    function writeOrBuffer(stream, state, chunk, encoding, cb) {
+      chunk = decodeChunk(state, chunk, encoding);
+      if (util.isBuffer(chunk))
+        encoding = 'buffer';
+      var len = state.objectMode ? 1 : chunk.length;
+      state.length += len;
+      var ret = state.length < state.highWaterMark;
+      if (!ret)
+        state.needDrain = true;
+      if (state.writing || state.corked)
+        state.buffer.push(new WriteReq(chunk, encoding, cb));
+      else
+        doWrite(stream, state, false, len, chunk, encoding, cb);
+      return ret;
+    }
+    function doWrite(stream, state, writev, len, chunk, encoding, cb) {
+      state.writelen = len;
+      state.writecb = cb;
+      state.writing = true;
+      state.sync = true;
+      if (writev)
+        stream._writev(chunk, state.onwrite);
+      else
+        stream._write(chunk, encoding, state.onwrite);
+      state.sync = false;
+    }
+    function onwriteError(stream, state, sync, er, cb) {
+      if (sync)
+        process.nextTick(function() {
+          state.pendingcb--;
+          cb(er);
+        });
+      else {
+        state.pendingcb--;
+        cb(er);
+      }
+      stream._writableState.errorEmitted = true;
+      stream.emit('error', er);
+    }
+    function onwriteStateUpdate(state) {
+      state.writing = false;
+      state.writecb = null;
+      state.length -= state.writelen;
+      state.writelen = 0;
+    }
+    function onwrite(stream, er) {
+      var state = stream._writableState;
+      var sync = state.sync;
+      var cb = state.writecb;
+      onwriteStateUpdate(state);
+      if (er)
+        onwriteError(stream, state, sync, er, cb);
+      else {
+        var finished = needFinish(stream, state);
+        if (!finished && !state.corked && !state.bufferProcessing && state.buffer.length) {
+          clearBuffer(stream, state);
+        }
+        if (sync) {
+          process.nextTick(function() {
+            afterWrite(stream, state, finished, cb);
+          });
+        } else {
+          afterWrite(stream, state, finished, cb);
+        }
+      }
+    }
+    function afterWrite(stream, state, finished, cb) {
+      if (!finished)
+        onwriteDrain(stream, state);
+      state.pendingcb--;
+      cb();
+      finishMaybe(stream, state);
+    }
+    function onwriteDrain(stream, state) {
+      if (state.length === 0 && state.needDrain) {
+        state.needDrain = false;
+        stream.emit('drain');
+      }
+    }
+    function clearBuffer(stream, state) {
+      state.bufferProcessing = true;
+      if (stream._writev && state.buffer.length > 1) {
+        var cbs = [];
+        for (var c = 0; c < state.buffer.length; c++)
+          cbs.push(state.buffer[c].callback);
+        state.pendingcb++;
+        doWrite(stream, state, true, state.length, state.buffer, '', function(err) {
+          for (var i = 0; i < cbs.length; i++) {
+            state.pendingcb--;
+            cbs[i](err);
+          }
+        });
+        state.buffer = [];
+      } else {
+        for (var c = 0; c < state.buffer.length; c++) {
+          var entry = state.buffer[c];
+          var chunk = entry.chunk;
+          var encoding = entry.encoding;
+          var cb = entry.callback;
+          var len = state.objectMode ? 1 : chunk.length;
+          doWrite(stream, state, false, len, chunk, encoding, cb);
+          if (state.writing) {
+            c++;
+            break;
+          }
+        }
+        if (c < state.buffer.length)
+          state.buffer = state.buffer.slice(c);
+        else
+          state.buffer.length = 0;
+      }
+      state.bufferProcessing = false;
+    }
+    Writable.prototype._write = function(chunk, encoding, cb) {
+      cb(new Error('not implemented'));
+    };
+    Writable.prototype._writev = null;
+    Writable.prototype.end = function(chunk, encoding, cb) {
+      var state = this._writableState;
+      if (util.isFunction(chunk)) {
+        cb = chunk;
+        chunk = null;
+        encoding = null;
+      } else if (util.isFunction(encoding)) {
+        cb = encoding;
+        encoding = null;
+      }
+      if (!util.isNullOrUndefined(chunk))
+        this.write(chunk, encoding);
+      if (state.corked) {
+        state.corked = 1;
+        this.uncork();
+      }
+      if (!state.ending && !state.finished)
+        endWritable(this, state, cb);
+    };
+    function needFinish(stream, state) {
+      return (state.ending && state.length === 0 && !state.finished && !state.writing);
+    }
+    function prefinish(stream, state) {
+      if (!state.prefinished) {
+        state.prefinished = true;
+        stream.emit('prefinish');
+      }
+    }
+    function finishMaybe(stream, state) {
+      var need = needFinish(stream, state);
+      if (need) {
+        if (state.pendingcb === 0) {
+          prefinish(stream, state);
+          state.finished = true;
+          stream.emit('finish');
+        } else
+          prefinish(stream, state);
+      }
+      return need;
+    }
+    function endWritable(stream, state, cb) {
+      state.ending = true;
+      finishMaybe(stream, state);
+      if (cb) {
+        if (state.finished)
+          process.nextTick(cb);
+        else
+          stream.once('finish', cb);
+      }
+      state.ended = true;
+    }
+  })(require("github:jspm/nodelibs-buffer@0.1.0").Buffer, require("github:jspm/nodelibs-process@0.1.1"));
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-buffer@0.1.0", ["github:jspm/nodelibs-buffer@0.1.0/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("github:jspm/nodelibs-buffer@0.1.0/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/lib/_stream_duplex", ["npm:core-util-is@1.0.1", "npm:inherits@2.0.1", "npm:readable-stream@1.1.13/lib/_stream_readable", "npm:readable-stream@1.1.13/lib/_stream_writable", "github:jspm/nodelibs-process@0.1.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(process) {
+    module.exports = Duplex;
+    var objectKeys = Object.keys || function(obj) {
+      var keys = [];
+      for (var key in obj)
+        keys.push(key);
+      return keys;
+    };
+    var util = require("npm:core-util-is@1.0.1");
+    util.inherits = require("npm:inherits@2.0.1");
+    var Readable = require("npm:readable-stream@1.1.13/lib/_stream_readable");
+    var Writable = require("npm:readable-stream@1.1.13/lib/_stream_writable");
+    util.inherits(Duplex, Readable);
+    forEach(objectKeys(Writable.prototype), function(method) {
+      if (!Duplex.prototype[method])
+        Duplex.prototype[method] = Writable.prototype[method];
+    });
+    function Duplex(options) {
+      if (!(this instanceof Duplex))
+        return new Duplex(options);
+      Readable.call(this, options);
+      Writable.call(this, options);
+      if (options && options.readable === false)
+        this.readable = false;
+      if (options && options.writable === false)
+        this.writable = false;
+      this.allowHalfOpen = true;
+      if (options && options.allowHalfOpen === false)
+        this.allowHalfOpen = false;
+      this.once('end', onend);
+    }
+    function onend() {
+      if (this.allowHalfOpen || this._writableState.ended)
+        return ;
+      process.nextTick(this.end.bind(this));
+    }
+    function forEach(xs, f) {
+      for (var i = 0,
+          l = xs.length; i < l; i++) {
+        f(xs[i], i);
+      }
+    }
+  })(require("github:jspm/nodelibs-process@0.1.1"));
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/lib/_stream_readable", ["npm:isarray@0.0.1", "github:jspm/nodelibs-buffer@0.1.0", "github:jspm/nodelibs-events@0.1.1", "npm:stream-browserify@1.0.0/index", "npm:core-util-is@1.0.1", "npm:inherits@2.0.1", "@empty", "npm:readable-stream@1.1.13/lib/_stream_duplex", "npm:string_decoder@0.10.31", "npm:readable-stream@1.1.13/lib/_stream_duplex", "npm:string_decoder@0.10.31", "github:jspm/nodelibs-buffer@0.1.0", "github:jspm/nodelibs-process@0.1.1"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(Buffer, process) {
+    module.exports = Readable;
+    var isArray = require("npm:isarray@0.0.1");
+    var Buffer = require("github:jspm/nodelibs-buffer@0.1.0").Buffer;
+    Readable.ReadableState = ReadableState;
+    var EE = require("github:jspm/nodelibs-events@0.1.1").EventEmitter;
+    if (!EE.listenerCount)
+      EE.listenerCount = function(emitter, type) {
+        return emitter.listeners(type).length;
+      };
+    var Stream = require("npm:stream-browserify@1.0.0/index");
+    var util = require("npm:core-util-is@1.0.1");
+    util.inherits = require("npm:inherits@2.0.1");
+    var StringDecoder;
+    var debug = require("@empty");
+    if (debug && debug.debuglog) {
+      debug = debug.debuglog('stream');
+    } else {
+      debug = function() {};
+    }
+    util.inherits(Readable, Stream);
+    function ReadableState(options, stream) {
+      var Duplex = require("npm:readable-stream@1.1.13/lib/_stream_duplex");
+      options = options || {};
+      var hwm = options.highWaterMark;
+      var defaultHwm = options.objectMode ? 16 : 16 * 1024;
+      this.highWaterMark = (hwm || hwm === 0) ? hwm : defaultHwm;
+      this.highWaterMark = ~~this.highWaterMark;
+      this.buffer = [];
+      this.length = 0;
+      this.pipes = null;
+      this.pipesCount = 0;
+      this.flowing = null;
+      this.ended = false;
+      this.endEmitted = false;
+      this.reading = false;
+      this.sync = true;
+      this.needReadable = false;
+      this.emittedReadable = false;
+      this.readableListening = false;
+      this.objectMode = !!options.objectMode;
+      if (stream instanceof Duplex)
+        this.objectMode = this.objectMode || !!options.readableObjectMode;
+      this.defaultEncoding = options.defaultEncoding || 'utf8';
+      this.ranOut = false;
+      this.awaitDrain = 0;
+      this.readingMore = false;
+      this.decoder = null;
+      this.encoding = null;
+      if (options.encoding) {
+        if (!StringDecoder)
+          StringDecoder = require("npm:string_decoder@0.10.31").StringDecoder;
+        this.decoder = new StringDecoder(options.encoding);
+        this.encoding = options.encoding;
+      }
+    }
+    function Readable(options) {
+      var Duplex = require("npm:readable-stream@1.1.13/lib/_stream_duplex");
+      if (!(this instanceof Readable))
+        return new Readable(options);
+      this._readableState = new ReadableState(options, this);
+      this.readable = true;
+      Stream.call(this);
+    }
+    Readable.prototype.push = function(chunk, encoding) {
+      var state = this._readableState;
+      if (util.isString(chunk) && !state.objectMode) {
+        encoding = encoding || state.defaultEncoding;
+        if (encoding !== state.encoding) {
+          chunk = new Buffer(chunk, encoding);
+          encoding = '';
+        }
+      }
+      return readableAddChunk(this, state, chunk, encoding, false);
+    };
+    Readable.prototype.unshift = function(chunk) {
+      var state = this._readableState;
+      return readableAddChunk(this, state, chunk, '', true);
+    };
+    function readableAddChunk(stream, state, chunk, encoding, addToFront) {
+      var er = chunkInvalid(state, chunk);
+      if (er) {
+        stream.emit('error', er);
+      } else if (util.isNullOrUndefined(chunk)) {
+        state.reading = false;
+        if (!state.ended)
+          onEofChunk(stream, state);
+      } else if (state.objectMode || chunk && chunk.length > 0) {
+        if (state.ended && !addToFront) {
+          var e = new Error('stream.push() after EOF');
+          stream.emit('error', e);
+        } else if (state.endEmitted && addToFront) {
+          var e = new Error('stream.unshift() after end event');
+          stream.emit('error', e);
+        } else {
+          if (state.decoder && !addToFront && !encoding)
+            chunk = state.decoder.write(chunk);
+          if (!addToFront)
+            state.reading = false;
+          if (state.flowing && state.length === 0 && !state.sync) {
+            stream.emit('data', chunk);
+            stream.read(0);
+          } else {
+            state.length += state.objectMode ? 1 : chunk.length;
+            if (addToFront)
+              state.buffer.unshift(chunk);
+            else
+              state.buffer.push(chunk);
+            if (state.needReadable)
+              emitReadable(stream);
+          }
+          maybeReadMore(stream, state);
+        }
+      } else if (!addToFront) {
+        state.reading = false;
+      }
+      return needMoreData(state);
+    }
+    function needMoreData(state) {
+      return !state.ended && (state.needReadable || state.length < state.highWaterMark || state.length === 0);
+    }
+    Readable.prototype.setEncoding = function(enc) {
+      if (!StringDecoder)
+        StringDecoder = require("npm:string_decoder@0.10.31").StringDecoder;
+      this._readableState.decoder = new StringDecoder(enc);
+      this._readableState.encoding = enc;
+      return this;
+    };
+    var MAX_HWM = 0x800000;
+    function roundUpToNextPowerOf2(n) {
+      if (n >= MAX_HWM) {
+        n = MAX_HWM;
+      } else {
+        n--;
+        for (var p = 1; p < 32; p <<= 1)
+          n |= n >> p;
+        n++;
+      }
+      return n;
+    }
+    function howMuchToRead(n, state) {
+      if (state.length === 0 && state.ended)
+        return 0;
+      if (state.objectMode)
+        return n === 0 ? 0 : 1;
+      if (isNaN(n) || util.isNull(n)) {
+        if (state.flowing && state.buffer.length)
+          return state.buffer[0].length;
+        else
+          return state.length;
+      }
+      if (n <= 0)
+        return 0;
+      if (n > state.highWaterMark)
+        state.highWaterMark = roundUpToNextPowerOf2(n);
+      if (n > state.length) {
+        if (!state.ended) {
+          state.needReadable = true;
+          return 0;
+        } else
+          return state.length;
+      }
+      return n;
+    }
+    Readable.prototype.read = function(n) {
+      debug('read', n);
+      var state = this._readableState;
+      var nOrig = n;
+      if (!util.isNumber(n) || n > 0)
+        state.emittedReadable = false;
+      if (n === 0 && state.needReadable && (state.length >= state.highWaterMark || state.ended)) {
+        debug('read: emitReadable', state.length, state.ended);
+        if (state.length === 0 && state.ended)
+          endReadable(this);
+        else
+          emitReadable(this);
+        return null;
+      }
+      n = howMuchToRead(n, state);
+      if (n === 0 && state.ended) {
+        if (state.length === 0)
+          endReadable(this);
+        return null;
+      }
+      var doRead = state.needReadable;
+      debug('need readable', doRead);
+      if (state.length === 0 || state.length - n < state.highWaterMark) {
+        doRead = true;
+        debug('length less than watermark', doRead);
+      }
+      if (state.ended || state.reading) {
+        doRead = false;
+        debug('reading or ended', doRead);
+      }
+      if (doRead) {
+        debug('do read');
+        state.reading = true;
+        state.sync = true;
+        if (state.length === 0)
+          state.needReadable = true;
+        this._read(state.highWaterMark);
+        state.sync = false;
+      }
+      if (doRead && !state.reading)
+        n = howMuchToRead(nOrig, state);
+      var ret;
+      if (n > 0)
+        ret = fromList(n, state);
+      else
+        ret = null;
+      if (util.isNull(ret)) {
+        state.needReadable = true;
+        n = 0;
+      }
+      state.length -= n;
+      if (state.length === 0 && !state.ended)
+        state.needReadable = true;
+      if (nOrig !== n && state.ended && state.length === 0)
+        endReadable(this);
+      if (!util.isNull(ret))
+        this.emit('data', ret);
+      return ret;
+    };
+    function chunkInvalid(state, chunk) {
+      var er = null;
+      if (!util.isBuffer(chunk) && !util.isString(chunk) && !util.isNullOrUndefined(chunk) && !state.objectMode) {
+        er = new TypeError('Invalid non-string/buffer chunk');
+      }
+      return er;
+    }
+    function onEofChunk(stream, state) {
+      if (state.decoder && !state.ended) {
+        var chunk = state.decoder.end();
+        if (chunk && chunk.length) {
+          state.buffer.push(chunk);
+          state.length += state.objectMode ? 1 : chunk.length;
+        }
+      }
+      state.ended = true;
+      emitReadable(stream);
+    }
+    function emitReadable(stream) {
+      var state = stream._readableState;
+      state.needReadable = false;
+      if (!state.emittedReadable) {
+        debug('emitReadable', state.flowing);
+        state.emittedReadable = true;
+        if (state.sync)
+          process.nextTick(function() {
+            emitReadable_(stream);
+          });
+        else
+          emitReadable_(stream);
+      }
+    }
+    function emitReadable_(stream) {
+      debug('emit readable');
+      stream.emit('readable');
+      flow(stream);
+    }
+    function maybeReadMore(stream, state) {
+      if (!state.readingMore) {
+        state.readingMore = true;
+        process.nextTick(function() {
+          maybeReadMore_(stream, state);
+        });
+      }
+    }
+    function maybeReadMore_(stream, state) {
+      var len = state.length;
+      while (!state.reading && !state.flowing && !state.ended && state.length < state.highWaterMark) {
+        debug('maybeReadMore read 0');
+        stream.read(0);
+        if (len === state.length)
+          break;
+        else
+          len = state.length;
+      }
+      state.readingMore = false;
+    }
+    Readable.prototype._read = function(n) {
+      this.emit('error', new Error('not implemented'));
+    };
+    Readable.prototype.pipe = function(dest, pipeOpts) {
+      var src = this;
+      var state = this._readableState;
+      switch (state.pipesCount) {
+        case 0:
+          state.pipes = dest;
+          break;
+        case 1:
+          state.pipes = [state.pipes, dest];
+          break;
+        default:
+          state.pipes.push(dest);
+          break;
+      }
+      state.pipesCount += 1;
+      debug('pipe count=%d opts=%j', state.pipesCount, pipeOpts);
+      var doEnd = (!pipeOpts || pipeOpts.end !== false) && dest !== process.stdout && dest !== process.stderr;
+      var endFn = doEnd ? onend : cleanup;
+      if (state.endEmitted)
+        process.nextTick(endFn);
+      else
+        src.once('end', endFn);
+      dest.on('unpipe', onunpipe);
+      function onunpipe(readable) {
+        debug('onunpipe');
+        if (readable === src) {
+          cleanup();
+        }
+      }
+      function onend() {
+        debug('onend');
+        dest.end();
+      }
+      var ondrain = pipeOnDrain(src);
+      dest.on('drain', ondrain);
+      function cleanup() {
+        debug('cleanup');
+        dest.removeListener('close', onclose);
+        dest.removeListener('finish', onfinish);
+        dest.removeListener('drain', ondrain);
+        dest.removeListener('error', onerror);
+        dest.removeListener('unpipe', onunpipe);
+        src.removeListener('end', onend);
+        src.removeListener('end', cleanup);
+        src.removeListener('data', ondata);
+        if (state.awaitDrain && (!dest._writableState || dest._writableState.needDrain))
+          ondrain();
+      }
+      src.on('data', ondata);
+      function ondata(chunk) {
+        debug('ondata');
+        var ret = dest.write(chunk);
+        if (false === ret) {
+          debug('false write response, pause', src._readableState.awaitDrain);
+          src._readableState.awaitDrain++;
+          src.pause();
+        }
+      }
+      function onerror(er) {
+        debug('onerror', er);
+        unpipe();
+        dest.removeListener('error', onerror);
+        if (EE.listenerCount(dest, 'error') === 0)
+          dest.emit('error', er);
+      }
+      if (!dest._events || !dest._events.error)
+        dest.on('error', onerror);
+      else if (isArray(dest._events.error))
+        dest._events.error.unshift(onerror);
+      else
+        dest._events.error = [onerror, dest._events.error];
+      function onclose() {
+        dest.removeListener('finish', onfinish);
+        unpipe();
+      }
+      dest.once('close', onclose);
+      function onfinish() {
+        debug('onfinish');
+        dest.removeListener('close', onclose);
+        unpipe();
+      }
+      dest.once('finish', onfinish);
+      function unpipe() {
+        debug('unpipe');
+        src.unpipe(dest);
+      }
+      dest.emit('pipe', src);
+      if (!state.flowing) {
+        debug('pipe resume');
+        src.resume();
+      }
+      return dest;
+    };
+    function pipeOnDrain(src) {
+      return function() {
+        var state = src._readableState;
+        debug('pipeOnDrain', state.awaitDrain);
+        if (state.awaitDrain)
+          state.awaitDrain--;
+        if (state.awaitDrain === 0 && EE.listenerCount(src, 'data')) {
+          state.flowing = true;
+          flow(src);
+        }
+      };
+    }
+    Readable.prototype.unpipe = function(dest) {
+      var state = this._readableState;
+      if (state.pipesCount === 0)
+        return this;
+      if (state.pipesCount === 1) {
+        if (dest && dest !== state.pipes)
+          return this;
+        if (!dest)
+          dest = state.pipes;
+        state.pipes = null;
+        state.pipesCount = 0;
+        state.flowing = false;
+        if (dest)
+          dest.emit('unpipe', this);
+        return this;
+      }
+      if (!dest) {
+        var dests = state.pipes;
+        var len = state.pipesCount;
+        state.pipes = null;
+        state.pipesCount = 0;
+        state.flowing = false;
+        for (var i = 0; i < len; i++)
+          dests[i].emit('unpipe', this);
+        return this;
+      }
+      var i = indexOf(state.pipes, dest);
+      if (i === -1)
+        return this;
+      state.pipes.splice(i, 1);
+      state.pipesCount -= 1;
+      if (state.pipesCount === 1)
+        state.pipes = state.pipes[0];
+      dest.emit('unpipe', this);
+      return this;
+    };
+    Readable.prototype.on = function(ev, fn) {
+      var res = Stream.prototype.on.call(this, ev, fn);
+      if (ev === 'data' && false !== this._readableState.flowing) {
+        this.resume();
+      }
+      if (ev === 'readable' && this.readable) {
+        var state = this._readableState;
+        if (!state.readableListening) {
+          state.readableListening = true;
+          state.emittedReadable = false;
+          state.needReadable = true;
+          if (!state.reading) {
+            var self = this;
+            process.nextTick(function() {
+              debug('readable nexttick read 0');
+              self.read(0);
+            });
+          } else if (state.length) {
+            emitReadable(this, state);
+          }
+        }
+      }
+      return res;
+    };
+    Readable.prototype.addListener = Readable.prototype.on;
+    Readable.prototype.resume = function() {
+      var state = this._readableState;
+      if (!state.flowing) {
+        debug('resume');
+        state.flowing = true;
+        if (!state.reading) {
+          debug('resume read 0');
+          this.read(0);
+        }
+        resume(this, state);
+      }
+      return this;
+    };
+    function resume(stream, state) {
+      if (!state.resumeScheduled) {
+        state.resumeScheduled = true;
+        process.nextTick(function() {
+          resume_(stream, state);
+        });
+      }
+    }
+    function resume_(stream, state) {
+      state.resumeScheduled = false;
+      stream.emit('resume');
+      flow(stream);
+      if (state.flowing && !state.reading)
+        stream.read(0);
+    }
+    Readable.prototype.pause = function() {
+      debug('call pause flowing=%j', this._readableState.flowing);
+      if (false !== this._readableState.flowing) {
+        debug('pause');
+        this._readableState.flowing = false;
+        this.emit('pause');
+      }
+      return this;
+    };
+    function flow(stream) {
+      var state = stream._readableState;
+      debug('flow', state.flowing);
+      if (state.flowing) {
+        do {
+          var chunk = stream.read();
+        } while (null !== chunk && state.flowing);
+      }
+    }
+    Readable.prototype.wrap = function(stream) {
+      var state = this._readableState;
+      var paused = false;
+      var self = this;
+      stream.on('end', function() {
+        debug('wrapped end');
+        if (state.decoder && !state.ended) {
+          var chunk = state.decoder.end();
+          if (chunk && chunk.length)
+            self.push(chunk);
+        }
+        self.push(null);
+      });
+      stream.on('data', function(chunk) {
+        debug('wrapped data');
+        if (state.decoder)
+          chunk = state.decoder.write(chunk);
+        if (!chunk || !state.objectMode && !chunk.length)
+          return ;
+        var ret = self.push(chunk);
+        if (!ret) {
+          paused = true;
+          stream.pause();
+        }
+      });
+      for (var i in stream) {
+        if (util.isFunction(stream[i]) && util.isUndefined(this[i])) {
+          this[i] = function(method) {
+            return function() {
+              return stream[method].apply(stream, arguments);
+            };
+          }(i);
+        }
+      }
+      var events = ['error', 'close', 'destroy', 'pause', 'resume'];
+      forEach(events, function(ev) {
+        stream.on(ev, self.emit.bind(self, ev));
+      });
+      self._read = function(n) {
+        debug('wrapped _read', n);
+        if (paused) {
+          paused = false;
+          stream.resume();
+        }
+      };
+      return self;
+    };
+    Readable._fromList = fromList;
+    function fromList(n, state) {
+      var list = state.buffer;
+      var length = state.length;
+      var stringMode = !!state.decoder;
+      var objectMode = !!state.objectMode;
+      var ret;
+      if (list.length === 0)
+        return null;
+      if (length === 0)
+        ret = null;
+      else if (objectMode)
+        ret = list.shift();
+      else if (!n || n >= length) {
+        if (stringMode)
+          ret = list.join('');
+        else
+          ret = Buffer.concat(list, length);
+        list.length = 0;
+      } else {
+        if (n < list[0].length) {
+          var buf = list[0];
+          ret = buf.slice(0, n);
+          list[0] = buf.slice(n);
+        } else if (n === list[0].length) {
+          ret = list.shift();
+        } else {
+          if (stringMode)
+            ret = '';
+          else
+            ret = new Buffer(n);
+          var c = 0;
+          for (var i = 0,
+              l = list.length; i < l && c < n; i++) {
+            var buf = list[0];
+            var cpy = Math.min(n - c, buf.length);
+            if (stringMode)
+              ret += buf.slice(0, cpy);
+            else
+              buf.copy(ret, c, 0, cpy);
+            if (cpy < buf.length)
+              list[0] = buf.slice(cpy);
+            else
+              list.shift();
+            c += cpy;
+          }
+        }
+      }
+      return ret;
+    }
+    function endReadable(stream) {
+      var state = stream._readableState;
+      if (state.length > 0)
+        throw new Error('endReadable called on non-empty stream');
+      if (!state.endEmitted) {
+        state.ended = true;
+        process.nextTick(function() {
+          if (!state.endEmitted && state.length === 0) {
+            state.endEmitted = true;
+            stream.readable = false;
+            stream.emit('end');
+          }
+        });
+      }
+    }
+    function forEach(xs, f) {
+      for (var i = 0,
+          l = xs.length; i < l; i++) {
+        f(xs[i], i);
+      }
+    }
+    function indexOf(xs, x) {
+      for (var i = 0,
+          l = xs.length; i < l; i++) {
+        if (xs[i] === x)
+          return i;
+      }
+      return -1;
+    }
+  })(require("github:jspm/nodelibs-buffer@0.1.0").Buffer, require("github:jspm/nodelibs-process@0.1.1"));
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:readable-stream@1.1.13/readable", ["npm:readable-stream@1.1.13/lib/_stream_readable", "npm:stream-browserify@1.0.0/index", "npm:readable-stream@1.1.13/lib/_stream_writable", "npm:readable-stream@1.1.13/lib/_stream_duplex", "npm:readable-stream@1.1.13/lib/_stream_transform", "npm:readable-stream@1.1.13/lib/_stream_passthrough"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  exports = module.exports = require("npm:readable-stream@1.1.13/lib/_stream_readable");
+  exports.Stream = require("npm:stream-browserify@1.0.0/index");
+  exports.Readable = exports;
+  exports.Writable = require("npm:readable-stream@1.1.13/lib/_stream_writable");
+  exports.Duplex = require("npm:readable-stream@1.1.13/lib/_stream_duplex");
+  exports.Transform = require("npm:readable-stream@1.1.13/lib/_stream_transform");
+  exports.PassThrough = require("npm:readable-stream@1.1.13/lib/_stream_passthrough");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:stream-browserify@1.0.0/index", ["github:jspm/nodelibs-events@0.1.1", "npm:inherits@2.0.1", "npm:readable-stream@1.1.13/readable", "npm:readable-stream@1.1.13/writable", "npm:readable-stream@1.1.13/duplex", "npm:readable-stream@1.1.13/transform", "npm:readable-stream@1.1.13/passthrough"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = Stream;
+  var EE = require("github:jspm/nodelibs-events@0.1.1").EventEmitter;
+  var inherits = require("npm:inherits@2.0.1");
+  inherits(Stream, EE);
+  Stream.Readable = require("npm:readable-stream@1.1.13/readable");
+  Stream.Writable = require("npm:readable-stream@1.1.13/writable");
+  Stream.Duplex = require("npm:readable-stream@1.1.13/duplex");
+  Stream.Transform = require("npm:readable-stream@1.1.13/transform");
+  Stream.PassThrough = require("npm:readable-stream@1.1.13/passthrough");
+  Stream.Stream = Stream;
+  function Stream() {
+    EE.call(this);
+  }
+  Stream.prototype.pipe = function(dest, options) {
+    var source = this;
+    function ondata(chunk) {
+      if (dest.writable) {
+        if (false === dest.write(chunk) && source.pause) {
+          source.pause();
+        }
+      }
+    }
+    source.on('data', ondata);
+    function ondrain() {
+      if (source.readable && source.resume) {
+        source.resume();
+      }
+    }
+    dest.on('drain', ondrain);
+    if (!dest._isStdio && (!options || options.end !== false)) {
+      source.on('end', onend);
+      source.on('close', onclose);
+    }
+    var didOnEnd = false;
+    function onend() {
+      if (didOnEnd)
+        return ;
+      didOnEnd = true;
+      dest.end();
+    }
+    function onclose() {
+      if (didOnEnd)
+        return ;
+      didOnEnd = true;
+      if (typeof dest.destroy === 'function')
+        dest.destroy();
+    }
+    function onerror(er) {
+      cleanup();
+      if (EE.listenerCount(this, 'error') === 0) {
+        throw er;
+      }
+    }
+    source.on('error', onerror);
+    dest.on('error', onerror);
+    function cleanup() {
+      source.removeListener('data', ondata);
+      dest.removeListener('drain', ondrain);
+      source.removeListener('end', onend);
+      source.removeListener('close', onclose);
+      source.removeListener('error', onerror);
+      dest.removeListener('error', onerror);
+      source.removeListener('end', cleanup);
+      source.removeListener('close', cleanup);
+      dest.removeListener('close', cleanup);
+    }
+    source.on('end', cleanup);
+    source.on('close', cleanup);
+    dest.on('close', cleanup);
+    dest.emit('pipe', source);
+    return dest;
+  };
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:stream-browserify@1.0.0", ["npm:stream-browserify@1.0.0/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:stream-browserify@1.0.0/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-stream@0.1.0/index", ["npm:stream-browserify@1.0.0"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = System._nodeRequire ? System._nodeRequire('stream') : require("npm:stream-browserify@1.0.0");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("github:jspm/nodelibs-stream@0.1.0", ["github:jspm/nodelibs-stream@0.1.0/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("github:jspm/nodelibs-stream@0.1.0/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:simple-peer@5.11.3/index", ["npm:debug@2.2.0", "npm:get-browser-rtc@1.0.0", "npm:hat@0.0.3", "npm:inherits@2.0.1", "npm:is-typedarray@1.0.0", "npm:once@1.3.2", "github:jspm/nodelibs-stream@0.1.0", "npm:typedarray-to-buffer@3.0.3", "github:jspm/nodelibs-buffer@0.1.0"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  (function(Buffer) {
+    module.exports = Peer;
+    var debug = require("npm:debug@2.2.0")('simple-peer');
+    var getBrowserRTC = require("npm:get-browser-rtc@1.0.0");
+    var hat = require("npm:hat@0.0.3");
+    var inherits = require("npm:inherits@2.0.1");
+    var isTypedArray = require("npm:is-typedarray@1.0.0");
+    var once = require("npm:once@1.3.2");
+    var stream = require("github:jspm/nodelibs-stream@0.1.0");
+    var toBuffer = require("npm:typedarray-to-buffer@3.0.3");
+    inherits(Peer, stream.Duplex);
+    function Peer(opts) {
+      var self = this;
+      if (!(self instanceof Peer))
+        return new Peer(opts);
+      self._debug('new peer %o', opts);
+      if (!opts)
+        opts = {};
+      opts.allowHalfOpen = false;
+      if (opts.highWaterMark == null)
+        opts.highWaterMark = 1024 * 1024;
+      stream.Duplex.call(self, opts);
+      self.initiator = opts.initiator || false;
+      self.channelConfig = opts.channelConfig || Peer.channelConfig;
+      self.channelName = opts.channelName || hat(160);
+      if (!opts.initiator)
+        self.channelName = null;
+      self.config = opts.config || Peer.config;
+      self.constraints = opts.constraints || Peer.constraints;
+      self.reconnectTimer = opts.reconnectTimer || 0;
+      self.sdpTransform = opts.sdpTransform || function(sdp) {
+        return sdp;
+      };
+      self.stream = opts.stream || false;
+      self.trickle = opts.trickle !== undefined ? opts.trickle : true;
+      self.destroyed = false;
+      self.connected = false;
+      self.remoteAddress = undefined;
+      self.remoteFamily = undefined;
+      self.remotePort = undefined;
+      self.localAddress = undefined;
+      self.localPort = undefined;
+      self._wrtc = opts.wrtc || getBrowserRTC();
+      if (!self._wrtc) {
+        if (typeof window === 'undefined') {
+          throw new Error('No WebRTC support: Specify `opts.wrtc` option in this environment');
+        } else {
+          throw new Error('No WebRTC support: Not a supported browser');
+        }
+      }
+      self._maxBufferedAmount = opts.highWaterMark;
+      self._pcReady = false;
+      self._channelReady = false;
+      self._iceComplete = false;
+      self._channel = null;
+      self._chunk = null;
+      self._cb = null;
+      self._interval = null;
+      self._reconnectTimeout = null;
+      self._pc = new (self._wrtc.RTCPeerConnection)(self.config, self.constraints);
+      self._pc.oniceconnectionstatechange = self._onIceConnectionStateChange.bind(self);
+      self._pc.onsignalingstatechange = self._onSignalingStateChange.bind(self);
+      self._pc.onicecandidate = self._onIceCandidate.bind(self);
+      if (self.stream)
+        self._pc.addStream(self.stream);
+      self._pc.onaddstream = self._onAddStream.bind(self);
+      if (self.initiator) {
+        self._setupData({channel: self._pc.createDataChannel(self.channelName, self.channelConfig)});
+        self._pc.onnegotiationneeded = once(self._createOffer.bind(self));
+        if (typeof window === 'undefined' || !window.webkitRTCPeerConnection) {
+          self._pc.onnegotiationneeded();
+        }
+      } else {
+        self._pc.ondatachannel = self._setupData.bind(self);
+      }
+      self.on('finish', function() {
+        if (self.connected) {
+          setTimeout(function() {
+            self._destroy();
+          }, 100);
+        } else {
+          self.once('connect', function() {
+            setTimeout(function() {
+              self._destroy();
+            }, 100);
+          });
+        }
+      });
+    }
+    Peer.WEBRTC_SUPPORT = !!getBrowserRTC();
+    Peer.config = {iceServers: [{
+        url: 'stun:23.21.150.121',
+        urls: 'stun:23.21.150.121'
+      }]};
+    Peer.constraints = {};
+    Peer.channelConfig = {};
+    Object.defineProperty(Peer.prototype, 'bufferSize', {get: function() {
+        var self = this;
+        return (self._channel && self._channel.bufferedAmount) || 0;
+      }});
+    Peer.prototype.address = function() {
+      var self = this;
+      return {
+        port: self.localPort,
+        family: 'IPv4',
+        address: self.localAddress
+      };
+    };
+    Peer.prototype.signal = function(data) {
+      var self = this;
+      if (self.destroyed)
+        throw new Error('cannot signal after peer is destroyed');
+      if (typeof data === 'string') {
+        try {
+          data = JSON.parse(data);
+        } catch (err) {
+          data = {};
+        }
+      }
+      self._debug('signal()');
+      if (data.sdp) {
+        self._pc.setRemoteDescription(new (self._wrtc.RTCSessionDescription)(data), function() {
+          if (self.destroyed)
+            return ;
+          if (self._pc.remoteDescription.type === 'offer')
+            self._createAnswer();
+        }, self._onError.bind(self));
+      }
+      if (data.candidate) {
+        try {
+          self._pc.addIceCandidate(new (self._wrtc.RTCIceCandidate)(data.candidate), noop, self._onError.bind(self));
+        } catch (err) {
+          self._destroy(new Error('error adding candidate: ' + err.message));
+        }
+      }
+      if (!data.sdp && !data.candidate) {
+        self._destroy(new Error('signal() called with invalid signal data'));
+      }
+    };
+    Peer.prototype.send = function(chunk) {
+      var self = this;
+      if (!isTypedArray.strict(chunk) && !(chunk instanceof ArrayBuffer) && !Buffer.isBuffer(chunk) && typeof chunk !== 'string' && (typeof Blob === 'undefined' || !(chunk instanceof Blob))) {
+        chunk = JSON.stringify(chunk);
+      }
+      if (Buffer.isBuffer(chunk) && !isTypedArray.strict(chunk)) {
+        chunk = new Uint8Array(chunk);
+      }
+      var len = chunk.length || chunk.byteLength || chunk.size;
+      self._channel.send(chunk);
+      self._debug('write: %d bytes', len);
+    };
+    Peer.prototype.destroy = function(onclose) {
+      var self = this;
+      self._destroy(null, onclose);
+    };
+    Peer.prototype._destroy = function(err, onclose) {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      if (onclose)
+        self.once('close', onclose);
+      self._debug('destroy (error: %s)', err && err.message);
+      self.readable = self.writable = false;
+      if (!self._readableState.ended)
+        self.push(null);
+      if (!self._writableState.finished)
+        self.end();
+      self.destroyed = true;
+      self.connected = false;
+      self._pcReady = false;
+      self._channelReady = false;
+      self._chunk = null;
+      self._cb = null;
+      clearInterval(self._interval);
+      clearTimeout(self._reconnectTimeout);
+      if (self._pc) {
+        try {
+          self._pc.close();
+        } catch (err) {}
+        self._pc.oniceconnectionstatechange = null;
+        self._pc.onsignalingstatechange = null;
+        self._pc.onicecandidate = null;
+      }
+      if (self._channel) {
+        try {
+          self._channel.close();
+        } catch (err) {}
+        self._channel.onmessage = null;
+        self._channel.onopen = null;
+        self._channel.onclose = null;
+      }
+      self._pc = null;
+      self._channel = null;
+      if (err)
+        self.emit('error', err);
+      self.emit('close');
+    };
+    Peer.prototype._setupData = function(event) {
+      var self = this;
+      self._channel = event.channel;
+      self.channelName = self._channel.label;
+      self._channel.binaryType = 'arraybuffer';
+      self._channel.onmessage = self._onChannelMessage.bind(self);
+      self._channel.onopen = self._onChannelOpen.bind(self);
+      self._channel.onclose = self._onChannelClose.bind(self);
+    };
+    Peer.prototype._read = function() {};
+    Peer.prototype._write = function(chunk, encoding, cb) {
+      var self = this;
+      if (self.destroyed)
+        return cb(new Error('cannot write after peer is destroyed'));
+      if (self.connected) {
+        try {
+          self.send(chunk);
+        } catch (err) {
+          return self._onError(err);
+        }
+        if (self._channel.bufferedAmount > self._maxBufferedAmount) {
+          self._debug('start backpressure: bufferedAmount %d', self._channel.bufferedAmount);
+          self._cb = cb;
+        } else {
+          cb(null);
+        }
+      } else {
+        self._debug('write before connect');
+        self._chunk = chunk;
+        self._cb = cb;
+      }
+    };
+    Peer.prototype._createOffer = function() {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      self._pc.createOffer(function(offer) {
+        if (self.destroyed)
+          return ;
+        offer.sdp = self.sdpTransform(offer.sdp);
+        self._pc.setLocalDescription(offer, noop, self._onError.bind(self));
+        var sendOffer = function() {
+          var signal = self._pc.localDescription || offer;
+          self._debug('signal');
+          self.emit('signal', {
+            type: signal.type,
+            sdp: signal.sdp
+          });
+        };
+        if (self.trickle || self._iceComplete)
+          sendOffer();
+        else
+          self.once('_iceComplete', sendOffer);
+      }, self._onError.bind(self), self.offerConstraints);
+    };
+    Peer.prototype._createAnswer = function() {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      self._pc.createAnswer(function(answer) {
+        if (self.destroyed)
+          return ;
+        answer.sdp = self.sdpTransform(answer.sdp);
+        self._pc.setLocalDescription(answer, noop, self._onError.bind(self));
+        var sendAnswer = function() {
+          var signal = self._pc.localDescription || answer;
+          self._debug('signal');
+          self.emit('signal', {
+            type: signal.type,
+            sdp: signal.sdp
+          });
+        };
+        if (self.trickle || self._iceComplete)
+          sendAnswer();
+        else
+          self.once('_iceComplete', sendAnswer);
+      }, self._onError.bind(self), self.answerConstraints);
+    };
+    Peer.prototype._onIceConnectionStateChange = function() {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      var iceGatheringState = self._pc.iceGatheringState;
+      var iceConnectionState = self._pc.iceConnectionState;
+      self._debug('iceConnectionStateChange %s %s', iceGatheringState, iceConnectionState);
+      self.emit('iceConnectionStateChange', iceGatheringState, iceConnectionState);
+      if (iceConnectionState === 'connected' || iceConnectionState === 'completed') {
+        clearTimeout(self._reconnectTimeout);
+        self._pcReady = true;
+        self._maybeReady();
+      }
+      if (iceConnectionState === 'disconnected') {
+        if (self.reconnectTimer) {
+          clearTimeout(self._reconnectTimeout);
+          self._reconnectTimeout = setTimeout(function() {
+            self._destroy();
+          }, self.reconnectTimer);
+        } else {
+          self._destroy();
+        }
+      }
+      if (iceConnectionState === 'closed') {
+        self._destroy();
+      }
+    };
+    Peer.prototype._maybeReady = function() {
+      var self = this;
+      self._debug('maybeReady pc %s channel %s', self._pcReady, self._channelReady);
+      if (self.connected || self._connecting || !self._pcReady || !self._channelReady)
+        return ;
+      self._connecting = true;
+      if (typeof window !== 'undefined' && !!window.mozRTCPeerConnection) {
+        self._pc.getStats(null, function(res) {
+          var items = [];
+          res.forEach(function(item) {
+            items.push(item);
+          });
+          onStats(items);
+        }, self._onError.bind(self));
+      } else {
+        self._pc.getStats(function(res) {
+          var items = [];
+          res.result().forEach(function(result) {
+            var item = {};
+            result.names().forEach(function(name) {
+              item[name] = result.stat(name);
+            });
+            item.id = result.id;
+            item.type = result.type;
+            item.timestamp = result.timestamp;
+            items.push(item);
+          });
+          onStats(items);
+        });
+      }
+      function onStats(items) {
+        items.forEach(function(item) {
+          if (item.type === 'remotecandidate') {
+            self.remoteAddress = item.ipAddress;
+            self.remoteFamily = 'IPv4';
+            self.remotePort = Number(item.portNumber);
+            self._debug('connect remote: %s:%s (%s)', self.remoteAddress, self.remotePort, self.remoteFamily);
+          } else if (item.type === 'localcandidate' && item.candidateType === 'host') {
+            self.localAddress = item.ipAddress;
+            self.localPort = Number(item.portNumber);
+            self._debug('connect local: %s:%s', self.localAddress, self.localPort);
+          }
+        });
+        self._connecting = false;
+        self.connected = true;
+        if (self._chunk) {
+          try {
+            self.send(self._chunk);
+          } catch (err) {
+            return self._onError(err);
+          }
+          self._chunk = null;
+          self._debug('sent chunk from "write before connect"');
+          var cb = self._cb;
+          self._cb = null;
+          cb(null);
+        }
+        self._interval = setInterval(function() {
+          if (!self._cb || !self._channel || self._channel.bufferedAmount > self._maxBufferedAmount)
+            return ;
+          self._debug('ending backpressure: bufferedAmount %d', self._channel.bufferedAmount);
+          var cb = self._cb;
+          self._cb = null;
+          cb(null);
+        }, 150);
+        if (self._interval.unref)
+          self._interval.unref();
+        self._debug('connect');
+        self.emit('connect');
+      }
+    };
+    Peer.prototype._onSignalingStateChange = function() {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      self._debug('signalingStateChange %s', self._pc.signalingState);
+      self.emit('signalingStateChange', self._pc.signalingState);
+    };
+    Peer.prototype._onIceCandidate = function(event) {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      if (event.candidate && self.trickle) {
+        self.emit('signal', {candidate: {
+            candidate: event.candidate.candidate,
+            sdpMLineIndex: event.candidate.sdpMLineIndex,
+            sdpMid: event.candidate.sdpMid
+          }});
+      } else if (!event.candidate) {
+        self._iceComplete = true;
+        self.emit('_iceComplete');
+      }
+    };
+    Peer.prototype._onChannelMessage = function(event) {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      var data = event.data;
+      self._debug('read: %d bytes', data.byteLength || data.length);
+      if (data instanceof ArrayBuffer) {
+        data = toBuffer(new Uint8Array(data));
+        self.push(data);
+      } else {
+        try {
+          data = JSON.parse(data);
+        } catch (err) {}
+        self.emit('data', data);
+      }
+    };
+    Peer.prototype._onChannelOpen = function() {
+      var self = this;
+      if (self.connected || self.destroyed)
+        return ;
+      self._debug('on channel open');
+      self._channelReady = true;
+      self._maybeReady();
+    };
+    Peer.prototype._onChannelClose = function() {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      self._debug('on channel close');
+      self._destroy();
+    };
+    Peer.prototype._onAddStream = function(event) {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      self._debug('on add stream');
+      self.emit('stream', event.stream);
+    };
+    Peer.prototype._onError = function(err) {
+      var self = this;
+      if (self.destroyed)
+        return ;
+      self._debug('error %s', err.message || err);
+      self._destroy(err);
+    };
+    Peer.prototype._debug = function() {
+      var self = this;
+      var args = [].slice.call(arguments);
+      var id = self.channelName && self.channelName.substring(0, 7);
+      args[0] = '[' + id + '] ' + args[0];
+      debug.apply(null, args);
+    };
+    function noop() {}
+  })(require("github:jspm/nodelibs-buffer@0.1.0").Buffer);
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("npm:simple-peer@5.11.3", ["npm:simple-peer@5.11.3/index"], true, function(require, exports, module) {
+  var global = System.global,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = require("npm:simple-peer@5.11.3/index");
+  global.define = __define;
+  return module.exports;
+});
+
+System.register("lib/call", ["npm:simple-peer@5.11.3"], function($__export) {
+  "use strict";
+  var __moduleName = "lib/call";
+  var SimplePeer;
+  return {
+    setters: [function($__m) {
+      SimplePeer = $__m.default;
+    }],
+    execute: function() {
+      $__export('default', function(stream, white) {
+        var socket = io(window.socketUrl);
+        socket.on('connect', function() {
+          socket.emit('hello', {white: white});
+          console.log('connected to server');
+        });
+        socket.on('call', function(initiator) {
+          console.log('recieving call');
+          var peer = new SimplePeer({
+            initiator: initiator,
+            stream: stream
+          });
+          peer.on('signal', function(data) {
+            socket.emit('signal', JSON.stringify(data));
+          });
+          socket.on('signal', function(data) {
+            peer.signal(data);
+          });
+          peer.on('stream', function(stream) {
+            console.log('recieving stream');
+            socket.emit('connected');
+            var video = document.querySelector('#peerVideo');
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+          });
+        });
+      });
+    }
+  };
+});
+
+System.register("lib/start", ["lib/headtrackr", "lib/call"], function($__export) {
   "use strict";
   var __moduleName = "lib/start";
-  var headtrackr;
+  var headtrackr,
+      call;
   return {
     setters: [function($__m) {
       headtrackr = $__m.default;
+    }, function($__m) {
+      call = $__m.default;
     }],
     execute: function() {
       $__export('default', function() {
@@ -18144,8 +22545,9 @@ System.register("lib/start", ["lib/headtrackr"], function($__export) {
         var samples = 1;
         var tries = 10;
         var matches = 0;
+        var running = true;
         document.addEventListener('facetrackingEvent', function(event) {
-          if (event.width > 100 && event.height > 100) {
+          if (running && event.width > 80 && event.height > 80) {
             var white = document.getElementById('white');
             var colour = medianColourFromFace(event);
             var isWhite = whitenessFromColour(colour);
@@ -18160,7 +22562,8 @@ System.register("lib/start", ["lib/headtrackr"], function($__export) {
               } else {
                 white.innerHTML = 'Sorry, you are not white!';
               }
-              htracker.stop();
+              running = false;
+              call(htracker.getStream(), samples > tries);
             }
           }
         });
@@ -18260,10 +22663,6 @@ System.register("lib/init", ["whitesaveme.css!github:systemjs/plugin-css@0.1.13"
           $('.slider').slider({full_width: true});
         });
         $('body').html(xPages);
-        var socket = io(window.socketUrl);
-        socket.on('connect', function() {
-          socket.emit('hello', {white: true});
-        });
         layout();
       });
     }
@@ -18272,6 +22671,6 @@ System.register("lib/init", ["whitesaveme.css!github:systemjs/plugin-css@0.1.13"
 
 System.register('whitesaveme.css!github:systemjs/plugin-css@0.1.13', [], false, function() {});
 (function(c){var d=document,a='appendChild',i='styleSheet',s=d.createElement('style');s.type='text/css';d.getElementsByTagName('head')[0][a](s);s[i]?s[i].cssText=c:s[a](d.createTextNode(c));})
-("html{overflow-y:scroll;overflow-x:hidden}x-header{position:fixed;top:0;width:100%;z-index:999}#main{padding-top:40px}.icon-block{padding:0 15px}.slider .slides li .caption{top:40%}.slider .indicators .indicator-item.active{background-color:#000}");
+("html{overflow-y:scroll;overflow-x:hidden}x-header{position:fixed;top:0;width:100%;z-index:999}#main{padding-top:55px}.icon-block{padding:0 15px}.slider .indicators .indicator-item.active{background-color:#000}nav{height:65px;line-height:65px}");
 });
 //# sourceMappingURL=build.js.map
