@@ -32,6 +32,8 @@
         if (typeof n['value'] !== 'undefined') initCall(socket.id, n['value'][0])
       }
       console.log('connected ' + socket.id)
+      console.log('white ' + connections.white.size)
+      console.log('not ' + connections.not.size)
     })
     socket.on('signal', function (data) {
       var s = (connections.white.has(socket.id)) ? connections.white.get(socket.id) : connections.not.get(socket.id)
