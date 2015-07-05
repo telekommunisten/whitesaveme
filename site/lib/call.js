@@ -10,7 +10,7 @@ export default function (stream, white) {
   socket.on('call', function (room, skykey) {
     var skylink = new Skylink()
     console.log('call from room ' + room + ' with key ' + skykey)
-    skylink.init('4182d87f-f849-4a41-8c84-2863e66cb3ed', function (error, success) {
+    skylink.init({ apiKey: '4182d87f-f849-4a41-8c84-2863e66cb3ed' }, function (error, success) {
       if (error) {
         console.log('Init failed: ' + JSON.stringify(error))
       } else {
