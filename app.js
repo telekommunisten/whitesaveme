@@ -3,8 +3,9 @@
   var koa = require('koa')
   var cors = require('koa-cors');
 
-  var app = koa()
   app.use(cors());
+  var app = koa()
+
   app.use(serve(__dirname + '/site'))
 
   var server = require('http').createServer(app.callback())
@@ -14,7 +15,7 @@
     var initCall = function (peer1, peer2) {
       if ((typeof io.sockets.connected[peer1] !== 'undefined') &&
         (typeof io.sockets.connected[peer2] !== 'undefined')) {
-        var room = ['whitesaveme', peer1, peer2].join('/')
+        var room = peer1
         io.sockets.connected[peer1].emit('call', room, '8fy08skh8k1hh')
         io.sockets.connected[peer2].emit('call', room, '8fy08skh8k1hh')
         connections.not.set(peer2, peer1)
