@@ -1,6 +1,4 @@
-/* global io */
-
-import SimplePeer from 'simple-peer'
+/* global io, skylink, attachMediaStream */
 
 export default function (stream, white) {
 
@@ -10,24 +8,27 @@ export default function (stream, white) {
     console.log('connected to server')
   })
 
-  socket.on('call', function (initiator) {
-    console.log('recieving call')
-    var peer = new SimplePeer({ initiator: initiator, stream: stream })
-
-    peer.on('signal', function (data) {
-      socket.emit('signal', JSON.stringify(data))
+  socket.on('call', function (room, skykey) {
+    console.log('call from room ' + room + ' with key ' + skykey)
+    var skylink = new Skylink()
+    skylink.init({
+      apiKey: skykey,
+      defaultRoom: room
+    });
+    skylink.on('mediaAccessSuccess', function(stream) {
+      attachMediaStream(document.getElementById('inputVideo'), stream)
+      console.log('media access success')
+    });
+    skylink.on('incomingStream', function(peerId, stream, isSelf) {
+      if(!isSelf) {
+        console.log('incoming stream')
+        attachMediaStream(document.getElementById('peerVideo'), stream)
+        socket.emit('connected')
+      }
     })
-
-    socket.on('signal', function (data) {
-      peer.signal(data)
-    })
-
-    peer.on('stream', function (stream) {
-      console.log('recieving stream')
-      socket.emit('connected')
-      var video = document.querySelector('#peerVideo')
-      video.src = window.URL.createObjectURL(stream)
-      video.play()
-    })
+    skylink.joinRoom({
+        audio: true,
+        video: true
+    });
   })
 }
