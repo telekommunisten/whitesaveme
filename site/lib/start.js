@@ -135,7 +135,7 @@ export default function () {
         }
         running = false
         call(htracker.getStream(), samples > tries)
-        // htracker.stop()
+      // htracker.stop()
       }
     }
   })

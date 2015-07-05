@@ -11,7 +11,7 @@
   io.on('connection', function (socket) {
     var initCall = function (peer1, peer2) {
       if ((typeof io.sockets.connected[peer1] !== 'undefined') &&
-           (typeof io.sockets.connected[peer2] !== 'undefined')) {
+        (typeof io.sockets.connected[peer2] !== 'undefined')) {
         var room = ['whitesaveme', peer1, peer2].join('/')
         io.sockets.connected[peer1].emit('call', room, '8fy08skh8k1hh')
         io.sockets.connected[peer2].emit('call', room, '8fy08skh8k1hh')
