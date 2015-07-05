@@ -1,11 +1,11 @@
 (function () {
   var serve = require('koa-static')
   var koa = require('koa')
-  var cors = require('koa-cors');
+  var cors = require('koa-cors')
 
-  app.use(cors());
   var app = koa()
 
+  app.use(cors())
   app.use(serve(__dirname + '/site'))
 
   var server = require('http').createServer(app.callback())
