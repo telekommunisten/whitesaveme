@@ -28,16 +28,18 @@ import pageHome from 'pages/home.html!text'
 addToSiteMap('home', pageHome)
 
 import pageStory from 'pages/story.html!text'
-addToSiteMap('story', pageStory)
+addToSiteMap('our story', pageStory)
 
 import pageContact from 'pages/contact.html!text'
-addToSiteMap('contact', pageContact)
+addToSiteMap('success stories', pageContact)
 
 import pageAbout from 'pages/about.html!text'
 addToSiteMap('about', pageAbout)
 
 import pageStart from 'pages/start.html!text'
 addToSiteMap('start', pageStart)
+
+import pageCall from 'pages/call.html!text'
 
 let siteOptions = { siteMap: siteMap, pageTitle: 'home', pageBody: pageHome }
 
@@ -49,9 +51,11 @@ riot.route(function (page, id, action) {
     siteOptions['pageTitle'] = page
     siteOptions['pageBody'] = siteMap[page]
     riot.update()
-    if (page === 'start') {
-      start()
-    }
+  } else if (page === 'call') {
+    siteOptions['pageTitle'] = 'call'
+    siteOptions['pageBody'] = pageCall
+    riot.update()
+    start()
   }
 })
 
