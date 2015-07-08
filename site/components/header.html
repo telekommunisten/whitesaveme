@@ -4,11 +4,11 @@
       <span><img class="responsive-img" src="img/WhiteSaveMe_Logo_VF.png"></span>
       </a>
     <ul class="right hide-on-med-and-down">
-      <li each="{ name, page in opts.siteMap }"><a href="#{ name }">{ name }</a></li>
+      <li each="{ slug, info in opts.siteMap }"><a href="#{ slug }">{ info.name }</a></li>
     </ul>
 
     <ul id="nav-mobile" class="side-nav">
-      <li each="{ name, page in opts.siteMap }"><a href="#{ name }">{ name }</a></li>
+      <li each="{ slug, info in opts.siteMap }"><a href="#{ slug }">{ info.name }</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
   </div>
