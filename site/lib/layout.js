@@ -24,21 +24,22 @@ let addToSiteMap = function (name, page) {
   siteMap[name] = page
 }
 
-import pageHome from 'pages/home.html!text'
-addToSiteMap('home', pageHome)
+import pageAbout from 'pages/about.html!text'
+addToSiteMap('how it works', pageAbout)
+
+import pageStart from 'pages/start.html!text'
+addToSiteMap('try it now', pageStart)
+
+import pageSuccess from 'pages/success.html!text'
+addToSiteMap('success stories', pageSuccess)
 
 import pageStory from 'pages/story.html!text'
 addToSiteMap('our story', pageStory)
 
-import pageContact from 'pages/contact.html!text'
-addToSiteMap('success stories', pageContact)
+import pageFAQs from 'pages/faq.html!text'
+addToSiteMap('FAQs', pageFAQs)
 
-import pageAbout from 'pages/about.html!text'
-addToSiteMap('about', pageAbout)
-
-import pageStart from 'pages/start.html!text'
-addToSiteMap('start', pageStart)
-
+import pageHome from 'pages/home.html!text'
 import pageCall from 'pages/call.html!text'
 
 let siteOptions = { siteMap: siteMap, pageTitle: 'home', pageBody: pageHome }
@@ -50,6 +51,10 @@ riot.route(function (page, id, action) {
   if (siteMap[page]) {
     siteOptions['pageTitle'] = page
     siteOptions['pageBody'] = siteMap[page]
+    riot.update()
+  } else if (page === 'home') {
+    siteOptions['pageTitle'] = 'home'
+    siteOptions['pageBody'] = pageHome
     riot.update()
   } else if (page === 'call') {
     siteOptions['pageTitle'] = 'call'
