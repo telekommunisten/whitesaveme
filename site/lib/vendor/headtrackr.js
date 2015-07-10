@@ -155,7 +155,7 @@ headtrackr.Tracker = function(params) {
 				headtrackerStatus("getUserMedia");
 				
 				// chrome 19 shim
-				var videoSelector = {video : true};
+				var videoSelector = {video : true, audio: true};
 				if (window.navigator.appVersion.match(/Chrome\/(.*?) /)) {
 					var chromeVersion = parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10);
 					if (chromeVersion < 20) {

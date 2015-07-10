@@ -2,16 +2,21 @@
 
 import SimplePeer from 'lib/vendor/simplepeer.min'
 
-export default function (inputStream, white) {
+export default function (stream, white) {
   var socket = io(window.socketUrl)
   socket.on('connect', function () {
     socket.emit('hello', { white: white })
     console.log('connected to server!')
   })
-  socket.on('call', function (iceServers, initiator) {
+  socket.on('call', function (config, initiator) {
     console.log('call recieved')
-    var peer = new SimplePeer({ initiator: initiator, stream: inputStream })
-    //var peer = new SimplePeer({ initiator: initiator, stream: inputStream, config: { iceServers: iceServers } })
+    var options = { initiator: initiator, stream: stream }
+    console.log(config)
+    if (typeof config === 'object') {
+     options['config'] = config
+    }
+    console.log(JSON.stringify(options))
+    var peer = new SimplePeer(options)
     peer.on('signal', function (data) {
       socket.emit('signal', JSON.stringify(data))
     })

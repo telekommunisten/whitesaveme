@@ -8,7 +8,7 @@ export default function () {
   var canvasOutput = document.getElementById('outputCanvas')
   var crop = canvasOutput.getContext('2d')
 
-  var htracker = new headtrackr.Tracker()
+  var htracker = new headtrackr.Tracker({ ui: false })
 
   htracker.init(videoInput, canvasInput)
   htracker.start()
@@ -118,7 +118,7 @@ export default function () {
   var matches = 0
   var running = true
   document.addEventListener('facetrackingEvent', function (event) {
-    if (running && event.width > 80 && event.height > 80) {
+    if (running && event.width > 70 && event.height > 70) {
       var white = document.getElementById('white')
       var colour = medianColourFromFace(event)
       var isWhite = whitenessFromColour(colour)

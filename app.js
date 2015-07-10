@@ -13,10 +13,10 @@
   var io = require('socket.io')(server)
   var connections = { white: new Map(), not: new Map() }
   io.on('connection', function (socket) {
+    console.log('init call')
     var initCall = function (peer1, peer2) {
       if ((typeof io.sockets.connected[peer1] !== 'undefined') &&
         (typeof io.sockets.connected[peer2] !== 'undefined')) {
-
         var q = [
           'ident=dmytri',
           'domain=whitesave.me',
@@ -26,18 +26,38 @@
           'secret=' + process.env.XIRSYS
         ].join('&')
         
-        get.concat('https://service.xirsys.com/ice?' + q, function (err, data, res) {
-          if (err) throw err
-          console.log(res.statusCode) // 200
-          var iceServers = JSON.parse(data.toString())['d']['iceServers']
-          console.log(iceServers) // 'this is the server response'
-
+        console.log('getting ice servers for ' + q)
+        var makeCall = function (config) {
           connections.not.set(peer2, peer1)
           connections.white.set(peer1, peer2)
-          io.sockets.connected[peer1].emit('call', iceServers, false)
-          io.sockets.connected[peer2].emit('call', iceServers, true)
+          io.sockets.connected[peer1].emit('call', config, false)
+          io.sockets.connected[peer2].emit('call', config, true)
           console.log('call from ' + peer1 + ' to ' + peer2)
+        }
+        var req = get.concat('https://service.xirsys.com/ice?' + q, function (err, data, res) {
+          if (err) console.log(err)
+          console.log(res.statusCode) // 200
+          var config = false 
+          if (res.statusCode === 200) {
+            var r = JSON.parse(data.toString())
+            if ((!!r['d']) &&
+              (!!r['d']['iceServers'])) {
+              config = { iceServers: r['d']['iceServers'] }
+            }
+          }
+          console.log(config) // 'this is the server response'
+
+          try {
+            makeCall(config)
+          } catch (e) {
+            console.log(e)
+          }
+        })
+        req.setTimeout(5000, function () {
+          req.abort()
+          makeCall(false)
         });
+
       }
     }
     socket.on('hello', function (data) {
