@@ -383,7 +383,7 @@ System.register("pages/about.html!github:systemjs/plugin-text@0.0.2", [], true, 
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Check your privilege!</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n\n<div class=\"container\">\n\t<div class=\"section no-pad-bot\" id=\"index-banner\">\n  \t\t<div class=\"col m12 s12\">\n\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>How It Works</h4>\n                <hr><h5>\"Finally there's a way for White guys to stop feeling bad about being born privileged.\" Ashton Koocher\t</h5>\n               \t<p class=\"light\">No more feeling guilty! Our innovative solution uses tech to expand and deliver privilege where it’s needed most&mdash;and everyone wins! Just follow these 6 steps and you’re on your way to delivering or accessing privilege! <a href=\"http://whitesave.me/#try\"><strong>Try it now!</a><strong>\n</p>\n\n                </div>\n            </div>\n         </div>\n\n\n\n          <div class=\"row\">\n            <div class=\"col s4 m4 l3\">\n            <a href=\"#try\" id=\"download-button\" class=\"btn-large waves-effect waves-#000000 black\">Try it now!</a></td>\n            </div>\n            <div class=\"col s8 m8 l9\">\n             <h5><strong>White</strong>Save.me beta free trial.</h5>\n              <p class=\"light\">Our beta version connects a White Savior and a Savee via video chat. It’s simple, easy, and impactful. What’s more, your first session is free if you <a href=\"http://whitesave.me/#try\"><strong>try it now!</a><strong></p>\n\n\n\n            </div>\n          </div>\n\n\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 1: Click on <a href=\"http://whitesave.me/#try\"><strong>Try it now!</a><strong> and get ready to chat!</h5>\n    <p class=\"light\">This will launch the <strong>White</strong>Save.me app and your web cam.</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 2: Turn on your camera!</h5>\n    <p class=\"light\">Allow <strong>White</strong>Save.me to access your device’s camera. (Note, we do not store your information. See our <a href=\"#faq\">FAQs</a> for more information on our privacy policies, aimed at protecting White Saviors and Premium Model customers).</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 3: Determining Whiteness.</h5>\n     <p class=\"light\">The camera will start, and our patented “White or Not White” facial color detection software&trade;will determine your Whiteness. (Visit our <a href=\"#faq\">FAQ</a> page if you do not agree with the results).</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 4: Get matched! Start giving or getting privilege!</h5>\n    <p class=\"light\">Based on your results, we will automatically match you via video chat with a partner to begin delivering privilege (if you are White) or accessing privilege (if you are Not White).<br><br>\nSavees can ask for the help they need for their particular situation, and Saviors provide their special White insights on how to resolve lack of privilege in ways that avoid uncomfortable discussions, protests, he possibility of a revolution or violence of any kind.<br><br>\n<strong>White</strong>Save.me goes further than a “like” and delivers real results without any messy disrupting of the status quo. What’s more, it doesn’t require much effort or long-term interest from anyone! Once the chat is over, Saviors can stop caring, knowing they’ve done their bit, and Savee problems will be fixed and they can get on with their lives.<br><br>\nEnd your chat at any time. If a problem is beyond a Savior’s capacity to resolve or a Savee has already gotten the same advice from a different Savior, just move to the next person or end the chat session altogether.</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 5: Rate your experience.</h5>\n    <p class=\"light\">As a Savee, you can give your Savior 1 to 5 “Savior Stars” based on the quality of his (or her if you are using the discounted model) advice. Saviors can reward Savees with “Savee Stars” based on the worthiness of their problems and how likely the Savior thinks it is that the Savee will work hard and be motivated to resolve them.</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 6: Sign up for the pricing model that’s best for you and download the app!</h5>\n   <p class=\"light\">Following your session, decide whether the <a href=\"#about\"> Free, Basic or Premium Model </a> is best for you, and create your account. If you are accessing from our list of Third World Countries, we will automatically sign you up for the Free model, based on your location.</p>\n  </div>\n\n\n\t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Our pricing model</h4>\n                <hr><h5>Our different levels of service enable anyone to use the service.</h5>\n                <p class=\"light\">From the poor and underprivileged in the Third World (Freemium), to poor and underprivileged people of color in the First World (Basic Model), to non-White people anywhere who have succeeded despite skin color (Premium Model) but who could still use a hand up and some mentoring from those generous White folks who have held power since the dawn of our glorious country.<a href=\"http://whitesave.me/#try\"><strong> Try it now </a><strong>and your first session is on us!\n</p>\n\n\n                </div>\n            </div>\n         </div>\n\n\n\n  <div class=\"section\">\n\t  <div class=\"row\">\n      \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-4.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">FREEMIUM</span>\n                 <p class=\"light\">For our least privileged users (Savees) in the Third World, we offer an SMS-based Freemium model.<br><br>\nWe know that many of our least privileged users cannot speak English, but our solution integrates Google Translate, enabling Saviors and Savees to easily converse via SMS to share problems and expert privileged advice despite any global language, culture or life experience barriers.<br><br>\nWorking through our Non Profit Champion, <a href=\"https://www.facebook.com/WorldAidCorps\">World Aid Corps</a>, we will engage with the most excluded people in the most far off places of the Third World. That enables us to reach those who have the biggest problems. SMS provides us a quick and easy way to reach our beneficiaries in any language. After all, there are more mobile phones than toilets now, according to the World Bank, so reaching the poorest of the poor is no longer an issue! <br><br>\nOur White Saviors will be able to provide their life-saving advice and deliver privilege with the touch of a button! Ending global poverty and lack of White privilege has never been so easy.<br><br>\n<strong>Free</strong></p>\n             \t</div>\n          \t</div>\n         </div>\n\n\n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-5.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">BASIC</span>\n                 <p class=\"light\">Our Basic Model is designed for those Savees who are not privileged themselves, but who are surrounded by the vast privilege of others, especially White privilege. These are the Savees who don’t know how to access White Saviors or who perhaps feel ashamed to admit publicly that they need saving.<br><br>\nBasic users (Savees) pay a small fee to access a White Savior via SMS, video chat or voice. Say a non-White person is being pulled over by the police and needs some quick advice on how to avoid being shot, beaten or choked to death. A quick click launches the app, and the non-White Savee can access any available White Savior, who will provide advice on the right attitude and the best way to leave the situation alive and unharmed. <br><br>\nIn dire situations, Basic users can quickly upgrade to the Premium Model and have a White Savior delivered to them in person to serve as an intermediary, a witness, a role model or to otherwise accompany them.<br><br>\nThe app works best on Android phones. Our Skype API allows us to provide service in multiple languages.<br><br>\nVideo chat allows the Savee to hand the phone over to an authority figure for White Savior intermediation services. <a href=\"http://whitesave.me/#try\"><strong>Try it now and your first session is free!</a><strong>\n<br><br>\n<strong>All for $29/month, or just $299 for a full year!<br>**SPECIAL OFFER** Click “I agree to take advice from a White woman” during registration and pay only 77% of the price. Discount code: PAYGAP.</strong></p>\n             \t</div>\n          \t</div>\n         </div>\n\n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-2.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">PREMIUM</span>\n                 <p class=\"light\">Even successful non-White people need a hand at some point. Our premium service is for the non-White Savee who has ‘made it,’ but still needs a White Savior to intervene for them from time to time or to offer personal one-on-one advice and mentorship.<br><br>\n                Say a non-White Savee is up for a promotion and wonders if race will be a factor. As a Premium Model Savee, he or she can call on a White Savior to accompany him or her out for drinks with the boss, join a high level meeting in person, or simply put in a good word and offer a strong handshake (no ‘terrorist fist bumping’ allowed here! LOL) and a few slaps on the back to those in charge.<br><br>\n\nA White Savior is also useful for non-White female Savees who often need someone to Whitemansplain what their superiors are saying so that they can grasp the true meaning in White man's terms. The Premium Model allows for White mansplaining in real-time through almost any channel, including in person (Mansplaining not available with our ‘Advice from a White Woman’ discount).<br><br>\nIn an emergency situation, our Premium Model customers can request a White Savior who will arrive directly to them. Using Boober’s patented disruptive transportation model and based on their highly successful kitten delivery service, we’ll ensure that the White Savior who is geographically closest to the Savee will arrive quickly. Using geolocation, the Savee can track the Savior’s location and arrival right on the device for easy and safe identification.<a href=\"http://whitesave.me/#try\"><strong>Try it now and your first session is free!</a><strong>\n<br><br>\n<strong>All for $99/month or just $999 a year for a 2 year subscription!<br>**SPECIAL OFFER** Click “I agree to take advice from a White woman” during registration and pay only 77% of the price. Discount code: PAYGAP.\n</strong>\n                </p>\n             \t</div>\n          \t\t</div>\n        \t </div>\n\t\t </div>\n\t</div>\n\n\n\n  </div>\n</div>\n</div>\n";
+  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Check your privilege!</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n\n<div class=\"container\">\n\t<div class=\"section no-pad-bot\" id=\"index-banner\">\n  \t\t<div class=\"col m12 s12\">\n\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>How It Works</h4>\n                <hr><h5>No more feeling guilty! Our innovative solution uses tech to expand and deliver privilege where it’s needed most&mdash;and everyone wins!</h5>\n                <blockquote>\"Finally there's a way for White guys to stop feeling bad about being born privileged.\" <br><em>Ashton Koocher</em>\t</blockquote>\n\n\n                </div>\n            </div>\n         </div>\n\n\n\n          <div class=\"row\">\n            <div class=\"col s4 m4 l3\">\n            <a href=\"#call\" id=\"download-button\" class=\"btn-large waves-effect waves-#000000 black\">Try it now!</a></td>\n            </div>\n            <div class=\"col s8 m8 l9\">\n             <h5><strong>White</strong>Save.me beta free trial.</h5>\n              <p class=\"light\">Our beta version connects a White Savior and a Savee via video chat. It’s simple, easy, and impactful. What’s more, your first session is free if you <a href=\"http://whitesave.me/#call\"><strong>try it now!</a></p>\n\n\n\n            </div>\n          </div>\n\n<h6>Just follow these 6 steps and you’re on your way to delivering or accessing privilege!</h6>\n\n  <div class=\"section\">\n    <h5>STEP 1: Click on <a href=\"http://whitesave.me/#call\"><strong>Try it now!</a><strong> and get ready to chat!</h5>\n    <p class=\"light\">This will launch the <strong>White</strong>Save.me app and your web cam. Make sure your lighting is adequate so that the <strong>White</strong>Save.me algorithm can correctly determine your Whiteness (avoid backlighting and extremely dim rooms). Broadcasting or offering nudity is not allowed. If you are under 13, you can not use the service. Broadcasting spam is not allowed. Faking video stream of another person is not allowed. By using the service you agree to follow <strong>White</strong>Save.me rules. You will be blocked from the service if you do not follow the rules. By clicking <a href=\"http://whitesave.me/#call\">here</a> to start your session, you are agreeing with our <a href=\"#terms\">terms and conditions.</a></br></div>\n\n\n\t\t</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 2: Turn on your camera!</h5>\n    <p class=\"light\">Allow <strong>White</strong>Save.me to access your device’s camera. (Note, we do not store your information. See our <a href=\"#faq\">FAQs</a> for more information on our privacy policies, aimed at protecting White Saviors and Premium Model customers).</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 3: Determining Whiteness.</h5>\n     <p class=\"light\">The camera will start, and our patented “White or Not White” facial color detection software&trade; will determine your Whiteness. (Visit our <a href=\"#faq\">FAQ</a> page if you do not agree with the results).</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 4: Get matched! Start giving or getting privilege!</h5>\n    <p class=\"light\">Based on your results, we will automatically match you via video chat with a partner to begin delivering privilege (if you are White) or accessing privilege (if you are Not White).<br><br>\nSavees can ask for the help they need for their particular situation, and Saviors provide their special White insights on how to resolve lack of privilege in ways that avoid uncomfortable discussions, protests, the possibility of a revolution, and violence of any kind.<br><br>\n<strong>White</strong>Save.me goes further than a “like” and delivers real results without any messy disrupting of the status quo. What’s more, it doesn’t require much effort or long-term interest from anyone! Once the chat is over, Saviors can stop caring, knowing they’ve done their bit, and Savee problems will be fixed and they can get on with their lives.<br><br>\nEnd your chat at any time. If a Savior gets bored trying to resolve a problem or realizes it's beyond his capacity or a Savee has already gotten the same advice from a different Savior, either can just move to the next person or end the chat session altogether.</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 5: Rate your experience.</h5>\n    <p class=\"light\">As a Savee, you can give your Savior 1 to 5 “Savior Stars” based on the quality of advice. Saviors can reward Savees with “Savee Stars” based on the worthiness of their problems and how likely it seems that the Savee will work hard and be motivated.</p>\n  </div>\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>STEP 6: Sign up for the pricing model that’s best for you and download the app!</h5>\n   <p class=\"light\">Following your session, decide whether the <a href=\"#about\"> Free, Basic or Premium Model </a> is best for you, and create your account. If you are accessing from our list of Third World Countries, we will automatically sign you up for the Free model, based on your location.</p>\n  </div>\n\n\n\t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Our pricing model</h4>\n                <hr><h5>Our different levels of service enable anyone to use the service.</h5>\n                <p class=\"light\">From the poor and underprivileged in the Third World (Freemium), to underprivileged people of color in the First World (Basic Model), to non-White people anywhere who have succeeded despite skin color (Premium Model) but who could still use a hand up and some mentoring from those generous White folks who have held power since the dawn of our glorious country.<a href=\"http://whitesave.me/#call\"><strong> Try it now </a><strong>and your first session is on us!\n</p>\n\n\n                </div>\n            </div>\n         </div>\n\n\n\n  <div class=\"section\">\n\t  <div class=\"row\">\n      \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-4.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">FREEMIUM</span>\n                 <p class=\"light\">For our least privileged users (Savees) in the Third World, we offer an SMS-based Freemium model.<br><br>\nWe know that many of our least privileged users cannot speak English, so our solution integrates Google Translate, enabling Saviors and Savees to easily converse via SMS to share problems and expert privileged advice despite any global language, culture or life experience barriers.<br><br>\nWorking through our Non Profit Champion, <a href=\"https://www.facebook.com/WorldAidCorps\">World Aid Corps</a>, we will engage with the most excluded people in the most far off places of the Third World. That enables us to reach those who have the biggest problems and the least capacity to resolve them. SMS provides us a quick and easy way to reach our beneficiaries in any language. After all, there are more mobile phones than toilets now, according to the World Bank, so reaching the poorest of the poor is no longer an issue! <br><br>\nOur White Saviors will be able to provide their life-saving advice and deliver privilege with the touch of a button! Ending global poverty and lack of White privilege has never been so quick and easy.<br><br>\n<strong>Free</strong></p>\n             \t</div>\n          \t</div>\n         </div>\n\n\n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-5.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">BASIC</span>\n                 <p class=\"light\">Our Basic Model is designed for those Savees who are not privileged themselves, but who are surrounded by the privilege of others. <br><br>\nBasic users (Savees) pay a small fee to access a White Savior via SMS, video chat or voice. Say a non-White person is being pulled over by the police and needs some rapid advice on how to avoid being shot, beaten or choked to death. A quick click launches the app, and the non-White Savee can access any available White Savior, who will provide tips on the right attitude and the best way to leave the situation alive and unharmed. <br><br>\nIn dire situations, Basic users can quickly upgrade to the Premium Model and have a White Savior delivered to them in person to serve as an intermediary, a witness, a role model or to otherwise accompany them.<br><br>\nThe app works best on Android phones. Our Skype API allows us to provide service in multiple languages.<br><br>\nVideo chat allows the Savee to hand the phone over to an authority figure for White Savior intermediation services. <a href=\"http://whitesave.me/#call\"><strong>Try it now and your first session is free!</a><strong>\n<br><br>\n<strong>All for $29/month, or just $299 for a full year!<br>**SPECIAL OFFER** Click “I agree to take advice from a White woman” during registration and pay only 77% of the price. Discount code: PAYGAP.</strong></p>\n             \t</div>\n          \t</div>\n         </div>\n\n         \t<div class=\"col s12 m4\">\n        \t<div class=\"card\">\n            \t<div class=\"card-image\">\n                <img src=\"/img/services-square-2.jpg\">\n                </div>\n                <div class=\"card-content\">\n\t\t\t\t<span class=\"card-title black-text\">PREMIUM</span>\n                 <p class=\"light\">Even successful non-White people need a hand at some point. Our premium service is for the non-White Savee who has ‘made it,’ but still needs personal advice or White Savior intervention from time-to-time.<br><br>\n                Say a non-White Savee is up for a promotion and wonders if race will be a factor. As a Premium Model Savee, he or she can call on a White Savior to personally accompany him or her out for drinks with the boss, join a high level meeting, or simply put in a good word and offer a strong handshake (no ‘terrorist fist bumping’ allowed here! LOL) and a few slaps on the back to those in charge.<br><br>\n\nA White Savior is also useful for non-White female Savees who need someone to mansplain what their superiors are saying. The Premium Model allows for White mansplaining in real-time through almost any channel, including in person (Mansplaining not available with our ‘Advice from a White Woman’ discount).<br><br>\nIn an emergency situation, Premium Model customers can request a White Savior who will arrive directly to them. Using <a href=\"http://whitesave.me/#partners\">Buber's</a> patented disruptive transportation model and based on their highly successful kitten delivery service, we’ll ensure that the White Savior who is closest to the Savee will arrive quickly. Using geolocation, the Savee can track the Savior’s location and arrival time right on the device.<a href=\"http://whitesave.me/#call\"><strong>Try it now and your first session is free!</a><strong>\n<br><br>\n<strong>All for $99/month or just $999 a year for a 2 year subscription!<br>**SPECIAL OFFER** Click “I agree to take advice from a White woman” during registration and pay only 77% of the price. Discount code: PAYGAP.\n</strong>\n                </p>\n             \t</div>\n          \t\t</div>\n        \t </div>\n\t\t </div>\n\t</div>\n\n\n\n  </div>\n</div>\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -401,7 +401,7 @@ System.register("pages/success.html!github:systemjs/plugin-text@0.0.2", [], true
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Saving one person at a time, at scale and for profit.</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<!-- Success Stories Section -->\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n          <div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Success Stories</h4>\n                <hr><h5>Our fast growth has changed the lives of thousands. Below are just a few stories in which our highly qualified White Saviors have helped underprivileged Savees get ahead.</h5>\n               \t\n\n                </div>\n            </div>\n         </div>\n       </div>\n       \n       <blockquote>\"I absolutely love WhiteSave.me. I can hop on for a second, do some social good real quick, then get back to finding stuff to paraphrase in my books!\" <br><em>Malcolm Fadwell</em> </blockquote>\n\n\n   <div class=\"section\">\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0000.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                “It was really great delivering some privilege through <strong>White</strong>Save.me. I’ve always felt that these people just need to be more motivated and hardworking and they’ll get ahead. <br><br>When I read that only 1% of CEOs are Black, I made sure to do a little research on Mark Zuckerberg so I could talk to some of these inner city kids about him. He didn’t go to college and look at him now&mdash;it’s like he fast tracked it right to the top. So I got to thinking&mdash;if we just teach these kids to code, they’ll be starting companies in no time. Or they can go work in Silicon Valley. Heck, by the time these kids graduate from high school in a few years, those Left Coast geek types will probably be open to hiring Blacks for tech jobs. <br><br>Right now most of these kids have this fantasy that they’ll grow up to be famous rappers or ball players. It’s a lot more realistic to think about being the next Mark Zuckerberg or Bill Gates, because that requires a real skill - coding.”\n               <br><br><em>Bill, age 52, helped inner-city kids see that becoming a billionaire through coding and entrepreneurship is a lot more realistic than doing it via professional sports or rap music.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0001.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                “I had a job in tech but was hitting an invisible ceiling as a Latina. A friend told me about <strong>White</strong>Save.me’s Premium Model where you can get a personal White savior in the flesh. I signed up and got connected with Trevor. <br><br>Once everyone saw us hanging out during my lunch break, they started including us in their happy hour invitations. He advised me to read “Lean In” and hang a poster of Sheryl Sandberg near my desk. Trevor doesn’t know anything about tech, but he really enjoyed explaining how tech works and telling me how to behave so that upper management would notice I was in the room without feeling threatened by my capacities. He advised me to look less Latina, be sure I never seemed angry, and dress more conservatively so I wouldn’t be seen as too sexy to be taken seriously. He also told me to stop speaking Spanish to my family on the phone during work hours, and that worked wonders! <br><br>With Trevor’s help, I moved up in the company. I even got asked to head up my company’s “Diversity Working Group” this year! I couldn’t be more grateful to Trevor and WhiteSave.me!”\n               <br><br><em>Maria Luisa (Mary Louise), age 28, started being more White-like and got a promotion by using our Premium Model service, all because of Trevor.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0002.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                “I got pregnant when I was 19 and really didn’t know what to do because the guy I was with left town. My mom already worked a lot and I didn’t think she could afford to help me take care of a baby. Luckily, a friend told me about <strong>White</strong>Save.me. <br><br>I was able to connect with Hunter on my cellphone. I started explaining my situation, and he immediately interrupted me and said to stop worrying so much. He explained that most of his feminist friends are really into having babies on their own, and it’s really not a big deal. They’d actually prefer to have their freedom and not get married. He also told me about this great app that helps you to track your monthly cycle. <br><br>It doesn’t matter if the Planned Parenthood clinics are shut down now, he said, tech allows women today to manage their fertility on their own. I think I’ll try it. If it works for Hunter’s friends, it should work for me!”\n               <br><br><em>Hunter explained to Shanaya, age 20, how to embrace the freedom and feminism of being a single mom.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0003.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n               “I was just chilling with my friends when somebody got the idea to go get some provisions. Nobody was around to drive us, so we decided to risk it and walk over to the store. We were just crossing the street when this cop came by and started hassling us for no reason. I had my phone with the <strong>White</strong>Save.me app on it. So I just tapped it to get hold of the next available White guy. <br><br>We ended up getting Bruce. He told us to be extra polite and allow the cops to stop and search us without a struggle even though we hadn’t done anything&mdash;after all we were a pack of Black kids just walking around without a legitimate destination, aside from going to the store to get food. He said we probably looked like typical thugs up to no good. Bruce told me to just put my hands up and let the cops see my phone with his face on the video, so they knew he was with us, and that I didn’t have a gun. Then he said to just hand my phone over and let him do the talking. <br><br>The thing about <strong>White</strong>Save.me is that it was like Bruce was right there. He talked to the cops and they let us go with a warning as long as we went back to the house and kept Bruce on the phone with us till we got there! It’s great having someone like Bruce with you! He really saved us.”\n\n               <br><br><em>With Bruce’s help and our Basic Model, Jayden, age 17, avoided arrest while walking in his own neighborhood. </em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0006.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n               “We were having trouble with our cassava and maize crops this year over here in Kabete, Kenya, due to a serious drought. The organization that comes by here regularly to snap photos of us, World Aid Corps, told us about a new project called <strong>White</strong>Save.me where subsistence farmers like us can get farming advice from White men in the United States through our mobile phones. <br><br>My brother and I pooled our money to cover the airtime costs to text in some questions about how to manage when there is a severe drought. We got some advice from Topher who’s living in New York City. He told us about some kind of plants that his eco-friendly community gardening group is experimenting with and which grow on the side of tall buildings. He suggested that perhaps we could do the same. <br><br>We don’t have tall buildings here, and it’s quite expensive and difficult to find this type of equipment which Topher mentioned. But we enjoyed greeting someone living in the United States and we wish him well.”\n               <br><br><em>Nderu, age 41, learned how to avoid slow onset disaster in rural Kenya with innovative hydroponic crops through a Freemium SMS chat with Topher in Brooklyn, New York.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-1.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n               “I was having trouble with my son who had gotten suspended several times for being late to middle school. I was really at a loss on what to do about this until I saw an ad for <strong>White</strong>Save.me on the bus home from my 3rd shift and decided to try it. <br><br> I got instantly connected with Jake, who suggested that I stop working 2 jobs and join the PTA to bond better with the teachers. Jake doesn’t have kids of his own, but he really enjoyed telling us how to raise ours. He also helped us understand that Black kids are more like adults than White kids. So James Junior really had no excuse for arriving late to school - he should take responsibility and get himself to school on his own whether we are home or still working, regardless of his age.  <br><br>Jake really helped us see that we just weren’t trying hard enough as parents and James Junior was slacking off. Jake’s a great mentor -- he even told me that he couldn’t believe how articulate I was for a Black guy!”\n\t\t\t\t\t\t\t<br><br><em>James, aged 32, got valuable insight into parenting and stopped his son from being repeatedly suspended from middle school, all via our Basic Model where he tapped into Jake’s good sense.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n\n\n  </div>\n</div>\n";
+  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Saving one person at a time, at scale and for profit.</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<!-- Success Stories Section -->\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n          <div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Success Stories</h4>\n                <hr><h5>Our fast growth has changed the lives of thousands. Below are just a few stories in which our highly qualified White Saviors have helped underprivileged Savees get ahead.</h5>\n\n\n                </div>\n            </div>\n         </div>\n       </div>\n\n       <blockquote>\"I absolutely love WhiteSave.me. I can hop on for a second, do some social good real quick, then get back to finding stuff to paraphrase in my books!\" <br><em>Malcolm Fadwell</em> </blockquote>\n\n\n   <div class=\"section\">\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0000.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                “It was really great delivering some privilege through <strong>White</strong>Save.me. I’ve always felt that these people just need to be more motivated and hardworking and they’ll get ahead. <br><br>When I read that only 1% of CEOs are Black, I made sure to do a little research on Mark Zuckerberg so I could talk to some of these inner city kids about him. He didn’t go to college and look at him now&mdash;it’s like he fast tracked it right to the top. So I got to thinking&mdash;if we just teach these kids to code, they’ll be starting companies in no time. Or they can go work in Silicon Valley. Heck, by the time these kids graduate from high school in a few years, those Left Coast geek types will probably be open to hiring Blacks for tech jobs. <br><br>Right now most of these kids have this fantasy that they’ll grow up to be famous rappers or ball players. It’s a lot more realistic to think about being the next Mark Zuckerberg or Bill Gates, because that requires a real skill - coding.”\n               <br><br><em>Bill, age 52, helped inner-city kids see that becoming a billionaire through coding and entrepreneurship is a lot more realistic than doing it via professional sports or rap music.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0001.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                “I had a job in tech but was hitting an invisible ceiling as a Latina. A friend told me about <strong>White</strong>Save.me’s Premium Model where you can get a personal White savior in the flesh. I signed up and got connected with Trevor. <br><br>Once everyone saw us hanging out during my lunch break, they started including us in their happy hour invitations. He advised me to read “Lean In” and hang a poster of Sheryl Sandberg near my desk. Trevor doesn’t know anything about tech, but he really enjoyed explaining how tech works and telling me how to behave so that upper management would notice I was in the room without feeling threatened by my capacities. He advised me to look less Latina, be sure I never seemed angry, and dress more conservatively so I wouldn’t be seen as too sexy to be taken seriously. He also told me to stop speaking Spanish to my family on the phone during work hours, and that worked wonders! <br><br>With Trevor’s help, I moved up in the company. I even got asked to head up my company’s “Diversity Working Group” this year! I couldn’t be more grateful to Trevor and WhiteSave.me!”\n               <br><br><em>Maria Luisa (Mary Louise), age 28, started being more White-like and got a promotion by using our Premium Model service, all because of Trevor.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0002.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n                “I got pregnant when I was 19 and really didn’t know what to do because the guy I was with left town. My mom already worked a lot and I didn’t think she could afford to help me take care of a baby. Luckily, a friend told me about <strong>White</strong>Save.me. <br><br>I was able to connect with Hunter on my cellphone. I started explaining my situation, and he immediately interrupted me and said to stop worrying so much. He explained that most of his feminist friends are really into having babies on their own, and it’s really not a big deal. They’d actually prefer to have their freedom and not get married. He also told me about this great app that helps you to track your monthly cycle. <br><br>It doesn’t matter if the Planned Parenthood clinics are shut down now, he said, tech allows women today to manage their fertility on their own. I think I’ll try it. If it works for Hunter’s friends, it should work for me!”\n               <br><br><em>Hunter explained to Shanaya, age 20, how to embrace the freedom and feminism of being a single mom.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0003.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n               “I was just chilling with my friends when somebody got the idea to go get some provisions. Nobody was around to drive us, so we decided to risk it and walk over to the store. We were just crossing the street when this cop came by and started hassling us for no reason. I had my phone with the <strong>White</strong>Save.me app on it. So I just tapped it to get hold of the next available White guy. <br><br>We ended up getting Bruce. He told us to be extra polite and allow the cops to stop and search us without a struggle even though we hadn’t done anything&mdash;after all we were a pack of Black kids just walking around without a legitimate destination, aside from going to the store to get food. He said we probably looked like typical thugs up to no good. Bruce told me to just put my hands up and let the cops see my phone with his face on the video, so they knew he was with us, and that I didn’t have a gun. Then he said to just hand my phone over and let him do the talking. <br><br>The thing about <strong>White</strong>Save.me is that it was like Bruce was right there. He talked to the cops and they let us go with a warning as long as we went back to the house and kept Bruce on the phone with us till we got there! It’s great having someone like Bruce with you! He really saved us.”\n\n               <br><br><em>With Bruce’s help and our Basic Model, Jayden, age 17, avoided arrest while walking in his own neighborhood. </em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0006.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n               “We were having trouble with our cassava and maize crops this year over here in Kabete, Kenya, due to a serious drought. The organization that comes by here regularly to snap photos of us, World Aid Corps, told us about a new project called <strong>White</strong>Save.me where subsistence farmers like us can get farming advice from White men in the United States through our mobile phones. <br><br>My brother and I pooled our money to cover the airtime costs to text in some questions about how to manage when there is a severe drought. We got some advice from Topher who’s living in New York City. He told us about some kind of plants that his eco-friendly community gardening group is experimenting with and which grow on the side of tall buildings. He suggested that perhaps we could do the same. <br><br>We don’t have tall buildings here, and it’s quite expensive and difficult to find this type of equipment which Topher mentioned. But we enjoyed greeting someone living in the United States and we wish him well.”\n               <br><br><em>Nderu, age 41, learned how to avoid slow onset disaster in rural Kenya with innovative hydroponic crops through a Freemium SMS chat with Topher in Brooklyn, New York.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/saved-1.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n            <div class=\"col s10\">\n              <span class=\"black-text\">\n               “I was having trouble with my son who had gotten suspended several times for being late to middle school. I was really at a loss on what to do about this until I saw an ad for <strong>White</strong>Save.me on the bus home from my 3rd shift and decided to try it. <br><br> I got instantly connected with Jake, who suggested that I stop working 2 jobs and join the PTA to bond better with the teachers. Jake doesn’t have kids of his own, but he really enjoyed telling us how to raise ours. He also helped us understand that Black kids are more like adults than White kids. So James Junior really had no excuse for arriving late to school - he should take responsibility and get himself to school on his own whether we are home or still working, regardless of his age.  <br><br>Jake really helped us see that we just weren’t trying hard enough as parents and James Junior was slacking off. Jake’s a great mentor -- he even told me that he couldn’t believe how articulate I was for a Black guy!”\n\t\t\t\t\t\t\t<br><br><em>James, age 32, got valuable insight into parenting and stopped his son from being repeatedly suspended from middle school, all via our Basic Model where he tapped into Jake’s good sense.</em>\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n\n\n  </div>\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -410,7 +410,7 @@ System.register("pages/story.html!github:systemjs/plugin-text@0.0.2", [], true, 
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Tech is our hammer and social problems are the nail! </h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<!-- Success Stories Section -->\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n          <div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Our Story</h4>\n                <hr><h5>Innovation and good intentions are the key! We are unlocking the door and ending inequalities through game-changing, scalable and smart design ideas.</p>\n\n                </div>\n            </div>\n         </div>\n       </div>\n   </div>\n\n\n            <p class=\"light\"><strong>White</strong>Save.me founders Dmytri, Jake, and Lulu met while backpacking the Inca trail as part of the “Unnecessary Innovating in the Mountains” gathering in 2013. We soon realized that regardless of the continent, lack of innovative thinking was a problem the world over, as were inequality and lack of privilege for non-White people. Following a weekend of post-it notes, some experimental Ayahuasca, and lots of cold brew coffee, <strong>White</strong>Save.me was born. <p>\n            <p class=\"light\">Our ah-ha moment came while taking a quick break and reading a Buzzfeed article on 12 facts about White male privilege. We quickly realized how the media has been really unfair in highlighting White male privilege and creating terms like \"systemic bias\" and \"institutional racism\" purely to make White men feel guilty.<p>\n            <p class=\"light\">We realized that lack of privilege has nothing to do with history, politics, laws, or institutions. It does have a lot to do with technology and enabling White guys to take the lead in delivering privilege to the less privileged all over the world. White guys want to share their privilege -- they just haven’t had an app to let them do it!<p>\n\t\t\t\t\t\t<p  class=\"light\"><strong>White</strong>Save.me is the solution we’ve all been waiting for. A simple app that lets White guys take advantage of their down-time to deliver privilege to the underprivileged right through their devices. Our hundreds of <a href=\"#success\">Success Stories</a> from Saviors and Savees all over the world prove that it’s working.</p>\n\n\n\n<blockquote>\"Armed with some technology, a skewed understanding of other people's realities, and the urge to feel good while doing good and making a profit from it, anyone can make a difference!\" <br> <em>Jason Muscle</em></blockquote>\n\n\n\n\n\n\n\n\t<div class=\"section\">\n\n    <div class=\"row\">\n        \t<div class=\"col m12 s12\">\n            <div class=\"rich-text\"><h4>Founders</h4>\n            <p class=\"light\">Our fresh and extensive experience in marketing, innovative technology solutions, backpacking around, and the social good sector make us uniquely placed to extract the value of privilege from one target demographic and deliver it to another, all the while tapping into available revenue from small pockets of cash that the underprivileged currently have but don’t invest wisely.\nOur team’s tried and true “Innovate Now, Ask Questions Later” approach has proven both lucrative and widely scalable by successful tech billionaires cum faux do-gooders.</p></div>\n            </div>\n            </div>\n\n\n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/dmytri.jpg\">\n          <h5 class=\"center\">dmytri</h5>\n\n         </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/linda.jpg\">\n          <h5 class=\"center\">lulu</h5>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/juan.jpg\">\n          <h5 class=\"center\">jake</h5>\n\n            </div>\n      </div>\n\n\n    </div>\n\n  </div>\n\n\n  \t<div class=\"section\">\n    <div class=\"rich-text\"><h4>Actual Sponsors</h4></div>\n\n        <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/sponsor_evil-genius-logo.png\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Evil Genius Publishing is a micro-publisher focused on the humanitarian aid industry. Our goal is to publish books that actual aid workers actually want to read (as opposed to the vast majority of what’s written for the aid world which is absurdly dry, dull, boring, verbose, over-written, pretentious, self-important, and otherwise inaccessible to mere mortals like most of us). We are also passionate about providing opportunity for those who otherwise lack access to “formal” publishing spaces, including local aid workers and the recipients of aid programs, commonly known as “beneficiaries.”\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/sponsor_telekommunisten.jpg\" alt=\"Telekommunisten\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                The Telekommunist Manifesto is an exploration of class conflict and property, born from a realization of the primacy of economic capacity in social struggles. Emphasis is placed on the distribution of productive assets and their output. The interpretation here is always tethered to an understanding that wealth and power are intrinsically linked, and only through the for- mer can the latter be achieved. As a collective of intellectual workers, the work of Telekom- munisten is very much rooted in the free software and free culture communities. However, a central premise of this Manifesto is that engaging in software development and the produc- tion of immaterial cultural works is not enough. The communization of immaterial property alone cannot change the distribution of material productive assets, and therefore cannot eliminate exploitation; only the self-organization of production by workers can.\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <br><br>\n\n      <div class=\"rich-text\"><h4>Non-Profit Champions</h4></div>\n\n        <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/partners_world-aid-corps.jpg\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Non profit partners are eager to develop public-private partnerships, use technology, and link with social enterprises in order to appear innovative. Our non profit champion, <a href= https://www.facebook.com/WorldAidCorps>World Aid Corps,</a> brings us access to the global base of the underprivileged pyramid, where rapid scale at minimal cost enables quick growth and revenue for our investors and shareholders.<br><br>\nBy leveraging trust that communities place in WAC we will work at large scale to encourage community members to contribute small amounts of their hard-earned income to access white privilege, thereby enabling individuals in poverty-stricken areas to move away from primitive community-based socio-economic models of development towards modern, consumer-based digital development and global economies.<br><br> If your non profit organization would like to help us reach the base of the pyramid so that we can extract small amounts of revenue at scale in parts of the world where both markets and governments have historically failed to ensure people’s basic human rights, please reach out to us via <a href=\"http://twitter.com/whitesaveme\">Twitter</a> or <a href=\"#contact\">email.</a>\n\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n      <br><br>\n       <div class=\"rich-text\"><h4>Private Sector Partners</h4></div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n            <img src=\"img/RCoK-01.png\" alt=\"Random Chats of Kindness\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Random Chats of Kindness is our partner for “Random Chats of Privilege,” as we like to call our model. This unique software model allows us to connect Saviors and Savees quickly and conveniently to deliver privilege through cutting edge video.\n\n\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/Boober-01.png\" alt=\"Boober\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Delivering kittens to the workplace and partnering with multilateral organizations to support women's empowerment was one thing, but Boober was looking to help out in a way that would really make a difference while also improving our company's reputation. Boober and <strong>White</strong>Save.me, will process Savee support requests through Boober’s patented disruptive transportation system and deliver Saviors in the flesh to the underprivileged, who can track the location of their savior while they wait. (Premium Plan required. NYC pilot, pending global expansion).\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n    </div>\n</div>\n";
+  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Tech is our hammer. Social problems are the nails! </h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<!-- Success Stories Section -->\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n          <div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Our Story</h4>\n                <hr><h5>Innovation and good intentions are the key! We are unlocking the door and ending inequality through smart, game-changing, and scalable design ideas.</p>\n\n                </div>\n            </div>\n         </div>\n         <blockquote>\"Armed with some technology, a skewed understanding of other people's realities, and the urge to feel good while doing good and making a profit from it, anyone can make a difference!\" <br> <em>Jason Mussell</em></blockquote>\n       </div>\n   </div>\n\n\n            <p class=\"light\"><strong>White</strong>Save.me founders Dmytri, Jake, and Lulu met while backpacking the Inca trail as part of the “Unnecessary Innovating in the Mountains” gathering in 2013. We soon realized that lack of innovative thinking was a problem the world over, as were inequality and lack of privilege for non-White people. Following a weekend of post-it notes, some experimental Ayahuasca, and lots of cold brew coffee, <strong>White</strong>Save.me was born. <p>\n            <p class=\"light\">Our ah-ha moment came while reading a Buzzfeed article (gifs FTW!) on 12 facts about White male privilege. Clearly the media has been unfair to focus so much on White male privilege. They've even created terms like \"systemic bias\" and \"institutional racism\" with the sole purpose of making White men feel guilty.<p>\n            <p class=\"light\">Anyone living in the 21st century knows that privilege has absolutely nothing to do with history, politics, biased laws, or institutions that favor White men. Like everything else these days, it has to do with digital connecting and sharing. Building solutions that place White guys at the center of delivering privilege directly to the less privileged all over the world will easily resolve inequality while simultaneously eliminating the need for government funded social programs, community development organizations and social justice movements! White guys want to share their privilege -- they just haven’t had an app to let them do it!<p>\n\t\t\t\t\t\t<p  class=\"light\"><strong>White</strong>Save.me is the solution the world's been waiting for. A simple app that lets White guys take advantage of their down-time to deliver privilege to the underprivileged right through their devices. Our hundreds of <a href=\"#success\">Success Stories</a> from Saviors and Savees all over the world prove that it’s working.</p>\n\n\n\n\n\n\n\n\n\n\n\n\t<div class=\"section\">\n\n    <div class=\"row\">\n        \t<div class=\"col m12 s12\">\n            <div class=\"rich-text\"><h4>Founders</h4>\n            <p class=\"light\">Our fresh and extensive experience in marketing, innovative technology solutions, backpacking around, and the social good sector make us uniquely placed to extract the value of privilege from one target demographic and deliver it to another, all the while tapping into available revenue from small pockets of cash that the underprivileged currently have but don’t invest wisely.\nOur team’s tried and true “Innovate Now, Ask Questions Later” approach has proven both lucrative and widely scalable by successful start-ups and entrenched tech billionaires cum faux do-gooders everywhere! Get in touch today if you'd like us to create a simple, engaging, innovative, life-saving, game-changing, story-telling, award-winning, profitable, scalable, viral social good solution for <strong>your</strong> favorite complex social problem!</p></div>\n            </div>\n            </div>\n\n\n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/dmytri.jpg\">\n          <h5 class=\"center\">dmytri</h5>\n\n         </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/linda.jpg\">\n          <h5 class=\"center\">lulu</h5>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/juan.jpg\">\n          <h5 class=\"center\">jake</h5>\n\n            </div>\n      </div>\n\n\n    </div>\n\n  </div>\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n    </div>\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -419,7 +419,7 @@ System.register("pages/faq.html!github:systemjs/plugin-text@0.0.2", [], true, fu
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Still have questions?</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"container\">\n\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Frequently Asked Questions (FAQs)</h4>\n                <hr><h5>Would you like to learn more or do you have questions about our work?</h5>\n               \t<p class=\"light\">Take a look at our FAQs below, as they may provide the answers you're looking for. If you don't find what you need, please reach out to us via <a href=\"http://twitter.com/whitesaveme\">Twitter</a> or <a href=\"#contact\">email and our interns will be happy to respond.</a></p>\n\n                </div>\n            </div>\n         </div>\n\n\n\n\n  <div class=\"section\">\n    <h5>Why do you need access to my camera?</h5>\n    <p class=\"light\">We need access to your camera in order to determine whether you are white or not. Once we’ve determined your Whiteness (or non-Whiteness) through our patented facial color recognition software&#8482; you will be connected to a Savior or a Savee to begin your life-changing video chat. We do not share any of the images that we collect.</p>\n  </div>\n  \n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>How does the White-not White algorithm work?</h5>\n    <p class=\"light\">Our patented innovative software determines what color you are based on a custom facial skintone recognition algorithm. This solution provides an highly accurate reading every time for enhanced security and privacy.</p>\n  </div>\n \n\n <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why does it say I’m not White? I’m definitely White.</h5>\n    <p class=\"light\">While you may think you are not White, computers and algorithms developed by those in the field of innovative technology are likely more equipped to detect aspects of Whiteness or non-Whiteness then the average person. Sometimes mistakes happen, but this is not a problem for the majority and can be chalked up to minute errors in the code.</p>\n  </div>\n  \n   \n  \n   <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why does it say I’m White? I’m definitely not White.</h5>\n    <p class=\"light\">While you may think you are not White, computers and algorithms developed by those in the field of innovative technology are like more equipped to detect aspects of Whiteness or non-Whiteness then the average person. Sometimes mistakes happen, but this is not a problem for the majority and can be chalked up to minute errors in the code.</p>\n  </div>\n\n<div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why do you assume that White people have privilege?</h5>\n    <p class=\"light\">We are fans of Buzzfeed and other media sources that confirm White privilege is a “thing.” We also know that technology companies are almost exclusively run by White men, and tech companies rule the world, for the most part. But we also know from attending start-up conferences and reviewing news stories emanating from Silicon Valley (and from studying our start-up heroes like Uber’s Trevor Kalanick and Facebook’s Mark Zuckerberg) that digital tools created by these same technology companies can save the world from inequalities and deliver privilege to those who don’t have it all the while maximizing profits for these companies. This has been proven many times by presentations at start-up conferences and international development conferences.</p>\n  </div>\n  \n  \n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why is there a discount for advice from White women?</h5>\n    <p class=\"light\">We all know that women are only worth 77% of men, based on the average pay gap between women and men in the US, so it’s only fair that our services offer a discounted rate for advice from White women.</p>\n  </div>\n  \n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>What makes you think that White men can offer worthwhile advice to non-White people?</h5>\n    <p class=\"light\">White men have been running the world for centuries and have a lot of experience doing things within the system -- they did set it up and make sure it worked for them exclusively, after all! It’s only logical that they have the inside scoop on how to succeed in that system. In addition, White men run the vast majority of US corporations, foundations, start-ups and nonprofit organizations, so clearly they know how to create socio-economic change as well as how to do projects that develop underprivileged countries and neighborhoods. They’re specially equipped to determine where investments should go to enable non-White communities to thrive. And White men want to help. Our app simply offers them a way to do that directly, and for people of color to access White men directly for immediate guidance and support.</p>\n  </div>\n  \n   <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>What do you do with my data? Do you share it?</h5>\n    <p class=\"light\">Don’t worry - if you are a White man and you volunteer your advice and share your privilege, the app is free for you, and we will not share any of your data with third parties. We will also not share data from our Premium users. We do share the data of our Basic and Freemium users so that we can be sure to provide useful targeted advertisements for products and services that will best meet their needs and purchasing habits. Big data analysis of the most common problems that our Savees face will enable us to seek investors and advertisers who can help us keep our services low in cost for those who need it the most all the while allowing corporations and small local businesses to prey on them so that we can make our app sustainable and profitable.</p>\n  </div>\n\n\n <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Is this site for real?</h5>\n    <p class=\"light\">Are you really asking this? We hope that it's clear that this site is satire that aims to make people think about White privilege and the folly of the idea that technology will save the world. </p>\n  </div>\n  \n</div>\n";
+  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Still have questions?</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"container\">\n\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Frequently Asked Questions (FAQs)</h4>\n                <hr><h5>Would you like to learn more or do you have questions about our work?</h5>\n               \t<p class=\"light\">Take a look at our FAQs below, as they may provide the answers you're looking for. If you don't find what you need, please reach out to us via <a href=\"http://twitter.com/whitesaveme\">Twitter</a> or <a href=\"#contact\">email</a> and our interns will be happy to respond.</p>\n\n                </div>\n            </div>\n         </div>\n\n\n\n\n  <div class=\"section\">\n    <h5>Why do you need access to my camera?</h5>\n    <p class=\"light\">We need access to your camera in order to determine whether you are White or not. Once we’ve determined your Whiteness (or non-Whiteness) through our patented facial color recognition software&#8482; you will be connected to a Savior or a Savee to begin your life-changing video chat. We do not share any of the images that we collect.</p>\n  </div>\n\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>How does the White-not White algorithm work?</h5>\n    <p class=\"light\">Our patented innovative facial color recognition software determines what color you are based on a custom skintone recognition algorithm. Our solution provides a highly accurate reading every time for enhanced security and privacy.</p>\n  </div>\n\n\n <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why does it say I’m not White? I’m definitely White.</h5>\n    <p class=\"light\">While you may think you are White, computers and algorithms developed by those in the field of innovative technology are likely more equipped than the average person to detect aspects of Whiteness or non-Whiteness with absolutely no bias. Your skin may be slightly yellower or slightly darker than our White detector allows for. Or you may be sitting in front of a window or in a dim room. Our software requires an ideal setting in order for maximum performance. Sometimes mistakes happen, but this is not a problem for the majority.</p>\n  </div>\n\n\n\n   <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why does it say I’m White? I’m definitely not White.</h5>\n    <p class=\"light\">While you may think you are not White, computers and algorithms developed by those in the field of innovative technology are likely more equipped than the average person to detect aspects of Whiteness or non-Whiteness with absolutely no bias. You may be sitting in front of a window or in a dim room, which will affect how your device's camera reads your skin color. Our software requires an ideal setting in order for maximum performance. Sometimes mistakes happen, but this is not a problem for the majority.</p>\n  </div>\n\n<div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why do you assume that White people have privilege?</h5>\n    <p class=\"light\">We are fans of Buzzfeed and other media sources that confirm White privilege is a “thing.” We also know that technology companies are almost exclusively run by White men, and tech companies rule the world, for the most part. But we also know from attending start-up conferences and reviewing news stories emanating from Silicon Valley (and from studying our start-up heroes like Uber’s Travis Kalanick and Facebook’s Mark Zuckerberg) that digital tools created by these same technology companies can save the world from inequality and deliver privilege to those who don’t have it all the while maximizing profits for these companies. This has been proven many times by presentations at start-up conferences and international development conferences.</p>\n  </div>\n\n\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why is there a discount for advice from White women?</h5>\n    <p class=\"light\">We all know that women are only worth 77% of men, based on the average pay gap between women and men in the US, so it’s only fair that our services offer a discounted rate for advice from White women.</p>\n  </div>\n\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>What makes you think that White men can offer worthwhile advice to non-White people?</h5>\n    <p class=\"light\">White men have been running the world for centuries and have a lot of experience doing things within the system -- they did set it up and make sure it worked for them exclusively, after all! It’s only logical that they have the inside scoop on how to succeed in that system. In addition, White men run the vast majority of US corporations, foundations, start-ups and nonprofit organizations, so clearly they know how to create socio-economic change as well as how to do projects that develop underprivileged countries and neighborhoods. They’re specially equipped to determine where investments should go to enable non-White communities to thrive. And White men want to help. Our app offers them a way to do that directly, and for people of color to access White men directly for immediate guidance and support.</p>\n  </div>\n\n   <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>What do you do with my data? Do you share it?</h5>\n    <p class=\"light\">Don’t worry - if you are White and you volunteer your advice and share your privilege, the app is free for you, and we will not share any of your data with third parties. We will also not share data from our Premium users. We do share the data of our Basic and Freemium users so that we can be sure to provide useful targeted advertisements for products and services that will best meet their needs and purchasing habits. Big data analysis of the most common problems that our Savees face will enable us to seek investors and advertisers who can help us keep our services low in cost for those who need it the most all the while allowing corporations and small local businesses to prey on them so that we can make our app sustainable and profitable.</p>\n  </div>\n\n\n <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Is this site for real?</h5>\n    <p class=\"light\">We hope it's clear that this site is satire. It aims to make people reflect on White privilege, digital saviorism, the danger of biased algorithms and binary approaches, the ridiculousness of simple solutions to deep-seated problems, and the folly that techno-utopian fixes can address issues like poverty, inequality and exclusion without addressing power imbalances and the entrenched historical privilege of certain individuals, institutions, and nations. Many thanks to <a href=\"http://artahack.io/\">Art-A-Hack</a> for their interest in the idea and to our (White and non-White!) testers and advisors for their orientation, comments, suggestions and input on the site!</p>\n  </div>\n\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -437,7 +437,7 @@ System.register("pages/partners.html!github:systemjs/plugin-text@0.0.2", [], tru
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Tech is our hammer and social problems are the nail! </h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<!-- Success Stories Section -->\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n          <div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Our Story</h4>\n                <hr><h5>Innovation and good intentions are the key! We are unlocking the door and ending inequalities through game-changing, scalable and smart design ideas.</p>\n\n                </div>\n            </div>\n         </div>\n       </div>\n   </div>\n\n\n            <p class=\"light\"><strong>White</strong>Save.me founders Dmytri, Jake, and Lulu met while backpacking the Inca trail as part of the “Unnecessary Innovating in the Mountains” gathering in 2013. We soon realized that regardless of the continent, lack of innovative thinking was a problem the world over, as were inequality and lack of privilege for non-White people. Following a weekend of post-it notes, some experimental Ayahuasca, and lots of cold brew coffee, <strong>White</strong>Save.me was born. <p>\n            <p class=\"light\">Our ah-ha moment came while taking a quick break and reading a Buzzfeed article on 12 facts about White male privilege. We quickly realized how the media has been really unfair in highlighting White male privilege and creating terms like \"systemic bias\" and \"institutional racism\" purely to make White men feel guilty.<p>\n            <p class=\"light\">We realized that lack of privilege has nothing to do with history, politics, laws, or institutions. It does have a lot to do with technology and enabling White guys to take the lead in delivering privilege to the less privileged all over the world. White guys want to share their privilege -- they just haven’t had an app to let them do it!<p>\n\t\t\t\t\t\t<p  class=\"light\"><strong>White</strong>Save.me is the solution we’ve all been waiting for. A simple app that lets White guys take advantage of their down-time to deliver privilege to the underprivileged right through their devices. Our hundreds of <a href=\"#success\">Success Stories</a> from Saviors and Savees all over the world prove that it’s working.</p>\n\n\n\n<blockquote>\"Armed with some technology, a skewed understanding of other people's realities, and the urge to feel good while doing good and making a profit from it, anyone can make a difference!\" <br> <em>Jason Muscle</em></blockquote>\n\n\n\n\n\n\n\n\t<div class=\"section\">\n\n    <div class=\"row\">\n        \t<div class=\"col m12 s12\">\n            <div class=\"rich-text\"><h4>Founders</h4>\n            <p class=\"light\">Our fresh and extensive experience in marketing, innovative technology solutions, backpacking around, and the social good sector make us uniquely placed to extract the value of privilege from one target demographic and deliver it to another, all the while tapping into available revenue from small pockets of cash that the underprivileged currently have but don’t invest wisely.\nOur team’s tried and true “Innovate Now, Ask Questions Later” approach has proven both lucrative and widely scalable by successful tech billionaires cum faux do-gooders.</p></div>\n            </div>\n            </div>\n\n\n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/dmytri.jpg\">\n          <h5 class=\"center\">dmytri</h5>\n\n         </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/linda.jpg\">\n          <h5 class=\"center\">lulu</h5>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/juan.jpg\">\n          <h5 class=\"center\">jake</h5>\n\n            </div>\n      </div>\n\n\n    </div>\n\n  </div>\n\n\n  \t<div class=\"section\">\n    <div class=\"rich-text\"><h4>Actual Sponsors</h4></div>\n\n        <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/sponsor_evil-genius-logo.png\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Evil Genius Publishing is a micro-publisher focused on the humanitarian aid industry. Our goal is to publish books that actual aid workers actually want to read (as opposed to the vast majority of what’s written for the aid world which is absurdly dry, dull, boring, verbose, over-written, pretentious, self-important, and otherwise inaccessible to mere mortals like most of us). We are also passionate about providing opportunity for those who otherwise lack access to “formal” publishing spaces, including local aid workers and the recipients of aid programs, commonly known as “beneficiaries.”\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/sponsor_telekommunisten.jpg\" alt=\"Telekommunisten\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                The Telekommunist Manifesto is an exploration of class conflict and property, born from a realization of the primacy of economic capacity in social struggles. Emphasis is placed on the distribution of productive assets and their output. The interpretation here is always tethered to an understanding that wealth and power are intrinsically linked, and only through the for- mer can the latter be achieved. As a collective of intellectual workers, the work of Telekom- munisten is very much rooted in the free software and free culture communities. However, a central premise of this Manifesto is that engaging in software development and the produc- tion of immaterial cultural works is not enough. The communization of immaterial property alone cannot change the distribution of material productive assets, and therefore cannot eliminate exploitation; only the self-organization of production by workers can.\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n      <br><br>\n\n      <div class=\"rich-text\"><h4>Non-Profit Champions</h4></div>\n\n        <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/partners_world-aid-corps.jpg\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Non profit partners are eager to develop public-private partnerships, use technology, and link with social enterprises in order to appear innovative. Our non profit champion, <a href= https://www.facebook.com/WorldAidCorps>World Aid Corps,</a> brings us access to the global base of the underprivileged pyramid, where rapid scale at minimal cost enables quick growth and revenue for our investors and shareholders.<br><br>\nBy leveraging trust that communities place in WAC we will work at large scale to encourage community members to contribute small amounts of their hard-earned income to access white privilege, thereby enabling individuals in poverty-stricken areas to move away from primitive community-based socio-economic models of development towards modern, consumer-based digital development and global economies.<br><br> If your non profit organization would like to help us reach the base of the pyramid so that we can extract small amounts of revenue at scale in parts of the world where both markets and governments have historically failed to ensure people’s basic human rights, please reach out to us via <a href=\"http://twitter.com/whitesaveme\">Twitter</a> or <a href=\"#contact\">email.</a>\n\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n      <br><br>\n       <div class=\"rich-text\"><h4>Private Sector Partners</h4></div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n            <img src=\"img/RCoK-01.png\" alt=\"Random Chats of Kindness\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Random Chats of Kindness is our partner for “Random Chats of Privilege,” as we like to call our model. This unique software model allows us to connect Saviors and Savees quickly and conveniently to deliver privilege through cutting edge video.\n\n\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/Boober-01.png\" alt=\"Boober\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Delivering kittens to the workplace and partnering with multilateral organizations to support women's empowerment was one thing, but Boober was looking to help out in a way that would really make a difference while also improving our company's reputation. Boober and <strong>White</strong>Save.me, will process Savee support requests through Boober’s patented disruptive transportation system and deliver Saviors in the flesh to the underprivileged, who can track the location of their savior while they wait. (Premium Plan required. NYC pilot, pending global expansion).\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n    </div>\n</div>\n";
+  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Silver bullet solutions with gold quality partners </h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n          <div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Our Partners</h4>\n                <hr><h5>Our Public-Private Partnerships equal scale, profit and social good.</p>\n\n                </div>\n            </div>\n         </div>\n       </div>\n   </div>\n\n         <div class=\"rich-text\"><h4>Private Sector Partners</h4></div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n            <img src=\"img/RCoK-01.png\" alt=\"Random Chats of Kindness\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Random Chats of Kindness is our partner for “Random Chats of Privilege,” as we like to call our model. This unique software model allows us to connect Saviors and Savees quickly and conveniently to deliver privilege through cutting edge video.\n\n\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/Buber-01.png\" alt=\"Buber\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Delivering kittens to the workplace and partnering with multilateral organizations to support women's empowerment was one thing, but Buber was looking to help out in a way that would really make a difference while also improving our company's reputation. Buber and <strong>White</strong>Save.me, will process Savee support requests through Buber’s patented disruptive transportation system and deliver Saviors in the flesh to the underprivileged, who can track the location of their savior while they wait. (Premium Plan required. NYC pilot, pending global expansion).\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n<div class=\"rich-text\"><h4>Non-Profit Champions</h4></div>\n\n        <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/partners_world-aid-corps.jpg\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Non profit partners are eager to develop public-private partnerships, use technology, and link with social enterprises in order to appear innovative. Our non profit champion, <a href= https://www.facebook.com/WorldAidCorps>World Aid Corps,</a> brings us access to the global base of the underprivileged pyramid, where rapid scale at minimal cost enables quick growth and revenue for our investors and shareholders.<br><br>\nBy leveraging trust that communities place in WAC we will work at large scale to encourage community members to contribute small amounts of their hard-earned income to access white privilege, thereby enabling individuals in poverty-stricken areas to move away from primitive community-based socio-economic models of development towards modern, consumer-based digital development and global economies.<br><br> If your non profit organization would like to help us reach the base of the pyramid so that we can extract small amounts of revenue at scale in parts of the world where both markets and governments have historically failed to ensure people’s basic human rights, please reach out to us via <a href=\"http://twitter.com/whitesaveme\">Twitter</a> or <a href=\"#contact\">email.</a>\n\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n      <br><br>\n\n<div class=\"section\">\n    <div class=\"rich-text\"><h4>(Actual Sponsors)</h4></div>\n\n        <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/sponsor_evil-genius-logo.png\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                Evil Genius Publishing is a micro-publisher focused on the humanitarian aid industry. Our goal is to publish books that actual aid workers actually want to read (as opposed to the vast majority of what’s written for the aid world which is absurdly dry, dull, boring, verbose, over-written, pretentious, self-important, and otherwise inaccessible to mere mortals like most of us). We are also passionate about providing opportunity for those who otherwise lack access to “formal” publishing spaces, including local aid workers and the recipients of aid programs, commonly known as “beneficiaries.”\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n       <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s4 l2\">\n              <img src=\"img/sponsor_telekommunisten.jpg\" alt=\"Telekommunisten\" class=\"responsive-img\" >\n            </div>\n            <div class=\"col s8 l10\">\n              <span class=\"black-text\">\n                The Telekommunist Manifesto is an exploration of class conflict and property, born from a realization of the primacy of economic capacity in social struggles. Emphasis is placed on the distribution of productive assets and their output. The interpretation here is always tethered to an understanding that wealth and power are intrinsically linked, and only through the for- mer can the latter be achieved. As a collective of intellectual workers, the work of Telekom- munisten is very much rooted in the free software and free culture communities. However, a central premise of this Manifesto is that engaging in software development and the produc- tion of immaterial cultural works is not enough. The communization of immaterial property alone cannot change the distribution of material productive assets, and therefore cannot eliminate exploitation; only the self-organization of production by workers can.\n\n\n              </span>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\t\t\t</div>\n\n\t</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -446,7 +446,7 @@ System.register("pages/terms.html!github:systemjs/plugin-text@0.0.2", [], true, 
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Simple and useful</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"container\">\n\n    <div class=\"row\">\n        <div class=\"col m12 s12 light\">\n         <p></p><div class=\"rich-text\"><h4>Terms and conditions for <strong>White</strong>Save.Me</h4>\n         <hr><h5>By using this site you agree to the following terms and conditions.</h5>\n         </div>\n        </div>\n  </div>\n     \n     \n     <div class=\"section\">\n       <p> Effective Date: 07/02/2015 </p>\n       <p>Welcome to WhiteSave.me&#8482; (the “Web site”) and its affiliates (collectively,\"\"we,\" and \"us\"). WhiteSave.me provides the services on this Web site (collectively, \"Services\") to you subject to the following Terms of Use (\"Terms\"). </p>\n       <p>1) Acceptance of Terms of Use </p>\n       <p>Please carefully read the following Terms before using the Web site. By accessing and using the Web site or Services, or the content displayed on, posted to, transmitted, streamed, or distributed or otherwise made available on or through the Web site, including without limitation, User Materials and Submissions (collectively, \"Content\"), you acknowledge that you have read, understood and agree to be bound by these Terms which form an agreement that is effective as if you had signed it. If at any time you do not agree to these Terms, please do not access or use the Web site or any of its Content or Services. YOU MUST BE AT LEAST 13 YEARS OF AGE TO VIEW, ACCESS, OR USE THIS WEB SITE, CONTENT OR SERVICES. IF YOU ARE UNDER 13 YEARS OF AGE, YOU ARE NOT PERMITTED TO ACCESS THIS WEB SITE, CONTENT OR SERVICES FOR ANY REASON. YOUR ACCESS TO, USE OF, AND BROWSING OF THE WEB SITE AND ITS CONTENTS AND SERVICES ARE SUBJECT TO ALL TERMS CONTAINED HEREIN AND ALL APPLICABLE LAWS AND REGULATIONS. BY VIEWING, USING, OR ACCESSING THIS WEB SITE, YOU REPRESENT AND WARRANT THAT YOU ARE AT LEAST 18 YEARS OF AGE AND YOU AGREE TO BE BOUND BY THESE TERMS. IF YOU ARE UNDER THE AGE OF 13 YOU MAY NOT USE, VIEW, OR ACCESS THIS WEBSITE, YOUR PERMISSION TO USE, VIEW, OR ACCESS THE WEB SITE, CONTENT OR SERVICES IS AUTOMATICALLY AND IMMEDIATELY REVOKED. <strong>YOU MUST DISCONTINUE USE OF THIS WEB SITE IMMEDIATELY. PLEASE ALSO LEAVE THE WEBSITE IF YOU DO NOT AGREE TO BE BOUND BY THESE TERMS.</strong>&nbsp;</p>\n       <p>These Terms may be revised or updated from time to time. Accordingly, you should check the Terms regularly for updates. You can determine when the Terms were last revised by referring to the \"Last Revised\" legend that will be located at the top of this page. Any changes in these Terms take effect upon posting and will only apply to use of the Web site, Content, or Services after that date. Each time you access, use or browse the Web site, Content, or Services you signify your acceptance of the then-current Terms. </p>\n       <p>2) Permitted Users of Web site The Web site, Content, or Services are solely directed to persons at least 13 years of age. If you are under the age of 13 you may not use, view, or access this Website and you must leave this Web site immediately. If you are at least 13 years of age and agree to these Terms, you are permitted to use, view, and access this Website, Content, or Services. If you do not agree to be bound by these Terms, you should not and are not permitted to use, view, and access this Website, Content, or Services and you must immediately discontinue your use of the Website. By viewing this site, you agree that such viewing and reading does not violate the laws or standards imposed by your town, city, state or country. We are not responsible or liable for any content, communication, or other use or access of the Web site, Content, or Services by users of this Web site in violation of these Terms. </p>\n       <p>WhiteSave.me and the Web site do not knowingly collect information from children under age 13. If you are under age 13, you are not permitted to use the Web site and must exit immediately. If you are under age 13, you are not permitted to submit any personally identifiable information to the Web site. If you provide information to WhiteSave.me through the Web site or any other part of the Web site, Content, or Services you represent to WhiteSave.me that you are 13 years of age or older. </p>\n       <p>3) Permitted Use of Web site The Content (other than Submissions which are governed by paragraph 3 of Section 8(d)), Web site, and Services are the sole and exclusive property of WhiteSave.me and/or its licensors. You agree not to reproduce, republish, upload, post, duplicate, modify, copy, alter, distribute, create derivative works from, sell, resell, transmit, transfer, display, perform, license, assign or publish, or exploit for any commercial purpose, any portion of the Web site, Content or Services other than as expressly authorized by WhiteSave.me in writing, including without limitation, posting or transmitting any advertising, sponsorships, or promotions on, in or through the Service, Website, or Content. Use of the Web site or the Content or Services in any way not expressly permitted by these Terms is prohibited, and may be actionable under United States or international law. You agree not to access the Website, Content or Services through any technology or means other than the video streaming pages of the Service itself or other explicitly authorized means WhiteSave.me may designate. You agree not to use or launch any automated system, including without limitation, \"robots,\" \"spiders,\" or \"offline readers,\" that accesses the Website, Content, or Service. WhiteSave.me reserves the right to remove or suspend access to the Website, Content, or Services without prior notice. </p>\n       <p>You may not duplicate, publish, display, modify, alter, distribute, perform, reproduce, copy, sell, resell, exploit, or create derivative works from any part of the Web site or the Content or Services unless expressly authorized by WhiteSave.me in writing or as expressly set forth herein. You agree that you will not remove, obscure, or modify any acknowledgements, credits or legal, intellectual property or proprietary notices, or marks, or logos contained on the Web site or in the Content or Services. You agree not to collect or harvest any personally identifiable information, from the Service, nor to use the communication systems provided by the Service (e.g., comments) for any commercial solicitation purposes. You agree not to solicit, for commercial purposes, any users of the Service or Web site. In your use of the Web site, Content or Service, you will comply with all applicable laws, regulations, rules, decrees, and ordinances. </p>\n       <p>You understand that when using the Service, you will be exposed to Content from a variety of sources, and that WhiteSave.me is not responsible for the accuracy, usefulness, safety, or intellectual property rights of or relating to such Content. You further understand and acknowledge that you may be exposed to Content that is inaccurate, offensive, indecent, objectionable, sexually explicit, or that contains nudity, and you agree to waive, and hereby do waive, any legal or equitable rights or remedies you have or may have against WhiteSave.me with respect thereto. Our community reporting system does it's best to filter out non adult users of the site. You should still be aware that you may encounter someone under the age of 18 that has not yet been filtered. If you do please report them immediately by clicking report. Exposing yourself to children is a serious crime and we are working closely with law enforcement to help them find and prosecute those responsible. Special terms may apply to some products or Services offered on the Web site, or to any sweepstakes, contests, or promotions that may be offered on the Web site. Such special terms (which may include official rules and expiration dates) may be posted in connection with the applicable product, service, sweepstakes, contest, promotion, feature or activity. By entering such sweepstakes or contests or participating in such promotions you will become subject to those terms or rules. We urge you to read the applicable terms or rules, which are linked from the particular activity, and to review our Privacy Policy which, in addition to these Terms, governs any information you submit in connection with such sweepstakes, contests and promotions. Any such special terms or rules are in addition to these Terms and, in the event of a conflict, any such terms shall prevail over these Terms. </p>\n       <p>4) Privacy Policy Please review the Privacy Policy at /privacy/ for the Web site. By using or visiting this Website or the Content or Services, you signify your agreement to the Privacy Policy. If you do not agree with the Privacy Policy at /privacy/, you are not authorized to use the Web site. The terms of the Privacy Policy are incorporated herein by this reference. </p>\n       <p>5) Account Password and Security The Web site may contain features that require registration (e.g., when you register for an account or a contest). You agree to provide accurate, current and complete information about yourself as prompted. If you provide any information that is inaccurate, not current or incomplete, or WhiteSave.me has reasonable grounds to suspect that such information is inaccurate, not current or incomplete, WhiteSave.me may remove or de-register you from this Web site or contest, at its sole discretion. WhiteSave.me reserves the right to take appropriate steps against any person or entity that intentionally provides false or misleading information to gain access to portions of the Web site that would otherwise be denied. At the time you register for online account access, you may be required to select a username and password to be used in conjunction with your account. You are responsible for maintaining the confidentiality of your password, if any, and are fully responsible for all uses of your password and transactions conducted in your account, whether by you or others. You agree to (a) log out of your account at the end of each session; (b) keep your password confidential and not share it with anyone else; and (c) immediately notify WhiteSave.me of any unauthorized use of your password or account or any other breach of security. WhiteSave.me is authorized to act on instructions received through use of your password, and is not liable for any loss or damage arising from your failure to comply with this Section. You agree not to circumvent, disable or otherwise interfere with security-related features of the Service or features that prevent or restrict use or copying of any Content or enforce limitations on use of the Service or the Content therein. </p>\n       <p>6) Proprietary Rights You acknowledge and agree that, as between WhiteSave.me and you, all right, title, and interest in and to the Web site, Content, and Services including without limitation any patents, copyrights, trademarks, trade secrets, inventions, know-how, and all other intellectual property rights are owned exclusively by WhiteSave.me or its licensors, are valid and enforceable, and are protected by United States intellectual property laws and other applicable laws. Any attempt to use, redistribute, reverse engineer, or redesign the information, code, videos, textual or visual materials, graphics, or modules contained on the Web site for any other purpose is prohibited. WhiteSave.me and its licensors reserve all rights not expressly granted in and to the Website, Service and the Content. </p>\n       <p>Copyright: As between you and WhiteSave.me, you acknowledge and agree that all Content and Services included in the Web site, such as text, graphics, logos, icons, videos, images, media, data, audio, visual, animation, software and other information and materials, is the copyright and property of WhiteSave.me or its content suppliers and protected by U.S. and international copyright laws. Permission is granted to electronically copy and print hard copy portions of the Web site or Content for the sole purpose of using the Web site as a personal internal resource or otherwise for its intended purposes, provided that all hard copies contain all copyrights and trademarks, and other applicable intellectual property and proprietary marks and notices. Any other use, including the reproduction, modification, distribution, transmission, republication, display or performance, of the Website, Content, or Services are strictly prohibited. </p>\n       <p>Trademarks: The trademarks, service marks, logos, slogans, trade names and trade dress used on the Web site are proprietary to WhiteSave.me or its licensors. Without limiting the foregoing, \"WhiteSave.me\" is the trademark of WhiteSave.me. Unauthorized use of any trademark of WhiteSave.me may be a violation of federal or state trademark laws. Any third party names or trademarks referenced in the Web site do not constitute or imply affiliation, endorsement or recommendation by WhiteSave.me, or of WhiteSave.me by the third parties. </p>\n       <p>7) Your Indemnity of WhiteSave.me YOU AGREE TO INDEMNIFY, DEFEND AND HOLD WHITESAVE.ME, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, REPRESENTATIVES, SUBSIDIARIES, AFFILIATES, LICENSORS, PARTNERS, SERVICE PROVIDERS AND OTHERS ACTING IN CONCERT WITH IT, HARMLESS FROM ANY LOSSES, LIABILITIES, CLAIMS, DAMAGES, OBLIGATIONS, DEMANDS, COSTS OR DEBTS, AND EXPENSES INCLUDING WITHOUT LIMITATION REASONABLE ATTORNEYS' FEES, MADE BY YOU OR ON YOUR BEHALF OR BY ANY THIRD PARTY DUE TO OR ARISING OUT OF (A) YOUR CONNECTION, POSTING, OR SUBMISSION TO OR USE OF THE WEB SITE OR THE CONTENT OR SERVICES OR SUBMISSION; (B) YOUR VIOLATION OF THESE TERMS, ANY APPLICABLE LAWS, OR THE RIGHTS OF WhiteSave.me OR ANY THIRD PARTY, INCLUDING WITHOUT LIMITATION ANY COPYRIGHT, PROPERTY, OR PRIVACY RIGHT; OR (C) ANY CLAIM THAT YOUR SUBMISSION CAUSED DAMAGE TO A THIRD PARTY. </p>\n       <p>8) User Generated Content </p>\n       <p>a) Communications Services: The Web site may contain areas for you to leave comments or feedback, chat areas, blogs, bulletin board services, focus groups, forums, sweepstakes, contests, games, communities, calendars, and/or other message or communication facilities designed to enable you and others to communicate with WhiteSave.me and other users of the Web site (collectively, \"Communication Services\"). The opinions expressed in the Communication Services reflect solely the opinion(s) of the participants and may not reflect the opinion(s) of WhiteSave.me. You acknowledge that your submissions to the Web site may be or become available to others. You agree only to post, send and receive messages and materials that are in accordance with these Terms and related to the particular Communication Service. </p>\n       <p>b) Prohibited Actions: You agree that the following actions are prohibited and constitute a material breach of these Terms. This list is not meant to be exhaustive, and WhiteSave.me reserves the right to determine what types of conduct it considers to be inappropriate use of the Web site. In the case of inappropriate use, WhiteSave.me or its designee may take such measures as it determines in its sole discretion. By way of example, and not as a limitation, you agree that when using the Web site, Content, Services or a Communication Service, you will not: 1) Use the Web site, Content or Services for any purpose or to take any actions in violation of local, state, national, or international laws, regulations, codes, or rules. 2) Violate any code of conduct or other guidelines which may be applicable for any particular Communication Service. 3) Take any action that imposes an unreasonable or disproportionately large load on the Web site's infrastructure or otherwise in a manner that may adversely affect performance of the Web site or restrict or inhibit any other user from using and enjoying the Communication Services or the Web site. 4) Use the Web site for unauthorized framing of or linking to, or access via automated devices, bots, agents, scraping, scripts, intelligent search or any similar means of access to the Content or Services. 5) Aggregate, copy, duplicate, publish, or make available any of the Content or Services or any other materials or information available from the Web site to third parties outside the Web site in any manner or any other materials or information available from the Web site. 6) Defame, bully, abuse, harass, stalk, demean, threaten or discriminate against others or otherwise violate the rights (such as rights of privacy and publicity) of others or reveal another user’s personal information e.g. hate speech. 7) Publish, post, upload, distribute or disseminate any defamatory, infringing, or unlawful topic, name, material, content, video, image, audio, caption, or information e.g. animal abuse, drug or substance abuse, accidents, dead bodies and similar items. You are not permitted to provide a Submission that contains graphic or gratuitous violence (on yourself or others) or shows yourself or someone else getting hurt, attacked, or humiliated. 8) Upload or download files that contain software or other material protected by intellectual property laws or other laws, unless you own or control the rights, titles, or interests thereto or have received all necessary consents or rights. 9) Upload or transmit files that contain viruses, corrupted files, or any other similar software or programs that may damage the operation of another's computer. 10) Use the Web site to make available unsolicited advertising or promotional materials, spam, pyramid schemes, chain letters, or similar forms of unauthorized advertising or solicitation or conduct or forward surveys. 11) Harvest or otherwise collect information about others, including email addresses, without their consent. 12) Download any file or material posted by another user of a Communication Service that you know, or reasonably should know, cannot be legally distributed in such manner. 13) Falsify or delete any author attributions, legal or other notices, or proprietary designations or labels of origin or source. 14) Restrict or inhibit any other user from using and enjoying the Communication Services. 15) Engage in any other action that, in the judgment of WhiteSave.me, exposes it or any third party to potential liability or detriment of any type. </p>\n       <p>If you use, view, or access this Web site in contravention of these Terms, or if you have repeatedly violated these Terms or a third party's copyright, we reserve the right to terminate the permissions or rights granted to you by WhiteSave.me and we reserve all of our rights under this Agreement, at law and in equity. </p>\n       <p>c) User Materials: Any and all content, comments, views, information, data, text, video, image, captions, music, sound, graphics, photos, software, code, audio, sound, music, audio visual combinations, interactive features, feedback, documentation, photographs, discussions, news, articles, messages, postings, listings, and other materials, viewed on, accessed through, displayed on, posted to, transmitted, streamed, or distributed or otherwise made available through the Web site, Services or the Communication Services by users or other third parties (\"User Materials\") are strictly those of the person from which such User Materials originated, who is solely responsible for its content. Use of or reliance on User Materials is entirely at your own risk and WhiteSave.me expressly disclaims any and all liability in connection with User Materials. WhiteSave.me does not validate, monitor, or endorse any User Materials of any user or other licensor, or any opinion, recommendation, or advice expressed therein nor vouch for their reliability. Under no circumstances will WhiteSave.me or its suppliers or agents be liable in any way for any User Materials. </p>\n       <p>You acknowledge and agree that WhiteSave.me may or may not pre-screen or monitor User Materials, but that it and its designees have the right (but not the obligation) in their sole discretion to pre-screen, monitor, refuse, delete, move, remove, suspend, block, and/or restrict access to the Website and any Content or User Materials that are available via the Web site. You understand that by using the Web site, you may be exposed to User Materials that you may consider offensive or objectionable or that may contain nudity or adult oriented or sexually explicit material. Some of the Content on this Web site may offend you. If you think that the Content violates these Terms, then \"tag\" or \"flag\" the video stream you're watching to submit it for review by us. You agree that you must evaluate, and bear all risks associated with, the use or exposure to any User Materials posted by others. </p>\n       <p>Without limiting the foregoing, WhiteSave.me and its designees have the right to temporarily or permanently remove, delete, block, suspend or restrict your account or access to the Website or any Content or User Materials on the Website that violate these Terms or are otherwise objectionable, or offensive in WhiteSave.me sole discretion, including without limitation removing or substituting other words for foul or inappropriate language. You agree WhiteSave.me shall have no liability for such removal, deletion, blocking, suspension, or restriction or any of the actions taken pursuant to this Section. </p>\n       <p>You further acknowledge and agree that you will not rely on this Web site or any Content or Services available on or through the Web site. We are not responsible for any errors or omissions in the User Materials or hyperlinks embedded therein or for any results obtained from the use of such information. Under no circumstances will WhiteSave.me or its suppliers or agents be liable for any loss or damage caused by your reliance on such User Materials. </p>\n       <p>Except as otherwise expressly permitted under copyright law or as otherwise expressly set forth herein, you will not copy, redistribute, retransmits, publish or commercially exploit the downloaded Content without the express permission of WhiteSave.me and the copyright owner. You may not sell, lease or rent access to or use of the Web site or its Services. You shall not use this Web site or any Content or Services at any time for any purpose that is unlawful or prohibited by these Terms and other conditions and notices on the Web site and shall comply with all applicable local, state, federal, national or international statutes, rules, regulations, ordinances, decrees, laws, codes, orders, regulations, or treaties of any government or regulatory body of any jurisdiction. You shall not use the Web site in any manner that could damage, disable, impair or interfere with any other user's use of the Web site or Services or Content. You may not attempt to gain unauthorized access to the Web site through hacking or any other unauthorized means. You may not attempt to obtain or obtain any Content or Services through any means not intentionally made available to you through the Web site. </p>\n       <p>d) Submissions: You are solely responsible for the User Materials that you post, display, share, stream, email, transmit or otherwise make available via the Web site or Services (\"Submission\"). All Submissions are subject to these Terms and you agree that you will not submit any Submission that is in violation of these Terms. You understand that WhiteSave.me does not guarantee any confidentiality with respect to any Submissions you submit. WhiteSave.me is under no obligation to post or use any Submission and may remove, delete, block, suspend, terminate, or restrict access to any Submission at any time in its sole discretion. You acknowledge and agree that WhiteSave.me is entitled to remove, delete, block, suspend, terminate, or restrict your Submission or account or your access to the Website, Content, or Services permanently or temporarily and without prior notice, if WhiteSave.me deems that you have been, or you have been identified by other users to be (either once or repeatedly), offensive in your Submission or if your use of the Website, Services, or Content violates these Terms. For the avoidance of doubt, if your Submission is \"skipped,\" \"flagged,\" \"reported\" or \"tagged\" by other users either once or repeatedly for the foregoing reasons, then we reserve the rights to perform the foregoing actions. You agree WhiteSave.me shall have no liability for such removal, deletion, blocking, suspension, termination, or restriction or any of the actions taken pursuant to this Section. Violations of the Terms of Use may result in a warning notification or termination of your account. If you violate these Terms we reserve the right to temporarily or permanently terminate your account or terminate or block your access to the Website, Content, or Services. </p>\n       <p>By making a Submission, you represent and warrant that your Submission is true, your own original work, and does not infringe any other person's or entity's rights, and that you and any other person mentioned or shown in your Submission release any and all claims concerning WhiteSave.me or its designees' use, posting, copying, modification, transmission, or distribution of the Submission or any part thereof. You represent and warrant that you own all right, title, and interest, including copyright, to your Submission, and hold all necessary licenses or releases concerning the contents of your Submission and consents and rights to use, post, copy, modify, distribute, stream, or transmit your Submission. You agree that you are solely responsible for you own Submission and the consequences of submitting and streaming, transmitting, displaying or publishing your Submission on the Service. You must evaluate and bear all risks associated with your disclosure of any Submission. </p>\n       <p>By making a Submission, you grant WhiteSave.me and its licensees, assignees and designees an irrevocable, assignable, transferable, fully sub-licensable (through multiple levels of sublicensees), perpetual, world-wide, royalty-free, fully paid-up, non-exclusive right and license, in their sole discretion, to use, distribute, stream, reproduce, post, modify, copy, combine, adapt, publish, translate, rent, lease, sell, resell, perform or display (whether publicly or otherwise), make available online or electronically transmit, and perform, and create derivative works of your Submission (in whole or in part), along with your name or any part thereof and city/town/country of residency, in WhiteSave.me’s discretion, on the Web site or elsewhere, and to use, copy, adapt, distribute, or incorporate all or any part of your Submission into other advertising, promotion, research, analysis or other materials in any format or medium or channels now known or later developed. You hereby waive any right to inspect such use and any claims based on title, privacy, confidentiality, publicity, defamation, misappropriation, intellectual property or similar claims for any use of your Submission. You also hereby grant each user of the Website, Content and Service a non-exclusive license to view, use, and access your Submission through the Website as permitted through the functionality of the Service and under these Terms. </p>\n       <p>9) Notice and Procedures for Making Claims of Copyright or Intellectual Property Infringement WhiteSave.me may, in appropriate circumstances and at its sole discretion, disable and/or terminate use of the Website, Content, or Services by users who infringe the intellectual property of others. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please provide WhiteSave.me’s Copyright Agent a Notice containing the following information: 1) an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest; 2) a description of the copyrighted work or other intellectual property that you claim has been infringed; 3) a description of where the material that you claim is infringing is located on the Web site (providing URL(s) in the body of an email is the best way to help WhiteSave.me locate content quickly); 4) your name, address, telephone number, and email address; 5) a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; 6) a statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner's behalf. </p>\n       <p>If you believe in good faith that a notice of copyright infringement has been wrongly filed by WhiteSave.me against you, the DMCA permits you to send WhiteSave.me a counter-notice. </p>\n       <p>Notices and counter-notices must meet the then-current statutory requirements imposed by the DMCA; see http://www.copyright.gov/ for details. Notices of claims of copyright or other intellectual property infringement and counter-notices should be sent to WhiteSave.me Copyright Agent who can be reached in the following ways: </p>\n       <p>Mailing Address: help@whitesave.me </p>\n       <p>Make sure you know whether the Content that you have seen on WhiteSave.me infringes your copyright. If you are not certain what your rights are, or whether your copyright has been infringed, you should check with a legal adviser first. Be aware that there may be adverse legal consequences in your country if you make a false or bad faith allegation of copyright infringement by using this process. Please also note that the information provided in this legal notice may be forwarded to the person who provided the allegedly infringing Content. </p>\n       <p>10) Links Links to Other Websites and Search Results: The Web site may contain links to websites operated by other parties. The Web site provides these links to other websites as a convenience, and your use of these sites is at your own risk. The linked sites are not under the control of WhiteSave.me which is not responsible for the content available on third party sites. Such links do not imply endorsement of information or material on any other site and WhiteSave.me disclaims all liability with regard to your access to, use of or transactions with such linked websites. You acknowledge and agree that WhiteSave.me shall not be responsible or liable, directly or indirectly, for any damage, loss or other claim caused or alleged to be caused by or in connection with, access to, use of or reliance on the Website or any Content or Services available on or through any other site or resource. </p>\n       <p>Links to the Web site: You may link another website to the Web site subject to the following linking policy: (i) the appearance, position and other aspects of any link may not be such as to damage or dilute the reputation of WhiteSave.me or the Web site; (ii) the appearance, position and other attributes of the link may not create the false appearance that your site, business, organization or entity is sponsored by, endorsed by, affiliated with, or associated with WhiteSave.me or the Web site; (iii) when selected by a user, the link must display the Web site on full-screen and not within a \"frame\" on the linking website; and (iv) WhiteSave.me reserves the right to revoke its consent to the link at any time and in its sole discretion. </p>\n       <p>11) Modifications to Web site WhiteSave.me reserves the right at any time and from time to time to modify, suspend, block, terminate, or discontinue, temporarily or permanently, the Web site, Content, or Services, or any portion thereof, with or without notice. You agree that WhiteSave.me will not be liable to you or to any third party for any modification, suspension, blocking, termination, or discontinuance of the Web site, Content, or Services. </p>\n       <p>12) Suspension and Termination Rights WhiteSave.me reserves the right, at its sole discretion, immediately and without notice, to suspend or terminate your access to the Web site, Content, or Services or any part thereof for any reason, including without limitation any breach by you of these Terms. You agree that WhiteSave.me shall not be liable to you or any third party for any such suspension or termination. </p>\n       <p>13) Disclaimer THE WEB SITE AND CONTENT AND THE INFORMATION, SERVICES, PRODUCTS, SWEEPSTAKES, CONTESTS, DRAWINGS, OR OTHER ACTIVITIES OFFERED, CONTAINED IN OR ADVERTISED ON THE WEB SITE, INCLUDING WITHOUT LIMITATION TEXT, VIDEO, GRAPHICS AND LINKS, ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY LAW, AND ITS LICENSORS, SUPPLIERS AND RELATED PARTIES DISCLAIM ALL REPRESENTATIONS AND WARRANTIES, EXPRESS OR IMPLIED, WITH RESPECT TO THE WEBSITE AND CONTENT, INFORMATION, SERVICES, PRODUCTS AND MATERIALS AVAILABLE ON OR THROUGH THE WEBSITE, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, FREEDOM FROM COMPUTER VIRUS AND IMPLIED WARRANTIES ARISING FROM COURSE OF DEALING OR COURSE OF PERFORMANCE. YOUR USE OF THE WEB SITE OR ANY CONTENT OR SERVICES ARE ENTIRELY AT YOUR OWN RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WhiteSave.me EXCLUDES ALL WARRANTIES, CONDITIONS, TERMS OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THIS WEB SITE'S CONTENT OR THE CONTENT OF ANY WEB SITES LINKED TO THIS WEB SITE AND ASSUMES NO LIABILITY OR RESPONSIBILITY FOR ANY (I) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT, (II) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF OUR SERVICES, (III) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL, CONFIDENTIAL AND/OR FINANCIAL INFORMATION STORED THEREIN, (IV) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OUR SERVICES, (IV) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH OUR SERVICES BY ANY THIRD PARTY, AND/OR (V) ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR SUBMISSION OR THE USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES OR WEBSITE. WhiteSave.me DOES NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES OR ANY HYPERLINKED SERVICES OR FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WhiteSave.me WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION OR COMMUNICATION BETWEEN YOU AND ANY OTHER USER OR THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE. </p>\n       <p>Without limiting the foregoing, you are responsible for taking all necessary precautions to insure that any Content, Services, or access to the Web site is free of viruses or other harmful code. </p>\n       <p>14) Limitation on Liability: TO THE MAXIMUM EXTENT PERMITTED BY LAW, WhiteSave.me AND ITS RELATED PARTIES DISCLAIM ALL LIABILITY, WHETHER BASED IN CONTRACT, TORT (INCLUDING WITHOUT LIMITATION NEGLIGENCE), STRICT LIABILITY OR ANY OTHER THEORY ARISING OUT OF OR IN CONNECTION WITH THE WEB SITE, USE, INABILITY TO USE OR PERFORMANCE OF THE INFORMATION, CONTENT, SERVICES, PRODUCTS AND MATERIALS AVAILABLE FROM OR THROUGH THE WEB SITE. IN NO EVENT SHALL WhiteSave.me, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS OR ANY OF ITS AFFILIATED ENTITIES OR SUPPLIERS BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL, EXEMPLARY OR CONSEQUENTIAL LOSSES, EXPENSES, OR DAMAGES, EVEN IF THESE PERSONS AND ENTITIES HAVE BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OR THE EXISTENCE OF ANY LIMITED REMEDY. WITHOUT LIMITING THE FOREGOING, THE MAXIMUM AGGREGATE LIABILITY OF WhiteSave.me ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE WEB SITE OR THE CONTENT, INFORMATION, MATERIALS, PRODUCTS OR SERVICES ON OR THROUGH THE WEBSITES SHALL NOT EXCEED FIFTY DOLLARS (U.S.) </p>\n       <p>YOU SPECIFICALLY ACKNOWLEDGE THAT WhiteSave.me SHALL NOT BE LIABLE FOR CONTENT OR THE DEFAMATORY, INDECENT, OFFENSIVE, OBSCENE, SEXUALLY EXPLICIT, PORNOGRAPHIC, NUDE, OR ILLEGAL CONDUCT OR CONTENT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU. </p>\n       <p>Exclusions and Limitations: Because some jurisdictions do not allow limitations on how long an implied warranty lasts, or the exclusion or limitation of liability for consequential or incidental damages, the above limitations may not apply to you. This Limitation of Liability shall be to the maximum extent permitted by applicable law. </p>\n       <p>15) Notice Required by California Law Pursuant to California Civil Code Section 1789.3, users are entitled to the following specific consumer rights notice: The name, address and telephone number of the provider of this Web site is WhiteSave.me 244 5th Ave. #1835, New York, NY 10001, 8008033978. Complaints regarding this Web site, or the Content or Services or requests to receive further information regarding use of this Web site or the Content or Services may be sent to the above address or to help@whitesave.me The Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs may be contacted in writing at 1625 North Market Boulevard, Suite S202, Sacramento, CA 95834 or by telephone at (916) 574-7950 or (800) 952-5210. </p>\n       <p>16) Governing Law and Disputes These Terms shall be governed by, and will be construed under, the laws of the State of California, U.S.A., without regard to choice of law principles. You irrevocably agree to the exclusive jurisdiction by the federal and state courts located in Santa Clara County, California, U.S.A., to settle any dispute which may arise out of, under, or in connection with these Terms, as the most convenient and appropriate for the resolution of disputes concerning these Terms. ANY CAUSE OF ACTION OR CLAIM YOU MAY HAVE WITH RESPECT TO THESE TERMS, THE WEB SITE OR THE CONTENT OR SERVICES MUST BE COMMENCED WITHIN SIX (6) MONTHS AFTER THE CLAIM OR CAUSE OF ACTION ARISES OR SUCH CLAIM OR CAUSE OF ACTION SHALL BE BARRED. The Web site is controlled within the United States of America and directed to individuals residing in the United States. Those who choose to access the Web site from locations outside of the United States do so on their own initiative, and are responsible for compliance with local laws if and to the extent local laws are applicable. WhiteSave.me does not represent that the Web site, Content, or Services are appropriate outside the United States of America. WhiteSave.me reserves the right to limit the availability of the Website to any person, geographic area or jurisdiction at any time in its sole discretion. </p>\n       <p>17) Force Majeure WhiteSave.me shall not be liable for any delay or failure to perform resulting from causes outside its reasonable control or unforeseen circumstances such as acts of nature or God, fire, flood, earthquake, accidents, strikes, war, terrorism, governmental act, failure of or interruption in common carriers (including without limitation Internet service providers and web hosting providers) or utilities, or shortages of transportation facilities, fuel, energy, labor or materials. </p>\n       <p>18) Ability To Accept Terms of Service You represent and warrant that you are either at least 18 years of age (or for jurisdictions in which 18 years old is not the age of majority to legally enter into binding contracts, at least such age of majority for your jurisdiction), or an emancipated minor, or possess legal parental or guardian consent, and are fully able and competent to enter into the terms, conditions, obligations, affirmations, representations, and warranties set forth in these Terms, and to abide by and comply with these Terms. You acknowledge that we have given you a reasonable opportunity to review these Terms and that you have agreed to them. </p>\n       <p>19) Miscellaneous These Terms and the Privacy Policy and any other legal notices published by WhiteSave.me set forth the entire understanding and agreement between you and WhiteSave.me with respect to the subject matter hereof. If any provision of the Terms or the Privacy Policy is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of the Terms or the Privacy Policy shall remain in full force and effect. Headings are for reference only and in no way define, limit, construe or describe the scope or extent of such section. WhiteSave.me's failure to act with respect to any failure by you or others to comply with these Terms or the Privacy Policy does not waive its right to act with respect to subsequent or similar failures. You may not assign, transfer, sublicense or delegate these Terms or the Privacy Policy or your rights or obligations under these Terms or the Privacy Policy without the prior written consent of WhiteSave.me, but same may be assigned by WhiteSave.me without restriction. Any assignment, transfer, sublicense, or delegation in violation of this provision shall be null and void. There are no third party beneficiaries to these Terms or the Privacy Policy. </p>\n       <p>20) Questions? Please direct any questions you may have about these Terms, technical questions or problems with the Web site, or report a violation of these Terms, or comments or suggestions to our support team. </p>\n     </div>\n         \n         \n\n \n  \n</div>\n";
+  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Simple and useful</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div>\n\n<div class=\"container\">\n\n    <div class=\"row\">\n        <div class=\"col m12 s12 light\">\n         <p></p><div class=\"rich-text\"><h4>Terms and conditions for <strong>White</strong>Save.Me</h4>\n         <hr><h5>By using this site you agree to the following terms and conditions.</h5>\n         </div>\n        </div>\n  </div>\n\n\n     <div class=\"section\">\n       <p> Effective Date: 07/02/2015 </p>\n       <p>Welcome to WhiteSave.me&#8482; (the “Web site”) and its affiliates (collectively,\"\"we,\" and \"us\"). WhiteSave.me provides the services on this Web site (collectively, \"Services\") to you subject to the following Terms of Use (\"Terms\"). </p>\n       <p>1) Acceptance of Terms of Use </p>\n       <p>Please carefully read the following Terms before using the Web site. By accessing and using the Web site or Services, or the content displayed on, posted to, transmitted, streamed, or distributed or otherwise made available on or through the Web site, including without limitation, User Materials and Submissions (collectively, \"Content\"), you acknowledge that you have read, understood and agree to be bound by these Terms which form an agreement that is effective as if you had signed it. If at any time you do not agree to these Terms, please do not access or use the Web site or any of its Content or Services. YOU MUST BE AT LEAST 13 YEARS OF AGE TO VIEW, ACCESS, OR USE THIS WEB SITE, CONTENT OR SERVICES. IF YOU ARE UNDER 13 YEARS OF AGE, YOU ARE NOT PERMITTED TO ACCESS THIS WEB SITE, CONTENT OR SERVICES FOR ANY REASON. YOUR ACCESS TO, USE OF, AND BROWSING OF THE WEB SITE AND ITS CONTENTS AND SERVICES ARE SUBJECT TO ALL TERMS CONTAINED HEREIN AND ALL APPLICABLE LAWS AND REGULATIONS. BY VIEWING, USING, OR ACCESSING THIS WEB SITE, YOU REPRESENT AND WARRANT THAT YOU ARE AT LEAST 18 YEARS OF AGE AND YOU AGREE TO BE BOUND BY THESE TERMS. IF YOU ARE UNDER THE AGE OF 13 YOU MAY NOT USE, VIEW, OR ACCESS THIS WEBSITE, YOUR PERMISSION TO USE, VIEW, OR ACCESS THE WEB SITE, CONTENT OR SERVICES IS AUTOMATICALLY AND IMMEDIATELY REVOKED. <strong>YOU MUST DISCONTINUE USE OF THIS WEB SITE IMMEDIATELY. PLEASE ALSO LEAVE THE WEBSITE IF YOU DO NOT AGREE TO BE BOUND BY THESE TERMS.</strong>&nbsp;</p>\n       <p>These Terms may be revised or updated from time to time. Accordingly, you should check the Terms regularly for updates. You can determine when the Terms were last revised by referring to the \"Last Revised\" legend that will be located at the top of this page. Any changes in these Terms take effect upon posting and will only apply to use of the Web site, Content, or Services after that date. Each time you access, use or browse the Web site, Content, or Services you signify your acceptance of the then-current Terms. </p>\n       <p>2) Permitted Users of Web site The Web site, Content, or Services are solely directed to persons at least 13 years of age. If you are under the age of 13 you may not use, view, or access this Website and you must leave this Web site immediately. If you are at least 13 years of age and agree to these Terms, you are permitted to use, view, and access this Website, Content, or Services. If you do not agree to be bound by these Terms, you should not and are not permitted to use, view, and access this Website, Content, or Services and you must immediately discontinue your use of the Website. By viewing this site, you agree that such viewing and reading does not violate the laws or standards imposed by your town, city, state or country. We are not responsible or liable for any content, communication, or other use or access of the Web site, Content, or Services by users of this Web site in violation of these Terms. </p>\n       <p>WhiteSave.me and the Web site do not knowingly collect information from children under age 13. If you are under age 13, you are not permitted to use the Web site and must exit immediately. If you are under age 13, you are not permitted to submit any personally identifiable information to the Web site. If you provide information to WhiteSave.me through the Web site or any other part of the Web site, Content, or Services you represent to WhiteSave.me that you are 13 years of age or older. </p>\n       <p>3) Permitted Use of Web site The Content (other than Submissions which are governed by paragraph 3 of Section 8(d)), Web site, and Services are the sole and exclusive property of WhiteSave.me and/or its licensors. You agree not to reproduce, republish, upload, post, duplicate, modify, copy, alter, distribute, create derivative works from, sell, resell, transmit, transfer, display, perform, license, assign or publish, or exploit for any commercial purpose, any portion of the Web site, Content or Services other than as expressly authorized by WhiteSave.me in writing, including without limitation, posting or transmitting any advertising, sponsorships, or promotions on, in or through the Service, Website, or Content. Use of the Web site or the Content or Services in any way not expressly permitted by these Terms is prohibited, and may be actionable under United States or international law. You agree not to access the Website, Content or Services through any technology or means other than the video streaming pages of the Service itself or other explicitly authorized means WhiteSave.me may designate. You agree not to use or launch any automated system, including without limitation, \"robots,\" \"spiders,\" or \"offline readers,\" that accesses the Website, Content, or Service. WhiteSave.me reserves the right to remove or suspend access to the Website, Content, or Services without prior notice. </p>\n       <p>You may not duplicate, publish, display, modify, alter, distribute, perform, reproduce, copy, sell, resell, exploit, or create derivative works from any part of the Web site or the Content or Services unless expressly authorized by WhiteSave.me in writing or as expressly set forth herein. You agree that you will not remove, obscure, or modify any acknowledgements, credits or legal, intellectual property or proprietary notices, or marks, or logos contained on the Web site or in the Content or Services. You agree not to collect or harvest any personally identifiable information, from the Service, nor to use the communication systems provided by the Service (e.g., comments) for any commercial solicitation purposes. You agree not to solicit, for commercial purposes, any users of the Service or Web site. In your use of the Web site, Content or Service, you will comply with all applicable laws, regulations, rules, decrees, and ordinances. </p>\n       <p>You understand that when using the Service, you will be exposed to Content from a variety of sources, and that WhiteSave.me is not responsible for the accuracy, usefulness, safety, or intellectual property rights of or relating to such Content. You further understand and acknowledge that you may be exposed to Content that is inaccurate, offensive, indecent, objectionable, sexually explicit, or that contains nudity, and you agree to waive, and hereby do waive, any legal or equitable rights or remedies you have or may have against WhiteSave.me with respect thereto. Our community reporting system does it's best to filter out non adult users of the site. You should still be aware that you may encounter someone under the age of 18 that has not yet been filtered. If you do please report them immediately by clicking report. Exposing yourself to children is a serious crime and we are working closely with law enforcement to help them find and prosecute those responsible. Special terms may apply to some products or Services offered on the Web site, or to any sweepstakes, contests, or promotions that may be offered on the Web site. Such special terms (which may include official rules and expiration dates) may be posted in connection with the applicable product, service, sweepstakes, contest, promotion, feature or activity. By entering such sweepstakes or contests or participating in such promotions you will become subject to those terms or rules. We urge you to read the applicable terms or rules, which are linked from the particular activity, and to review our Privacy Policy which, in addition to these Terms, governs any information you submit in connection with such sweepstakes, contests and promotions. Any such special terms or rules are in addition to these Terms and, in the event of a conflict, any such terms shall prevail over these Terms. </p>\n       <p>4) Privacy Policy Please review the Privacy Policy at /privacy/ for the Web site. By using or visiting this Website or the Content or Services, you signify your agreement to the Privacy Policy. If you do not agree with the Privacy Policy at /privacy/, you are not authorized to use the Web site. The terms of the Privacy Policy are incorporated herein by this reference. </p>\n       <p>5) Account Password and Security The Web site may contain features that require registration (e.g., when you register for an account or a contest). You agree to provide accurate, current and complete information about yourself as prompted. If you provide any information that is inaccurate, not current or incomplete, or WhiteSave.me has reasonable grounds to suspect that such information is inaccurate, not current or incomplete, WhiteSave.me may remove or de-register you from this Web site or contest, at its sole discretion. WhiteSave.me reserves the right to take appropriate steps against any person or entity that intentionally provides false or misleading information to gain access to portions of the Web site that would otherwise be denied. At the time you register for online account access, you may be required to select a username and password to be used in conjunction with your account. You are responsible for maintaining the confidentiality of your password, if any, and are fully responsible for all uses of your password and transactions conducted in your account, whether by you or others. You agree to (a) log out of your account at the end of each session; (b) keep your password confidential and not share it with anyone else; and (c) immediately notify WhiteSave.me of any unauthorized use of your password or account or any other breach of security. WhiteSave.me is authorized to act on instructions received through use of your password, and is not liable for any loss or damage arising from your failure to comply with this Section. You agree not to circumvent, disable or otherwise interfere with security-related features of the Service or features that prevent or restrict use or copying of any Content or enforce limitations on use of the Service or the Content therein. </p>\n       <p>6) Proprietary Rights You acknowledge and agree that, as between WhiteSave.me and you, all right, title, and interest in and to the Web site, Content, and Services including without limitation any patents, copyrights, trademarks, trade secrets, inventions, know-how, and all other intellectual property rights are owned exclusively by WhiteSave.me or its licensors, are valid and enforceable, and are protected by United States intellectual property laws and other applicable laws. Any attempt to use, redistribute, reverse engineer, or redesign the information, code, videos, textual or visual materials, graphics, or modules contained on the Web site for any other purpose is prohibited. WhiteSave.me and its licensors reserve all rights not expressly granted in and to the Website, Service and the Content. </p>\n       <p>Copyright: As between you and WhiteSave.me, you acknowledge and agree that all Content and Services included in the Web site, such as text, graphics, logos, icons, videos, images, media, data, audio, visual, animation, software and other information and materials, is the copyright and property of WhiteSave.me or its content suppliers and protected by U.S. and international copyright laws. Permission is granted to electronically copy and print hard copy portions of the Web site or Content for the sole purpose of using the Web site as a personal internal resource or otherwise for its intended purposes, provided that all hard copies contain all copyrights and trademarks, and other applicable intellectual property and proprietary marks and notices. Any other use, including the reproduction, modification, distribution, transmission, republication, display or performance, of the Website, Content, or Services are strictly prohibited. </p>\n       <p>Trademarks: The trademarks, service marks, logos, slogans, trade names and trade dress used on the Web site are proprietary to WhiteSave.me or its licensors. Without limiting the foregoing, \"WhiteSave.me\" is the trademark of WhiteSave.me. Unauthorized use of any trademark of WhiteSave.me may be a violation of federal or state trademark laws. Any third party names or trademarks referenced in the Web site do not constitute or imply affiliation, endorsement or recommendation by WhiteSave.me, or of WhiteSave.me by the third parties. </p>\n       <p>7) Your Indemnity of WhiteSave.me YOU AGREE TO INDEMNIFY, DEFEND AND HOLD WHITESAVE.ME, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, REPRESENTATIVES, SUBSIDIARIES, AFFILIATES, LICENSORS, PARTNERS, SERVICE PROVIDERS AND OTHERS ACTING IN CONCERT WITH IT, HARMLESS FROM ANY LOSSES, LIABILITIES, CLAIMS, DAMAGES, OBLIGATIONS, DEMANDS, COSTS OR DEBTS, AND EXPENSES INCLUDING WITHOUT LIMITATION REASONABLE ATTORNEYS' FEES, MADE BY YOU OR ON YOUR BEHALF OR BY ANY THIRD PARTY DUE TO OR ARISING OUT OF (A) YOUR CONNECTION, POSTING, OR SUBMISSION TO OR USE OF THE WEB SITE OR THE CONTENT OR SERVICES OR SUBMISSION; (B) YOUR VIOLATION OF THESE TERMS, ANY APPLICABLE LAWS, OR THE RIGHTS OF WhiteSave.me OR ANY THIRD PARTY, INCLUDING WITHOUT LIMITATION ANY COPYRIGHT, PROPERTY, OR PRIVACY RIGHT; OR (C) ANY CLAIM THAT YOUR SUBMISSION CAUSED DAMAGE TO A THIRD PARTY. </p>\n       <p>8) User Generated Content </p>\n       <p>a) Communications Services: The Web site may contain areas for you to leave comments or feedback, chat areas, blogs, bulletin board services, focus groups, forums, sweepstakes, contests, games, communities, calendars, and/or other message or communication facilities designed to enable you and others to communicate with WhiteSave.me and other users of the Web site (collectively, \"Communication Services\"). The opinions expressed in the Communication Services reflect solely the opinion(s) of the participants and may not reflect the opinion(s) of WhiteSave.me. You acknowledge that your submissions to the Web site may be or become available to others. You agree only to post, send and receive messages and materials that are in accordance with these Terms and related to the particular Communication Service. </p>\n       <p>b) Prohibited Actions: You agree that the following actions are prohibited and constitute a material breach of these Terms. This list is not meant to be exhaustive, and WhiteSave.me reserves the right to determine what types of conduct it considers to be inappropriate use of the Web site. In the case of inappropriate use, WhiteSave.me or its designee may take such measures as it determines in its sole discretion. By way of example, and not as a limitation, you agree that when using the Web site, Content, Services or a Communication Service, you will not: 1) Use the Web site, Content or Services for any purpose or to take any actions in violation of local, state, national, or international laws, regulations, codes, or rules. 2) Violate any code of conduct or other guidelines which may be applicable for any particular Communication Service. 3) Take any action that imposes an unreasonable or disproportionately large load on the Web site's infrastructure or otherwise in a manner that may adversely affect performance of the Web site or restrict or inhibit any other user from using and enjoying the Communication Services or the Web site. 4) Use the Web site for unauthorized framing of or linking to, or access via automated devices, bots, agents, scraping, scripts, intelligent search or any similar means of access to the Content or Services. 5) Aggregate, copy, duplicate, publish, or make available any of the Content or Services or any other materials or information available from the Web site to third parties outside the Web site in any manner or any other materials or information available from the Web site. 6) Defame, bully, abuse, harass, stalk, demean, threaten or discriminate against others or otherwise violate the rights (such as rights of privacy and publicity) of others or reveal another user’s personal information e.g. hate speech. 7) Publish, post, upload, distribute or disseminate any defamatory, infringing, or unlawful topic, name, material, content, video, image, audio, caption, or information e.g. animal abuse, drug or substance abuse, accidents, dead bodies and similar items. You are not permitted to provide a Submission that contains graphic or gratuitous violence (on yourself or others) or shows yourself or someone else getting hurt, attacked, or humiliated. 8) Upload or download files that contain software or other material protected by intellectual property laws or other laws, unless you own or control the rights, titles, or interests thereto or have received all necessary consents or rights. 9) Upload or transmit files that contain viruses, corrupted files, or any other similar software or programs that may damage the operation of another's computer. 10) Use the Web site to make available unsolicited advertising or promotional materials, spam, pyramid schemes, chain letters, or similar forms of unauthorized advertising or solicitation or conduct or forward surveys. 11) Harvest or otherwise collect information about others, including email addresses, without their consent. 12) Download any file or material posted by another user of a Communication Service that you know, or reasonably should know, cannot be legally distributed in such manner. 13) Falsify or delete any author attributions, legal or other notices, or proprietary designations or labels of origin or source. 14) Restrict or inhibit any other user from using and enjoying the Communication Services. 15) Engage in any other action that, in the judgment of WhiteSave.me, exposes it or any third party to potential liability or detriment of any type. </p>\n       <p>If you use, view, or access this Web site in contravention of these Terms, or if you have repeatedly violated these Terms or a third party's copyright, we reserve the right to terminate the permissions or rights granted to you by WhiteSave.me and we reserve all of our rights under this Agreement, at law and in equity. </p>\n       <p>c) User Materials: Any and all content, comments, views, information, data, text, video, image, captions, music, sound, graphics, photos, software, code, audio, sound, music, audio visual combinations, interactive features, feedback, documentation, photographs, discussions, news, articles, messages, postings, listings, and other materials, viewed on, accessed through, displayed on, posted to, transmitted, streamed, or distributed or otherwise made available through the Web site, Services or the Communication Services by users or other third parties (\"User Materials\") are strictly those of the person from which such User Materials originated, who is solely responsible for its content. Use of or reliance on User Materials is entirely at your own risk and WhiteSave.me expressly disclaims any and all liability in connection with User Materials. WhiteSave.me does not validate, monitor, or endorse any User Materials of any user or other licensor, or any opinion, recommendation, or advice expressed therein nor vouch for their reliability. Under no circumstances will WhiteSave.me or its suppliers or agents be liable in any way for any User Materials. </p>\n       <p>You acknowledge and agree that WhiteSave.me may or may not pre-screen or monitor User Materials, but that it and its designees have the right (but not the obligation) in their sole discretion to pre-screen, monitor, refuse, delete, move, remove, suspend, block, and/or restrict access to the Website and any Content or User Materials that are available via the Web site. You understand that by using the Web site, you may be exposed to User Materials that you may consider offensive or objectionable or that may contain nudity or adult oriented or sexually explicit material. Some of the Content on this Web site may offend you. If you think that the Content violates these Terms, then \"tag\" or \"flag\" the video stream you're watching to submit it for review by us. You agree that you must evaluate, and bear all risks associated with, the use or exposure to any User Materials posted by others. </p>\n       <p>Without limiting the foregoing, WhiteSave.me and its designees have the right to temporarily or permanently remove, delete, block, suspend or restrict your account or access to the Website or any Content or User Materials on the Website that violate these Terms or are otherwise objectionable, or offensive in WhiteSave.me sole discretion, including without limitation removing or substituting other words for foul or inappropriate language. You agree WhiteSave.me shall have no liability for such removal, deletion, blocking, suspension, or restriction or any of the actions taken pursuant to this Section. </p>\n       <p>You further acknowledge and agree that you will not rely on this Web site or any Content or Services available on or through the Web site. We are not responsible for any errors or omissions in the User Materials or hyperlinks embedded therein or for any results obtained from the use of such information. Under no circumstances will WhiteSave.me or its suppliers or agents be liable for any loss or damage caused by your reliance on such User Materials. </p>\n       <p>Except as otherwise expressly permitted under copyright law or as otherwise expressly set forth herein, you will not copy, redistribute, retransmits, publish or commercially exploit the downloaded Content without the express permission of WhiteSave.me and the copyright owner. You may not sell, lease or rent access to or use of the Web site or its Services. You shall not use this Web site or any Content or Services at any time for any purpose that is unlawful or prohibited by these Terms and other conditions and notices on the Web site and shall comply with all applicable local, state, federal, national or international statutes, rules, regulations, ordinances, decrees, laws, codes, orders, regulations, or treaties of any government or regulatory body of any jurisdiction. You shall not use the Web site in any manner that could damage, disable, impair or interfere with any other user's use of the Web site or Services or Content. You may not attempt to gain unauthorized access to the Web site through hacking or any other unauthorized means. You may not attempt to obtain or obtain any Content or Services through any means not intentionally made available to you through the Web site. </p>\n       <p>d) Submissions: You are solely responsible for the User Materials that you post, display, share, stream, email, transmit or otherwise make available via the Web site or Services (\"Submission\"). All Submissions are subject to these Terms and you agree that you will not submit any Submission that is in violation of these Terms. You understand that WhiteSave.me does not guarantee any confidentiality with respect to any Submissions you submit. WhiteSave.me is under no obligation to post or use any Submission and may remove, delete, block, suspend, terminate, or restrict access to any Submission at any time in its sole discretion. You acknowledge and agree that WhiteSave.me is entitled to remove, delete, block, suspend, terminate, or restrict your Submission or account or your access to the Website, Content, or Services permanently or temporarily and without prior notice, if WhiteSave.me deems that you have been, or you have been identified by other users to be (either once or repeatedly), offensive in your Submission or if your use of the Website, Services, or Content violates these Terms. For the avoidance of doubt, if your Submission is \"skipped,\" \"flagged,\" \"reported\" or \"tagged\" by other users either once or repeatedly for the foregoing reasons, then we reserve the rights to perform the foregoing actions. You agree WhiteSave.me shall have no liability for such removal, deletion, blocking, suspension, termination, or restriction or any of the actions taken pursuant to this Section. Violations of the Terms of Use may result in a warning notification or termination of your account. If you violate these Terms we reserve the right to temporarily or permanently terminate your account or terminate or block your access to the Website, Content, or Services. </p>\n       <p>By making a Submission, you represent and warrant that your Submission is true, your own original work, and does not infringe any other person's or entity's rights, and that you and any other person mentioned or shown in your Submission release any and all claims concerning WhiteSave.me or its designees' use, posting, copying, modification, transmission, or distribution of the Submission or any part thereof. You represent and warrant that you own all right, title, and interest, including copyright, to your Submission, and hold all necessary licenses or releases concerning the contents of your Submission and consents and rights to use, post, copy, modify, distribute, stream, or transmit your Submission. You agree that you are solely responsible for you own Submission and the consequences of submitting and streaming, transmitting, displaying or publishing your Submission on the Service. You must evaluate and bear all risks associated with your disclosure of any Submission. </p>\n       <p>By making a Submission, you grant WhiteSave.me and its licensees, assignees and designees an irrevocable, assignable, transferable, fully sub-licensable (through multiple levels of sublicensees), perpetual, world-wide, royalty-free, fully paid-up, non-exclusive right and license, in their sole discretion, to use, distribute, stream, reproduce, post, modify, copy, combine, adapt, publish, translate, rent, lease, sell, resell, perform or display (whether publicly or otherwise), make available online or electronically transmit, and perform, and create derivative works of your Submission (in whole or in part), along with your name or any part thereof and city/town/country of residency, in WhiteSave.me’s discretion, on the Web site or elsewhere, and to use, copy, adapt, distribute, or incorporate all or any part of your Submission into other advertising, promotion, research, analysis or other materials in any format or medium or channels now known or later developed. You hereby waive any right to inspect such use and any claims based on title, privacy, confidentiality, publicity, defamation, misappropriation, intellectual property or similar claims for any use of your Submission. You also hereby grant each user of the Website, Content and Service a non-exclusive license to view, use, and access your Submission through the Website as permitted through the functionality of the Service and under these Terms. </p>\n       <p>9) Notice and Procedures for Making Claims of Copyright or Intellectual Property Infringement WhiteSave.me may, in appropriate circumstances and at its sole discretion, disable and/or terminate use of the Website, Content, or Services by users who infringe the intellectual property of others. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please provide WhiteSave.me’s Copyright Agent a Notice containing the following information: 1) an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest; 2) a description of the copyrighted work or other intellectual property that you claim has been infringed; 3) a description of where the material that you claim is infringing is located on the Web site (providing URL(s) in the body of an email is the best way to help WhiteSave.me locate content quickly); 4) your name, address, telephone number, and email address; 5) a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; 6) a statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner's behalf. </p>\n       <p>If you believe in good faith that a notice of copyright infringement has been wrongly filed by WhiteSave.me against you, the DMCA permits you to send WhiteSave.me a counter-notice. </p>\n       <p>Notices and counter-notices must meet the then-current statutory requirements imposed by the DMCA; see http://www.copyright.gov/ for details. Notices of claims of copyright or other intellectual property infringement and counter-notices should be sent to WhiteSave.me Copyright Agent who can be reached in the following ways: </p>\n       <p>Mailing Address: help@whitesave.me </p>\n       <p>Make sure you know whether the Content that you have seen on WhiteSave.me infringes your copyright. If you are not certain what your rights are, or whether your copyright has been infringed, you should check with a legal adviser first. Be aware that there may be adverse legal consequences in your country if you make a false or bad faith allegation of copyright infringement by using this process. Please also note that the information provided in this legal notice may be forwarded to the person who provided the allegedly infringing Content. </p>\n       <p>10) Links Links to Other Websites and Search Results: The Web site may contain links to websites operated by other parties. The Web site provides these links to other websites as a convenience, and your use of these sites is at your own risk. The linked sites are not under the control of WhiteSave.me which is not responsible for the content available on third party sites. Such links do not imply endorsement of information or material on any other site and WhiteSave.me disclaims all liability with regard to your access to, use of or transactions with such linked websites. You acknowledge and agree that WhiteSave.me shall not be responsible or liable, directly or indirectly, for any damage, loss or other claim caused or alleged to be caused by or in connection with, access to, use of or reliance on the Website or any Content or Services available on or through any other site or resource. </p>\n       <p>Links to the Web site: You may link another website to the Web site subject to the following linking policy: (i) the appearance, position and other aspects of any link may not be such as to damage or dilute the reputation of WhiteSave.me or the Web site; (ii) the appearance, position and other attributes of the link may not create the false appearance that your site, business, organization or entity is sponsored by, endorsed by, affiliated with, or associated with WhiteSave.me or the Web site; (iii) when selected by a user, the link must display the Web site on full-screen and not within a \"frame\" on the linking website; and (iv) WhiteSave.me reserves the right to revoke its consent to the link at any time and in its sole discretion. </p>\n       <p>11) Modifications to Web site WhiteSave.me reserves the right at any time and from time to time to modify, suspend, block, terminate, or discontinue, temporarily or permanently, the Web site, Content, or Services, or any portion thereof, with or without notice. You agree that WhiteSave.me will not be liable to you or to any third party for any modification, suspension, blocking, termination, or discontinuance of the Web site, Content, or Services. </p>\n       <p>12) Suspension and Termination Rights WhiteSave.me reserves the right, at its sole discretion, immediately and without notice, to suspend or terminate your access to the Web site, Content, or Services or any part thereof for any reason, including without limitation any breach by you of these Terms. You agree that WhiteSave.me shall not be liable to you or any third party for any such suspension or termination. </p>\n       <p>13) Disclaimer THE WEB SITE AND CONTENT AND THE INFORMATION, SERVICES, PRODUCTS, SWEEPSTAKES, CONTESTS, DRAWINGS, OR OTHER ACTIVITIES OFFERED, CONTAINED IN OR ADVERTISED ON THE WEB SITE, INCLUDING WITHOUT LIMITATION TEXT, VIDEO, GRAPHICS AND LINKS, ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY LAW, AND ITS LICENSORS, SUPPLIERS AND RELATED PARTIES DISCLAIM ALL REPRESENTATIONS AND WARRANTIES, EXPRESS OR IMPLIED, WITH RESPECT TO THE WEBSITE AND CONTENT, INFORMATION, SERVICES, PRODUCTS AND MATERIALS AVAILABLE ON OR THROUGH THE WEBSITE, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, FREEDOM FROM COMPUTER VIRUS AND IMPLIED WARRANTIES ARISING FROM COURSE OF DEALING OR COURSE OF PERFORMANCE. YOUR USE OF THE WEB SITE OR ANY CONTENT OR SERVICES ARE ENTIRELY AT YOUR OWN RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WhiteSave.me EXCLUDES ALL WARRANTIES, CONDITIONS, TERMS OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THIS WEB SITE'S CONTENT OR THE CONTENT OF ANY WEB SITES LINKED TO THIS WEB SITE AND ASSUMES NO LIABILITY OR RESPONSIBILITY FOR ANY (I) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT, (II) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF OUR SERVICES, (III) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL, CONFIDENTIAL AND/OR FINANCIAL INFORMATION STORED THEREIN, (IV) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OUR SERVICES, (IV) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH OUR SERVICES BY ANY THIRD PARTY, AND/OR (V) ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR SUBMISSION OR THE USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES OR WEBSITE. WhiteSave.me DOES NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES OR ANY HYPERLINKED SERVICES OR FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WhiteSave.me WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION OR COMMUNICATION BETWEEN YOU AND ANY OTHER USER OR THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE. </p>\n       <p>Without limiting the foregoing, you are responsible for taking all necessary precautions to insure that any Content, Services, or access to the Web site is free of viruses or other harmful code. </p>\n       <p>14) Limitation on Liability: TO THE MAXIMUM EXTENT PERMITTED BY LAW, WhiteSave.me AND ITS RELATED PARTIES DISCLAIM ALL LIABILITY, WHETHER BASED IN CONTRACT, TORT (INCLUDING WITHOUT LIMITATION NEGLIGENCE), STRICT LIABILITY OR ANY OTHER THEORY ARISING OUT OF OR IN CONNECTION WITH THE WEB SITE, USE, INABILITY TO USE OR PERFORMANCE OF THE INFORMATION, CONTENT, SERVICES, PRODUCTS AND MATERIALS AVAILABLE FROM OR THROUGH THE WEB SITE. IN NO EVENT SHALL WhiteSave.me, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS OR ANY OF ITS AFFILIATED ENTITIES OR SUPPLIERS BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL, EXEMPLARY OR CONSEQUENTIAL LOSSES, EXPENSES, OR DAMAGES, EVEN IF THESE PERSONS AND ENTITIES HAVE BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OR THE EXISTENCE OF ANY LIMITED REMEDY. WITHOUT LIMITING THE FOREGOING, THE MAXIMUM AGGREGATE LIABILITY OF WhiteSave.me ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE WEB SITE OR THE CONTENT, INFORMATION, MATERIALS, PRODUCTS OR SERVICES ON OR THROUGH THE WEBSITES SHALL NOT EXCEED FIFTY DOLLARS (U.S.) </p>\n       <p>YOU SPECIFICALLY ACKNOWLEDGE THAT WhiteSave.me SHALL NOT BE LIABLE FOR CONTENT OR THE DEFAMATORY, INDECENT, OFFENSIVE, OBSCENE, SEXUALLY EXPLICIT, PORNOGRAPHIC, NUDE, OR ILLEGAL CONDUCT OR CONTENT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU. </p>\n       <p>Exclusions and Limitations: Because some jurisdictions do not allow limitations on how long an implied warranty lasts, or the exclusion or limitation of liability for consequential or incidental damages, the above limitations may not apply to you. This Limitation of Liability shall be to the maximum extent permitted by applicable law. </p>\n       <p>15) Notice Required by California Law Pursuant to California Civil Code Section 1789.3, users are entitled to the following specific consumer rights notice: The name, address and telephone number of the provider of this Web site is WhiteSave.me 244 5th Ave. New York, NY 10001, 8005555555. Complaints regarding this Web site, or the Content or Services or requests to receive further information regarding use of this Web site or the Content or Services may be sent to the above address or to help@whitesave.me The Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs may be contacted in writing at 1625 North Market Boulevard, Suite S202, Sacramento, CA 95834 or by telephone at (916) 574-7950 or (800) 952-5210. </p>\n       <p>16) Governing Law and Disputes These Terms shall be governed by, and will be construed under, the laws of the State of California, U.S.A., without regard to choice of law principles. You irrevocably agree to the exclusive jurisdiction by the federal and state courts located in Santa Clara County, California, U.S.A., to settle any dispute which may arise out of, under, or in connection with these Terms, as the most convenient and appropriate for the resolution of disputes concerning these Terms. ANY CAUSE OF ACTION OR CLAIM YOU MAY HAVE WITH RESPECT TO THESE TERMS, THE WEB SITE OR THE CONTENT OR SERVICES MUST BE COMMENCED WITHIN SIX (6) MONTHS AFTER THE CLAIM OR CAUSE OF ACTION ARISES OR SUCH CLAIM OR CAUSE OF ACTION SHALL BE BARRED. The Web site is controlled within the United States of America and directed to individuals residing in the United States. Those who choose to access the Web site from locations outside of the United States do so on their own initiative, and are responsible for compliance with local laws if and to the extent local laws are applicable. WhiteSave.me does not represent that the Web site, Content, or Services are appropriate outside the United States of America. WhiteSave.me reserves the right to limit the availability of the Website to any person, geographic area or jurisdiction at any time in its sole discretion. </p>\n       <p>17) Force Majeure WhiteSave.me shall not be liable for any delay or failure to perform resulting from causes outside its reasonable control or unforeseen circumstances such as acts of nature or God, fire, flood, earthquake, accidents, strikes, war, terrorism, governmental act, failure of or interruption in common carriers (including without limitation Internet service providers and web hosting providers) or utilities, or shortages of transportation facilities, fuel, energy, labor or materials. </p>\n       <p>18) Ability To Accept Terms of Service You represent and warrant that you are either at least 18 years of age (or for jurisdictions in which 18 years old is not the age of majority to legally enter into binding contracts, at least such age of majority for your jurisdiction), or an emancipated minor, or possess legal parental or guardian consent, and are fully able and competent to enter into the terms, conditions, obligations, affirmations, representations, and warranties set forth in these Terms, and to abide by and comply with these Terms. You acknowledge that we have given you a reasonable opportunity to review these Terms and that you have agreed to them. </p>\n       <p>19) Miscellaneous These Terms and the Privacy Policy and any other legal notices published by WhiteSave.me set forth the entire understanding and agreement between you and WhiteSave.me with respect to the subject matter hereof. If any provision of the Terms or the Privacy Policy is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of the Terms or the Privacy Policy shall remain in full force and effect. Headings are for reference only and in no way define, limit, construe or describe the scope or extent of such section. WhiteSave.me's failure to act with respect to any failure by you or others to comply with these Terms or the Privacy Policy does not waive its right to act with respect to subsequent or similar failures. You may not assign, transfer, sublicense or delegate these Terms or the Privacy Policy or your rights or obligations under these Terms or the Privacy Policy without the prior written consent of WhiteSave.me, but same may be assigned by WhiteSave.me without restriction. Any assignment, transfer, sublicense, or delegation in violation of this provision shall be null and void. There are no third party beneficiaries to these Terms or the Privacy Policy. </p>\n       <p>20) Questions? Please direct any questions you may have about these Terms, technical questions or problems with the Web site, or report a violation of these Terms, or comments or suggestions to our support team. </p>\n     </div>\n\n\n\n\n\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -455,7 +455,7 @@ System.register("pages/call.html!github:systemjs/plugin-text@0.0.2", [], true, f
   var global = System.global,
       __define = global.define;
   global.define = undefined;
-  module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        \t<div class=\"row\">\n            \t<div class=\"col m10 s12\">\n                <span class=\"brown-text text-darken-4\">\n                <h2 class=\"m12\">Determining Whiteness!</h2>\n\n                </div>\n             \t\t<div class=\"col header-icon-image m4\">\n                \t</div>\n             </div>\n         </div>\n     </div>\n</div><div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"container\">\n    <br><br>\n    <div class=\"row center\">\n    <h5 class=\"header col s12 light\"> Please allow <strong>White</strong>Save.me to access your camera.<br><br>\n    By starting your session, you are agreeing with our <a href=\"#terms\">terms and conditions.</a></strong></br><br>\nOur patented facial color recognition software&#8482; will determine your Whiteness.<br><br>\nBased on your results we will link you with a White Savior or a non-White Savee via a live video chat session (must be 13 or older) so you can connect and start ending inequality by giving or getting privilege and advice right through your device.<br><br>\nYou can end the chat session at any time. For more information on how it works,<a href=\"#how\"> click here</a> or check out our <a href=\"#faq\">FAQs</a> and our amazing <a href=\"#success\">Success Stories!</a></h5>\n\n    <div class=\"center-align\" style=\"height: 500px\">\n      <div>\n        <canvas id=\"inputCanvas\" width=\"280\" height=\"200\" style=\"display:inline\"></canvas>\n      </div>\n      <strong class=\"brown-text\" id=\"dark\"></strong>\n      <strong class=\"yellow-text\" id=\"yellow\"></strong>\n    </div>\n    <canvas id=\"outputCanvas\" class=\"responsive-img\" width=\"280\" height=\"200\" style=\"display:none\"></canvas>\n    <video id=\"inputVideo\" autoplay loop style=\"display:none\"></video>\n    <video id=\"peerVideo\" xposter=\"img/loader.gif\" autoplay muted></video>\n  </div>\n</div>\n";
+  module.exports = "<div class=\"section no-pad-bot\" id=\"index-banner\">\n  <div class=\"container\">\n    <br><br>\n    <h3 class=\"header center brown-text\" id=\"white\">Determining Whiteness</h3>\n    <div class=\"row center\">\n    <h5 class=\"header col s12 light\"> Please allow <strong>white</strong>save.me to access your camera.<br><br>\nOur patented facial color recognition software&#8482; will determine your whiteness.<br><br>\nBased on your results we will link you with a White Savior or a non-White Savee via a chat session.<br><br>\nYou can end the chat session at any time..</h5>\n    \n    <div class=\"center-align\" style=\"height: 500px\">\n      <div>\n        <canvas id=\"inputCanvas\" width=\"280\" height=\"200\" style=\"display:inline\"></canvas>\n      </div>\n      <strong class=\"brown-text\" id=\"dark\"></strong>\n      <strong class=\"yellow-text\" id=\"yellow\"></strong>\n    </div>\n    <canvas id=\"outputCanvas\" class=\"responsive-img\" width=\"280\" height=\"200\" style=\"display:none\"></canvas>\n    <video id=\"inputVideo\" autoplay loop style=\"display:none\"></video>\n    <video id=\"peerVideo\" poster=\"img/loader.gif\"></video>\n  </div>\n</div>\n";
   global.define = __define;
   return module.exports;
 });
@@ -466,7 +466,7 @@ function define(){};  define.amd = {};
   if (typeof exports === 'object') {
     module.exports = factory();
   } else if (typeof define === 'function' && define.amd) {
-    System.register("lib/headtrackr", [], false, function(__require, __exports, __module) {
+    System.register("lib/vendor/headtrackr", [], false, function(__require, __exports, __module) {
       return (factory).call(this);
     });
   } else {
@@ -18066,6 +18066,3972 @@ function define(){};  define.amd = {};
   return headtrackr;
 }));
 })();
+(function() {
+function define(){};  define.amd = {};
+(function(e) {
+  if (typeof exports === "object" && typeof module !== "undefined") {
+    module.exports = e();
+  } else if (typeof define === "function" && define.amd) {
+    System.register("lib/vendor/simplepeer.min", [], false, function(__require, __exports, __module) {
+      return (e).call(this);
+    });
+  } else {
+    var t;
+    if (typeof window !== "undefined") {
+      t = window;
+    } else if (typeof global !== "undefined") {
+      t = global;
+    } else if (typeof self !== "undefined") {
+      t = self;
+    } else {
+      t = this;
+    }
+    t.SimplePeer = e();
+  }
+})(function() {
+  var e,
+      t,
+      r;
+  return function n(e, t, r) {
+    function i(o, s) {
+      if (!t[o]) {
+        if (!e[o]) {
+          var f = typeof require == "function" && require;
+          if (!s && f)
+            return f(o, !0);
+          if (a)
+            return a(o, !0);
+          var u = new Error("Cannot find module '" + o + "'");
+          throw u.code = "MODULE_NOT_FOUND", u;
+        }
+        var c = t[o] = {exports: {}};
+        e[o][0].call(c.exports, function(t) {
+          var r = e[o][1][t];
+          return i(r ? r : t);
+        }, c, c.exports, n, e, t, r);
+      }
+      return t[o].exports;
+    }
+    var a = typeof require == "function" && require;
+    for (var o = 0; o < r.length; o++)
+      i(r[o]);
+    return i;
+  }({
+    1: [function(e, t, r) {
+      r = t.exports = e("./debug");
+      r.log = a;
+      r.formatArgs = i;
+      r.save = o;
+      r.load = s;
+      r.useColors = n;
+      r.storage = "undefined" != typeof chrome && "undefined" != typeof chrome.storage ? chrome.storage.local : f();
+      r.colors = ["lightseagreen", "forestgreen", "goldenrod", "dodgerblue", "darkorchid", "crimson"];
+      function n() {
+        return "WebkitAppearance" in document.documentElement.style || window.console && (console.firebug || console.exception && console.table) || navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31;
+      }
+      r.formatters.j = function(e) {
+        return JSON.stringify(e);
+      };
+      function i() {
+        var e = arguments;
+        var t = this.useColors;
+        e[0] = (t ? "%c" : "") + this.namespace + (t ? " %c" : " ") + e[0] + (t ? "%c " : " ") + "+" + r.humanize(this.diff);
+        if (!t)
+          return e;
+        var n = "color: " + this.color;
+        e = [e[0], n, "color: inherit"].concat(Array.prototype.slice.call(e, 1));
+        var i = 0;
+        var a = 0;
+        e[0].replace(/%[a-z%]/g, function(e) {
+          if ("%%" === e)
+            return ;
+          i++;
+          if ("%c" === e) {
+            a = i;
+          }
+        });
+        e.splice(a, 0, n);
+        return e;
+      }
+      function a() {
+        return "object" === typeof console && console.log && Function.prototype.apply.call(console.log, console, arguments);
+      }
+      function o(e) {
+        try {
+          if (null == e) {
+            r.storage.removeItem("debug");
+          } else {
+            r.storage.debug = e;
+          }
+        } catch (t) {}
+      }
+      function s() {
+        var e;
+        try {
+          e = r.storage.debug;
+        } catch (t) {}
+        return e;
+      }
+      r.enable(s());
+      function f() {
+        try {
+          return window.localStorage;
+        } catch (e) {}
+      }
+    }, {"./debug": 2}],
+    2: [function(e, t, r) {
+      r = t.exports = o;
+      r.coerce = c;
+      r.disable = f;
+      r.enable = s;
+      r.enabled = u;
+      r.humanize = e("ms");
+      r.names = [];
+      r.skips = [];
+      r.formatters = {};
+      var n = 0;
+      var i;
+      function a() {
+        return r.colors[n++ % r.colors.length];
+      }
+      function o(e) {
+        function t() {}
+        t.enabled = false;
+        function n() {
+          var e = n;
+          var t = +new Date;
+          var o = t - (i || t);
+          e.diff = o;
+          e.prev = i;
+          e.curr = t;
+          i = t;
+          if (null == e.useColors)
+            e.useColors = r.useColors();
+          if (null == e.color && e.useColors)
+            e.color = a();
+          var s = Array.prototype.slice.call(arguments);
+          s[0] = r.coerce(s[0]);
+          if ("string" !== typeof s[0]) {
+            s = ["%o"].concat(s);
+          }
+          var f = 0;
+          s[0] = s[0].replace(/%([a-z%])/g, function(t, n) {
+            if (t === "%%")
+              return t;
+            f++;
+            var i = r.formatters[n];
+            if ("function" === typeof i) {
+              var a = s[f];
+              t = i.call(e, a);
+              s.splice(f, 1);
+              f--;
+            }
+            return t;
+          });
+          if ("function" === typeof r.formatArgs) {
+            s = r.formatArgs.apply(e, s);
+          }
+          var u = n.log || r.log || console.log.bind(console);
+          u.apply(e, s);
+        }
+        n.enabled = true;
+        var o = r.enabled(e) ? n : t;
+        o.namespace = e;
+        return o;
+      }
+      function s(e) {
+        r.save(e);
+        var t = (e || "").split(/[\s,]+/);
+        var n = t.length;
+        for (var i = 0; i < n; i++) {
+          if (!t[i])
+            continue;
+          e = t[i].replace(/\*/g, ".*?");
+          if (e[0] === "-") {
+            r.skips.push(new RegExp("^" + e.substr(1) + "$"));
+          } else {
+            r.names.push(new RegExp("^" + e + "$"));
+          }
+        }
+      }
+      function f() {
+        r.enable("");
+      }
+      function u(e) {
+        var t,
+            n;
+        for (t = 0, n = r.skips.length; t < n; t++) {
+          if (r.skips[t].test(e)) {
+            return false;
+          }
+        }
+        for (t = 0, n = r.names.length; t < n; t++) {
+          if (r.names[t].test(e)) {
+            return true;
+          }
+        }
+        return false;
+      }
+      function c(e) {
+        if (e instanceof Error)
+          return e.stack || e.message;
+        return e;
+      }
+    }, {ms: 3}],
+    3: [function(e, t, r) {
+      var n = 1e3;
+      var i = n * 60;
+      var a = i * 60;
+      var o = a * 24;
+      var s = o * 365.25;
+      t.exports = function(e, t) {
+        t = t || {};
+        if ("string" == typeof e)
+          return f(e);
+        return t.long ? c(e) : u(e);
+      };
+      function f(e) {
+        e = "" + e;
+        if (e.length > 1e4)
+          return ;
+        var t = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(e);
+        if (!t)
+          return ;
+        var r = parseFloat(t[1]);
+        var f = (t[2] || "ms").toLowerCase();
+        switch (f) {
+          case "years":
+          case "year":
+          case "yrs":
+          case "yr":
+          case "y":
+            return r * s;
+          case "days":
+          case "day":
+          case "d":
+            return r * o;
+          case "hours":
+          case "hour":
+          case "hrs":
+          case "hr":
+          case "h":
+            return r * a;
+          case "minutes":
+          case "minute":
+          case "mins":
+          case "min":
+          case "m":
+            return r * i;
+          case "seconds":
+          case "second":
+          case "secs":
+          case "sec":
+          case "s":
+            return r * n;
+          case "milliseconds":
+          case "millisecond":
+          case "msecs":
+          case "msec":
+          case "ms":
+            return r;
+        }
+      }
+      function u(e) {
+        if (e >= o)
+          return Math.round(e / o) + "d";
+        if (e >= a)
+          return Math.round(e / a) + "h";
+        if (e >= i)
+          return Math.round(e / i) + "m";
+        if (e >= n)
+          return Math.round(e / n) + "s";
+        return e + "ms";
+      }
+      function c(e) {
+        return l(e, o, "day") || l(e, a, "hour") || l(e, i, "minute") || l(e, n, "second") || e + " ms";
+      }
+      function l(e, t, r) {
+        if (e < t)
+          return ;
+        if (e < t * 1.5)
+          return Math.floor(e / t) + " " + r;
+        return Math.ceil(e / t) + " " + r + "s";
+      }
+    }, {}],
+    4: [function(e, t, r) {
+      t.exports = function n() {
+        if (typeof window === "undefined")
+          return null;
+        var e = {
+          RTCPeerConnection: window.mozRTCPeerConnection || window.RTCPeerConnection || window.webkitRTCPeerConnection,
+          RTCSessionDescription: window.mozRTCSessionDescription || window.RTCSessionDescription || window.webkitRTCSessionDescription,
+          RTCIceCandidate: window.mozRTCIceCandidate || window.RTCIceCandidate || window.webkitRTCIceCandidate
+        };
+        if (!e.RTCPeerConnection)
+          return null;
+        return e;
+      };
+    }, {}],
+    5: [function(e, t, r) {
+      var n = t.exports = function(e, t) {
+        if (!t)
+          t = 16;
+        if (e === undefined)
+          e = 128;
+        if (e <= 0)
+          return "0";
+        var r = Math.log(Math.pow(2, e)) / Math.log(t);
+        for (var i = 2; r === Infinity; i *= 2) {
+          r = Math.log(Math.pow(2, e / i)) / Math.log(t) * i;
+        }
+        var a = r - Math.floor(r);
+        var o = "";
+        for (var i = 0; i < Math.floor(r); i++) {
+          var s = Math.floor(Math.random() * t).toString(t);
+          o = s + o;
+        }
+        if (a) {
+          var f = Math.pow(t, a);
+          var s = Math.floor(Math.random() * f).toString(t);
+          o = s + o;
+        }
+        var u = parseInt(o, t);
+        if (u !== Infinity && u >= Math.pow(2, e)) {
+          return n(e, t);
+        } else
+          return o;
+      };
+      n.rack = function(e, t, r) {
+        var i = function(i) {
+          var o = 0;
+          do {
+            if (o++ > 10) {
+              if (r)
+                e += r;
+              else
+                throw new Error("too many ID collisions, use more bits");
+            }
+            var s = n(e, t);
+          } while (Object.hasOwnProperty.call(a, s));
+          a[s] = i;
+          return s;
+        };
+        var a = i.hats = {};
+        i.get = function(e) {
+          return i.hats[e];
+        };
+        i.set = function(e, t) {
+          i.hats[e] = t;
+          return i;
+        };
+        i.bits = e || 128;
+        i.base = t || 16;
+        return i;
+      };
+    }, {}],
+    6: [function(e, t, r) {
+      if (typeof Object.create === "function") {
+        t.exports = function n(e, t) {
+          e.super_ = t;
+          e.prototype = Object.create(t.prototype, {constructor: {
+              value: e,
+              enumerable: false,
+              writable: true,
+              configurable: true
+            }});
+        };
+      } else {
+        t.exports = function i(e, t) {
+          e.super_ = t;
+          var r = function() {};
+          r.prototype = t.prototype;
+          e.prototype = new r;
+          e.prototype.constructor = e;
+        };
+      }
+    }, {}],
+    7: [function(e, t, r) {
+      t.exports = a;
+      a.strict = o;
+      a.loose = s;
+      var n = Object.prototype.toString;
+      var i = {
+        "[object Int8Array]": true,
+        "[object Int16Array]": true,
+        "[object Int32Array]": true,
+        "[object Uint8Array]": true,
+        "[object Uint8ClampedArray]": true,
+        "[object Uint16Array]": true,
+        "[object Uint32Array]": true,
+        "[object Float32Array]": true,
+        "[object Float64Array]": true
+      };
+      function a(e) {
+        return o(e) || s(e);
+      }
+      function o(e) {
+        return e instanceof Int8Array || e instanceof Int16Array || e instanceof Int32Array || e instanceof Uint8Array || e instanceof Uint8ClampedArray || e instanceof Uint16Array || e instanceof Uint32Array || e instanceof Float32Array || e instanceof Float64Array;
+      }
+      function s(e) {
+        return i[n.call(e)];
+      }
+    }, {}],
+    8: [function(e, t, r) {
+      t.exports = n;
+      function n(e, t) {
+        if (e && t)
+          return n(e)(t);
+        if (typeof e !== "function")
+          throw new TypeError("need wrapper function");
+        Object.keys(e).forEach(function(t) {
+          r[t] = e[t];
+        });
+        return r;
+        function r() {
+          var t = new Array(arguments.length);
+          for (var r = 0; r < t.length; r++) {
+            t[r] = arguments[r];
+          }
+          var n = e.apply(this, t);
+          var i = t[t.length - 1];
+          if (typeof n === "function" && n !== i) {
+            Object.keys(i).forEach(function(e) {
+              n[e] = i[e];
+            });
+          }
+          return n;
+        }
+      }
+    }, {}],
+    9: [function(e, t, r) {
+      var n = e("wrappy");
+      t.exports = n(i);
+      i.proto = i(function() {
+        Object.defineProperty(Function.prototype, "once", {
+          value: function() {
+            return i(this);
+          },
+          configurable: true
+        });
+      });
+      function i(e) {
+        var t = function() {
+          if (t.called)
+            return t.value;
+          t.called = true;
+          return t.value = e.apply(this, arguments);
+        };
+        t.called = false;
+        return t;
+      }
+    }, {wrappy: 8}],
+    10: [function(e, t, r) {
+      (function(r) {
+        var n = e("is-typedarray").strict;
+        t.exports = function(e) {
+          var t = r.TYPED_ARRAY_SUPPORT ? r._augment : function(e) {
+            return new r(e);
+          };
+          if (e instanceof Uint8Array) {
+            return t(e);
+          } else if (e instanceof ArrayBuffer) {
+            return t(new Uint8Array(e));
+          } else if (n(e)) {
+            return t(new Uint8Array(e.buffer, e.byteOffset, e.byteLength));
+          } else {
+            return new r(e);
+          }
+        };
+      }).call(this, e("buffer").Buffer);
+    }, {
+      buffer: 13,
+      "is-typedarray": 11
+    }],
+    11: [function(e, t, r) {
+      arguments[4][7][0].apply(r, arguments);
+    }, {dup: 7}],
+    "/": [function(e, t, r) {
+      (function(r) {
+        t.exports = l;
+        var n = e("debug")("simple-peer");
+        var i = e("get-browser-rtc");
+        var a = e("hat");
+        var o = e("inherits");
+        var s = e("is-typedarray");
+        var f = e("once");
+        var u = e("stream");
+        var c = e("typedarray-to-buffer");
+        o(l, u.Duplex);
+        function l(e) {
+          var t = this;
+          if (!(t instanceof l))
+            return new l(e);
+          t._debug("new peer %o", e);
+          if (!e)
+            e = {};
+          e.allowHalfOpen = false;
+          if (e.highWaterMark == null)
+            e.highWaterMark = 1024 * 1024;
+          u.Duplex.call(t, e);
+          t.initiator = e.initiator || false;
+          t.channelConfig = e.channelConfig || l.channelConfig;
+          t.channelName = e.channelName || a(160);
+          if (!e.initiator)
+            t.channelName = null;
+          t.config = e.config || l.config;
+          t.constraints = e.constraints || l.constraints;
+          t.reconnectTimer = e.reconnectTimer || 0;
+          t.sdpTransform = e.sdpTransform || function(e) {
+            return e;
+          };
+          t.stream = e.stream || false;
+          t.trickle = e.trickle !== undefined ? e.trickle : true;
+          t.destroyed = false;
+          t.connected = false;
+          t.remoteAddress = undefined;
+          t.remoteFamily = undefined;
+          t.remotePort = undefined;
+          t.localAddress = undefined;
+          t.localPort = undefined;
+          t._wrtc = e.wrtc || i();
+          if (!t._wrtc) {
+            if (typeof window === "undefined") {
+              throw new Error("No WebRTC support: Specify `opts.wrtc` option in this environment");
+            } else {
+              throw new Error("No WebRTC support: Not a supported browser");
+            }
+          }
+          t._maxBufferedAmount = e.highWaterMark;
+          t._pcReady = false;
+          t._channelReady = false;
+          t._iceComplete = false;
+          t._channel = null;
+          t._chunk = null;
+          t._cb = null;
+          t._interval = null;
+          t._reconnectTimeout = null;
+          t._pc = new t._wrtc.RTCPeerConnection(t.config, t.constraints);
+          t._pc.oniceconnectionstatechange = t._onIceConnectionStateChange.bind(t);
+          t._pc.onsignalingstatechange = t._onSignalingStateChange.bind(t);
+          t._pc.onicecandidate = t._onIceCandidate.bind(t);
+          if (t.stream)
+            t._pc.addStream(t.stream);
+          t._pc.onaddstream = t._onAddStream.bind(t);
+          if (t.initiator) {
+            t._setupData({channel: t._pc.createDataChannel(t.channelName, t.channelConfig)});
+            t._pc.onnegotiationneeded = f(t._createOffer.bind(t));
+            if (typeof window === "undefined" || !window.webkitRTCPeerConnection) {
+              t._pc.onnegotiationneeded();
+            }
+          } else {
+            t._pc.ondatachannel = t._setupData.bind(t);
+          }
+          t.on("finish", function() {
+            if (t.connected) {
+              setTimeout(function() {
+                t._destroy();
+              }, 100);
+            } else {
+              t.once("connect", function() {
+                setTimeout(function() {
+                  t._destroy();
+                }, 100);
+              });
+            }
+          });
+        }
+        l.WEBRTC_SUPPORT = !!i();
+        l.config = {iceServers: [{
+            url: "stun:23.21.150.121",
+            urls: "stun:23.21.150.121"
+          }]};
+        l.constraints = {};
+        l.channelConfig = {};
+        Object.defineProperty(l.prototype, "bufferSize", {get: function() {
+            var e = this;
+            return e._channel && e._channel.bufferedAmount || 0;
+          }});
+        l.prototype.address = function() {
+          var e = this;
+          return {
+            port: e.localPort,
+            family: "IPv4",
+            address: e.localAddress
+          };
+        };
+        l.prototype.signal = function(e) {
+          var t = this;
+          if (t.destroyed)
+            throw new Error("cannot signal after peer is destroyed");
+          if (typeof e === "string") {
+            try {
+              e = JSON.parse(e);
+            } catch (r) {
+              e = {};
+            }
+          }
+          t._debug("signal()");
+          if (e.sdp) {
+            t._pc.setRemoteDescription(new t._wrtc.RTCSessionDescription(e), function() {
+              if (t.destroyed)
+                return ;
+              if (t._pc.remoteDescription.type === "offer")
+                t._createAnswer();
+            }, t._onError.bind(t));
+          }
+          if (e.candidate) {
+            try {
+              t._pc.addIceCandidate(new t._wrtc.RTCIceCandidate(e.candidate), h, t._onError.bind(t));
+            } catch (r) {
+              t._destroy(new Error("error adding candidate: " + r.message));
+            }
+          }
+          if (!e.sdp && !e.candidate) {
+            t._destroy(new Error("signal() called with invalid signal data"));
+          }
+        };
+        l.prototype.send = function(e) {
+          var t = this;
+          if (!s.strict(e) && !(e instanceof ArrayBuffer) && !r.isBuffer(e) && typeof e !== "string" && (typeof Blob === "undefined" || !(e instanceof Blob))) {
+            e = JSON.stringify(e);
+          }
+          if (r.isBuffer(e) && !s.strict(e)) {
+            e = new Uint8Array(e);
+          }
+          var n = e.length || e.byteLength || e.size;
+          t._channel.send(e);
+          t._debug("write: %d bytes", n);
+        };
+        l.prototype.destroy = function(e) {
+          var t = this;
+          t._destroy(null, e);
+        };
+        l.prototype._destroy = function(e, t) {
+          var r = this;
+          if (r.destroyed)
+            return ;
+          if (t)
+            r.once("close", t);
+          r._debug("destroy (error: %s)", e && e.message);
+          r.readable = r.writable = false;
+          if (!r._readableState.ended)
+            r.push(null);
+          if (!r._writableState.finished)
+            r.end();
+          r.destroyed = true;
+          r.connected = false;
+          r._pcReady = false;
+          r._channelReady = false;
+          r._chunk = null;
+          r._cb = null;
+          clearInterval(r._interval);
+          clearTimeout(r._reconnectTimeout);
+          if (r._pc) {
+            try {
+              r._pc.close();
+            } catch (e) {}
+            r._pc.oniceconnectionstatechange = null;
+            r._pc.onsignalingstatechange = null;
+            r._pc.onicecandidate = null;
+          }
+          if (r._channel) {
+            try {
+              r._channel.close();
+            } catch (e) {}
+            r._channel.onmessage = null;
+            r._channel.onopen = null;
+            r._channel.onclose = null;
+          }
+          r._pc = null;
+          r._channel = null;
+          if (e)
+            r.emit("error", e);
+          r.emit("close");
+        };
+        l.prototype._setupData = function(e) {
+          var t = this;
+          t._channel = e.channel;
+          t.channelName = t._channel.label;
+          t._channel.binaryType = "arraybuffer";
+          t._channel.onmessage = t._onChannelMessage.bind(t);
+          t._channel.onopen = t._onChannelOpen.bind(t);
+          t._channel.onclose = t._onChannelClose.bind(t);
+        };
+        l.prototype._read = function() {};
+        l.prototype._write = function(e, t, r) {
+          var n = this;
+          if (n.destroyed)
+            return r(new Error("cannot write after peer is destroyed"));
+          if (n.connected) {
+            try {
+              n.send(e);
+            } catch (i) {
+              return n._onError(i);
+            }
+            if (n._channel.bufferedAmount > n._maxBufferedAmount) {
+              n._debug("start backpressure: bufferedAmount %d", n._channel.bufferedAmount);
+              n._cb = r;
+            } else {
+              r(null);
+            }
+          } else {
+            n._debug("write before connect");
+            n._chunk = e;
+            n._cb = r;
+          }
+        };
+        l.prototype._createOffer = function() {
+          var e = this;
+          if (e.destroyed)
+            return ;
+          e._pc.createOffer(function(t) {
+            if (e.destroyed)
+              return ;
+            t.sdp = e.sdpTransform(t.sdp);
+            e._pc.setLocalDescription(t, h, e._onError.bind(e));
+            var r = function() {
+              var r = e._pc.localDescription || t;
+              e._debug("signal");
+              e.emit("signal", {
+                type: r.type,
+                sdp: r.sdp
+              });
+            };
+            if (e.trickle || e._iceComplete)
+              r();
+            else
+              e.once("_iceComplete", r);
+          }, e._onError.bind(e), e.offerConstraints);
+        };
+        l.prototype._createAnswer = function() {
+          var e = this;
+          if (e.destroyed)
+            return ;
+          e._pc.createAnswer(function(t) {
+            if (e.destroyed)
+              return ;
+            t.sdp = e.sdpTransform(t.sdp);
+            e._pc.setLocalDescription(t, h, e._onError.bind(e));
+            var r = function() {
+              var r = e._pc.localDescription || t;
+              e._debug("signal");
+              e.emit("signal", {
+                type: r.type,
+                sdp: r.sdp
+              });
+            };
+            if (e.trickle || e._iceComplete)
+              r();
+            else
+              e.once("_iceComplete", r);
+          }, e._onError.bind(e), e.answerConstraints);
+        };
+        l.prototype._onIceConnectionStateChange = function() {
+          var e = this;
+          if (e.destroyed)
+            return ;
+          var t = e._pc.iceGatheringState;
+          var r = e._pc.iceConnectionState;
+          e._debug("iceConnectionStateChange %s %s", t, r);
+          e.emit("iceConnectionStateChange", t, r);
+          if (r === "connected" || r === "completed") {
+            clearTimeout(e._reconnectTimeout);
+            e._pcReady = true;
+            e._maybeReady();
+          }
+          if (r === "disconnected") {
+            if (e.reconnectTimer) {
+              clearTimeout(e._reconnectTimeout);
+              e._reconnectTimeout = setTimeout(function() {
+                e._destroy();
+              }, e.reconnectTimer);
+            } else {
+              e._destroy();
+            }
+          }
+          if (r === "closed") {
+            e._destroy();
+          }
+        };
+        l.prototype._maybeReady = function() {
+          var e = this;
+          e._debug("maybeReady pc %s channel %s", e._pcReady, e._channelReady);
+          if (e.connected || e._connecting || !e._pcReady || !e._channelReady)
+            return ;
+          e._connecting = true;
+          if (typeof window !== "undefined" && !!window.mozRTCPeerConnection) {
+            e._pc.getStats(null, function(e) {
+              var r = [];
+              e.forEach(function(e) {
+                r.push(e);
+              });
+              t(r);
+            }, e._onError.bind(e));
+          } else {
+            e._pc.getStats(function(e) {
+              var r = [];
+              e.result().forEach(function(e) {
+                var t = {};
+                e.names().forEach(function(r) {
+                  t[r] = e.stat(r);
+                });
+                t.id = e.id;
+                t.type = e.type;
+                t.timestamp = e.timestamp;
+                r.push(t);
+              });
+              t(r);
+            });
+          }
+          function t(t) {
+            t.forEach(function(t) {
+              if (t.type === "remotecandidate") {
+                e.remoteAddress = t.ipAddress;
+                e.remoteFamily = "IPv4";
+                e.remotePort = Number(t.portNumber);
+                e._debug("connect remote: %s:%s (%s)", e.remoteAddress, e.remotePort, e.remoteFamily);
+              } else if (t.type === "localcandidate" && t.candidateType === "host") {
+                e.localAddress = t.ipAddress;
+                e.localPort = Number(t.portNumber);
+                e._debug("connect local: %s:%s", e.localAddress, e.localPort);
+              }
+            });
+            e._connecting = false;
+            e.connected = true;
+            if (e._chunk) {
+              try {
+                e.send(e._chunk);
+              } catch (r) {
+                return e._onError(r);
+              }
+              e._chunk = null;
+              e._debug('sent chunk from "write before connect"');
+              var n = e._cb;
+              e._cb = null;
+              n(null);
+            }
+            e._interval = setInterval(function() {
+              if (!e._cb || !e._channel || e._channel.bufferedAmount > e._maxBufferedAmount)
+                return ;
+              e._debug("ending backpressure: bufferedAmount %d", e._channel.bufferedAmount);
+              var t = e._cb;
+              e._cb = null;
+              t(null);
+            }, 150);
+            if (e._interval.unref)
+              e._interval.unref();
+            e._debug("connect");
+            e.emit("connect");
+          }
+        };
+        l.prototype._onSignalingStateChange = function() {
+          var e = this;
+          if (e.destroyed)
+            return ;
+          e._debug("signalingStateChange %s", e._pc.signalingState);
+          e.emit("signalingStateChange", e._pc.signalingState);
+        };
+        l.prototype._onIceCandidate = function(e) {
+          var t = this;
+          if (t.destroyed)
+            return ;
+          if (e.candidate && t.trickle) {
+            t.emit("signal", {candidate: {
+                candidate: e.candidate.candidate,
+                sdpMLineIndex: e.candidate.sdpMLineIndex,
+                sdpMid: e.candidate.sdpMid
+              }});
+          } else if (!e.candidate) {
+            t._iceComplete = true;
+            t.emit("_iceComplete");
+          }
+        };
+        l.prototype._onChannelMessage = function(e) {
+          var t = this;
+          if (t.destroyed)
+            return ;
+          var r = e.data;
+          t._debug("read: %d bytes", r.byteLength || r.length);
+          if (r instanceof ArrayBuffer) {
+            r = c(new Uint8Array(r));
+            t.push(r);
+          } else {
+            try {
+              r = JSON.parse(r);
+            } catch (n) {}
+            t.emit("data", r);
+          }
+        };
+        l.prototype._onChannelOpen = function() {
+          var e = this;
+          if (e.connected || e.destroyed)
+            return ;
+          e._debug("on channel open");
+          e._channelReady = true;
+          e._maybeReady();
+        };
+        l.prototype._onChannelClose = function() {
+          var e = this;
+          if (e.destroyed)
+            return ;
+          e._debug("on channel close");
+          e._destroy();
+        };
+        l.prototype._onAddStream = function(e) {
+          var t = this;
+          if (t.destroyed)
+            return ;
+          t._debug("on add stream");
+          t.emit("stream", e.stream);
+        };
+        l.prototype._onError = function(e) {
+          var t = this;
+          if (t.destroyed)
+            return ;
+          t._debug("error %s", e.message || e);
+          t._destroy(e);
+        };
+        l.prototype._debug = function() {
+          var e = this;
+          var t = [].slice.call(arguments);
+          var r = e.channelName && e.channelName.substring(0, 7);
+          t[0] = "[" + r + "] " + t[0];
+          n.apply(null, t);
+        };
+        function h() {}
+      }).call(this, e("buffer").Buffer);
+    }, {
+      buffer: 13,
+      debug: 1,
+      "get-browser-rtc": 4,
+      hat: 5,
+      inherits: 6,
+      "is-typedarray": 7,
+      once: 9,
+      stream: 32,
+      "typedarray-to-buffer": 10
+    }],
+    12: [function(e, t, r) {}, {}],
+    13: [function(e, t, r) {
+      var n = e("base64-js");
+      var i = e("ieee754");
+      var a = e("is-array");
+      r.Buffer = f;
+      r.SlowBuffer = u;
+      r.INSPECT_MAX_BYTES = 50;
+      f.poolSize = 8192;
+      var o = 1073741823;
+      var s = {};
+      f.TYPED_ARRAY_SUPPORT = function() {
+        try {
+          var e = new ArrayBuffer(0);
+          var t = new Uint8Array(e);
+          t.foo = function() {
+            return 42;
+          };
+          return t.foo() === 42 && typeof t.subarray === "function" && new Uint8Array(1).subarray(1, 1).byteLength === 0;
+        } catch (r) {
+          return false;
+        }
+      }();
+      function f(e, t) {
+        var r = this;
+        if (!(r instanceof f))
+          return new f(e, t);
+        var n = typeof e;
+        var i;
+        if (n === "number") {
+          i = +e;
+        } else if (n === "string") {
+          i = f.byteLength(e, t);
+        } else if (n === "object" && e !== null) {
+          if (e.type === "Buffer" && a(e.data))
+            e = e.data;
+          i = +e.length;
+        } else {
+          throw new TypeError("must start with number, buffer, array or string");
+        }
+        if (i > o) {
+          throw new RangeError("Attempt to allocate Buffer larger than maximum size: 0x" + o.toString(16) + " bytes");
+        }
+        if (i < 0)
+          i = 0;
+        else
+          i >>>= 0;
+        if (f.TYPED_ARRAY_SUPPORT) {
+          r = f._augment(new Uint8Array(i));
+        } else {
+          r.length = i;
+          r._isBuffer = true;
+        }
+        var u;
+        if (f.TYPED_ARRAY_SUPPORT && typeof e.byteLength === "number") {
+          r._set(e);
+        } else if (x(e)) {
+          if (f.isBuffer(e)) {
+            for (u = 0; u < i; u++) {
+              r[u] = e.readUInt8(u);
+            }
+          } else {
+            for (u = 0; u < i; u++) {
+              r[u] = (e[u] % 256 + 256) % 256;
+            }
+          }
+        } else if (n === "string") {
+          r.write(e, 0, t);
+        } else if (n === "number" && !f.TYPED_ARRAY_SUPPORT) {
+          for (u = 0; u < i; u++) {
+            r[u] = 0;
+          }
+        }
+        if (i > 0 && i <= f.poolSize)
+          r.parent = s;
+        return r;
+      }
+      function u(e, t) {
+        if (!(this instanceof u))
+          return new u(e, t);
+        var r = new f(e, t);
+        delete r.parent;
+        return r;
+      }
+      f.isBuffer = function F(e) {
+        return !!(e != null && e._isBuffer);
+      };
+      f.compare = function W(e, t) {
+        if (!f.isBuffer(e) || !f.isBuffer(t)) {
+          throw new TypeError("Arguments must be Buffers");
+        }
+        if (e === t)
+          return 0;
+        var r = e.length;
+        var n = t.length;
+        for (var i = 0,
+            a = Math.min(r, n); i < a && e[i] === t[i]; i++) {}
+        if (i !== a) {
+          r = e[i];
+          n = t[i];
+        }
+        if (r < n)
+          return -1;
+        if (n < r)
+          return 1;
+        return 0;
+      };
+      f.isEncoding = function z(e) {
+        switch (String(e).toLowerCase()) {
+          case "hex":
+          case "utf8":
+          case "utf-8":
+          case "ascii":
+          case "binary":
+          case "base64":
+          case "raw":
+          case "ucs2":
+          case "ucs-2":
+          case "utf16le":
+          case "utf-16le":
+            return true;
+          default:
+            return false;
+        }
+      };
+      f.concat = function q(e, t) {
+        if (!a(e))
+          throw new TypeError("list argument must be an Array of Buffers.");
+        if (e.length === 0) {
+          return new f(0);
+        } else if (e.length === 1) {
+          return e[0];
+        }
+        var r;
+        if (t === undefined) {
+          t = 0;
+          for (r = 0; r < e.length; r++) {
+            t += e[r].length;
+          }
+        }
+        var n = new f(t);
+        var i = 0;
+        for (r = 0; r < e.length; r++) {
+          var o = e[r];
+          o.copy(n, i);
+          i += o.length;
+        }
+        return n;
+      };
+      f.byteLength = function J(e, t) {
+        var r;
+        e = e + "";
+        switch (t || "utf8") {
+          case "ascii":
+          case "binary":
+          case "raw":
+            r = e.length;
+            break;
+          case "ucs2":
+          case "ucs-2":
+          case "utf16le":
+          case "utf-16le":
+            r = e.length * 2;
+            break;
+          case "hex":
+            r = e.length >>> 1;
+            break;
+          case "utf8":
+          case "utf-8":
+            r = j(e).length;
+            break;
+          case "base64":
+            r = O(e).length;
+            break;
+          default:
+            r = e.length;
+        }
+        return r;
+      };
+      f.prototype.length = undefined;
+      f.prototype.parent = undefined;
+      f.prototype.toString = function H(e, t, r) {
+        var n = false;
+        t = t >>> 0;
+        r = r === undefined || r === Infinity ? this.length : r >>> 0;
+        if (!e)
+          e = "utf8";
+        if (t < 0)
+          t = 0;
+        if (r > this.length)
+          r = this.length;
+        if (r <= t)
+          return "";
+        while (true) {
+          switch (e) {
+            case "hex":
+              return w(this, t, r);
+            case "utf8":
+            case "utf-8":
+              return b(this, t, r);
+            case "ascii":
+              return m(this, t, r);
+            case "binary":
+              return y(this, t, r);
+            case "base64":
+              return v(this, t, r);
+            case "ucs2":
+            case "ucs-2":
+            case "utf16le":
+            case "utf-16le":
+              return _(this, t, r);
+            default:
+              if (n)
+                throw new TypeError("Unknown encoding: " + e);
+              e = (e + "").toLowerCase();
+              n = true;
+          }
+        }
+      };
+      f.prototype.equals = function $(e) {
+        if (!f.isBuffer(e))
+          throw new TypeError("Argument must be a Buffer");
+        if (this === e)
+          return true;
+        return f.compare(this, e) === 0;
+      };
+      f.prototype.inspect = function X() {
+        var e = "";
+        var t = r.INSPECT_MAX_BYTES;
+        if (this.length > 0) {
+          e = this.toString("hex", 0, t).match(/.{2}/g).join(" ");
+          if (this.length > t)
+            e += " ... ";
+        }
+        return "<Buffer " + e + ">";
+      };
+      f.prototype.compare = function G(e) {
+        if (!f.isBuffer(e))
+          throw new TypeError("Argument must be a Buffer");
+        if (this === e)
+          return 0;
+        return f.compare(this, e);
+      };
+      f.prototype.indexOf = function K(e, t) {
+        if (t > 2147483647)
+          t = 2147483647;
+        else if (t < -2147483648)
+          t = -2147483648;
+        t >>= 0;
+        if (this.length === 0)
+          return -1;
+        if (t >= this.length)
+          return -1;
+        if (t < 0)
+          t = Math.max(this.length + t, 0);
+        if (typeof e === "string") {
+          if (e.length === 0)
+            return -1;
+          return String.prototype.indexOf.call(this, e, t);
+        }
+        if (f.isBuffer(e)) {
+          return r(this, e, t);
+        }
+        if (typeof e === "number") {
+          if (f.TYPED_ARRAY_SUPPORT && Uint8Array.prototype.indexOf === "function") {
+            return Uint8Array.prototype.indexOf.call(this, e, t);
+          }
+          return r(this, [e], t);
+        }
+        function r(e, t, r) {
+          var n = -1;
+          for (var i = 0; r + i < e.length; i++) {
+            if (e[r + i] === t[n === -1 ? 0 : i - n]) {
+              if (n === -1)
+                n = i;
+              if (i - n + 1 === t.length)
+                return r + n;
+            } else {
+              n = -1;
+            }
+          }
+          return -1;
+        }
+        throw new TypeError("val must be string, number or Buffer");
+      };
+      f.prototype.get = function Q(e) {
+        console.log(".get() is deprecated. Access using array indexes instead.");
+        return this.readUInt8(e);
+      };
+      f.prototype.set = function V(e, t) {
+        console.log(".set() is deprecated. Access using array indexes instead.");
+        return this.writeUInt8(e, t);
+      };
+      function c(e, t, r, n) {
+        r = Number(r) || 0;
+        var i = e.length - r;
+        if (!n) {
+          n = i;
+        } else {
+          n = Number(n);
+          if (n > i) {
+            n = i;
+          }
+        }
+        var a = t.length;
+        if (a % 2 !== 0)
+          throw new Error("Invalid hex string");
+        if (n > a / 2) {
+          n = a / 2;
+        }
+        for (var o = 0; o < n; o++) {
+          var s = parseInt(t.substr(o * 2, 2), 16);
+          if (isNaN(s))
+            throw new Error("Invalid hex string");
+          e[r + o] = s;
+        }
+        return o;
+      }
+      function l(e, t, r, n) {
+        var i = N(j(t, e.length - r), e, r, n);
+        return i;
+      }
+      function h(e, t, r, n) {
+        var i = N(P(t), e, r, n);
+        return i;
+      }
+      function d(e, t, r, n) {
+        return h(e, t, r, n);
+      }
+      function p(e, t, r, n) {
+        var i = N(O(t), e, r, n);
+        return i;
+      }
+      function g(e, t, r, n) {
+        var i = N(D(t, e.length - r), e, r, n);
+        return i;
+      }
+      f.prototype.write = function Z(e, t, r, n) {
+        if (isFinite(t)) {
+          if (!isFinite(r)) {
+            n = r;
+            r = undefined;
+          }
+        } else {
+          var i = n;
+          n = t;
+          t = r;
+          r = i;
+        }
+        t = Number(t) || 0;
+        if (r < 0 || t < 0 || t > this.length) {
+          throw new RangeError("attempt to write outside buffer bounds");
+        }
+        var a = this.length - t;
+        if (!r) {
+          r = a;
+        } else {
+          r = Number(r);
+          if (r > a) {
+            r = a;
+          }
+        }
+        n = String(n || "utf8").toLowerCase();
+        var o;
+        switch (n) {
+          case "hex":
+            o = c(this, e, t, r);
+            break;
+          case "utf8":
+          case "utf-8":
+            o = l(this, e, t, r);
+            break;
+          case "ascii":
+            o = h(this, e, t, r);
+            break;
+          case "binary":
+            o = d(this, e, t, r);
+            break;
+          case "base64":
+            o = p(this, e, t, r);
+            break;
+          case "ucs2":
+          case "ucs-2":
+          case "utf16le":
+          case "utf-16le":
+            o = g(this, e, t, r);
+            break;
+          default:
+            throw new TypeError("Unknown encoding: " + n);
+        }
+        return o;
+      };
+      f.prototype.toJSON = function ee() {
+        return {
+          type: "Buffer",
+          data: Array.prototype.slice.call(this._arr || this, 0)
+        };
+      };
+      function v(e, t, r) {
+        if (t === 0 && r === e.length) {
+          return n.fromByteArray(e);
+        } else {
+          return n.fromByteArray(e.slice(t, r));
+        }
+      }
+      function b(e, t, r) {
+        var n = "";
+        var i = "";
+        r = Math.min(e.length, r);
+        for (var a = t; a < r; a++) {
+          if (e[a] <= 127) {
+            n += Y(i) + String.fromCharCode(e[a]);
+            i = "";
+          } else {
+            i += "%" + e[a].toString(16);
+          }
+        }
+        return n + Y(i);
+      }
+      function m(e, t, r) {
+        var n = "";
+        r = Math.min(e.length, r);
+        for (var i = t; i < r; i++) {
+          n += String.fromCharCode(e[i] & 127);
+        }
+        return n;
+      }
+      function y(e, t, r) {
+        var n = "";
+        r = Math.min(e.length, r);
+        for (var i = t; i < r; i++) {
+          n += String.fromCharCode(e[i]);
+        }
+        return n;
+      }
+      function w(e, t, r) {
+        var n = e.length;
+        if (!t || t < 0)
+          t = 0;
+        if (!r || r < 0 || r > n)
+          r = n;
+        var i = "";
+        for (var a = t; a < r; a++) {
+          i += U(e[a]);
+        }
+        return i;
+      }
+      function _(e, t, r) {
+        var n = e.slice(t, r);
+        var i = "";
+        for (var a = 0; a < n.length; a += 2) {
+          i += String.fromCharCode(n[a] + n[a + 1] * 256);
+        }
+        return i;
+      }
+      f.prototype.slice = function te(e, t) {
+        var r = this.length;
+        e = ~~e;
+        t = t === undefined ? r : ~~t;
+        if (e < 0) {
+          e += r;
+          if (e < 0)
+            e = 0;
+        } else if (e > r) {
+          e = r;
+        }
+        if (t < 0) {
+          t += r;
+          if (t < 0)
+            t = 0;
+        } else if (t > r) {
+          t = r;
+        }
+        if (t < e)
+          t = e;
+        var n;
+        if (f.TYPED_ARRAY_SUPPORT) {
+          n = f._augment(this.subarray(e, t));
+        } else {
+          var i = t - e;
+          n = new f(i, undefined);
+          for (var a = 0; a < i; a++) {
+            n[a] = this[a + e];
+          }
+        }
+        if (n.length)
+          n.parent = this.parent || this;
+        return n;
+      };
+      function E(e, t, r) {
+        if (e % 1 !== 0 || e < 0)
+          throw new RangeError("offset is not uint");
+        if (e + t > r)
+          throw new RangeError("Trying to access beyond buffer length");
+      }
+      f.prototype.readUIntLE = function re(e, t, r) {
+        e = e >>> 0;
+        t = t >>> 0;
+        if (!r)
+          E(e, t, this.length);
+        var n = this[e];
+        var i = 1;
+        var a = 0;
+        while (++a < t && (i *= 256)) {
+          n += this[e + a] * i;
+        }
+        return n;
+      };
+      f.prototype.readUIntBE = function ne(e, t, r) {
+        e = e >>> 0;
+        t = t >>> 0;
+        if (!r) {
+          E(e, t, this.length);
+        }
+        var n = this[e + --t];
+        var i = 1;
+        while (t > 0 && (i *= 256)) {
+          n += this[e + --t] * i;
+        }
+        return n;
+      };
+      f.prototype.readUInt8 = function ie(e, t) {
+        if (!t)
+          E(e, 1, this.length);
+        return this[e];
+      };
+      f.prototype.readUInt16LE = function ae(e, t) {
+        if (!t)
+          E(e, 2, this.length);
+        return this[e] | this[e + 1] << 8;
+      };
+      f.prototype.readUInt16BE = function oe(e, t) {
+        if (!t)
+          E(e, 2, this.length);
+        return this[e] << 8 | this[e + 1];
+      };
+      f.prototype.readUInt32LE = function se(e, t) {
+        if (!t)
+          E(e, 4, this.length);
+        return (this[e] | this[e + 1] << 8 | this[e + 2] << 16) + this[e + 3] * 16777216;
+      };
+      f.prototype.readUInt32BE = function fe(e, t) {
+        if (!t)
+          E(e, 4, this.length);
+        return this[e] * 16777216 + (this[e + 1] << 16 | this[e + 2] << 8 | this[e + 3]);
+      };
+      f.prototype.readIntLE = function ue(e, t, r) {
+        e = e >>> 0;
+        t = t >>> 0;
+        if (!r)
+          E(e, t, this.length);
+        var n = this[e];
+        var i = 1;
+        var a = 0;
+        while (++a < t && (i *= 256)) {
+          n += this[e + a] * i;
+        }
+        i *= 128;
+        if (n >= i)
+          n -= Math.pow(2, 8 * t);
+        return n;
+      };
+      f.prototype.readIntBE = function ce(e, t, r) {
+        e = e >>> 0;
+        t = t >>> 0;
+        if (!r)
+          E(e, t, this.length);
+        var n = t;
+        var i = 1;
+        var a = this[e + --n];
+        while (n > 0 && (i *= 256)) {
+          a += this[e + --n] * i;
+        }
+        i *= 128;
+        if (a >= i)
+          a -= Math.pow(2, 8 * t);
+        return a;
+      };
+      f.prototype.readInt8 = function le(e, t) {
+        if (!t)
+          E(e, 1, this.length);
+        if (!(this[e] & 128))
+          return this[e];
+        return (255 - this[e] + 1) * -1;
+      };
+      f.prototype.readInt16LE = function he(e, t) {
+        if (!t)
+          E(e, 2, this.length);
+        var r = this[e] | this[e + 1] << 8;
+        return r & 32768 ? r | 4294901760 : r;
+      };
+      f.prototype.readInt16BE = function de(e, t) {
+        if (!t)
+          E(e, 2, this.length);
+        var r = this[e + 1] | this[e] << 8;
+        return r & 32768 ? r | 4294901760 : r;
+      };
+      f.prototype.readInt32LE = function pe(e, t) {
+        if (!t)
+          E(e, 4, this.length);
+        return this[e] | this[e + 1] << 8 | this[e + 2] << 16 | this[e + 3] << 24;
+      };
+      f.prototype.readInt32BE = function ge(e, t) {
+        if (!t)
+          E(e, 4, this.length);
+        return this[e] << 24 | this[e + 1] << 16 | this[e + 2] << 8 | this[e + 3];
+      };
+      f.prototype.readFloatLE = function ve(e, t) {
+        if (!t)
+          E(e, 4, this.length);
+        return i.read(this, e, true, 23, 4);
+      };
+      f.prototype.readFloatBE = function be(e, t) {
+        if (!t)
+          E(e, 4, this.length);
+        return i.read(this, e, false, 23, 4);
+      };
+      f.prototype.readDoubleLE = function me(e, t) {
+        if (!t)
+          E(e, 8, this.length);
+        return i.read(this, e, true, 52, 8);
+      };
+      f.prototype.readDoubleBE = function ye(e, t) {
+        if (!t)
+          E(e, 8, this.length);
+        return i.read(this, e, false, 52, 8);
+      };
+      function A(e, t, r, n, i, a) {
+        if (!f.isBuffer(e))
+          throw new TypeError("buffer must be a Buffer instance");
+        if (t > i || t < a)
+          throw new RangeError("value is out of bounds");
+        if (r + n > e.length)
+          throw new RangeError("index out of range");
+      }
+      f.prototype.writeUIntLE = function we(e, t, r, n) {
+        e = +e;
+        t = t >>> 0;
+        r = r >>> 0;
+        if (!n)
+          A(this, e, t, r, Math.pow(2, 8 * r), 0);
+        var i = 1;
+        var a = 0;
+        this[t] = e & 255;
+        while (++a < r && (i *= 256)) {
+          this[t + a] = e / i >>> 0 & 255;
+        }
+        return t + r;
+      };
+      f.prototype.writeUIntBE = function _e(e, t, r, n) {
+        e = +e;
+        t = t >>> 0;
+        r = r >>> 0;
+        if (!n)
+          A(this, e, t, r, Math.pow(2, 8 * r), 0);
+        var i = r - 1;
+        var a = 1;
+        this[t + i] = e & 255;
+        while (--i >= 0 && (a *= 256)) {
+          this[t + i] = e / a >>> 0 & 255;
+        }
+        return t + r;
+      };
+      f.prototype.writeUInt8 = function Ee(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 1, 255, 0);
+        if (!f.TYPED_ARRAY_SUPPORT)
+          e = Math.floor(e);
+        this[t] = e;
+        return t + 1;
+      };
+      function S(e, t, r, n) {
+        if (t < 0)
+          t = 65535 + t + 1;
+        for (var i = 0,
+            a = Math.min(e.length - r, 2); i < a; i++) {
+          e[r + i] = (t & 255 << 8 * (n ? i : 1 - i)) >>> (n ? i : 1 - i) * 8;
+        }
+      }
+      f.prototype.writeUInt16LE = function Ae(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 2, 65535, 0);
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t] = e;
+          this[t + 1] = e >>> 8;
+        } else {
+          S(this, e, t, true);
+        }
+        return t + 2;
+      };
+      f.prototype.writeUInt16BE = function Se(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 2, 65535, 0);
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t] = e >>> 8;
+          this[t + 1] = e;
+        } else {
+          S(this, e, t, false);
+        }
+        return t + 2;
+      };
+      function R(e, t, r, n) {
+        if (t < 0)
+          t = 4294967295 + t + 1;
+        for (var i = 0,
+            a = Math.min(e.length - r, 4); i < a; i++) {
+          e[r + i] = t >>> (n ? i : 3 - i) * 8 & 255;
+        }
+      }
+      f.prototype.writeUInt32LE = function Re(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 4, 4294967295, 0);
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t + 3] = e >>> 24;
+          this[t + 2] = e >>> 16;
+          this[t + 1] = e >>> 8;
+          this[t] = e;
+        } else {
+          R(this, e, t, true);
+        }
+        return t + 4;
+      };
+      f.prototype.writeUInt32BE = function Le(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 4, 4294967295, 0);
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t] = e >>> 24;
+          this[t + 1] = e >>> 16;
+          this[t + 2] = e >>> 8;
+          this[t + 3] = e;
+        } else {
+          R(this, e, t, false);
+        }
+        return t + 4;
+      };
+      f.prototype.writeIntLE = function Ce(e, t, r, n) {
+        e = +e;
+        t = t >>> 0;
+        if (!n) {
+          A(this, e, t, r, Math.pow(2, 8 * r - 1) - 1, -Math.pow(2, 8 * r - 1));
+        }
+        var i = 0;
+        var a = 1;
+        var o = e < 0 ? 1 : 0;
+        this[t] = e & 255;
+        while (++i < r && (a *= 256)) {
+          this[t + i] = (e / a >> 0) - o & 255;
+        }
+        return t + r;
+      };
+      f.prototype.writeIntBE = function Ie(e, t, r, n) {
+        e = +e;
+        t = t >>> 0;
+        if (!n) {
+          A(this, e, t, r, Math.pow(2, 8 * r - 1) - 1, -Math.pow(2, 8 * r - 1));
+        }
+        var i = r - 1;
+        var a = 1;
+        var o = e < 0 ? 1 : 0;
+        this[t + i] = e & 255;
+        while (--i >= 0 && (a *= 256)) {
+          this[t + i] = (e / a >> 0) - o & 255;
+        }
+        return t + r;
+      };
+      f.prototype.writeInt8 = function ke(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 1, 127, -128);
+        if (!f.TYPED_ARRAY_SUPPORT)
+          e = Math.floor(e);
+        if (e < 0)
+          e = 255 + e + 1;
+        this[t] = e;
+        return t + 1;
+      };
+      f.prototype.writeInt16LE = function Te(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 2, 32767, -32768);
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t] = e;
+          this[t + 1] = e >>> 8;
+        } else {
+          S(this, e, t, true);
+        }
+        return t + 2;
+      };
+      f.prototype.writeInt16BE = function Be(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 2, 32767, -32768);
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t] = e >>> 8;
+          this[t + 1] = e;
+        } else {
+          S(this, e, t, false);
+        }
+        return t + 2;
+      };
+      f.prototype.writeInt32LE = function Me(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 4, 2147483647, -2147483648);
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t] = e;
+          this[t + 1] = e >>> 8;
+          this[t + 2] = e >>> 16;
+          this[t + 3] = e >>> 24;
+        } else {
+          R(this, e, t, true);
+        }
+        return t + 4;
+      };
+      f.prototype.writeInt32BE = function xe(e, t, r) {
+        e = +e;
+        t = t >>> 0;
+        if (!r)
+          A(this, e, t, 4, 2147483647, -2147483648);
+        if (e < 0)
+          e = 4294967295 + e + 1;
+        if (f.TYPED_ARRAY_SUPPORT) {
+          this[t] = e >>> 24;
+          this[t + 1] = e >>> 16;
+          this[t + 2] = e >>> 8;
+          this[t + 3] = e;
+        } else {
+          R(this, e, t, false);
+        }
+        return t + 4;
+      };
+      function L(e, t, r, n, i, a) {
+        if (t > i || t < a)
+          throw new RangeError("value is out of bounds");
+        if (r + n > e.length)
+          throw new RangeError("index out of range");
+        if (r < 0)
+          throw new RangeError("index out of range");
+      }
+      function C(e, t, r, n, a) {
+        if (!a) {
+          L(e, t, r, 4, 3.4028234663852886e38, -3.4028234663852886e38);
+        }
+        i.write(e, t, r, n, 23, 4);
+        return r + 4;
+      }
+      f.prototype.writeFloatLE = function Ue(e, t, r) {
+        return C(this, e, t, true, r);
+      };
+      f.prototype.writeFloatBE = function je(e, t, r) {
+        return C(this, e, t, false, r);
+      };
+      function I(e, t, r, n, a) {
+        if (!a) {
+          L(e, t, r, 8, 1.7976931348623157e308, -1.7976931348623157e308);
+        }
+        i.write(e, t, r, n, 52, 8);
+        return r + 8;
+      }
+      f.prototype.writeDoubleLE = function Pe(e, t, r) {
+        return I(this, e, t, true, r);
+      };
+      f.prototype.writeDoubleBE = function De(e, t, r) {
+        return I(this, e, t, false, r);
+      };
+      f.prototype.copy = function Oe(e, t, r, n) {
+        var i = this;
+        if (!r)
+          r = 0;
+        if (!n && n !== 0)
+          n = this.length;
+        if (t >= e.length)
+          t = e.length;
+        if (!t)
+          t = 0;
+        if (n > 0 && n < r)
+          n = r;
+        if (n === r)
+          return 0;
+        if (e.length === 0 || i.length === 0)
+          return 0;
+        if (t < 0) {
+          throw new RangeError("targetStart out of bounds");
+        }
+        if (r < 0 || r >= i.length)
+          throw new RangeError("sourceStart out of bounds");
+        if (n < 0)
+          throw new RangeError("sourceEnd out of bounds");
+        if (n > this.length)
+          n = this.length;
+        if (e.length - t < n - r) {
+          n = e.length - t + r;
+        }
+        var a = n - r;
+        if (a < 1e3 || !f.TYPED_ARRAY_SUPPORT) {
+          for (var o = 0; o < a; o++) {
+            e[o + t] = this[o + r];
+          }
+        } else {
+          e._set(this.subarray(r, r + a), t);
+        }
+        return a;
+      };
+      f.prototype.fill = function Ne(e, t, r) {
+        if (!e)
+          e = 0;
+        if (!t)
+          t = 0;
+        if (!r)
+          r = this.length;
+        if (r < t)
+          throw new RangeError("end < start");
+        if (r === t)
+          return ;
+        if (this.length === 0)
+          return ;
+        if (t < 0 || t >= this.length)
+          throw new RangeError("start out of bounds");
+        if (r < 0 || r > this.length)
+          throw new RangeError("end out of bounds");
+        var n;
+        if (typeof e === "number") {
+          for (n = t; n < r; n++) {
+            this[n] = e;
+          }
+        } else {
+          var i = j(e.toString());
+          var a = i.length;
+          for (n = t; n < r; n++) {
+            this[n] = i[n % a];
+          }
+        }
+        return this;
+      };
+      f.prototype.toArrayBuffer = function Ye() {
+        if (typeof Uint8Array !== "undefined") {
+          if (f.TYPED_ARRAY_SUPPORT) {
+            return new f(this).buffer;
+          } else {
+            var e = new Uint8Array(this.length);
+            for (var t = 0,
+                r = e.length; t < r; t += 1) {
+              e[t] = this[t];
+            }
+            return e.buffer;
+          }
+        } else {
+          throw new TypeError("Buffer.toArrayBuffer not supported in this browser");
+        }
+      };
+      var k = f.prototype;
+      f._augment = function Fe(e) {
+        e.constructor = f;
+        e._isBuffer = true;
+        e._get = e.get;
+        e._set = e.set;
+        e.get = k.get;
+        e.set = k.set;
+        e.write = k.write;
+        e.toString = k.toString;
+        e.toLocaleString = k.toString;
+        e.toJSON = k.toJSON;
+        e.equals = k.equals;
+        e.compare = k.compare;
+        e.indexOf = k.indexOf;
+        e.copy = k.copy;
+        e.slice = k.slice;
+        e.readUIntLE = k.readUIntLE;
+        e.readUIntBE = k.readUIntBE;
+        e.readUInt8 = k.readUInt8;
+        e.readUInt16LE = k.readUInt16LE;
+        e.readUInt16BE = k.readUInt16BE;
+        e.readUInt32LE = k.readUInt32LE;
+        e.readUInt32BE = k.readUInt32BE;
+        e.readIntLE = k.readIntLE;
+        e.readIntBE = k.readIntBE;
+        e.readInt8 = k.readInt8;
+        e.readInt16LE = k.readInt16LE;
+        e.readInt16BE = k.readInt16BE;
+        e.readInt32LE = k.readInt32LE;
+        e.readInt32BE = k.readInt32BE;
+        e.readFloatLE = k.readFloatLE;
+        e.readFloatBE = k.readFloatBE;
+        e.readDoubleLE = k.readDoubleLE;
+        e.readDoubleBE = k.readDoubleBE;
+        e.writeUInt8 = k.writeUInt8;
+        e.writeUIntLE = k.writeUIntLE;
+        e.writeUIntBE = k.writeUIntBE;
+        e.writeUInt16LE = k.writeUInt16LE;
+        e.writeUInt16BE = k.writeUInt16BE;
+        e.writeUInt32LE = k.writeUInt32LE;
+        e.writeUInt32BE = k.writeUInt32BE;
+        e.writeIntLE = k.writeIntLE;
+        e.writeIntBE = k.writeIntBE;
+        e.writeInt8 = k.writeInt8;
+        e.writeInt16LE = k.writeInt16LE;
+        e.writeInt16BE = k.writeInt16BE;
+        e.writeInt32LE = k.writeInt32LE;
+        e.writeInt32BE = k.writeInt32BE;
+        e.writeFloatLE = k.writeFloatLE;
+        e.writeFloatBE = k.writeFloatBE;
+        e.writeDoubleLE = k.writeDoubleLE;
+        e.writeDoubleBE = k.writeDoubleBE;
+        e.fill = k.fill;
+        e.inspect = k.inspect;
+        e.toArrayBuffer = k.toArrayBuffer;
+        return e;
+      };
+      var T = /[^+\/0-9A-z\-]/g;
+      function B(e) {
+        e = M(e).replace(T, "");
+        if (e.length < 2)
+          return "";
+        while (e.length % 4 !== 0) {
+          e = e + "=";
+        }
+        return e;
+      }
+      function M(e) {
+        if (e.trim)
+          return e.trim();
+        return e.replace(/^\s+|\s+$/g, "");
+      }
+      function x(e) {
+        return a(e) || f.isBuffer(e) || e && typeof e === "object" && typeof e.length === "number";
+      }
+      function U(e) {
+        if (e < 16)
+          return "0" + e.toString(16);
+        return e.toString(16);
+      }
+      function j(e, t) {
+        t = t || Infinity;
+        var r;
+        var n = e.length;
+        var i = null;
+        var a = [];
+        var o = 0;
+        for (; o < n; o++) {
+          r = e.charCodeAt(o);
+          if (r > 55295 && r < 57344) {
+            if (i) {
+              if (r < 56320) {
+                if ((t -= 3) > -1)
+                  a.push(239, 191, 189);
+                i = r;
+                continue;
+              } else {
+                r = i - 55296 << 10 | r - 56320 | 65536;
+                i = null;
+              }
+            } else {
+              if (r > 56319) {
+                if ((t -= 3) > -1)
+                  a.push(239, 191, 189);
+                continue;
+              } else if (o + 1 === n) {
+                if ((t -= 3) > -1)
+                  a.push(239, 191, 189);
+                continue;
+              } else {
+                i = r;
+                continue;
+              }
+            }
+          } else if (i) {
+            if ((t -= 3) > -1)
+              a.push(239, 191, 189);
+            i = null;
+          }
+          if (r < 128) {
+            if ((t -= 1) < 0)
+              break;
+            a.push(r);
+          } else if (r < 2048) {
+            if ((t -= 2) < 0)
+              break;
+            a.push(r >> 6 | 192, r & 63 | 128);
+          } else if (r < 65536) {
+            if ((t -= 3) < 0)
+              break;
+            a.push(r >> 12 | 224, r >> 6 & 63 | 128, r & 63 | 128);
+          } else if (r < 2097152) {
+            if ((t -= 4) < 0)
+              break;
+            a.push(r >> 18 | 240, r >> 12 & 63 | 128, r >> 6 & 63 | 128, r & 63 | 128);
+          } else {
+            throw new Error("Invalid code point");
+          }
+        }
+        return a;
+      }
+      function P(e) {
+        var t = [];
+        for (var r = 0; r < e.length; r++) {
+          t.push(e.charCodeAt(r) & 255);
+        }
+        return t;
+      }
+      function D(e, t) {
+        var r,
+            n,
+            i;
+        var a = [];
+        for (var o = 0; o < e.length; o++) {
+          if ((t -= 2) < 0)
+            break;
+          r = e.charCodeAt(o);
+          n = r >> 8;
+          i = r % 256;
+          a.push(i);
+          a.push(n);
+        }
+        return a;
+      }
+      function O(e) {
+        return n.toByteArray(B(e));
+      }
+      function N(e, t, r, n) {
+        for (var i = 0; i < n; i++) {
+          if (i + r >= t.length || i >= e.length)
+            break;
+          t[i + r] = e[i];
+        }
+        return i;
+      }
+      function Y(e) {
+        try {
+          return decodeURIComponent(e);
+        } catch (t) {
+          return String.fromCharCode(65533);
+        }
+      }
+    }, {
+      "base64-js": 14,
+      ieee754: 15,
+      "is-array": 16
+    }],
+    14: [function(e, t, r) {
+      var n = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+      (function(e) {
+        "use strict";
+        var t = typeof Uint8Array !== "undefined" ? Uint8Array : Array;
+        var r = "+".charCodeAt(0);
+        var i = "/".charCodeAt(0);
+        var a = "0".charCodeAt(0);
+        var o = "a".charCodeAt(0);
+        var s = "A".charCodeAt(0);
+        var f = "-".charCodeAt(0);
+        var u = "_".charCodeAt(0);
+        function c(e) {
+          var t = e.charCodeAt(0);
+          if (t === r || t === f)
+            return 62;
+          if (t === i || t === u)
+            return 63;
+          if (t < a)
+            return -1;
+          if (t < a + 10)
+            return t - a + 26 + 26;
+          if (t < s + 26)
+            return t - s;
+          if (t < o + 26)
+            return t - o + 26;
+        }
+        function l(e) {
+          var r,
+              n,
+              i,
+              a,
+              o,
+              s;
+          if (e.length % 4 > 0) {
+            throw new Error("Invalid string. Length must be a multiple of 4");
+          }
+          var f = e.length;
+          o = "=" === e.charAt(f - 2) ? 2 : "=" === e.charAt(f - 1) ? 1 : 0;
+          s = new t(e.length * 3 / 4 - o);
+          i = o > 0 ? e.length - 4 : e.length;
+          var u = 0;
+          function l(e) {
+            s[u++] = e;
+          }
+          for (r = 0, n = 0; r < i; r += 4, n += 3) {
+            a = c(e.charAt(r)) << 18 | c(e.charAt(r + 1)) << 12 | c(e.charAt(r + 2)) << 6 | c(e.charAt(r + 3));
+            l((a & 16711680) >> 16);
+            l((a & 65280) >> 8);
+            l(a & 255);
+          }
+          if (o === 2) {
+            a = c(e.charAt(r)) << 2 | c(e.charAt(r + 1)) >> 4;
+            l(a & 255);
+          } else if (o === 1) {
+            a = c(e.charAt(r)) << 10 | c(e.charAt(r + 1)) << 4 | c(e.charAt(r + 2)) >> 2;
+            l(a >> 8 & 255);
+            l(a & 255);
+          }
+          return s;
+        }
+        function h(e) {
+          var t,
+              r = e.length % 3,
+              i = "",
+              a,
+              o;
+          function s(e) {
+            return n.charAt(e);
+          }
+          function f(e) {
+            return s(e >> 18 & 63) + s(e >> 12 & 63) + s(e >> 6 & 63) + s(e & 63);
+          }
+          for (t = 0, o = e.length - r; t < o; t += 3) {
+            a = (e[t] << 16) + (e[t + 1] << 8) + e[t + 2];
+            i += f(a);
+          }
+          switch (r) {
+            case 1:
+              a = e[e.length - 1];
+              i += s(a >> 2);
+              i += s(a << 4 & 63);
+              i += "==";
+              break;
+            case 2:
+              a = (e[e.length - 2] << 8) + e[e.length - 1];
+              i += s(a >> 10);
+              i += s(a >> 4 & 63);
+              i += s(a << 2 & 63);
+              i += "=";
+              break;
+          }
+          return i;
+        }
+        e.toByteArray = l;
+        e.fromByteArray = h;
+      })(typeof r === "undefined" ? this.base64js = {} : r);
+    }, {}],
+    15: [function(e, t, r) {
+      r.read = function(e, t, r, n, i) {
+        var a,
+            o,
+            s = i * 8 - n - 1,
+            f = (1 << s) - 1,
+            u = f >> 1,
+            c = -7,
+            l = r ? i - 1 : 0,
+            h = r ? -1 : 1,
+            d = e[t + l];
+        l += h;
+        a = d & (1 << -c) - 1;
+        d >>= -c;
+        c += s;
+        for (; c > 0; a = a * 256 + e[t + l], l += h, c -= 8)
+          ;
+        o = a & (1 << -c) - 1;
+        a >>= -c;
+        c += n;
+        for (; c > 0; o = o * 256 + e[t + l], l += h, c -= 8)
+          ;
+        if (a === 0) {
+          a = 1 - u;
+        } else if (a === f) {
+          return o ? NaN : (d ? -1 : 1) * Infinity;
+        } else {
+          o = o + Math.pow(2, n);
+          a = a - u;
+        }
+        return (d ? -1 : 1) * o * Math.pow(2, a - n);
+      };
+      r.write = function(e, t, r, n, i, a) {
+        var o,
+            s,
+            f,
+            u = a * 8 - i - 1,
+            c = (1 << u) - 1,
+            l = c >> 1,
+            h = i === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0,
+            d = n ? 0 : a - 1,
+            p = n ? 1 : -1,
+            g = t < 0 || t === 0 && 1 / t < 0 ? 1 : 0;
+        t = Math.abs(t);
+        if (isNaN(t) || t === Infinity) {
+          s = isNaN(t) ? 1 : 0;
+          o = c;
+        } else {
+          o = Math.floor(Math.log(t) / Math.LN2);
+          if (t * (f = Math.pow(2, -o)) < 1) {
+            o--;
+            f *= 2;
+          }
+          if (o + l >= 1) {
+            t += h / f;
+          } else {
+            t += h * Math.pow(2, 1 - l);
+          }
+          if (t * f >= 2) {
+            o++;
+            f /= 2;
+          }
+          if (o + l >= c) {
+            s = 0;
+            o = c;
+          } else if (o + l >= 1) {
+            s = (t * f - 1) * Math.pow(2, i);
+            o = o + l;
+          } else {
+            s = t * Math.pow(2, l - 1) * Math.pow(2, i);
+            o = 0;
+          }
+        }
+        for (; i >= 8; e[r + d] = s & 255, d += p, s /= 256, i -= 8)
+          ;
+        o = o << i | s;
+        u += i;
+        for (; u > 0; e[r + d] = o & 255, d += p, o /= 256, u -= 8)
+          ;
+        e[r + d - p] |= g * 128;
+      };
+    }, {}],
+    16: [function(e, t, r) {
+      var n = Array.isArray;
+      var i = Object.prototype.toString;
+      t.exports = n || function(e) {
+        return !!e && "[object Array]" == i.call(e);
+      };
+    }, {}],
+    17: [function(e, t, r) {
+      function n() {
+        this._events = this._events || {};
+        this._maxListeners = this._maxListeners || undefined;
+      }
+      t.exports = n;
+      n.EventEmitter = n;
+      n.prototype._events = undefined;
+      n.prototype._maxListeners = undefined;
+      n.defaultMaxListeners = 10;
+      n.prototype.setMaxListeners = function(e) {
+        if (!a(e) || e < 0 || isNaN(e))
+          throw TypeError("n must be a positive number");
+        this._maxListeners = e;
+        return this;
+      };
+      n.prototype.emit = function(e) {
+        var t,
+            r,
+            n,
+            a,
+            f,
+            u;
+        if (!this._events)
+          this._events = {};
+        if (e === "error") {
+          if (!this._events.error || o(this._events.error) && !this._events.error.length) {
+            t = arguments[1];
+            if (t instanceof Error) {
+              throw t;
+            }
+            throw TypeError('Uncaught, unspecified "error" event.');
+          }
+        }
+        r = this._events[e];
+        if (s(r))
+          return false;
+        if (i(r)) {
+          switch (arguments.length) {
+            case 1:
+              r.call(this);
+              break;
+            case 2:
+              r.call(this, arguments[1]);
+              break;
+            case 3:
+              r.call(this, arguments[1], arguments[2]);
+              break;
+            default:
+              n = arguments.length;
+              a = new Array(n - 1);
+              for (f = 1; f < n; f++)
+                a[f - 1] = arguments[f];
+              r.apply(this, a);
+          }
+        } else if (o(r)) {
+          n = arguments.length;
+          a = new Array(n - 1);
+          for (f = 1; f < n; f++)
+            a[f - 1] = arguments[f];
+          u = r.slice();
+          n = u.length;
+          for (f = 0; f < n; f++)
+            u[f].apply(this, a);
+        }
+        return true;
+      };
+      n.prototype.addListener = function(e, t) {
+        var r;
+        if (!i(t))
+          throw TypeError("listener must be a function");
+        if (!this._events)
+          this._events = {};
+        if (this._events.newListener)
+          this.emit("newListener", e, i(t.listener) ? t.listener : t);
+        if (!this._events[e])
+          this._events[e] = t;
+        else if (o(this._events[e]))
+          this._events[e].push(t);
+        else
+          this._events[e] = [this._events[e], t];
+        if (o(this._events[e]) && !this._events[e].warned) {
+          var r;
+          if (!s(this._maxListeners)) {
+            r = this._maxListeners;
+          } else {
+            r = n.defaultMaxListeners;
+          }
+          if (r && r > 0 && this._events[e].length > r) {
+            this._events[e].warned = true;
+            console.error("(node) warning: possible EventEmitter memory " + "leak detected. %d listeners added. " + "Use emitter.setMaxListeners() to increase limit.", this._events[e].length);
+            if (typeof console.trace === "function") {
+              console.trace();
+            }
+          }
+        }
+        return this;
+      };
+      n.prototype.on = n.prototype.addListener;
+      n.prototype.once = function(e, t) {
+        if (!i(t))
+          throw TypeError("listener must be a function");
+        var r = false;
+        function n() {
+          this.removeListener(e, n);
+          if (!r) {
+            r = true;
+            t.apply(this, arguments);
+          }
+        }
+        n.listener = t;
+        this.on(e, n);
+        return this;
+      };
+      n.prototype.removeListener = function(e, t) {
+        var r,
+            n,
+            a,
+            s;
+        if (!i(t))
+          throw TypeError("listener must be a function");
+        if (!this._events || !this._events[e])
+          return this;
+        r = this._events[e];
+        a = r.length;
+        n = -1;
+        if (r === t || i(r.listener) && r.listener === t) {
+          delete this._events[e];
+          if (this._events.removeListener)
+            this.emit("removeListener", e, t);
+        } else if (o(r)) {
+          for (s = a; s-- > 0; ) {
+            if (r[s] === t || r[s].listener && r[s].listener === t) {
+              n = s;
+              break;
+            }
+          }
+          if (n < 0)
+            return this;
+          if (r.length === 1) {
+            r.length = 0;
+            delete this._events[e];
+          } else {
+            r.splice(n, 1);
+          }
+          if (this._events.removeListener)
+            this.emit("removeListener", e, t);
+        }
+        return this;
+      };
+      n.prototype.removeAllListeners = function(e) {
+        var t,
+            r;
+        if (!this._events)
+          return this;
+        if (!this._events.removeListener) {
+          if (arguments.length === 0)
+            this._events = {};
+          else if (this._events[e])
+            delete this._events[e];
+          return this;
+        }
+        if (arguments.length === 0) {
+          for (t in this._events) {
+            if (t === "removeListener")
+              continue;
+            this.removeAllListeners(t);
+          }
+          this.removeAllListeners("removeListener");
+          this._events = {};
+          return this;
+        }
+        r = this._events[e];
+        if (i(r)) {
+          this.removeListener(e, r);
+        } else {
+          while (r.length)
+            this.removeListener(e, r[r.length - 1]);
+        }
+        delete this._events[e];
+        return this;
+      };
+      n.prototype.listeners = function(e) {
+        var t;
+        if (!this._events || !this._events[e])
+          t = [];
+        else if (i(this._events[e]))
+          t = [this._events[e]];
+        else
+          t = this._events[e].slice();
+        return t;
+      };
+      n.listenerCount = function(e, t) {
+        var r;
+        if (!e._events || !e._events[t])
+          r = 0;
+        else if (i(e._events[t]))
+          r = 1;
+        else
+          r = e._events[t].length;
+        return r;
+      };
+      function i(e) {
+        return typeof e === "function";
+      }
+      function a(e) {
+        return typeof e === "number";
+      }
+      function o(e) {
+        return typeof e === "object" && e !== null;
+      }
+      function s(e) {
+        return e === void 0;
+      }
+    }, {}],
+    18: [function(e, t, r) {
+      arguments[4][6][0].apply(r, arguments);
+    }, {dup: 6}],
+    19: [function(e, t, r) {
+      t.exports = Array.isArray || function(e) {
+        return Object.prototype.toString.call(e) == "[object Array]";
+      };
+    }, {}],
+    20: [function(e, t, r) {
+      var n = t.exports = {};
+      var i = [];
+      var a = false;
+      function o() {
+        if (a) {
+          return ;
+        }
+        a = true;
+        var e;
+        var t = i.length;
+        while (t) {
+          e = i;
+          i = [];
+          var r = -1;
+          while (++r < t) {
+            e[r]();
+          }
+          t = i.length;
+        }
+        a = false;
+      }
+      n.nextTick = function(e) {
+        i.push(e);
+        if (!a) {
+          setTimeout(o, 0);
+        }
+      };
+      n.title = "browser";
+      n.browser = true;
+      n.env = {};
+      n.argv = [];
+      n.version = "";
+      n.versions = {};
+      function s() {}
+      n.on = s;
+      n.addListener = s;
+      n.once = s;
+      n.off = s;
+      n.removeListener = s;
+      n.removeAllListeners = s;
+      n.emit = s;
+      n.binding = function(e) {
+        throw new Error("process.binding is not supported");
+      };
+      n.cwd = function() {
+        return "/";
+      };
+      n.chdir = function(e) {
+        throw new Error("process.chdir is not supported");
+      };
+      n.umask = function() {
+        return 0;
+      };
+    }, {}],
+    21: [function(e, t, r) {
+      t.exports = e("./lib/_stream_duplex.js");
+    }, {"./lib/_stream_duplex.js": 22}],
+    22: [function(e, t, r) {
+      (function(r) {
+        t.exports = s;
+        var n = Object.keys || function(e) {
+          var t = [];
+          for (var r in e)
+            t.push(r);
+          return t;
+        };
+        var i = e("core-util-is");
+        i.inherits = e("inherits");
+        var a = e("./_stream_readable");
+        var o = e("./_stream_writable");
+        i.inherits(s, a);
+        u(n(o.prototype), function(e) {
+          if (!s.prototype[e])
+            s.prototype[e] = o.prototype[e];
+        });
+        function s(e) {
+          if (!(this instanceof s))
+            return new s(e);
+          a.call(this, e);
+          o.call(this, e);
+          if (e && e.readable === false)
+            this.readable = false;
+          if (e && e.writable === false)
+            this.writable = false;
+          this.allowHalfOpen = true;
+          if (e && e.allowHalfOpen === false)
+            this.allowHalfOpen = false;
+          this.once("end", f);
+        }
+        function f() {
+          if (this.allowHalfOpen || this._writableState.ended)
+            return ;
+          r.nextTick(this.end.bind(this));
+        }
+        function u(e, t) {
+          for (var r = 0,
+              n = e.length; r < n; r++) {
+            t(e[r], r);
+          }
+        }
+      }).call(this, e("_process"));
+    }, {
+      "./_stream_readable": 24,
+      "./_stream_writable": 26,
+      _process: 20,
+      "core-util-is": 27,
+      inherits: 18
+    }],
+    23: [function(e, t, r) {
+      t.exports = a;
+      var n = e("./_stream_transform");
+      var i = e("core-util-is");
+      i.inherits = e("inherits");
+      i.inherits(a, n);
+      function a(e) {
+        if (!(this instanceof a))
+          return new a(e);
+        n.call(this, e);
+      }
+      a.prototype._transform = function(e, t, r) {
+        r(null, e);
+      };
+    }, {
+      "./_stream_transform": 25,
+      "core-util-is": 27,
+      inherits: 18
+    }],
+    24: [function(e, t, r) {
+      (function(r) {
+        t.exports = l;
+        var n = e("isarray");
+        var i = e("buffer").Buffer;
+        l.ReadableState = c;
+        var a = e("events").EventEmitter;
+        if (!a.listenerCount)
+          a.listenerCount = function(e, t) {
+            return e.listeners(t).length;
+          };
+        var o = e("stream");
+        var s = e("core-util-is");
+        s.inherits = e("inherits");
+        var f;
+        var u = e("util");
+        if (u && u.debuglog) {
+          u = u.debuglog("stream");
+        } else {
+          u = function() {};
+        }
+        s.inherits(l, o);
+        function c(t, r) {
+          var n = e("./_stream_duplex");
+          t = t || {};
+          var i = t.highWaterMark;
+          var a = t.objectMode ? 16 : 16 * 1024;
+          this.highWaterMark = i || i === 0 ? i : a;
+          this.highWaterMark = ~~this.highWaterMark;
+          this.buffer = [];
+          this.length = 0;
+          this.pipes = null;
+          this.pipesCount = 0;
+          this.flowing = null;
+          this.ended = false;
+          this.endEmitted = false;
+          this.reading = false;
+          this.sync = true;
+          this.needReadable = false;
+          this.emittedReadable = false;
+          this.readableListening = false;
+          this.objectMode = !!t.objectMode;
+          if (r instanceof n)
+            this.objectMode = this.objectMode || !!t.readableObjectMode;
+          this.defaultEncoding = t.defaultEncoding || "utf8";
+          this.ranOut = false;
+          this.awaitDrain = 0;
+          this.readingMore = false;
+          this.decoder = null;
+          this.encoding = null;
+          if (t.encoding) {
+            if (!f)
+              f = e("string_decoder/").StringDecoder;
+            this.decoder = new f(t.encoding);
+            this.encoding = t.encoding;
+          }
+        }
+        function l(t) {
+          var r = e("./_stream_duplex");
+          if (!(this instanceof l))
+            return new l(t);
+          this._readableState = new c(t, this);
+          this.readable = true;
+          o.call(this);
+        }
+        l.prototype.push = function(e, t) {
+          var r = this._readableState;
+          if (s.isString(e) && !r.objectMode) {
+            t = t || r.defaultEncoding;
+            if (t !== r.encoding) {
+              e = new i(e, t);
+              t = "";
+            }
+          }
+          return h(this, r, e, t, false);
+        };
+        l.prototype.unshift = function(e) {
+          var t = this._readableState;
+          return h(this, t, e, "", true);
+        };
+        function h(e, t, r, n, i) {
+          var a = b(t, r);
+          if (a) {
+            e.emit("error", a);
+          } else if (s.isNullOrUndefined(r)) {
+            t.reading = false;
+            if (!t.ended)
+              m(e, t);
+          } else if (t.objectMode || r && r.length > 0) {
+            if (t.ended && !i) {
+              var o = new Error("stream.push() after EOF");
+              e.emit("error", o);
+            } else if (t.endEmitted && i) {
+              var o = new Error("stream.unshift() after end event");
+              e.emit("error", o);
+            } else {
+              if (t.decoder && !i && !n)
+                r = t.decoder.write(r);
+              if (!i)
+                t.reading = false;
+              if (t.flowing && t.length === 0 && !t.sync) {
+                e.emit("data", r);
+                e.read(0);
+              } else {
+                t.length += t.objectMode ? 1 : r.length;
+                if (i)
+                  t.buffer.unshift(r);
+                else
+                  t.buffer.push(r);
+                if (t.needReadable)
+                  y(e);
+              }
+              _(e, t);
+            }
+          } else if (!i) {
+            t.reading = false;
+          }
+          return d(t);
+        }
+        function d(e) {
+          return !e.ended && (e.needReadable || e.length < e.highWaterMark || e.length === 0);
+        }
+        l.prototype.setEncoding = function(t) {
+          if (!f)
+            f = e("string_decoder/").StringDecoder;
+          this._readableState.decoder = new f(t);
+          this._readableState.encoding = t;
+          return this;
+        };
+        var p = 8388608;
+        function g(e) {
+          if (e >= p) {
+            e = p;
+          } else {
+            e--;
+            for (var t = 1; t < 32; t <<= 1)
+              e |= e >> t;
+            e++;
+          }
+          return e;
+        }
+        function v(e, t) {
+          if (t.length === 0 && t.ended)
+            return 0;
+          if (t.objectMode)
+            return e === 0 ? 0 : 1;
+          if (isNaN(e) || s.isNull(e)) {
+            if (t.flowing && t.buffer.length)
+              return t.buffer[0].length;
+            else
+              return t.length;
+          }
+          if (e <= 0)
+            return 0;
+          if (e > t.highWaterMark)
+            t.highWaterMark = g(e);
+          if (e > t.length) {
+            if (!t.ended) {
+              t.needReadable = true;
+              return 0;
+            } else
+              return t.length;
+          }
+          return e;
+        }
+        l.prototype.read = function(e) {
+          u("read", e);
+          var t = this._readableState;
+          var r = e;
+          if (!s.isNumber(e) || e > 0)
+            t.emittedReadable = false;
+          if (e === 0 && t.needReadable && (t.length >= t.highWaterMark || t.ended)) {
+            u("read: emitReadable", t.length, t.ended);
+            if (t.length === 0 && t.ended)
+              I(this);
+            else
+              y(this);
+            return null;
+          }
+          e = v(e, t);
+          if (e === 0 && t.ended) {
+            if (t.length === 0)
+              I(this);
+            return null;
+          }
+          var n = t.needReadable;
+          u("need readable", n);
+          if (t.length === 0 || t.length - e < t.highWaterMark) {
+            n = true;
+            u("length less than watermark", n);
+          }
+          if (t.ended || t.reading) {
+            n = false;
+            u("reading or ended", n);
+          }
+          if (n) {
+            u("do read");
+            t.reading = true;
+            t.sync = true;
+            if (t.length === 0)
+              t.needReadable = true;
+            this._read(t.highWaterMark);
+            t.sync = false;
+          }
+          if (n && !t.reading)
+            e = v(r, t);
+          var i;
+          if (e > 0)
+            i = C(e, t);
+          else
+            i = null;
+          if (s.isNull(i)) {
+            t.needReadable = true;
+            e = 0;
+          }
+          t.length -= e;
+          if (t.length === 0 && !t.ended)
+            t.needReadable = true;
+          if (r !== e && t.ended && t.length === 0)
+            I(this);
+          if (!s.isNull(i))
+            this.emit("data", i);
+          return i;
+        };
+        function b(e, t) {
+          var r = null;
+          if (!s.isBuffer(t) && !s.isString(t) && !s.isNullOrUndefined(t) && !e.objectMode) {
+            r = new TypeError("Invalid non-string/buffer chunk");
+          }
+          return r;
+        }
+        function m(e, t) {
+          if (t.decoder && !t.ended) {
+            var r = t.decoder.end();
+            if (r && r.length) {
+              t.buffer.push(r);
+              t.length += t.objectMode ? 1 : r.length;
+            }
+          }
+          t.ended = true;
+          y(e);
+        }
+        function y(e) {
+          var t = e._readableState;
+          t.needReadable = false;
+          if (!t.emittedReadable) {
+            u("emitReadable", t.flowing);
+            t.emittedReadable = true;
+            if (t.sync)
+              r.nextTick(function() {
+                w(e);
+              });
+            else
+              w(e);
+          }
+        }
+        function w(e) {
+          u("emit readable");
+          e.emit("readable");
+          L(e);
+        }
+        function _(e, t) {
+          if (!t.readingMore) {
+            t.readingMore = true;
+            r.nextTick(function() {
+              E(e, t);
+            });
+          }
+        }
+        function E(e, t) {
+          var r = t.length;
+          while (!t.reading && !t.flowing && !t.ended && t.length < t.highWaterMark) {
+            u("maybeReadMore read 0");
+            e.read(0);
+            if (r === t.length)
+              break;
+            else
+              r = t.length;
+          }
+          t.readingMore = false;
+        }
+        l.prototype._read = function(e) {
+          this.emit("error", new Error("not implemented"));
+        };
+        l.prototype.pipe = function(e, t) {
+          var i = this;
+          var o = this._readableState;
+          switch (o.pipesCount) {
+            case 0:
+              o.pipes = e;
+              break;
+            case 1:
+              o.pipes = [o.pipes, e];
+              break;
+            default:
+              o.pipes.push(e);
+              break;
+          }
+          o.pipesCount += 1;
+          u("pipe count=%d opts=%j", o.pipesCount, t);
+          var s = (!t || t.end !== false) && e !== r.stdout && e !== r.stderr;
+          var f = s ? l : d;
+          if (o.endEmitted)
+            r.nextTick(f);
+          else
+            i.once("end", f);
+          e.on("unpipe", c);
+          function c(e) {
+            u("onunpipe");
+            if (e === i) {
+              d();
+            }
+          }
+          function l() {
+            u("onend");
+            e.end();
+          }
+          var h = A(i);
+          e.on("drain", h);
+          function d() {
+            u("cleanup");
+            e.removeListener("close", v);
+            e.removeListener("finish", b);
+            e.removeListener("drain", h);
+            e.removeListener("error", g);
+            e.removeListener("unpipe", c);
+            i.removeListener("end", l);
+            i.removeListener("end", d);
+            i.removeListener("data", p);
+            if (o.awaitDrain && (!e._writableState || e._writableState.needDrain))
+              h();
+          }
+          i.on("data", p);
+          function p(t) {
+            u("ondata");
+            var r = e.write(t);
+            if (false === r) {
+              u("false write response, pause", i._readableState.awaitDrain);
+              i._readableState.awaitDrain++;
+              i.pause();
+            }
+          }
+          function g(t) {
+            u("onerror", t);
+            m();
+            e.removeListener("error", g);
+            if (a.listenerCount(e, "error") === 0)
+              e.emit("error", t);
+          }
+          if (!e._events || !e._events.error)
+            e.on("error", g);
+          else if (n(e._events.error))
+            e._events.error.unshift(g);
+          else
+            e._events.error = [g, e._events.error];
+          function v() {
+            e.removeListener("finish", b);
+            m();
+          }
+          e.once("close", v);
+          function b() {
+            u("onfinish");
+            e.removeListener("close", v);
+            m();
+          }
+          e.once("finish", b);
+          function m() {
+            u("unpipe");
+            i.unpipe(e);
+          }
+          e.emit("pipe", i);
+          if (!o.flowing) {
+            u("pipe resume");
+            i.resume();
+          }
+          return e;
+        };
+        function A(e) {
+          return function() {
+            var t = e._readableState;
+            u("pipeOnDrain", t.awaitDrain);
+            if (t.awaitDrain)
+              t.awaitDrain--;
+            if (t.awaitDrain === 0 && a.listenerCount(e, "data")) {
+              t.flowing = true;
+              L(e);
+            }
+          };
+        }
+        l.prototype.unpipe = function(e) {
+          var t = this._readableState;
+          if (t.pipesCount === 0)
+            return this;
+          if (t.pipesCount === 1) {
+            if (e && e !== t.pipes)
+              return this;
+            if (!e)
+              e = t.pipes;
+            t.pipes = null;
+            t.pipesCount = 0;
+            t.flowing = false;
+            if (e)
+              e.emit("unpipe", this);
+            return this;
+          }
+          if (!e) {
+            var r = t.pipes;
+            var n = t.pipesCount;
+            t.pipes = null;
+            t.pipesCount = 0;
+            t.flowing = false;
+            for (var i = 0; i < n; i++)
+              r[i].emit("unpipe", this);
+            return this;
+          }
+          var i = T(t.pipes, e);
+          if (i === -1)
+            return this;
+          t.pipes.splice(i, 1);
+          t.pipesCount -= 1;
+          if (t.pipesCount === 1)
+            t.pipes = t.pipes[0];
+          e.emit("unpipe", this);
+          return this;
+        };
+        l.prototype.on = function(e, t) {
+          var n = o.prototype.on.call(this, e, t);
+          if (e === "data" && false !== this._readableState.flowing) {
+            this.resume();
+          }
+          if (e === "readable" && this.readable) {
+            var i = this._readableState;
+            if (!i.readableListening) {
+              i.readableListening = true;
+              i.emittedReadable = false;
+              i.needReadable = true;
+              if (!i.reading) {
+                var a = this;
+                r.nextTick(function() {
+                  u("readable nexttick read 0");
+                  a.read(0);
+                });
+              } else if (i.length) {
+                y(this, i);
+              }
+            }
+          }
+          return n;
+        };
+        l.prototype.addListener = l.prototype.on;
+        l.prototype.resume = function() {
+          var e = this._readableState;
+          if (!e.flowing) {
+            u("resume");
+            e.flowing = true;
+            if (!e.reading) {
+              u("resume read 0");
+              this.read(0);
+            }
+            S(this, e);
+          }
+          return this;
+        };
+        function S(e, t) {
+          if (!t.resumeScheduled) {
+            t.resumeScheduled = true;
+            r.nextTick(function() {
+              R(e, t);
+            });
+          }
+        }
+        function R(e, t) {
+          t.resumeScheduled = false;
+          e.emit("resume");
+          L(e);
+          if (t.flowing && !t.reading)
+            e.read(0);
+        }
+        l.prototype.pause = function() {
+          u("call pause flowing=%j", this._readableState.flowing);
+          if (false !== this._readableState.flowing) {
+            u("pause");
+            this._readableState.flowing = false;
+            this.emit("pause");
+          }
+          return this;
+        };
+        function L(e) {
+          var t = e._readableState;
+          u("flow", t.flowing);
+          if (t.flowing) {
+            do {
+              var r = e.read();
+            } while (null !== r && t.flowing);
+          }
+        }
+        l.prototype.wrap = function(e) {
+          var t = this._readableState;
+          var r = false;
+          var n = this;
+          e.on("end", function() {
+            u("wrapped end");
+            if (t.decoder && !t.ended) {
+              var e = t.decoder.end();
+              if (e && e.length)
+                n.push(e);
+            }
+            n.push(null);
+          });
+          e.on("data", function(i) {
+            u("wrapped data");
+            if (t.decoder)
+              i = t.decoder.write(i);
+            if (!i || !t.objectMode && !i.length)
+              return ;
+            var a = n.push(i);
+            if (!a) {
+              r = true;
+              e.pause();
+            }
+          });
+          for (var i in e) {
+            if (s.isFunction(e[i]) && s.isUndefined(this[i])) {
+              this[i] = function(t) {
+                return function() {
+                  return e[t].apply(e, arguments);
+                };
+              }(i);
+            }
+          }
+          var a = ["error", "close", "destroy", "pause", "resume"];
+          k(a, function(t) {
+            e.on(t, n.emit.bind(n, t));
+          });
+          n._read = function(t) {
+            u("wrapped _read", t);
+            if (r) {
+              r = false;
+              e.resume();
+            }
+          };
+          return n;
+        };
+        l._fromList = C;
+        function C(e, t) {
+          var r = t.buffer;
+          var n = t.length;
+          var a = !!t.decoder;
+          var o = !!t.objectMode;
+          var s;
+          if (r.length === 0)
+            return null;
+          if (n === 0)
+            s = null;
+          else if (o)
+            s = r.shift();
+          else if (!e || e >= n) {
+            if (a)
+              s = r.join("");
+            else
+              s = i.concat(r, n);
+            r.length = 0;
+          } else {
+            if (e < r[0].length) {
+              var f = r[0];
+              s = f.slice(0, e);
+              r[0] = f.slice(e);
+            } else if (e === r[0].length) {
+              s = r.shift();
+            } else {
+              if (a)
+                s = "";
+              else
+                s = new i(e);
+              var u = 0;
+              for (var c = 0,
+                  l = r.length; c < l && u < e; c++) {
+                var f = r[0];
+                var h = Math.min(e - u, f.length);
+                if (a)
+                  s += f.slice(0, h);
+                else
+                  f.copy(s, u, 0, h);
+                if (h < f.length)
+                  r[0] = f.slice(h);
+                else
+                  r.shift();
+                u += h;
+              }
+            }
+          }
+          return s;
+        }
+        function I(e) {
+          var t = e._readableState;
+          if (t.length > 0)
+            throw new Error("endReadable called on non-empty stream");
+          if (!t.endEmitted) {
+            t.ended = true;
+            r.nextTick(function() {
+              if (!t.endEmitted && t.length === 0) {
+                t.endEmitted = true;
+                e.readable = false;
+                e.emit("end");
+              }
+            });
+          }
+        }
+        function k(e, t) {
+          for (var r = 0,
+              n = e.length; r < n; r++) {
+            t(e[r], r);
+          }
+        }
+        function T(e, t) {
+          for (var r = 0,
+              n = e.length; r < n; r++) {
+            if (e[r] === t)
+              return r;
+          }
+          return -1;
+        }
+      }).call(this, e("_process"));
+    }, {
+      "./_stream_duplex": 22,
+      _process: 20,
+      buffer: 13,
+      "core-util-is": 27,
+      events: 17,
+      inherits: 18,
+      isarray: 19,
+      stream: 32,
+      "string_decoder/": 33,
+      util: 12
+    }],
+    25: [function(e, t, r) {
+      t.exports = s;
+      var n = e("./_stream_duplex");
+      var i = e("core-util-is");
+      i.inherits = e("inherits");
+      i.inherits(s, n);
+      function a(e, t) {
+        this.afterTransform = function(e, r) {
+          return o(t, e, r);
+        };
+        this.needTransform = false;
+        this.transforming = false;
+        this.writecb = null;
+        this.writechunk = null;
+      }
+      function o(e, t, r) {
+        var n = e._transformState;
+        n.transforming = false;
+        var a = n.writecb;
+        if (!a)
+          return e.emit("error", new Error("no writecb in Transform class"));
+        n.writechunk = null;
+        n.writecb = null;
+        if (!i.isNullOrUndefined(r))
+          e.push(r);
+        if (a)
+          a(t);
+        var o = e._readableState;
+        o.reading = false;
+        if (o.needReadable || o.length < o.highWaterMark) {
+          e._read(o.highWaterMark);
+        }
+      }
+      function s(e) {
+        if (!(this instanceof s))
+          return new s(e);
+        n.call(this, e);
+        this._transformState = new a(e, this);
+        var t = this;
+        this._readableState.needReadable = true;
+        this._readableState.sync = false;
+        this.once("prefinish", function() {
+          if (i.isFunction(this._flush))
+            this._flush(function(e) {
+              f(t, e);
+            });
+          else
+            f(t);
+        });
+      }
+      s.prototype.push = function(e, t) {
+        this._transformState.needTransform = false;
+        return n.prototype.push.call(this, e, t);
+      };
+      s.prototype._transform = function(e, t, r) {
+        throw new Error("not implemented");
+      };
+      s.prototype._write = function(e, t, r) {
+        var n = this._transformState;
+        n.writecb = r;
+        n.writechunk = e;
+        n.writeencoding = t;
+        if (!n.transforming) {
+          var i = this._readableState;
+          if (n.needTransform || i.needReadable || i.length < i.highWaterMark)
+            this._read(i.highWaterMark);
+        }
+      };
+      s.prototype._read = function(e) {
+        var t = this._transformState;
+        if (!i.isNull(t.writechunk) && t.writecb && !t.transforming) {
+          t.transforming = true;
+          this._transform(t.writechunk, t.writeencoding, t.afterTransform);
+        } else {
+          t.needTransform = true;
+        }
+      };
+      function f(e, t) {
+        if (t)
+          return e.emit("error", t);
+        var r = e._writableState;
+        var n = e._transformState;
+        if (r.length)
+          throw new Error("calling transform done when ws.length != 0");
+        if (n.transforming)
+          throw new Error("calling transform done when still transforming");
+        return e.push(null);
+      }
+    }, {
+      "./_stream_duplex": 22,
+      "core-util-is": 27,
+      inherits: 18
+    }],
+    26: [function(e, t, r) {
+      (function(r) {
+        t.exports = f;
+        var n = e("buffer").Buffer;
+        f.WritableState = s;
+        var i = e("core-util-is");
+        i.inherits = e("inherits");
+        var a = e("stream");
+        i.inherits(f, a);
+        function o(e, t, r) {
+          this.chunk = e;
+          this.encoding = t;
+          this.callback = r;
+        }
+        function s(t, r) {
+          var n = e("./_stream_duplex");
+          t = t || {};
+          var i = t.highWaterMark;
+          var a = t.objectMode ? 16 : 16 * 1024;
+          this.highWaterMark = i || i === 0 ? i : a;
+          this.objectMode = !!t.objectMode;
+          if (r instanceof n)
+            this.objectMode = this.objectMode || !!t.writableObjectMode;
+          this.highWaterMark = ~~this.highWaterMark;
+          this.needDrain = false;
+          this.ending = false;
+          this.ended = false;
+          this.finished = false;
+          var o = t.decodeStrings === false;
+          this.decodeStrings = !o;
+          this.defaultEncoding = t.defaultEncoding || "utf8";
+          this.length = 0;
+          this.writing = false;
+          this.corked = 0;
+          this.sync = true;
+          this.bufferProcessing = false;
+          this.onwrite = function(e) {
+            v(r, e);
+          };
+          this.writecb = null;
+          this.writelen = 0;
+          this.buffer = [];
+          this.pendingcb = 0;
+          this.prefinished = false;
+          this.errorEmitted = false;
+        }
+        function f(t) {
+          var r = e("./_stream_duplex");
+          if (!(this instanceof f) && !(this instanceof r))
+            return new f(t);
+          this._writableState = new s(t, this);
+          this.writable = true;
+          a.call(this);
+        }
+        f.prototype.pipe = function() {
+          this.emit("error", new Error("Cannot pipe. Not readable."));
+        };
+        function u(e, t, n) {
+          var i = new Error("write after end");
+          e.emit("error", i);
+          r.nextTick(function() {
+            n(i);
+          });
+        }
+        function c(e, t, n, a) {
+          var o = true;
+          if (!i.isBuffer(n) && !i.isString(n) && !i.isNullOrUndefined(n) && !t.objectMode) {
+            var s = new TypeError("Invalid non-string/buffer chunk");
+            e.emit("error", s);
+            r.nextTick(function() {
+              a(s);
+            });
+            o = false;
+          }
+          return o;
+        }
+        f.prototype.write = function(e, t, r) {
+          var n = this._writableState;
+          var a = false;
+          if (i.isFunction(t)) {
+            r = t;
+            t = null;
+          }
+          if (i.isBuffer(e))
+            t = "buffer";
+          else if (!t)
+            t = n.defaultEncoding;
+          if (!i.isFunction(r))
+            r = function() {};
+          if (n.ended)
+            u(this, n, r);
+          else if (c(this, n, e, r)) {
+            n.pendingcb++;
+            a = h(this, n, e, t, r);
+          }
+          return a;
+        };
+        f.prototype.cork = function() {
+          var e = this._writableState;
+          e.corked++;
+        };
+        f.prototype.uncork = function() {
+          var e = this._writableState;
+          if (e.corked) {
+            e.corked--;
+            if (!e.writing && !e.corked && !e.finished && !e.bufferProcessing && e.buffer.length)
+              y(this, e);
+          }
+        };
+        function l(e, t, r) {
+          if (!e.objectMode && e.decodeStrings !== false && i.isString(t)) {
+            t = new n(t, r);
+          }
+          return t;
+        }
+        function h(e, t, r, n, a) {
+          r = l(t, r, n);
+          if (i.isBuffer(r))
+            n = "buffer";
+          var s = t.objectMode ? 1 : r.length;
+          t.length += s;
+          var f = t.length < t.highWaterMark;
+          if (!f)
+            t.needDrain = true;
+          if (t.writing || t.corked)
+            t.buffer.push(new o(r, n, a));
+          else
+            d(e, t, false, s, r, n, a);
+          return f;
+        }
+        function d(e, t, r, n, i, a, o) {
+          t.writelen = n;
+          t.writecb = o;
+          t.writing = true;
+          t.sync = true;
+          if (r)
+            e._writev(i, t.onwrite);
+          else
+            e._write(i, a, t.onwrite);
+          t.sync = false;
+        }
+        function p(e, t, n, i, a) {
+          if (n)
+            r.nextTick(function() {
+              t.pendingcb--;
+              a(i);
+            });
+          else {
+            t.pendingcb--;
+            a(i);
+          }
+          e._writableState.errorEmitted = true;
+          e.emit("error", i);
+        }
+        function g(e) {
+          e.writing = false;
+          e.writecb = null;
+          e.length -= e.writelen;
+          e.writelen = 0;
+        }
+        function v(e, t) {
+          var n = e._writableState;
+          var i = n.sync;
+          var a = n.writecb;
+          g(n);
+          if (t)
+            p(e, n, i, t, a);
+          else {
+            var o = w(e, n);
+            if (!o && !n.corked && !n.bufferProcessing && n.buffer.length) {
+              y(e, n);
+            }
+            if (i) {
+              r.nextTick(function() {
+                b(e, n, o, a);
+              });
+            } else {
+              b(e, n, o, a);
+            }
+          }
+        }
+        function b(e, t, r, n) {
+          if (!r)
+            m(e, t);
+          t.pendingcb--;
+          n();
+          E(e, t);
+        }
+        function m(e, t) {
+          if (t.length === 0 && t.needDrain) {
+            t.needDrain = false;
+            e.emit("drain");
+          }
+        }
+        function y(e, t) {
+          t.bufferProcessing = true;
+          if (e._writev && t.buffer.length > 1) {
+            var r = [];
+            for (var n = 0; n < t.buffer.length; n++)
+              r.push(t.buffer[n].callback);
+            t.pendingcb++;
+            d(e, t, true, t.length, t.buffer, "", function(e) {
+              for (var n = 0; n < r.length; n++) {
+                t.pendingcb--;
+                r[n](e);
+              }
+            });
+            t.buffer = [];
+          } else {
+            for (var n = 0; n < t.buffer.length; n++) {
+              var i = t.buffer[n];
+              var a = i.chunk;
+              var o = i.encoding;
+              var s = i.callback;
+              var f = t.objectMode ? 1 : a.length;
+              d(e, t, false, f, a, o, s);
+              if (t.writing) {
+                n++;
+                break;
+              }
+            }
+            if (n < t.buffer.length)
+              t.buffer = t.buffer.slice(n);
+            else
+              t.buffer.length = 0;
+          }
+          t.bufferProcessing = false;
+        }
+        f.prototype._write = function(e, t, r) {
+          r(new Error("not implemented"));
+        };
+        f.prototype._writev = null;
+        f.prototype.end = function(e, t, r) {
+          var n = this._writableState;
+          if (i.isFunction(e)) {
+            r = e;
+            e = null;
+            t = null;
+          } else if (i.isFunction(t)) {
+            r = t;
+            t = null;
+          }
+          if (!i.isNullOrUndefined(e))
+            this.write(e, t);
+          if (n.corked) {
+            n.corked = 1;
+            this.uncork();
+          }
+          if (!n.ending && !n.finished)
+            A(this, n, r);
+        };
+        function w(e, t) {
+          return t.ending && t.length === 0 && !t.finished && !t.writing;
+        }
+        function _(e, t) {
+          if (!t.prefinished) {
+            t.prefinished = true;
+            e.emit("prefinish");
+          }
+        }
+        function E(e, t) {
+          var r = w(e, t);
+          if (r) {
+            if (t.pendingcb === 0) {
+              _(e, t);
+              t.finished = true;
+              e.emit("finish");
+            } else
+              _(e, t);
+          }
+          return r;
+        }
+        function A(e, t, n) {
+          t.ending = true;
+          E(e, t);
+          if (n) {
+            if (t.finished)
+              r.nextTick(n);
+            else
+              e.once("finish", n);
+          }
+          t.ended = true;
+        }
+      }).call(this, e("_process"));
+    }, {
+      "./_stream_duplex": 22,
+      _process: 20,
+      buffer: 13,
+      "core-util-is": 27,
+      inherits: 18,
+      stream: 32
+    }],
+    27: [function(e, t, r) {
+      (function(e) {
+        function t(e) {
+          return Array.isArray(e);
+        }
+        r.isArray = t;
+        function n(e) {
+          return typeof e === "boolean";
+        }
+        r.isBoolean = n;
+        function i(e) {
+          return e === null;
+        }
+        r.isNull = i;
+        function a(e) {
+          return e == null;
+        }
+        r.isNullOrUndefined = a;
+        function o(e) {
+          return typeof e === "number";
+        }
+        r.isNumber = o;
+        function s(e) {
+          return typeof e === "string";
+        }
+        r.isString = s;
+        function f(e) {
+          return typeof e === "symbol";
+        }
+        r.isSymbol = f;
+        function u(e) {
+          return e === void 0;
+        }
+        r.isUndefined = u;
+        function c(e) {
+          return l(e) && b(e) === "[object RegExp]";
+        }
+        r.isRegExp = c;
+        function l(e) {
+          return typeof e === "object" && e !== null;
+        }
+        r.isObject = l;
+        function h(e) {
+          return l(e) && b(e) === "[object Date]";
+        }
+        r.isDate = h;
+        function d(e) {
+          return l(e) && (b(e) === "[object Error]" || e instanceof Error);
+        }
+        r.isError = d;
+        function p(e) {
+          return typeof e === "function";
+        }
+        r.isFunction = p;
+        function g(e) {
+          return e === null || typeof e === "boolean" || typeof e === "number" || typeof e === "string" || typeof e === "symbol" || typeof e === "undefined";
+        }
+        r.isPrimitive = g;
+        function v(t) {
+          return e.isBuffer(t);
+        }
+        r.isBuffer = v;
+        function b(e) {
+          return Object.prototype.toString.call(e);
+        }
+      }).call(this, e("buffer").Buffer);
+    }, {buffer: 13}],
+    28: [function(e, t, r) {
+      t.exports = e("./lib/_stream_passthrough.js");
+    }, {"./lib/_stream_passthrough.js": 23}],
+    29: [function(e, t, r) {
+      r = t.exports = e("./lib/_stream_readable.js");
+      r.Stream = e("stream");
+      r.Readable = r;
+      r.Writable = e("./lib/_stream_writable.js");
+      r.Duplex = e("./lib/_stream_duplex.js");
+      r.Transform = e("./lib/_stream_transform.js");
+      r.PassThrough = e("./lib/_stream_passthrough.js");
+    }, {
+      "./lib/_stream_duplex.js": 22,
+      "./lib/_stream_passthrough.js": 23,
+      "./lib/_stream_readable.js": 24,
+      "./lib/_stream_transform.js": 25,
+      "./lib/_stream_writable.js": 26,
+      stream: 32
+    }],
+    30: [function(e, t, r) {
+      t.exports = e("./lib/_stream_transform.js");
+    }, {"./lib/_stream_transform.js": 25}],
+    31: [function(e, t, r) {
+      t.exports = e("./lib/_stream_writable.js");
+    }, {"./lib/_stream_writable.js": 26}],
+    32: [function(e, t, r) {
+      t.exports = a;
+      var n = e("events").EventEmitter;
+      var i = e("inherits");
+      i(a, n);
+      a.Readable = e("readable-stream/readable.js");
+      a.Writable = e("readable-stream/writable.js");
+      a.Duplex = e("readable-stream/duplex.js");
+      a.Transform = e("readable-stream/transform.js");
+      a.PassThrough = e("readable-stream/passthrough.js");
+      a.Stream = a;
+      function a() {
+        n.call(this);
+      }
+      a.prototype.pipe = function(e, t) {
+        var r = this;
+        function i(t) {
+          if (e.writable) {
+            if (false === e.write(t) && r.pause) {
+              r.pause();
+            }
+          }
+        }
+        r.on("data", i);
+        function a() {
+          if (r.readable && r.resume) {
+            r.resume();
+          }
+        }
+        e.on("drain", a);
+        if (!e._isStdio && (!t || t.end !== false)) {
+          r.on("end", s);
+          r.on("close", f);
+        }
+        var o = false;
+        function s() {
+          if (o)
+            return ;
+          o = true;
+          e.end();
+        }
+        function f() {
+          if (o)
+            return ;
+          o = true;
+          if (typeof e.destroy === "function")
+            e.destroy();
+        }
+        function u(e) {
+          c();
+          if (n.listenerCount(this, "error") === 0) {
+            throw e;
+          }
+        }
+        r.on("error", u);
+        e.on("error", u);
+        function c() {
+          r.removeListener("data", i);
+          e.removeListener("drain", a);
+          r.removeListener("end", s);
+          r.removeListener("close", f);
+          r.removeListener("error", u);
+          e.removeListener("error", u);
+          r.removeListener("end", c);
+          r.removeListener("close", c);
+          e.removeListener("close", c);
+        }
+        r.on("end", c);
+        r.on("close", c);
+        e.on("close", c);
+        e.emit("pipe", r);
+        return e;
+      };
+    }, {
+      events: 17,
+      inherits: 18,
+      "readable-stream/duplex.js": 21,
+      "readable-stream/passthrough.js": 28,
+      "readable-stream/readable.js": 29,
+      "readable-stream/transform.js": 30,
+      "readable-stream/writable.js": 31
+    }],
+    33: [function(e, t, r) {
+      var n = e("buffer").Buffer;
+      var i = n.isEncoding || function(e) {
+        switch (e && e.toLowerCase()) {
+          case "hex":
+          case "utf8":
+          case "utf-8":
+          case "ascii":
+          case "binary":
+          case "base64":
+          case "ucs2":
+          case "ucs-2":
+          case "utf16le":
+          case "utf-16le":
+          case "raw":
+            return true;
+          default:
+            return false;
+        }
+      };
+      function a(e) {
+        if (e && !i(e)) {
+          throw new Error("Unknown encoding: " + e);
+        }
+      }
+      var o = r.StringDecoder = function(e) {
+        this.encoding = (e || "utf8").toLowerCase().replace(/[-_]/, "");
+        a(e);
+        switch (this.encoding) {
+          case "utf8":
+            this.surrogateSize = 3;
+            break;
+          case "ucs2":
+          case "utf16le":
+            this.surrogateSize = 2;
+            this.detectIncompleteChar = f;
+            break;
+          case "base64":
+            this.surrogateSize = 3;
+            this.detectIncompleteChar = u;
+            break;
+          default:
+            this.write = s;
+            return ;
+        }
+        this.charBuffer = new n(6);
+        this.charReceived = 0;
+        this.charLength = 0;
+      };
+      o.prototype.write = function(e) {
+        var t = "";
+        while (this.charLength) {
+          var r = e.length >= this.charLength - this.charReceived ? this.charLength - this.charReceived : e.length;
+          e.copy(this.charBuffer, this.charReceived, 0, r);
+          this.charReceived += r;
+          if (this.charReceived < this.charLength) {
+            return "";
+          }
+          e = e.slice(r, e.length);
+          t = this.charBuffer.slice(0, this.charLength).toString(this.encoding);
+          var n = t.charCodeAt(t.length - 1);
+          if (n >= 55296 && n <= 56319) {
+            this.charLength += this.surrogateSize;
+            t = "";
+            continue;
+          }
+          this.charReceived = this.charLength = 0;
+          if (e.length === 0) {
+            return t;
+          }
+          break;
+        }
+        this.detectIncompleteChar(e);
+        var i = e.length;
+        if (this.charLength) {
+          e.copy(this.charBuffer, 0, e.length - this.charReceived, i);
+          i -= this.charReceived;
+        }
+        t += e.toString(this.encoding, 0, i);
+        var i = t.length - 1;
+        var n = t.charCodeAt(i);
+        if (n >= 55296 && n <= 56319) {
+          var a = this.surrogateSize;
+          this.charLength += a;
+          this.charReceived += a;
+          this.charBuffer.copy(this.charBuffer, a, 0, a);
+          e.copy(this.charBuffer, 0, 0, a);
+          return t.substring(0, i);
+        }
+        return t;
+      };
+      o.prototype.detectIncompleteChar = function(e) {
+        var t = e.length >= 3 ? 3 : e.length;
+        for (; t > 0; t--) {
+          var r = e[e.length - t];
+          if (t == 1 && r >> 5 == 6) {
+            this.charLength = 2;
+            break;
+          }
+          if (t <= 2 && r >> 4 == 14) {
+            this.charLength = 3;
+            break;
+          }
+          if (t <= 3 && r >> 3 == 30) {
+            this.charLength = 4;
+            break;
+          }
+        }
+        this.charReceived = t;
+      };
+      o.prototype.end = function(e) {
+        var t = "";
+        if (e && e.length)
+          t = this.write(e);
+        if (this.charReceived) {
+          var r = this.charReceived;
+          var n = this.charBuffer;
+          var i = this.encoding;
+          t += n.slice(0, r).toString(i);
+        }
+        return t;
+      };
+      function s(e) {
+        return e.toString(this.encoding);
+      }
+      function f(e) {
+        this.charReceived = e.length % 2;
+        this.charLength = this.charReceived ? 2 : 0;
+      }
+      function u(e) {
+        this.charReceived = e.length % 3;
+        this.charLength = this.charReceived ? 3 : 0;
+      }
+    }, {buffer: 13}]
+  }, {}, [])("/");
+});
+})();
 System.register("components/pages.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
   var global = System.global,
       __define = global.define;
@@ -18075,44 +22041,38 @@ System.register("components/pages.html!github:systemjs/plugin-text@0.0.2", [], t
   return module.exports;
 });
 
-System.register("lib/call", [], function($__export) {
+System.register("lib/call", ["lib/vendor/simplepeer.min"], function($__export) {
   "use strict";
   var __moduleName = "lib/call";
+  var SimplePeer;
   return {
-    setters: [],
+    setters: [function($__m) {
+      SimplePeer = $__m.default;
+    }],
     execute: function() {
       $__export('default', function(inputStream, white) {
-        var skylink = new Skylink();
-        skylink.on('incomingStream', function(peerId, stream, isSelf) {
-          console.log('incomming stream');
-          if (isSelf) {
-            var peer = document.getElementById('inputVideo');
-            attachMediaStream(peer, stream);
-            console.log('input connected');
-          } else {
-            console.log('peer stream');
-            var peer = document.getElementById('peerVideo');
-            attachMediaStream(peer, stream);
-            socket.emit('connected');
-          }
+        var socket = io(window.socketUrl);
+        socket.on('connect', function() {
+          socket.emit('hello', {white: white});
+          console.log('connected to server!');
         });
-        skylink.init({apiKey: '4182d87f-f849-4a41-8c84-2863e66cb3ed'}, function(error, success) {
-          if (error) {
-            console.log('skylink failed ' + JSON.stringify(error));
-          } else {
-            console.log('skylink init ' + JSON.stringify(success));
-          }
-          var socket = io(window.socketUrl);
-          socket.on('connect', function() {
-            socket.emit('hello', {white: white});
-            console.log('connected to server!');
+        socket.on('call', function(iceServers, initiator) {
+          console.log('call recieved');
+          var peer = new SimplePeer({
+            initiator: initiator,
+            stream: inputStream
           });
-          socket.on('call', function(room) {
-            console.log('call from room ' + 'room');
-            skylink.joinRoom('room', {
-              audio: false,
-              video: true
-            });
+          peer.on('signal', function(data) {
+            socket.emit('signal', JSON.stringify(data));
+          });
+          peer.on('stream', function(stream) {
+            socket.emit('connected');
+            var video = document.querySelector('#peerVideo');
+            video.src = window.URL.createObjectURL(stream);
+            video.play();
+          });
+          socket.on('signal', function(data) {
+            peer.signal(data);
           });
         });
       });
@@ -18120,7 +22080,7 @@ System.register("lib/call", [], function($__export) {
   };
 });
 
-System.register("lib/start", ["lib/headtrackr", "lib/call"], function($__export) {
+System.register("lib/start", ["lib/vendor/headtrackr", "lib/call"], function($__export) {
   "use strict";
   var __moduleName = "lib/start";
   var headtrackr,
