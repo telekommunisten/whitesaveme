@@ -7,6 +7,7 @@
 
   app.use(cors())
   app.use(serve(__dirname + '/site'))
+  var get = require('simple-get')
 
   var server = require('http').createServer(app.callback())
   var io = require('socket.io')(server)
@@ -15,11 +16,28 @@
     var initCall = function (peer1, peer2) {
       if ((typeof io.sockets.connected[peer1] !== 'undefined') &&
         (typeof io.sockets.connected[peer2] !== 'undefined')) {
-        connections.not.set(peer2, peer1)
-        connections.white.set(peer1, peer2)
-        io.sockets.connected[peer1].emit('call', false)
-        io.sockets.connected[peer2].emit('call', true)
-        console.log('call from ' + peer1 + ' to ' + peer2)
+
+        var q = [
+          'ident=dmytri',
+          'domain=whitesave.me',
+          'application=default',
+          'room=default',
+          'secure=1',
+          'secret=' + process.env.XIRSYS
+        ].join('&')
+        
+        get.concat('https://service.xirsys.com/ice?' + q, function (err, data, res) {
+          if (err) throw err
+          console.log(res.statusCode) // 200
+          var iceServers = JSON.parse(data.toString())['d']['iceServers']
+          console.log(iceServers) // 'this is the server response'
+
+          connections.not.set(peer2, peer1)
+          connections.white.set(peer1, peer2)
+          io.sockets.connected[peer1].emit('call', iceServers, false)
+          io.sockets.connected[peer2].emit('call', iceServers, true)
+          console.log('call from ' + peer1 + ' to ' + peer2)
+        });
       }
     }
     socket.on('hello', function (data) {
