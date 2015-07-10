@@ -1,1 +1,1 @@
-window.socketUrl = 'http://devlocal.trick.ca:5000'
+window.socketUrl = 'http://localhost:5000'
