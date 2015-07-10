@@ -26,7 +26,7 @@
       "site/config.js",
       "site/build.js",
       "site/whitesaveme.js",
-      "site/lib/headtrackr.js"
+      "site/lib/vendor/headtrackr.js"
     ]
   },
   "jspm": {
@@ -36,7 +36,6 @@
     "dependencies": {
       "clean-css": "npm:clean-css@^3.3.3",
       "css": "github:systemjs/plugin-css@^0.1.13",
-      "simple-peer": "npm:simple-peer@^5.11.3",
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {

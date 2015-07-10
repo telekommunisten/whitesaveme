@@ -1,4 +1,4 @@
-import headtrackr from 'lib/headtrackr'
+import headtrackr from 'lib/vendor/headtrackr'
 import call from 'lib/call'
 
 export default function () {

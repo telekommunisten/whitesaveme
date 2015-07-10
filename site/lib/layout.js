@@ -69,7 +69,7 @@ riot.route(function (slug, id, action) {
     riot.update()
     start()
   }
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 0)
 })
 
 // mount

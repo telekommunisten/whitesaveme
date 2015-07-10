@@ -15,11 +15,10 @@
     var initCall = function (peer1, peer2) {
       if ((typeof io.sockets.connected[peer1] !== 'undefined') &&
         (typeof io.sockets.connected[peer2] !== 'undefined')) {
-        var room = peer1
-        io.sockets.connected[peer1].emit('call', room, '8fy08skh8k1hh')
-        io.sockets.connected[peer2].emit('call', room, '8fy08skh8k1hh')
         connections.not.set(peer2, peer1)
         connections.white.set(peer1, peer2)
+        io.sockets.connected[peer1].emit('call', false)
+        io.sockets.connected[peer2].emit('call', true)
         console.log('call from ' + peer1 + ' to ' + peer2)
       }
     }
@@ -39,13 +38,22 @@
       console.log('white ' + connections.white.size)
       console.log('not ' + connections.not.size)
     })
+    socket.on('signal', function (data) {
+      console.log('signal from ' + socket.id)
+      console.log(data)
+      var s = (connections.white.has(socket.id)) ? connections.white.get(socket.id) : connections.not.get(socket.id)
+      if (typeof io.sockets.connected[s] !== 'undefined') {
+         console.log('signal to ' + s)
+        io.sockets.connected[s].emit('signal', data)
+      }
+    })
     var remove = function (s) {
       console.log('removing ' + s)
       if (connections.white.has(s)) connections.white.delete(s)
       if (connections.not.has(s)) connections.not.delete(s)
     }
     socket.on('connected', function () {
-      remove(socket.id)
+      //remove(socket.id)
     })
     socket.on('disconnect', function () {
       remove(socket.id)
