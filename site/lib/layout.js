@@ -20,29 +20,39 @@ riot.tag('x-footer', xFooter)
 // pages
 
 var siteMap = {}
-var addToSiteMap = function (name, slug, page) {
+var siteMenu = []
+var addToSiteMap = function (name, slug, page, menu) {
   siteMap[slug] = { page: page, name: name }
+  if (menu) siteMenu.push({ slug: slug, name: name })
 }
 
 import pageAbout from 'pages/about.html!text'
-addToSiteMap('how it works', 'how', pageAbout)
+addToSiteMap('how it works', 'how', pageAbout, true)
 
 import pageStart from 'pages/start.html!text'
-addToSiteMap('try it now', 'try', pageStart)
+addToSiteMap('try it now', 'try', pageStart, true)
 
 import pageSuccess from 'pages/success.html!text'
-addToSiteMap('success stories', 'success', pageSuccess)
+addToSiteMap('success stories', 'success', pageSuccess, true)
 
 import pageStory from 'pages/story.html!text'
-addToSiteMap('our story', 'story', pageStory)
+addToSiteMap('our story', 'story', pageStory, true)
 
 import pageFAQs from 'pages/faq.html!text'
-addToSiteMap('FAQs', 'faq', pageFAQs)
+addToSiteMap('FAQs', 'faq', pageFAQs, true)
 
 import pageHome from 'pages/home.html!text'
+addToSiteMap('home', 'home', pageHome, false)
+
+import pagePartners from 'pages/partners.html!text'
+addToSiteMap('partners', 'partners', pagePartners, false)
+
+import pageTerms from 'pages/terms.html!text'
+addToSiteMap('terms', 'terms', pageTerms, false)
+
 import pageCall from 'pages/call.html!text'
 
-var siteOptions = { siteMap: siteMap, pageTitle: 'home', pageBody: pageHome }
+var siteOptions = { siteMenu: siteMenu, pageTitle: 'home', pageBody: pageHome }
 
 // route
 import start from 'lib/start'
@@ -53,16 +63,13 @@ riot.route(function (slug, id, action) {
     siteOptions['pageTitle'] = siteMap[slug]['name']
     siteOptions['pageBody'] = siteMap[slug]['page']
     riot.update()
-  } else if (slug === 'home') {
-    siteOptions['pageTitle'] = 'home'
-    siteOptions['pageBody'] = pageHome
-    riot.update()
   } else if (slug === 'call') {
     siteOptions['pageTitle'] = 'call'
     siteOptions['pageBody'] = pageCall
     riot.update()
     start()
   }
+  window.scrollTo(0, 0);
 })
 
 // mount
