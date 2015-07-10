@@ -11,7 +11,7 @@ export default function (inputStream, white) {
     })
     socket.on('call', function (initiator) {
       console.log('call recieved')
-      var peer = new SimplePeer({ initiator: initiator, stream: inputStream, iceServers: iceServers })
+      var peer = new SimplePeer({ initiator: initiator, stream: inputStream, config: { iceServers: iceServers } })
       peer.on('signal', function (data) {
         socket.emit('signal', JSON.stringify(data))
       })
