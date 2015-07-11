@@ -37,15 +37,7 @@ export default function () {
     console.log('cmyk:' + [c, m, y, k].join(', '))
 
     var dark = y + m > 90 || c > 10
-    var darkness
-    if (dark) {
-      darkness = 'Too dark'
-    } else {
-      darkness = 'Not too dark!'
-    }
-
     var yellow = Math.abs(y - m) > 20
-    var yellowness
 
     return (!dark) && (!yellow)
 
@@ -112,6 +104,9 @@ export default function () {
   var matches = 0
   var running = true
   document.addEventListener('facetrackingEvent', function (event) {
+    if (typeof window['wsmStream'] !== 'undefined') {
+      window.wsmStream = htracker.getStream()
+    }
     if (running && event.width > 70 && event.height > 70) {
       var white = document.getElementById('white')
       var colour = medianColourFromFace(event)
@@ -121,7 +116,6 @@ export default function () {
       }
       samples = samples + 1
       console.log(matches)
-      window.wsmStream = htracker.getStream()
       if (samples > tries) {
         if (matches > samples * 0.8) {
           white.innerHTML = 'Congratulations! You are white!'

@@ -29,7 +29,7 @@ var addToSiteMap = function (name, slug, page, menu) {
 import pageAbout from 'pages/about.html!text'
 addToSiteMap('how it works', 'how', pageAbout, true)
 
-import pageStart from 'pages/start.html!text'
+import pageCall from 'pages/call.html!text'
 addToSiteMap('try it now', 'call', pageCall, true)
 
 import pageSuccess from 'pages/success.html!text'
@@ -50,10 +50,8 @@ addToSiteMap('partners', 'partners', pagePartners, false)
 import pageTerms from 'pages/terms.html!text'
 addToSiteMap('terms', 'terms', pageTerms, false)
 
-import pageContact from 'pages/terms.html!text'
+import pageContact from 'pages/contact.html!text'
 addToSiteMap('contact', 'contact', pageContact, false)
-
-import pageCall from 'pages/call.html!text'
 
 var siteOptions = { siteMenu: siteMenu, pageTitle: 'home', pageBody: pageHome }
 
