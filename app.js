@@ -27,7 +27,9 @@
         ].join('&')
         
         console.log('getting ice servers for ' + q)
-        var makeCall = function (config) {
+        var config = false 
+        var makeCall = function () {
+          console.log(config)
           connections.not.set(peer2, peer1)
           connections.white.set(peer1, peer2)
           io.sockets.connected[peer1].emit('call', config, false)
@@ -35,27 +37,27 @@
           console.log('call from ' + peer1 + ' to ' + peer2)
         }
         var req = get.concat('https://service.xirsys.com/ice?' + q, function (err, data, res) {
-          if (err) console.log(err)
-          console.log(res.statusCode) // 200
-          var config = false 
-          if (res.statusCode === 200) {
-            var r = JSON.parse(data.toString())
-            if ((!!r['d']) &&
-              (!!r['d']['iceServers'])) {
-              config = { iceServers: r['d']['iceServers'] }
+          if (err) {
+            console.log(err)
+          } else {
+            console.log(res.statusCode) // 200
+            if (res.statusCode === 200) {
+              var r = JSON.parse(data.toString())
+              if ((!!r['d']) &&
+                (!!r['d']['iceServers'])) {
+                config = { iceServers: r['d']['iceServers'] }
+              }
             }
           }
-          console.log(config) // 'this is the server response'
-
           try {
-            makeCall(config)
+            makeCall()
           } catch (e) {
             console.log(e)
           }
         })
         req.setTimeout(5000, function () {
           req.abort()
-          makeCall(false)
+          makeCall()
         });
 
       }

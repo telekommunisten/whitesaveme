@@ -10,6 +10,8 @@ export default function () {
 
   var htracker = new headtrackr.Tracker({ ui: false })
 
+  console.log('ready')
+
   htracker.init(videoInput, canvasInput)
   htracker.start()
 
