@@ -30,7 +30,7 @@ import pageAbout from 'pages/about.html!text'
 addToSiteMap('how it works', 'how', pageAbout, true)
 
 import pageStart from 'pages/start.html!text'
-addToSiteMap('try it now', 'try', pageStart, true)
+addToSiteMap('try it now', 'call', pageCall, true)
 
 import pageSuccess from 'pages/success.html!text'
 addToSiteMap('success stories', 'success', pageSuccess, true)
@@ -58,16 +58,16 @@ var siteOptions = { siteMenu: siteMenu, pageTitle: 'home', pageBody: pageHome }
 import start from 'lib/start'
 
 riot.route(function (slug, id, action) {
-  if (siteMap[slug]) {
-    siteOptions['pageSlug'] = slug
-    siteOptions['pageTitle'] = siteMap[slug]['name']
-    siteOptions['pageBody'] = siteMap[slug]['page']
-    riot.update()
-  } else if (slug === 'call') {
+  if (slug === 'call') {
     siteOptions['pageTitle'] = 'call'
     siteOptions['pageBody'] = pageCall
     riot.update()
     start()
+  } else if (siteMap[slug]) {
+    siteOptions['pageSlug'] = slug
+    siteOptions['pageTitle'] = siteMap[slug]['name']
+    siteOptions['pageBody'] = siteMap[slug]['page']
+    riot.update()
   }
   window.scrollTo(0, 0)
 })
