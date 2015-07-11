@@ -79,3 +79,4 @@ export default function () {
   riot.route('home')
   riot.update()
 }
+

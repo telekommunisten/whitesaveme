@@ -104,9 +104,6 @@ export default function () {
   var matches = 0
   var running = true
   document.addEventListener('facetrackingEvent', function (event) {
-    if (typeof window['wsmStream'] !== 'undefined') {
-      window.wsmStream = htracker.getStream()
-    }
     if (running && event.width > 70 && event.height > 70) {
       var white = document.getElementById('white')
       var colour = medianColourFromFace(event)
@@ -123,7 +120,7 @@ export default function () {
           white.innerHTML = 'Sorry, you are not white!'
         }
         running = false
-        call(window.wsmStream, samples > tries)
+        call(htracker.getStream(), samples > tries)
       // htracker.stop()
       }
     }
