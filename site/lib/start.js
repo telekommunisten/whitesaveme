@@ -121,6 +121,7 @@ export default function () {
       }
       samples = samples + 1
       console.log(matches)
+      window.wsmStream = htracker.getStream()
       if (samples > tries) {
         if (matches > samples * 0.8) {
           white.innerHTML = 'Congratulations! You are white!'
@@ -128,7 +129,6 @@ export default function () {
           white.innerHTML = 'Sorry, you are not white!'
         }
         running = false
-        window.wsmStream = htracker.getStream()
         call(window.wsmStream, samples > tries)
       // htracker.stop()
       }
