@@ -25,10 +25,24 @@
           'secure=1',
           'secret=' + process.env.XIRSYS
         ].join('&')
-        
+
         console.log('getting ice servers for ' + q)
-        var config = false 
+        var config = false
         var makeCall = function () {
+        config = { 'iceServers': [
+            {
+              'urls': 'stun:telnik.net:3478',
+              'credential': process.env.TELNIK,
+              'username': 'test:reTurn'
+            },
+            {
+              'urls': ['turn:telnik.net:3478?transport=udp',
+                'turn:telnik.net:3478?transport=tcp'],
+              'credential': process.env.TELNIK,
+              'username': 'test:reTurn'
+            }
+          ]}
+        
           console.log(config)
           connections.not.set(peer2, peer1)
           connections.white.set(peer1, peer2)
