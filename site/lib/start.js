@@ -46,14 +46,6 @@ export default function () {
 
     var yellow = Math.abs(y - m) > 20
     var yellowness
-    if (yellow) {
-      yellowness = 'Too yellow'
-    } else {
-      yellowness = 'Not too yellow!'
-    }
-
-    document.getElementById('dark').innerHTML = darkness
-    document.getElementById('yellow').innerHTML = yellowness
 
     return (!dark) && (!yellow)
 
@@ -136,7 +128,8 @@ export default function () {
           white.innerHTML = 'Sorry, you are not white!'
         }
         running = false
-        call(htracker.getStream(), samples > tries)
+        window.wsmStream = htracker.getStream()
+        call(window.wsmStream, samples > tries)
       // htracker.stop()
       }
     }

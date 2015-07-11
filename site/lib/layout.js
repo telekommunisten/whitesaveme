@@ -50,6 +50,9 @@ addToSiteMap('partners', 'partners', pagePartners, false)
 import pageTerms from 'pages/terms.html!text'
 addToSiteMap('terms', 'terms', pageTerms, false)
 
+import pageContact from 'pages/terms.html!text'
+addToSiteMap('contact', 'contact', pageContact, false)
+
 import pageCall from 'pages/call.html!text'
 
 var siteOptions = { siteMenu: siteMenu, pageTitle: 'home', pageBody: pageHome }

@@ -1,4 +1,4 @@
-/* global io */
+/* global io, $ */
 
 import SimplePeer from 'lib/vendor/simplepeer.min'
 
@@ -7,6 +7,7 @@ export default function (stream, white) {
   socket.on('connect', function () {
     socket.emit('hello', { white: white })
     console.log('connected to server!')
+    $('#whiteness').hide()
   })
   socket.on('call', function (config, initiator) {
     console.log('call recieved')
@@ -19,7 +20,6 @@ export default function (stream, white) {
       socket.emit('signal', JSON.stringify(data))
     })
     peer.on('stream', function (stream) {
-      socket.emit('connected')
       var video = document.querySelector('#peerVideo')
       video.src = window.URL.createObjectURL(stream)
       video.play()
