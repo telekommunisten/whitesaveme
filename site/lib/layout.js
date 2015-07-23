@@ -38,9 +38,6 @@ addToSiteMap('success stories', 'success', pageSuccess, true)
 import pageStory from 'pages/story.html!text'
 addToSiteMap('our story', 'story', pageStory, true)
 
-import pageStatement from 'pages/statement.html!text'
-addToSiteMap('statement', 'statement', pageStatement, true)
-
 import pageFAQs from 'pages/faq.html!text'
 addToSiteMap('FAQs', 'faq', pageFAQs, true)
 
@@ -52,6 +49,9 @@ addToSiteMap('partners', 'partners', pagePartners, false)
 
 import pageContact from 'pages/contact.html!text'
 addToSiteMap('contact', 'contact', pageContact, false)
+
+import pageStatement from 'pages/statement.html!text'
+addToSiteMap('statement', 'statement', pageStatement, false)
 
 var siteOptions = { siteMenu: siteMenu, pageTitle: 'home', pageBody: pageHome }
 
