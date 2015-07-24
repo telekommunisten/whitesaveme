@@ -29,8 +29,7 @@ x-header {
 
 .slider .indicators .indicator-item.active {
     background-color: #000000; }
-	
-	
+
 nav {
   height: 65px;
   line-height: 65px;
@@ -38,5 +37,13 @@ nav {
 
 a {
     color: #f57c00;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 300;
+  font-stretch: condensed;
+  text-transform: capitalize;
+  text-align: center;
 }
 
