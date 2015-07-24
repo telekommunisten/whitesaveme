@@ -58,7 +58,7 @@ var siteOptions = { siteMenu: siteMenu, pageTitle: 'home', pageBody: pageHome }
 // route
 import start from 'lib/start'
 
-riot.route(function (slug, id, action) {
+var router = function (slug, id, action) {
   if (slug === 'call') {
     siteOptions['pageTitle'] = 'call'
     siteOptions['pageBody'] = pageCall
@@ -70,13 +70,16 @@ riot.route(function (slug, id, action) {
     siteOptions['pageBody'] = siteMap[slug]['page']
     riot.update()
   }
+  $('a[href*="#' + slug + '"]').addClass('active');
   window.scrollTo(0, 0)
-})
+}
+
 
 // mount
 export default function () {
   riot.mount('*', siteOptions)
-  riot.route('home')
+  riot.route(router)
+  riot.route.exec(router);
   riot.update()
 }
 
