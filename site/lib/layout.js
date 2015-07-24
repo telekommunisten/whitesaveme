@@ -56,6 +56,9 @@ addToSiteMap('terms', 'terms', pageTerms, false)
 import pageStatement from 'pages/statement.html!text'
 addToSiteMap('statement', 'statement', pageStatement, false)
 
+import pageRelease from 'pages/release.html!text'
+addToSiteMap('release', 'release', pageRelease, false)
+
 var siteOptions = { siteMenu: siteMenu, pageTitle: 'home', pageBody: pageHome }
 
 // route
@@ -73,8 +76,10 @@ var router = function (slug, id, action) {
     siteOptions['pageBody'] = siteMap[slug]['page']
     riot.update()
   }
-  $('.active').removeClass('active amber-text');
-  $('a[href*="#' + slug + '"]').addClass('active amber-text');
+  if (slug) {
+    $('.active').removeClass('active amber-text');
+    $('a[href*="#' + slug + '"]').addClass('active amber-text');
+  }
   window.scrollTo(0, 0)
 }
 
