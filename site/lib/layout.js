@@ -77,18 +77,17 @@ var router = function (slug, id, action) {
     riot.update()
   }
   if (slug) {
-    $('.active').removeClass('active amber-text');
-    $('a[href*="#' + slug + '"]').addClass('active amber-text');
+    $('.active').removeClass('active amber-text')
+    $('a[href*="#' + slug + '"]').addClass('active amber-text')
   }
   window.scrollTo(0, 0)
 }
-
 
 // mount
 export default function () {
   riot.mount('*', siteOptions)
   riot.route(router)
-  riot.route.exec(router);
+  riot.route.exec(router)
   riot.update()
 }
 
