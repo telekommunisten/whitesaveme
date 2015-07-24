@@ -38,17 +38,20 @@ addToSiteMap('success stories', 'success', pageSuccess, true)
 import pageStory from 'pages/story.html!text'
 addToSiteMap('our story', 'story', pageStory, true)
 
+import pagePartners from 'pages/partners.html!text'
+addToSiteMap('partners', 'partners', pagePartners, true)
+
 import pageFAQs from 'pages/faq.html!text'
 addToSiteMap('FAQs', 'faq', pageFAQs, true)
 
 import pageHome from 'pages/home.html!text'
 addToSiteMap('home', 'home', pageHome, false)
 
-import pagePartners from 'pages/partners.html!text'
-addToSiteMap('partners', 'partners', pagePartners, false)
-
 import pageContact from 'pages/contact.html!text'
 addToSiteMap('contact', 'contact', pageContact, false)
+
+import pageTerms from 'pages/terms.html!text'
+addToSiteMap('terms', 'terms', pageTerms, false)
 
 import pageStatement from 'pages/statement.html!text'
 addToSiteMap('statement', 'statement', pageStatement, false)
@@ -70,7 +73,8 @@ var router = function (slug, id, action) {
     siteOptions['pageBody'] = siteMap[slug]['page']
     riot.update()
   }
-  $('a[href*="#' + slug + '"]').addClass('active');
+  $('.active').removeClass('active amber-text');
+  $('a[href*="#' + slug + '"]').addClass('active amber-text');
   window.scrollTo(0, 0)
 }
 
