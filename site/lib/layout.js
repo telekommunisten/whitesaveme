@@ -29,6 +29,9 @@ var addToSiteMap = function (name, slug, page, menu) {
 import pageAbout from 'pages/about.html!text'
 addToSiteMap('how it works', 'how', pageAbout, true)
 
+import pagePricing from 'pages/pricing.html!text'
+addToSiteMap('out pricing model', 'pricing', pagePricing, true)
+
 import pageCall from 'pages/call.html!text'
 addToSiteMap('try it now', 'call', pageCall, true)
 
