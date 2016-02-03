@@ -20,7 +20,7 @@ export default function (stream, white) {
       try {
         socket.emit('signal', JSON.stringify(data))
         console.log('signal sent')
-      catch (e) {
+      } catch (e) {
         console.log('signal emit failed with', e)
       }
     })
