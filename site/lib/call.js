@@ -12,12 +12,12 @@ export default function (stream, white) {
   socket.on('call', function (config, initiator) {
     console.log('call recieved')
     var options = { initiator: initiator, stream: stream }
-    if (typeof config === 'object') {
+    /* if (typeof config === 'object') {
       options['config'] = config
-    }
+    } */
     var peer = new SimplePeer(options)
     peer.on('signal', function (data) {
-      console.log('signal recieved')
+      console.log('signal sent')
       socket.emit('signal', JSON.stringify(data))
     })
     peer.on('stream', function (stream) {
@@ -27,7 +27,7 @@ export default function (stream, white) {
       video.play()
     })
     socket.on('signal', function (data) {
-      console.log('signal sent')
+      console.log('signal recieved')
       peer.signal(data)
     })
   })
