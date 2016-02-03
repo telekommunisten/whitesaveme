@@ -47,13 +47,13 @@
         console.log('new non white user')
         available.not.set(socket.id, true)
         var w = available.white.entries().next()
-        if (typeof w['value'] === 'undefined') w = available.not.entries.next()
+        if (typeof w['value'] === 'undefined') w = available.not.entries().next()
         if (typeof w['value'] !== 'undefined') initCall(w['value'][0], socket.id)
       } else {
         console.log('new white user')
         available.white.set(socket.id, true)
         var n = available.not.entries().next()
-        if (typeof n['value'] === 'undefined') n = available.white.entries.next()
+        if (typeof n['value'] === 'undefined') n = available.white.entries().next()
         if (typeof n['value'] !== 'undefined') initCall(socket.id, n['value'][0])
       }
       console.log('connected ' + socket.id)
