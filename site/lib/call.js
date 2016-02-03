@@ -17,14 +17,17 @@ export default function (stream, white) {
     }
     var peer = new SimplePeer(options)
     peer.on('signal', function (data) {
+      console.log('signal recieved')
       socket.emit('signal', JSON.stringify(data))
     })
     peer.on('stream', function (stream) {
+      console.log('stream recieved')
       var video = document.querySelector('#peerVideo')
       video.src = window.URL.createObjectURL(stream)
       video.play()
     })
     socket.on('signal', function (data) {
+      console.log('signal sent')
       peer.signal(data)
     })
   })

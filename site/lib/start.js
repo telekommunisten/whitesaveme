@@ -10,7 +10,7 @@ export default function () {
 
   var htracker = new headtrackr.Tracker({ ui: false })
 
-  console.log('ready')
+  console.log('whiteness detection ready')
 
   htracker.init(videoInput, canvasInput)
   htracker.start()
@@ -34,7 +34,7 @@ export default function () {
     y = Math.round(y * 100.0)
     k = Math.round(k * 100.0)
 
-    console.log('cmyk:' + [c, m, y, k].join(', '))
+    //console.log('cmyk:' + [c, m, y, k].join(', '))
 
     var dark = y + m > 90 || c > 10
     var yellow = Math.abs(y - m) > 20
@@ -84,8 +84,8 @@ export default function () {
 
     var maxc = Math.max(r, g, b)
     var boost = 255 - maxc
-    console.log('boost:' + boost)
-    console.log('rgb:' + [r, g, b].join(', '))
+    //console.log('boost:' + boost)
+    //console.log('rgb:' + [r, g, b].join(', '))
 
     r = Math.floor(r + boost * r / maxc)
     g = Math.floor(g + boost * g / maxc)
@@ -94,7 +94,7 @@ export default function () {
     ctx.fillStyle = 'rgb(' + [r, g, b].join(',') + ')'
     ctx.fillRect(0, 0, 80, 80)
 
-    console.log('rgb:' + [r, g, b].join(', '))
+    //console.log('rgb:' + [r, g, b].join(', '))
 
     return {r: r, g: g, b: b}
   }
@@ -112,7 +112,7 @@ export default function () {
         matches = matches + 1
       }
       samples = samples + 1
-      console.log(matches)
+      //console.log(matches)
       if (samples > tries) {
         if (matches > samples * 0.8) {
           white.innerHTML = 'Congratulations! You are white!'
