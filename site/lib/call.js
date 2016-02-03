@@ -12,9 +12,9 @@ export default function (stream, white) {
   socket.on('call', function (config, initiator) {
     console.log('call recieved')
     var options = { initiator: initiator, stream: stream }
-    /* if (typeof config === 'object') {
+    if (typeof config === 'object') {
       options['config'] = config
-    } */
+    }
     var peer = new SimplePeer(options)
     peer.on('signal', function (data) {
       try {
