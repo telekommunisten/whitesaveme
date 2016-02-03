@@ -1,368 +1,3740 @@
+(function(){ var curSystem = typeof System != 'undefined' ? System : undefined;
+/* */ 
+"format global";
+"exports $traceurRuntime";
 (function(global) {
-
-  var defined = {};
-
-  // indexOf polyfill for IE8
-  var indexOf = Array.prototype.indexOf || function(item) {
-    for (var i = 0, l = this.length; i < l; i++)
-      if (this[i] === item)
+  'use strict';
+  if (global.$traceurRuntime) {
+    return;
+  }
+  var $Object = Object;
+  var $TypeError = TypeError;
+  var $create = $Object.create;
+  var $defineProperty = $Object.defineProperty;
+  var $freeze = $Object.freeze;
+  var $getOwnPropertyNames = $Object.getOwnPropertyNames;
+  var $keys = $Object.keys;
+  var $apply = Function.prototype.call.bind(Function.prototype.apply);
+  var $random = Math.random;
+  var $getOwnPropertySymbols = $Object.getOwnPropertySymbols;
+  var $Symbol = global.Symbol;
+  var $WeakMap = global.WeakMap;
+  var hasNativeSymbol = $getOwnPropertySymbols && typeof $Symbol === 'function';
+  var hasNativeWeakMap = typeof $WeakMap === 'function';
+  function $bind(operand, thisArg, args) {
+    var argArray = [thisArg];
+    for (var i = 0; i < args.length; i++) {
+      argArray[i + 1] = args[i];
+    }
+    var func = $apply(Function.prototype.bind, operand, argArray);
+    return func;
+  }
+  function $construct(func, argArray) {
+    var object = new ($bind(func, null, argArray));
+    return object;
+  }
+  var counter = Date.now() % 1e9;
+  function newUniqueString() {
+    return '__$' + ($random() * 1e9 >>> 1) + '$' + ++counter + '$__';
+  }
+  var createPrivateSymbol,
+      deletePrivate,
+      getPrivate,
+      hasPrivate,
+      isPrivateSymbol,
+      setPrivate;
+  if (hasNativeWeakMap) {
+    isPrivateSymbol = function(s) {
+      return false;
+    };
+    createPrivateSymbol = function() {
+      return new $WeakMap();
+    };
+    hasPrivate = function(obj, sym) {
+      return sym.has(obj);
+    };
+    deletePrivate = function(obj, sym) {
+      return sym.delete(obj);
+    };
+    setPrivate = function(obj, sym, val) {
+      sym.set(obj, val);
+    };
+    getPrivate = function(obj, sym) {
+      return sym.get(obj);
+    };
+  } else {
+    var privateNames = $create(null);
+    isPrivateSymbol = function(s) {
+      return privateNames[s];
+    };
+    createPrivateSymbol = function() {
+      var s = hasNativeSymbol ? $Symbol() : newUniqueString();
+      privateNames[s] = true;
+      return s;
+    };
+    hasPrivate = function(obj, sym) {
+      return hasOwnProperty.call(obj, sym);
+    };
+    deletePrivate = function(obj, sym) {
+      if (!hasPrivate(obj, sym)) {
+        return false;
+      }
+      delete obj[sym];
+      return true;
+    };
+    setPrivate = function(obj, sym, val) {
+      obj[sym] = val;
+    };
+    getPrivate = function(obj, sym) {
+      var val = obj[sym];
+      if (val === undefined)
+        return undefined;
+      return hasOwnProperty.call(obj, sym) ? val : undefined;
+    };
+  }
+  (function() {
+    function nonEnum(value) {
+      return {
+        configurable: true,
+        enumerable: false,
+        value: value,
+        writable: true
+      };
+    }
+    var method = nonEnum;
+    var symbolInternalProperty = newUniqueString();
+    var symbolDescriptionProperty = newUniqueString();
+    var symbolDataProperty = newUniqueString();
+    var symbolValues = $create(null);
+    var SymbolImpl = function Symbol(description) {
+      var value = new SymbolValue(description);
+      if (!(this instanceof SymbolImpl))
+        return value;
+      throw new TypeError('Symbol cannot be new\'ed');
+    };
+    $defineProperty(SymbolImpl.prototype, 'constructor', nonEnum(SymbolImpl));
+    $defineProperty(SymbolImpl.prototype, 'toString', method(function() {
+      var symbolValue = this[symbolDataProperty];
+      return symbolValue[symbolInternalProperty];
+    }));
+    $defineProperty(SymbolImpl.prototype, 'valueOf', method(function() {
+      var symbolValue = this[symbolDataProperty];
+      if (!symbolValue)
+        throw TypeError('Conversion from symbol to string');
+      return symbolValue[symbolInternalProperty];
+    }));
+    function SymbolValue(description) {
+      var key = newUniqueString();
+      $defineProperty(this, symbolDataProperty, {value: this});
+      $defineProperty(this, symbolInternalProperty, {value: key});
+      $defineProperty(this, symbolDescriptionProperty, {value: description});
+      $freeze(this);
+      symbolValues[key] = this;
+    }
+    $defineProperty(SymbolValue.prototype, 'constructor', nonEnum(SymbolImpl));
+    $defineProperty(SymbolValue.prototype, 'toString', {
+      value: SymbolImpl.prototype.toString,
+      enumerable: false
+    });
+    $defineProperty(SymbolValue.prototype, 'valueOf', {
+      value: SymbolImpl.prototype.valueOf,
+      enumerable: false
+    });
+    $freeze(SymbolValue.prototype);
+    function isSymbolString(s) {
+      return symbolValues[s] || isPrivateSymbol(s);
+    }
+    function removeSymbolKeys(array) {
+      var rv = [];
+      for (var i = 0; i < array.length; i++) {
+        if (!isSymbolString(array[i])) {
+          rv.push(array[i]);
+        }
+      }
+      return rv;
+    }
+    function getOwnPropertyNames(object) {
+      return removeSymbolKeys($getOwnPropertyNames(object));
+    }
+    function keys(object) {
+      return removeSymbolKeys($keys(object));
+    }
+    var getOwnPropertySymbolsEmulate = function getOwnPropertySymbols(object) {
+      var rv = [];
+      var names = $getOwnPropertyNames(object);
+      for (var i = 0; i < names.length; i++) {
+        var symbol = symbolValues[names[i]];
+        if (symbol) {
+          rv.push(symbol);
+        }
+      }
+      return rv;
+    };
+    var getOwnPropertySymbolsPrivate = function getOwnPropertySymbols(object) {
+      var rv = [];
+      var symbols = $getOwnPropertySymbols(object);
+      for (var i = 0; i < symbols.length; i++) {
+        var symbol = symbols[i];
+        if (!isPrivateSymbol(symbol)) {
+          rv.push(symbol);
+        }
+      }
+      return rv;
+    };
+    function exportStar(object) {
+      for (var i = 1; i < arguments.length; i++) {
+        var names = $getOwnPropertyNames(arguments[i]);
+        for (var j = 0; j < names.length; j++) {
+          var name = names[j];
+          if (name === '__esModule' || name === 'default' || isSymbolString(name))
+            continue;
+          (function(mod, name) {
+            $defineProperty(object, name, {
+              get: function() {
+                return mod[name];
+              },
+              enumerable: true
+            });
+          })(arguments[i], names[j]);
+        }
+      }
+      return object;
+    }
+    function isObject(x) {
+      return x != null && (typeof x === 'object' || typeof x === 'function');
+    }
+    function toObject(x) {
+      if (x == null)
+        throw $TypeError();
+      return $Object(x);
+    }
+    function checkObjectCoercible(argument) {
+      if (argument == null) {
+        throw new TypeError('Value cannot be converted to an Object');
+      }
+      return argument;
+    }
+    function polyfillSymbol(global) {
+      if (!hasNativeSymbol) {
+        global.Symbol = SymbolImpl;
+        var Object = global.Object;
+        Object.getOwnPropertyNames = getOwnPropertyNames;
+        Object.keys = keys;
+        $defineProperty(Object, 'getOwnPropertySymbols', nonEnum(getOwnPropertySymbolsEmulate));
+      } else if (!hasNativeWeakMap) {
+        $defineProperty(Object, 'getOwnPropertySymbols', nonEnum(getOwnPropertySymbolsPrivate));
+      }
+      if (!global.Symbol.iterator) {
+        global.Symbol.iterator = Symbol('Symbol.iterator');
+      }
+      if (!global.Symbol.observer) {
+        global.Symbol.observer = Symbol('Symbol.observer');
+      }
+    }
+    function hasNativeSymbolFunc() {
+      return hasNativeSymbol;
+    }
+    function setupGlobals(global) {
+      polyfillSymbol(global);
+      global.Reflect = global.Reflect || {};
+      global.Reflect.global = global.Reflect.global || global;
+    }
+    setupGlobals(global);
+    var typeOf = hasNativeSymbol ? function(x) {
+      return typeof x;
+    } : function(x) {
+      return x instanceof SymbolValue ? 'symbol' : typeof x;
+    };
+    global.$traceurRuntime = {
+      checkObjectCoercible: checkObjectCoercible,
+      createPrivateSymbol: createPrivateSymbol,
+      deletePrivate: deletePrivate,
+      exportStar: exportStar,
+      getPrivate: getPrivate,
+      hasNativeSymbol: hasNativeSymbolFunc,
+      hasPrivate: hasPrivate,
+      isObject: isObject,
+      options: {},
+      setPrivate: setPrivate,
+      setupGlobals: setupGlobals,
+      toObject: toObject,
+      typeof: typeOf
+    };
+  })();
+})(typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : this);
+(function() {
+  function buildFromEncodedParts(opt_scheme, opt_userInfo, opt_domain, opt_port, opt_path, opt_queryData, opt_fragment) {
+    var out = [];
+    if (opt_scheme) {
+      out.push(opt_scheme, ':');
+    }
+    if (opt_domain) {
+      out.push('//');
+      if (opt_userInfo) {
+        out.push(opt_userInfo, '@');
+      }
+      out.push(opt_domain);
+      if (opt_port) {
+        out.push(':', opt_port);
+      }
+    }
+    if (opt_path) {
+      out.push(opt_path);
+    }
+    if (opt_queryData) {
+      out.push('?', opt_queryData);
+    }
+    if (opt_fragment) {
+      out.push('#', opt_fragment);
+    }
+    return out.join('');
+  }
+  var splitRe = new RegExp('^' + '(?:' + '([^:/?#.]+)' + ':)?' + '(?://' + '(?:([^/?#]*)@)?' + '([\\w\\d\\-\\u0100-\\uffff.%]*)' + '(?::([0-9]+))?' + ')?' + '([^?#]+)?' + '(?:\\?([^#]*))?' + '(?:#(.*))?' + '$');
+  var ComponentIndex = {
+    SCHEME: 1,
+    USER_INFO: 2,
+    DOMAIN: 3,
+    PORT: 4,
+    PATH: 5,
+    QUERY_DATA: 6,
+    FRAGMENT: 7
+  };
+  function split(uri) {
+    return (uri.match(splitRe));
+  }
+  function removeDotSegments(path) {
+    if (path === '/')
+      return '/';
+    var leadingSlash = path[0] === '/' ? '/' : '';
+    var trailingSlash = path.slice(-1) === '/' ? '/' : '';
+    var segments = path.split('/');
+    var out = [];
+    var up = 0;
+    for (var pos = 0; pos < segments.length; pos++) {
+      var segment = segments[pos];
+      switch (segment) {
+        case '':
+        case '.':
+          break;
+        case '..':
+          if (out.length)
+            out.pop();
+          else
+            up++;
+          break;
+        default:
+          out.push(segment);
+      }
+    }
+    if (!leadingSlash) {
+      while (up-- > 0) {
+        out.unshift('..');
+      }
+      if (out.length === 0)
+        out.push('.');
+    }
+    return leadingSlash + out.join('/') + trailingSlash;
+  }
+  function joinAndCanonicalizePath(parts) {
+    var path = parts[ComponentIndex.PATH] || '';
+    path = removeDotSegments(path);
+    parts[ComponentIndex.PATH] = path;
+    return buildFromEncodedParts(parts[ComponentIndex.SCHEME], parts[ComponentIndex.USER_INFO], parts[ComponentIndex.DOMAIN], parts[ComponentIndex.PORT], parts[ComponentIndex.PATH], parts[ComponentIndex.QUERY_DATA], parts[ComponentIndex.FRAGMENT]);
+  }
+  function canonicalizeUrl(url) {
+    var parts = split(url);
+    return joinAndCanonicalizePath(parts);
+  }
+  function resolveUrl(base, url) {
+    var parts = split(url);
+    var baseParts = split(base);
+    if (parts[ComponentIndex.SCHEME]) {
+      return joinAndCanonicalizePath(parts);
+    } else {
+      parts[ComponentIndex.SCHEME] = baseParts[ComponentIndex.SCHEME];
+    }
+    for (var i = ComponentIndex.SCHEME; i <= ComponentIndex.PORT; i++) {
+      if (!parts[i]) {
+        parts[i] = baseParts[i];
+      }
+    }
+    if (parts[ComponentIndex.PATH][0] == '/') {
+      return joinAndCanonicalizePath(parts);
+    }
+    var path = baseParts[ComponentIndex.PATH];
+    var index = path.lastIndexOf('/');
+    path = path.slice(0, index + 1) + parts[ComponentIndex.PATH];
+    parts[ComponentIndex.PATH] = path;
+    return joinAndCanonicalizePath(parts);
+  }
+  function isAbsolute(name) {
+    if (!name)
+      return false;
+    if (name[0] === '/')
+      return true;
+    var parts = split(name);
+    if (parts[ComponentIndex.SCHEME])
+      return true;
+    return false;
+  }
+  $traceurRuntime.canonicalizeUrl = canonicalizeUrl;
+  $traceurRuntime.isAbsolute = isAbsolute;
+  $traceurRuntime.removeDotSegments = removeDotSegments;
+  $traceurRuntime.resolveUrl = resolveUrl;
+})();
+(function(global) {
+  'use strict';
+  var $__3 = $traceurRuntime,
+      canonicalizeUrl = $__3.canonicalizeUrl,
+      resolveUrl = $__3.resolveUrl,
+      isAbsolute = $__3.isAbsolute;
+  var moduleInstantiators = Object.create(null);
+  var baseURL;
+  if (global.location && global.location.href)
+    baseURL = resolveUrl(global.location.href, './');
+  else
+    baseURL = '';
+  function UncoatedModuleEntry(url, uncoatedModule) {
+    this.url = url;
+    this.value_ = uncoatedModule;
+  }
+  function ModuleEvaluationError(erroneousModuleName, cause) {
+    this.message = this.constructor.name + ': ' + this.stripCause(cause) + ' in ' + erroneousModuleName;
+    if (!(cause instanceof ModuleEvaluationError) && cause.stack)
+      this.stack = this.stripStack(cause.stack);
+    else
+      this.stack = '';
+  }
+  ModuleEvaluationError.prototype = Object.create(Error.prototype);
+  ModuleEvaluationError.prototype.constructor = ModuleEvaluationError;
+  ModuleEvaluationError.prototype.stripError = function(message) {
+    return message.replace(/.*Error:/, this.constructor.name + ':');
+  };
+  ModuleEvaluationError.prototype.stripCause = function(cause) {
+    if (!cause)
+      return '';
+    if (!cause.message)
+      return cause + '';
+    return this.stripError(cause.message);
+  };
+  ModuleEvaluationError.prototype.loadedBy = function(moduleName) {
+    this.stack += '\n loaded by ' + moduleName;
+  };
+  ModuleEvaluationError.prototype.stripStack = function(causeStack) {
+    var stack = [];
+    causeStack.split('\n').some(function(frame) {
+      if (/UncoatedModuleInstantiator/.test(frame))
+        return true;
+      stack.push(frame);
+    });
+    stack[0] = this.stripError(stack[0]);
+    return stack.join('\n');
+  };
+  function beforeLines(lines, number) {
+    var result = [];
+    var first = number - 3;
+    if (first < 0)
+      first = 0;
+    for (var i = first; i < number; i++) {
+      result.push(lines[i]);
+    }
+    return result;
+  }
+  function afterLines(lines, number) {
+    var last = number + 1;
+    if (last > lines.length - 1)
+      last = lines.length - 1;
+    var result = [];
+    for (var i = number; i <= last; i++) {
+      result.push(lines[i]);
+    }
+    return result;
+  }
+  function columnSpacing(columns) {
+    var result = '';
+    for (var i = 0; i < columns - 1; i++) {
+      result += '-';
+    }
+    return result;
+  }
+  function UncoatedModuleInstantiator(url, func) {
+    UncoatedModuleEntry.call(this, url, null);
+    this.func = func;
+  }
+  UncoatedModuleInstantiator.prototype = Object.create(UncoatedModuleEntry.prototype);
+  UncoatedModuleInstantiator.prototype.getUncoatedModule = function() {
+    var $__2 = this;
+    if (this.value_)
+      return this.value_;
+    try {
+      var relativeRequire;
+      if (typeof $traceurRuntime !== undefined && $traceurRuntime.require) {
+        relativeRequire = $traceurRuntime.require.bind(null, this.url);
+      }
+      return this.value_ = this.func.call(global, relativeRequire);
+    } catch (ex) {
+      if (ex instanceof ModuleEvaluationError) {
+        ex.loadedBy(this.url);
+        throw ex;
+      }
+      if (ex.stack) {
+        var lines = this.func.toString().split('\n');
+        var evaled = [];
+        ex.stack.split('\n').some(function(frame, index) {
+          if (frame.indexOf('UncoatedModuleInstantiator.getUncoatedModule') > 0)
+            return true;
+          var m = /(at\s[^\s]*\s).*>:(\d*):(\d*)\)/.exec(frame);
+          if (m) {
+            var line = parseInt(m[2], 10);
+            evaled = evaled.concat(beforeLines(lines, line));
+            if (index === 1) {
+              evaled.push(columnSpacing(m[3]) + '^ ' + $__2.url);
+            } else {
+              evaled.push(columnSpacing(m[3]) + '^');
+            }
+            evaled = evaled.concat(afterLines(lines, line));
+            evaled.push('= = = = = = = = =');
+          } else {
+            evaled.push(frame);
+          }
+        });
+        ex.stack = evaled.join('\n');
+      }
+      throw new ModuleEvaluationError(this.url, ex);
+    }
+  };
+  function getUncoatedModuleInstantiator(name) {
+    if (!name)
+      return;
+    var url = ModuleStore.normalize(name);
+    return moduleInstantiators[url];
+  }
+  ;
+  var moduleInstances = Object.create(null);
+  var liveModuleSentinel = {};
+  function Module(uncoatedModule) {
+    var isLive = arguments[1];
+    var coatedModule = Object.create(null);
+    Object.getOwnPropertyNames(uncoatedModule).forEach(function(name) {
+      var getter,
+          value;
+      if (isLive === liveModuleSentinel) {
+        var descr = Object.getOwnPropertyDescriptor(uncoatedModule, name);
+        if (descr.get)
+          getter = descr.get;
+      }
+      if (!getter) {
+        value = uncoatedModule[name];
+        getter = function() {
+          return value;
+        };
+      }
+      Object.defineProperty(coatedModule, name, {
+        get: getter,
+        enumerable: true
+      });
+    });
+    Object.preventExtensions(coatedModule);
+    return coatedModule;
+  }
+  var ModuleStore = {
+    normalize: function(name, refererName, refererAddress) {
+      if (typeof name !== 'string')
+        throw new TypeError('module name must be a string, not ' + typeof name);
+      if (isAbsolute(name))
+        return canonicalizeUrl(name);
+      if (/[^\.]\/\.\.\//.test(name)) {
+        throw new Error('module name embeds /../: ' + name);
+      }
+      if (name[0] === '.' && refererName)
+        return resolveUrl(refererName, name);
+      return canonicalizeUrl(name);
+    },
+    get: function(normalizedName) {
+      var m = getUncoatedModuleInstantiator(normalizedName);
+      if (!m)
+        return undefined;
+      var moduleInstance = moduleInstances[m.url];
+      if (moduleInstance)
+        return moduleInstance;
+      moduleInstance = Module(m.getUncoatedModule(), liveModuleSentinel);
+      return moduleInstances[m.url] = moduleInstance;
+    },
+    set: function(normalizedName, module) {
+      normalizedName = String(normalizedName);
+      moduleInstantiators[normalizedName] = new UncoatedModuleInstantiator(normalizedName, function() {
+        return module;
+      });
+      moduleInstances[normalizedName] = module;
+    },
+    get baseURL() {
+      return baseURL;
+    },
+    set baseURL(v) {
+      baseURL = String(v);
+    },
+    registerModule: function(name, deps, func) {
+      var normalizedName = ModuleStore.normalize(name);
+      if (moduleInstantiators[normalizedName])
+        throw new Error('duplicate module named ' + normalizedName);
+      moduleInstantiators[normalizedName] = new UncoatedModuleInstantiator(normalizedName, func);
+    },
+    bundleStore: Object.create(null),
+    register: function(name, deps, func) {
+      if (!deps || !deps.length && !func.length) {
+        this.registerModule(name, deps, func);
+      } else {
+        this.bundleStore[name] = {
+          deps: deps,
+          execute: function() {
+            var $__2 = arguments;
+            var depMap = {};
+            deps.forEach(function(dep, index) {
+              return depMap[dep] = $__2[index];
+            });
+            var registryEntry = func.call(this, depMap);
+            registryEntry.execute.call(this);
+            return registryEntry.exports;
+          }
+        };
+      }
+    },
+    getAnonymousModule: function(func) {
+      return new Module(func.call(global), liveModuleSentinel);
+    },
+    setCompilerVersion: function(version) {
+      ModuleStore.compilerVersion = version;
+    },
+    getCompilerVersion: function() {
+      return ModuleStore.compilerVersion;
+    }
+  };
+  var moduleStoreModule = new Module({ModuleStore: ModuleStore});
+  ModuleStore.set('@traceur/src/runtime/ModuleStore.js', moduleStoreModule);
+  var setupGlobals = $traceurRuntime.setupGlobals;
+  $traceurRuntime.setupGlobals = function(global) {
+    setupGlobals(global);
+  };
+  $traceurRuntime.ModuleStore = ModuleStore;
+  global.System = {
+    register: ModuleStore.register.bind(ModuleStore),
+    registerModule: ModuleStore.registerModule.bind(ModuleStore),
+    get: ModuleStore.get,
+    set: ModuleStore.set,
+    normalize: ModuleStore.normalize,
+    setCompilerVersion: ModuleStore.setCompilerVersion,
+    getCompilerVersion: ModuleStore.getCompilerVersion
+  };
+})(typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : this);
+System.registerModule("traceur-runtime@0.0.93/src/runtime/async.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/async.js";
+  if (typeof $traceurRuntime !== 'object') {
+    throw new Error('traceur runtime not found.');
+  }
+  var $__11 = $traceurRuntime,
+      createPrivateSymbol = $__11.createPrivateSymbol,
+      getPrivate = $__11.getPrivate,
+      setPrivate = $__11.setPrivate;
+  var $__12 = Object,
+      create = $__12.create,
+      defineProperty = $__12.defineProperty;
+  var observeName = createPrivateSymbol();
+  function AsyncGeneratorFunction() {}
+  function AsyncGeneratorFunctionPrototype() {}
+  AsyncGeneratorFunction.prototype = AsyncGeneratorFunctionPrototype;
+  AsyncGeneratorFunctionPrototype.constructor = AsyncGeneratorFunction;
+  defineProperty(AsyncGeneratorFunctionPrototype, 'constructor', {enumerable: false});
+  var AsyncGeneratorContext = function() {
+    function AsyncGeneratorContext(observer) {
+      var $__2 = this;
+      this.decoratedObserver = $traceurRuntime.createDecoratedGenerator(observer, function() {
+        $__2.done = true;
+      });
+      this.done = false;
+      this.inReturn = false;
+    }
+    return ($traceurRuntime.createClass)(AsyncGeneratorContext, {
+      throw: function(error) {
+        if (!this.inReturn) {
+          throw error;
+        }
+      },
+      yield: function(value) {
+        if (this.done) {
+          this.inReturn = true;
+          throw undefined;
+        }
+        var result;
+        try {
+          result = this.decoratedObserver.next(value);
+        } catch (e) {
+          this.done = true;
+          throw e;
+        }
+        if (result === undefined) {
+          return;
+        }
+        if (result.done) {
+          this.done = true;
+          this.inReturn = true;
+          throw undefined;
+        }
+        return result.value;
+      },
+      yieldFor: function(observable) {
+        var ctx = this;
+        return $traceurRuntime.observeForEach(observable[Symbol.observer].bind(observable), function(value) {
+          if (ctx.done) {
+            this.return();
+            return;
+          }
+          var result;
+          try {
+            result = ctx.decoratedObserver.next(value);
+          } catch (e) {
+            ctx.done = true;
+            throw e;
+          }
+          if (result === undefined) {
+            return;
+          }
+          if (result.done) {
+            ctx.done = true;
+          }
+          return result;
+        });
+      }
+    }, {});
+  }();
+  AsyncGeneratorFunctionPrototype.prototype[Symbol.observer] = function(observer) {
+    var observe = getPrivate(this, observeName);
+    var ctx = new AsyncGeneratorContext(observer);
+    $traceurRuntime.schedule(function() {
+      return observe(ctx);
+    }).then(function(value) {
+      if (!ctx.done) {
+        ctx.decoratedObserver.return(value);
+      }
+    }).catch(function(error) {
+      if (!ctx.done) {
+        ctx.decoratedObserver.throw(error);
+      }
+    });
+    return ctx.decoratedObserver;
+  };
+  defineProperty(AsyncGeneratorFunctionPrototype.prototype, Symbol.observer, {enumerable: false});
+  function initAsyncGeneratorFunction(functionObject) {
+    functionObject.prototype = create(AsyncGeneratorFunctionPrototype.prototype);
+    functionObject.__proto__ = AsyncGeneratorFunctionPrototype;
+    return functionObject;
+  }
+  function createAsyncGeneratorInstance(observe, functionObject) {
+    for (var args = [],
+        $__10 = 2; $__10 < arguments.length; $__10++)
+      args[$__10 - 2] = arguments[$__10];
+    var object = create(functionObject.prototype);
+    setPrivate(object, observeName, observe);
+    return object;
+  }
+  function observeForEach(observe, next) {
+    return new Promise(function(resolve, reject) {
+      var generator = observe({
+        next: function(value) {
+          return next.call(generator, value);
+        },
+        throw: function(error) {
+          reject(error);
+        },
+        return: function(value) {
+          resolve(value);
+        }
+      });
+    });
+  }
+  function schedule(asyncF) {
+    return Promise.resolve().then(asyncF);
+  }
+  var generator = Symbol();
+  var onDone = Symbol();
+  var DecoratedGenerator = function() {
+    function DecoratedGenerator(_generator, _onDone) {
+      this[generator] = _generator;
+      this[onDone] = _onDone;
+    }
+    return ($traceurRuntime.createClass)(DecoratedGenerator, {
+      next: function(value) {
+        var result = this[generator].next(value);
+        if (result !== undefined && result.done) {
+          this[onDone].call(this);
+        }
+        return result;
+      },
+      throw: function(error) {
+        this[onDone].call(this);
+        return this[generator].throw(error);
+      },
+      return: function(value) {
+        this[onDone].call(this);
+        return this[generator].return(value);
+      }
+    }, {});
+  }();
+  function createDecoratedGenerator(generator, onDone) {
+    return new DecoratedGenerator(generator, onDone);
+  }
+  Array.prototype[Symbol.observer] = function(observer) {
+    var done = false;
+    var decoratedObserver = createDecoratedGenerator(observer, function() {
+      return done = true;
+    });
+    var $__6 = true;
+    var $__7 = false;
+    var $__8 = undefined;
+    try {
+      for (var $__4 = void 0,
+          $__3 = (this)[Symbol.iterator](); !($__6 = ($__4 = $__3.next()).done); $__6 = true) {
+        var value = $__4.value;
+        {
+          decoratedObserver.next(value);
+          if (done) {
+            return;
+          }
+        }
+      }
+    } catch ($__9) {
+      $__7 = true;
+      $__8 = $__9;
+    } finally {
+      try {
+        if (!$__6 && $__3.return != null) {
+          $__3.return();
+        }
+      } finally {
+        if ($__7) {
+          throw $__8;
+        }
+      }
+    }
+    decoratedObserver.return();
+    return decoratedObserver;
+  };
+  defineProperty(Array.prototype, Symbol.observer, {enumerable: false});
+  $traceurRuntime.initAsyncGeneratorFunction = initAsyncGeneratorFunction;
+  $traceurRuntime.createAsyncGeneratorInstance = createAsyncGeneratorInstance;
+  $traceurRuntime.observeForEach = observeForEach;
+  $traceurRuntime.schedule = schedule;
+  $traceurRuntime.createDecoratedGenerator = createDecoratedGenerator;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/classes.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/classes.js";
+  var $Object = Object;
+  var $TypeError = TypeError;
+  var $__1 = Object,
+      create = $__1.create,
+      defineProperties = $__1.defineProperties,
+      defineProperty = $__1.defineProperty,
+      getOwnPropertyDescriptor = $__1.getOwnPropertyDescriptor,
+      getOwnPropertyNames = $__1.getOwnPropertyNames,
+      getOwnPropertySymbols = $__1.getOwnPropertySymbols,
+      getPrototypeOf = $__1.getPrototypeOf;
+  function superDescriptor(homeObject, name) {
+    var proto = getPrototypeOf(homeObject);
+    do {
+      var result = getOwnPropertyDescriptor(proto, name);
+      if (result)
+        return result;
+      proto = getPrototypeOf(proto);
+    } while (proto);
+    return undefined;
+  }
+  function superConstructor(ctor) {
+    return ctor.__proto__;
+  }
+  function superGet(self, homeObject, name) {
+    var descriptor = superDescriptor(homeObject, name);
+    if (descriptor) {
+      var value = descriptor.value;
+      if (value)
+        return value;
+      if (!descriptor.get)
+        return value;
+      return descriptor.get.call(self);
+    }
+    return undefined;
+  }
+  function superSet(self, homeObject, name, value) {
+    var descriptor = superDescriptor(homeObject, name);
+    if (descriptor && descriptor.set) {
+      descriptor.set.call(self, value);
+      return value;
+    }
+    throw $TypeError(("super has no setter '" + name + "'."));
+  }
+  function forEachPropertyKey(object, f) {
+    getOwnPropertyNames(object).forEach(f);
+    getOwnPropertySymbols(object).forEach(f);
+  }
+  function getDescriptors(object) {
+    var descriptors = {};
+    forEachPropertyKey(object, function(key) {
+      descriptors[key] = getOwnPropertyDescriptor(object, key);
+      descriptors[key].enumerable = false;
+    });
+    return descriptors;
+  }
+  var nonEnum = {enumerable: false};
+  function makePropertiesNonEnumerable(object) {
+    forEachPropertyKey(object, function(key) {
+      defineProperty(object, key, nonEnum);
+    });
+  }
+  function createClass(ctor, object, staticObject, superClass) {
+    defineProperty(object, 'constructor', {
+      value: ctor,
+      configurable: true,
+      enumerable: false,
+      writable: true
+    });
+    if (arguments.length > 3) {
+      if (typeof superClass === 'function')
+        ctor.__proto__ = superClass;
+      ctor.prototype = create(getProtoParent(superClass), getDescriptors(object));
+    } else {
+      makePropertiesNonEnumerable(object);
+      ctor.prototype = object;
+    }
+    defineProperty(ctor, 'prototype', {
+      configurable: false,
+      writable: false
+    });
+    return defineProperties(ctor, getDescriptors(staticObject));
+  }
+  function getProtoParent(superClass) {
+    if (typeof superClass === 'function') {
+      var prototype = superClass.prototype;
+      if ($Object(prototype) === prototype || prototype === null)
+        return superClass.prototype;
+      throw new $TypeError('super prototype must be an Object or null');
+    }
+    if (superClass === null)
+      return null;
+    throw new $TypeError(("Super expression must either be null or a function, not " + typeof superClass + "."));
+  }
+  $traceurRuntime.createClass = createClass;
+  $traceurRuntime.superConstructor = superConstructor;
+  $traceurRuntime.superGet = superGet;
+  $traceurRuntime.superSet = superSet;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/destructuring.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/destructuring.js";
+  function iteratorToArray(iter) {
+    var rv = [];
+    var i = 0;
+    var tmp;
+    while (!(tmp = iter.next()).done) {
+      rv[i++] = tmp.value;
+    }
+    return rv;
+  }
+  $traceurRuntime.iteratorToArray = iteratorToArray;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/generators.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/generators.js";
+  if (typeof $traceurRuntime !== 'object') {
+    throw new Error('traceur runtime not found.');
+  }
+  var $TypeError = TypeError;
+  var $__1 = $traceurRuntime,
+      createPrivateSymbol = $__1.createPrivateSymbol,
+      getPrivate = $__1.getPrivate,
+      setPrivate = $__1.setPrivate;
+  var $__2 = Object,
+      create = $__2.create,
+      defineProperties = $__2.defineProperties,
+      defineProperty = $__2.defineProperty;
+  function nonEnum(value) {
+    return {
+      configurable: true,
+      enumerable: false,
+      value: value,
+      writable: true
+    };
+  }
+  var ST_NEWBORN = 0;
+  var ST_EXECUTING = 1;
+  var ST_SUSPENDED = 2;
+  var ST_CLOSED = 3;
+  var END_STATE = -2;
+  var RETHROW_STATE = -3;
+  function getInternalError(state) {
+    return new Error('Traceur compiler bug: invalid state in state machine: ' + state);
+  }
+  var RETURN_SENTINEL = {};
+  function GeneratorContext() {
+    this.state = 0;
+    this.GState = ST_NEWBORN;
+    this.storedException = undefined;
+    this.finallyFallThrough = undefined;
+    this.sent_ = undefined;
+    this.returnValue = undefined;
+    this.oldReturnValue = undefined;
+    this.tryStack_ = [];
+  }
+  GeneratorContext.prototype = {
+    pushTry: function(catchState, finallyState) {
+      if (finallyState !== null) {
+        var finallyFallThrough = null;
+        for (var i = this.tryStack_.length - 1; i >= 0; i--) {
+          if (this.tryStack_[i].catch !== undefined) {
+            finallyFallThrough = this.tryStack_[i].catch;
+            break;
+          }
+        }
+        if (finallyFallThrough === null)
+          finallyFallThrough = RETHROW_STATE;
+        this.tryStack_.push({
+          finally: finallyState,
+          finallyFallThrough: finallyFallThrough
+        });
+      }
+      if (catchState !== null) {
+        this.tryStack_.push({catch: catchState});
+      }
+    },
+    popTry: function() {
+      this.tryStack_.pop();
+    },
+    maybeUncatchable: function() {
+      if (this.storedException === RETURN_SENTINEL) {
+        throw RETURN_SENTINEL;
+      }
+    },
+    get sent() {
+      this.maybeThrow();
+      return this.sent_;
+    },
+    set sent(v) {
+      this.sent_ = v;
+    },
+    get sentIgnoreThrow() {
+      return this.sent_;
+    },
+    maybeThrow: function() {
+      if (this.action === 'throw') {
+        this.action = 'next';
+        throw this.sent_;
+      }
+    },
+    end: function() {
+      switch (this.state) {
+        case END_STATE:
+          return this;
+        case RETHROW_STATE:
+          throw this.storedException;
+        default:
+          throw getInternalError(this.state);
+      }
+    },
+    handleException: function(ex) {
+      this.GState = ST_CLOSED;
+      this.state = END_STATE;
+      throw ex;
+    },
+    wrapYieldStar: function(iterator) {
+      var ctx = this;
+      return {
+        next: function(v) {
+          return iterator.next(v);
+        },
+        throw: function(e) {
+          var result;
+          if (e === RETURN_SENTINEL) {
+            if (iterator.return) {
+              result = iterator.return(ctx.returnValue);
+              if (!result.done) {
+                ctx.returnValue = ctx.oldReturnValue;
+                return result;
+              }
+              ctx.returnValue = result.value;
+            }
+            throw e;
+          }
+          if (iterator.throw) {
+            return iterator.throw(e);
+          }
+          iterator.return && iterator.return();
+          throw $TypeError('Inner iterator does not have a throw method');
+        }
+      };
+    }
+  };
+  function nextOrThrow(ctx, moveNext, action, x) {
+    switch (ctx.GState) {
+      case ST_EXECUTING:
+        throw new Error(("\"" + action + "\" on executing generator"));
+      case ST_CLOSED:
+        if (action == 'next') {
+          return {
+            value: undefined,
+            done: true
+          };
+        }
+        if (x === RETURN_SENTINEL) {
+          return {
+            value: ctx.returnValue,
+            done: true
+          };
+        }
+        throw x;
+      case ST_NEWBORN:
+        if (action === 'throw') {
+          ctx.GState = ST_CLOSED;
+          if (x === RETURN_SENTINEL) {
+            return {
+              value: ctx.returnValue,
+              done: true
+            };
+          }
+          throw x;
+        }
+        if (x !== undefined)
+          throw $TypeError('Sent value to newborn generator');
+      case ST_SUSPENDED:
+        ctx.GState = ST_EXECUTING;
+        ctx.action = action;
+        ctx.sent = x;
+        var value;
+        try {
+          value = moveNext(ctx);
+        } catch (ex) {
+          if (ex === RETURN_SENTINEL) {
+            value = ctx;
+          } else {
+            throw ex;
+          }
+        }
+        var done = value === ctx;
+        if (done)
+          value = ctx.returnValue;
+        ctx.GState = done ? ST_CLOSED : ST_SUSPENDED;
+        return {
+          value: value,
+          done: done
+        };
+    }
+  }
+  var ctxName = createPrivateSymbol();
+  var moveNextName = createPrivateSymbol();
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+  GeneratorFunction.prototype = GeneratorFunctionPrototype;
+  defineProperty(GeneratorFunctionPrototype, 'constructor', nonEnum(GeneratorFunction));
+  GeneratorFunctionPrototype.prototype = {
+    constructor: GeneratorFunctionPrototype,
+    next: function(v) {
+      return nextOrThrow(getPrivate(this, ctxName), getPrivate(this, moveNextName), 'next', v);
+    },
+    throw: function(v) {
+      return nextOrThrow(getPrivate(this, ctxName), getPrivate(this, moveNextName), 'throw', v);
+    },
+    return: function(v) {
+      var ctx = getPrivate(this, ctxName);
+      ctx.oldReturnValue = ctx.returnValue;
+      ctx.returnValue = v;
+      return nextOrThrow(ctx, getPrivate(this, moveNextName), 'throw', RETURN_SENTINEL);
+    }
+  };
+  defineProperties(GeneratorFunctionPrototype.prototype, {
+    constructor: {enumerable: false},
+    next: {enumerable: false},
+    throw: {enumerable: false},
+    return: {enumerable: false}
+  });
+  Object.defineProperty(GeneratorFunctionPrototype.prototype, Symbol.iterator, nonEnum(function() {
+    return this;
+  }));
+  function createGeneratorInstance(innerFunction, functionObject, self) {
+    var moveNext = getMoveNext(innerFunction, self);
+    var ctx = new GeneratorContext();
+    var object = create(functionObject.prototype);
+    setPrivate(object, ctxName, ctx);
+    setPrivate(object, moveNextName, moveNext);
+    return object;
+  }
+  function initGeneratorFunction(functionObject) {
+    functionObject.prototype = create(GeneratorFunctionPrototype.prototype);
+    functionObject.__proto__ = GeneratorFunctionPrototype;
+    return functionObject;
+  }
+  function AsyncFunctionContext() {
+    GeneratorContext.call(this);
+    this.err = undefined;
+    var ctx = this;
+    ctx.result = new Promise(function(resolve, reject) {
+      ctx.resolve = resolve;
+      ctx.reject = reject;
+    });
+  }
+  AsyncFunctionContext.prototype = create(GeneratorContext.prototype);
+  AsyncFunctionContext.prototype.end = function() {
+    switch (this.state) {
+      case END_STATE:
+        this.resolve(this.returnValue);
+        break;
+      case RETHROW_STATE:
+        this.reject(this.storedException);
+        break;
+      default:
+        this.reject(getInternalError(this.state));
+    }
+  };
+  AsyncFunctionContext.prototype.handleException = function() {
+    this.state = RETHROW_STATE;
+  };
+  function asyncWrap(innerFunction, self) {
+    var moveNext = getMoveNext(innerFunction, self);
+    var ctx = new AsyncFunctionContext();
+    ctx.createCallback = function(newState) {
+      return function(value) {
+        ctx.state = newState;
+        ctx.value = value;
+        moveNext(ctx);
+      };
+    };
+    ctx.errback = function(err) {
+      handleCatch(ctx, err);
+      moveNext(ctx);
+    };
+    moveNext(ctx);
+    return ctx.result;
+  }
+  function getMoveNext(innerFunction, self) {
+    return function(ctx) {
+      while (true) {
+        try {
+          return innerFunction.call(self, ctx);
+        } catch (ex) {
+          handleCatch(ctx, ex);
+        }
+      }
+    };
+  }
+  function handleCatch(ctx, ex) {
+    ctx.storedException = ex;
+    var last = ctx.tryStack_[ctx.tryStack_.length - 1];
+    if (!last) {
+      ctx.handleException(ex);
+      return;
+    }
+    ctx.state = last.catch !== undefined ? last.catch : last.finally;
+    if (last.finallyFallThrough !== undefined)
+      ctx.finallyFallThrough = last.finallyFallThrough;
+  }
+  $traceurRuntime.asyncWrap = asyncWrap;
+  $traceurRuntime.initGeneratorFunction = initGeneratorFunction;
+  $traceurRuntime.createGeneratorInstance = createGeneratorInstance;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/proper-tail-calls.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/proper-tail-calls.js";
+  if (typeof $traceurRuntime !== 'object') {
+    throw new Error('traceur runtime not found.');
+  }
+  var $apply = Function.prototype.call.bind(Function.prototype.apply);
+  var $__1 = $traceurRuntime,
+      getPrivate = $__1.getPrivate,
+      setPrivate = $__1.setPrivate,
+      createPrivateSymbol = $__1.createPrivateSymbol;
+  var CONTINUATION_TYPE = Object.create(null);
+  var isTailRecursiveName = null;
+  function createContinuation(operand, thisArg, argsArray) {
+    return [CONTINUATION_TYPE, operand, thisArg, argsArray];
+  }
+  function isContinuation(object) {
+    return object && object[0] === CONTINUATION_TYPE;
+  }
+  function $bind(operand, thisArg, args) {
+    var argArray = [thisArg];
+    for (var i = 0; i < args.length; i++) {
+      argArray[i + 1] = args[i];
+    }
+    var func = $apply(Function.prototype.bind, operand, argArray);
+    return func;
+  }
+  function $construct(func, argArray) {
+    var object = new ($bind(func, null, argArray));
+    return object;
+  }
+  function isTailRecursive(func) {
+    return !!getPrivate(func, isTailRecursiveName);
+  }
+  function tailCall(func, thisArg, argArray) {
+    var continuation = argArray[0];
+    if (isContinuation(continuation)) {
+      continuation = $apply(func, thisArg, continuation[3]);
+      return continuation;
+    }
+    continuation = createContinuation(func, thisArg, argArray);
+    while (true) {
+      if (isTailRecursive(func)) {
+        continuation = $apply(func, continuation[2], [continuation]);
+      } else {
+        continuation = $apply(func, continuation[2], continuation[3]);
+      }
+      if (!isContinuation(continuation)) {
+        return continuation;
+      }
+      func = continuation[1];
+    }
+  }
+  function construct() {
+    var object;
+    if (isTailRecursive(this)) {
+      object = $construct(this, [createContinuation(null, null, arguments)]);
+    } else {
+      object = $construct(this, arguments);
+    }
+    return object;
+  }
+  function setupProperTailCalls() {
+    isTailRecursiveName = createPrivateSymbol();
+    Function.prototype.call = initTailRecursiveFunction(function call(thisArg) {
+      var result = tailCall(function(thisArg) {
+        var argArray = [];
+        for (var i = 1; i < arguments.length; ++i) {
+          argArray[i - 1] = arguments[i];
+        }
+        var continuation = createContinuation(this, thisArg, argArray);
+        return continuation;
+      }, this, arguments);
+      return result;
+    });
+    Function.prototype.apply = initTailRecursiveFunction(function apply(thisArg, argArray) {
+      var result = tailCall(function(thisArg, argArray) {
+        var continuation = createContinuation(this, thisArg, argArray);
+        return continuation;
+      }, this, arguments);
+      return result;
+    });
+  }
+  function initTailRecursiveFunction(func) {
+    if (isTailRecursiveName === null) {
+      setupProperTailCalls();
+    }
+    setPrivate(func, isTailRecursiveName, true);
+    return func;
+  }
+  $traceurRuntime.initTailRecursiveFunction = initTailRecursiveFunction;
+  $traceurRuntime.call = tailCall;
+  $traceurRuntime.continuation = createContinuation;
+  $traceurRuntime.construct = construct;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/relativeRequire.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/relativeRequire.js";
+  var path;
+  function relativeRequire(callerPath, requiredPath) {
+    path = path || typeof require !== 'undefined' && require('path');
+    function isDirectory(path) {
+      return path.slice(-1) === '/';
+    }
+    function isAbsolute(path) {
+      return path[0] === '/';
+    }
+    function isRelative(path) {
+      return path[0] === '.';
+    }
+    if (isDirectory(requiredPath) || isAbsolute(requiredPath))
+      return;
+    return isRelative(requiredPath) ? require(path.resolve(path.dirname(callerPath), requiredPath)) : require(requiredPath);
+  }
+  $traceurRuntime.require = relativeRequire;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/spread.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/spread.js";
+  function spread() {
+    var rv = [],
+        j = 0,
+        iterResult;
+    for (var i = 0; i < arguments.length; i++) {
+      var valueToSpread = $traceurRuntime.checkObjectCoercible(arguments[i]);
+      if (typeof valueToSpread[Symbol.iterator] !== 'function') {
+        throw new TypeError('Cannot spread non-iterable object.');
+      }
+      var iter = valueToSpread[Symbol.iterator]();
+      while (!(iterResult = iter.next()).done) {
+        rv[j++] = iterResult.value;
+      }
+    }
+    return rv;
+  }
+  $traceurRuntime.spread = spread;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/template.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/template.js";
+  var $__1 = Object,
+      defineProperty = $__1.defineProperty,
+      freeze = $__1.freeze;
+  var slice = Array.prototype.slice;
+  var map = Object.create(null);
+  function getTemplateObject(raw) {
+    var cooked = arguments[1];
+    var key = raw.join('${}');
+    var templateObject = map[key];
+    if (templateObject)
+      return templateObject;
+    if (!cooked) {
+      cooked = slice.call(raw);
+    }
+    return map[key] = freeze(defineProperty(cooked, 'raw', {value: freeze(raw)}));
+  }
+  $traceurRuntime.getTemplateObject = getTemplateObject;
+  return {};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/runtime-modules.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/runtime-modules.js";
+  System.get("traceur-runtime@0.0.93/src/runtime/proper-tail-calls.js");
+  System.get("traceur-runtime@0.0.93/src/runtime/relativeRequire.js");
+  System.get("traceur-runtime@0.0.93/src/runtime/spread.js");
+  System.get("traceur-runtime@0.0.93/src/runtime/destructuring.js");
+  System.get("traceur-runtime@0.0.93/src/runtime/classes.js");
+  System.get("traceur-runtime@0.0.93/src/runtime/async.js");
+  System.get("traceur-runtime@0.0.93/src/runtime/generators.js");
+  System.get("traceur-runtime@0.0.93/src/runtime/template.js");
+  return {};
+});
+System.get("traceur-runtime@0.0.93/src/runtime/runtime-modules.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/frozen-data.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/frozen-data.js";
+  function findIndex(arr, key) {
+    for (var i = 0; i < arr.length; i += 2) {
+      if (arr[i] === key) {
         return i;
+      }
+    }
     return -1;
   }
-
-  function dedupe(deps) {
-    var newDeps = [];
-    for (var i = 0, l = deps.length; i < l; i++)
-      if (indexOf.call(newDeps, deps[i]) == -1)
-        newDeps.push(deps[i])
-    return newDeps;
-  }
-
-  function register(name, deps, declare, execute) {
-    if (typeof name != 'string')
-      throw "System.register provided no module name";
-
-    var entry;
-
-    // dynamic
-    if (typeof declare == 'boolean') {
-      entry = {
-        declarative: false,
-        deps: deps,
-        execute: execute,
-        executingRequire: declare
-      };
-    }
-    else {
-      // ES6 declarative
-      entry = {
-        declarative: true,
-        deps: deps,
-        declare: declare
-      };
-    }
-
-    entry.name = name;
-
-    // we never overwrite an existing define
-    if (!(name in defined))
-      defined[name] = entry; 
-
-    entry.deps = dedupe(entry.deps);
-
-    // we have to normalize dependencies
-    // (assume dependencies are normalized for now)
-    // entry.normalizedDeps = entry.deps.map(normalize);
-    entry.normalizedDeps = entry.deps;
-  }
-
-  function buildGroups(entry, groups) {
-    groups[entry.groupIndex] = groups[entry.groupIndex] || [];
-
-    if (indexOf.call(groups[entry.groupIndex], entry) != -1)
-      return;
-
-    groups[entry.groupIndex].push(entry);
-
-    for (var i = 0, l = entry.normalizedDeps.length; i < l; i++) {
-      var depName = entry.normalizedDeps[i];
-      var depEntry = defined[depName];
-
-      // not in the registry means already linked / ES6
-      if (!depEntry || depEntry.evaluated)
-        continue;
-
-      // now we know the entry is in our unlinked linkage group
-      var depGroupIndex = entry.groupIndex + (depEntry.declarative != entry.declarative);
-
-      // the group index of an entry is always the maximum
-      if (depEntry.groupIndex === undefined || depEntry.groupIndex < depGroupIndex) {
-
-        // if already in a group, remove from the old group
-        if (depEntry.groupIndex !== undefined) {
-          groups[depEntry.groupIndex].splice(indexOf.call(groups[depEntry.groupIndex], depEntry), 1);
-
-          // if the old group is empty, then we have a mixed depndency cycle
-          if (groups[depEntry.groupIndex].length == 0)
-            throw new TypeError("Mixed dependency cycle detected");
-        }
-
-        depEntry.groupIndex = depGroupIndex;
-      }
-
-      buildGroups(depEntry, groups);
+  function setFrozen(arr, key, val) {
+    var i = findIndex(arr, key);
+    if (i === -1) {
+      arr.push(key, val);
     }
   }
-
-  function link(name) {
-    var startEntry = defined[name];
-
-    startEntry.groupIndex = 0;
-
-    var groups = [];
-
-    buildGroups(startEntry, groups);
-
-    var curGroupDeclarative = !!startEntry.declarative == groups.length % 2;
-    for (var i = groups.length - 1; i >= 0; i--) {
-      var group = groups[i];
-      for (var j = 0; j < group.length; j++) {
-        var entry = group[j];
-
-        // link each group
-        if (curGroupDeclarative)
-          linkDeclarativeModule(entry);
-        else
-          linkDynamicModule(entry);
-      }
-      curGroupDeclarative = !curGroupDeclarative; 
+  function getFrozen(arr, key) {
+    var i = findIndex(arr, key);
+    if (i !== -1) {
+      return arr[i + 1];
     }
+    return undefined;
   }
-
-  // module binding records
-  var moduleRecords = {};
-  function getOrCreateModuleRecord(name) {
-    return moduleRecords[name] || (moduleRecords[name] = {
-      name: name,
-      dependencies: [],
-      exports: {}, // start from an empty module and extend
-      importers: []
-    })
+  function hasFrozen(arr, key) {
+    return findIndex(arr, key) !== -1;
   }
-
-  function linkDeclarativeModule(entry) {
-    // only link if already not already started linking (stops at circular)
-    if (entry.module)
-      return;
-
-    var module = entry.module = getOrCreateModuleRecord(entry.name);
-    var exports = entry.module.exports;
-
-    var declaration = entry.declare.call(global, function(name, value) {
-      module.locked = true;
-      exports[name] = value;
-
-      for (var i = 0, l = module.importers.length; i < l; i++) {
-        var importerModule = module.importers[i];
-        if (!importerModule.locked) {
-          var importerIndex = indexOf.call(importerModule.dependencies, module);
-          importerModule.setters[importerIndex](exports);
-        }
-      }
-
-      module.locked = false;
-      return value;
-    });
-
-    module.setters = declaration.setters;
-    module.execute = declaration.execute;
-
-    if (!module.setters || !module.execute)
-      throw new TypeError("Invalid System.register form for " + entry.name);
-
-    // now link all the module dependencies
-    for (var i = 0, l = entry.normalizedDeps.length; i < l; i++) {
-      var depName = entry.normalizedDeps[i];
-      var depEntry = defined[depName];
-      var depModule = moduleRecords[depName];
-
-      // work out how to set depExports based on scenarios...
-      var depExports;
-
-      if (depModule) {
-        depExports = depModule.exports;
-      }
-      else if (depEntry && !depEntry.declarative) {
-        if (depEntry.module.exports && depEntry.module.exports.__esModule)
-          depExports = depEntry.module.exports;
-        else
-          depExports = { 'default': depEntry.module.exports, __useDefault: true };
-      }
-      // in the module registry
-      else if (!depEntry) {
-        depExports = load(depName);
-      }
-      // we have an entry -> link
-      else {
-        linkDeclarativeModule(depEntry);
-        depModule = depEntry.module;
-        depExports = depModule.exports;
-      }
-
-      // only declarative modules have dynamic bindings
-      if (depModule && depModule.importers) {
-        depModule.importers.push(module);
-        module.dependencies.push(depModule);
-      }
-      else
-        module.dependencies.push(null);
-
-      // run the setter for this dependency
-      if (module.setters[i])
-        module.setters[i](depExports);
+  function deleteFrozen(arr, key) {
+    var i = findIndex(arr, key);
+    if (i !== -1) {
+      arr.splice(i, 2);
+      return true;
     }
+    return false;
   }
-
-  // An analog to loader.get covering execution of all three layers (real declarative, simulated declarative, simulated dynamic)
-  function getModule(name) {
-    var exports;
-    var entry = defined[name];
-
-    if (!entry) {
-      exports = load(name);
-      if (!exports)
-        throw new Error("Unable to load dependency " + name + ".");
+  return {
+    get setFrozen() {
+      return setFrozen;
+    },
+    get getFrozen() {
+      return getFrozen;
+    },
+    get hasFrozen() {
+      return hasFrozen;
+    },
+    get deleteFrozen() {
+      return deleteFrozen;
     }
-
-    else {
-      if (entry.declarative)
-        ensureEvaluated(name, []);
-
-      else if (!entry.evaluated)
-        linkDynamicModule(entry);
-
-      exports = entry.module.exports;
-    }
-
-    if ((!entry || entry.declarative) && exports && exports.__useDefault)
-      return exports['default'];
-
-    return exports;
-  }
-
-  function linkDynamicModule(entry) {
-    if (entry.module)
-      return;
-
-    var exports = {};
-
-    var module = entry.module = { exports: exports, id: entry.name };
-
-    // AMD requires execute the tree first
-    if (!entry.executingRequire) {
-      for (var i = 0, l = entry.normalizedDeps.length; i < l; i++) {
-        var depName = entry.normalizedDeps[i];
-        var depEntry = defined[depName];
-        if (depEntry)
-          linkDynamicModule(depEntry);
-      }
-    }
-
-    // now execute
-    entry.evaluated = true;
-    var output = entry.execute.call(global, function(name) {
-      for (var i = 0, l = entry.deps.length; i < l; i++) {
-        if (entry.deps[i] != name)
-          continue;
-        return getModule(entry.normalizedDeps[i]);
-      }
-      throw new TypeError('Module ' + name + ' not declared as a dependency.');
-    }, exports, module);
-
-    if (output)
-      module.exports = output;
-  }
-
-  /*
-   * Given a module, and the list of modules for this current branch,
-   *  ensure that each of the dependencies of this module is evaluated
-   *  (unless one is a circular dependency already in the list of seen
-   *  modules, in which case we execute it)
-   *
-   * Then we evaluate the module itself depth-first left to right 
-   * execution to match ES6 modules
-   */
-  function ensureEvaluated(moduleName, seen) {
-    var entry = defined[moduleName];
-
-    // if already seen, that means it's an already-evaluated non circular dependency
-    if (!entry || entry.evaluated || !entry.declarative)
-      return;
-
-    // this only applies to declarative modules which late-execute
-
-    seen.push(moduleName);
-
-    for (var i = 0, l = entry.normalizedDeps.length; i < l; i++) {
-      var depName = entry.normalizedDeps[i];
-      if (indexOf.call(seen, depName) == -1) {
-        if (!defined[depName])
-          load(depName);
-        else
-          ensureEvaluated(depName, seen);
-      }
-    }
-
-    if (entry.evaluated)
-      return;
-
-    entry.evaluated = true;
-    entry.module.execute.call(global);
-  }
-
-  // magical execution function
-  var modules = {};
-  function load(name) {
-    if (modules[name])
-      return modules[name];
-
-    var entry = defined[name];
-
-    // first we check if this module has already been defined in the registry
-    if (!entry)
-      throw "Module " + name + " not present.";
-
-    // recursively ensure that the module and all its 
-    // dependencies are linked (with dependency group handling)
-    link(name);
-
-    // now handle dependency execution in correct order
-    ensureEvaluated(name, []);
-
-    // remove from the registry
-    defined[name] = undefined;
-
-    var module = entry.module.exports;
-
-    if (!module || !entry.declarative && module.__esModule !== true)
-      module = { 'default': module, __useDefault: true };
-
-    // return the defined module object
-    return modules[name] = module;
   };
-
-  return function(mains, declare) {
-
-    var System;
-    var System = {
-      register: register, 
-      get: load, 
-      set: function(name, module) {
-        modules[name] = module; 
-      },
-      newModule: function(module) {
-        return module;
-      },
-      global: global 
-    };
-    System.set('@empty', {});
-
-    declare(System);
-
-    for (var i = 0; i < mains.length; i++)
-      load(mains[i]);
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/utils.js";
+  var $ceil = Math.ceil;
+  var $floor = Math.floor;
+  var $isFinite = isFinite;
+  var $isNaN = isNaN;
+  var $pow = Math.pow;
+  var $min = Math.min;
+  var toObject = $traceurRuntime.toObject;
+  function toUint32(x) {
+    return x >>> 0;
   }
+  function isObject(x) {
+    return x && (typeof x === 'object' || typeof x === 'function');
+  }
+  function isCallable(x) {
+    return typeof x === 'function';
+  }
+  function isNumber(x) {
+    return typeof x === 'number';
+  }
+  function toInteger(x) {
+    x = +x;
+    if ($isNaN(x))
+      return 0;
+    if (x === 0 || !$isFinite(x))
+      return x;
+    return x > 0 ? $floor(x) : $ceil(x);
+  }
+  var MAX_SAFE_LENGTH = $pow(2, 53) - 1;
+  function toLength(x) {
+    var len = toInteger(x);
+    return len < 0 ? 0 : $min(len, MAX_SAFE_LENGTH);
+  }
+  function checkIterable(x) {
+    return !isObject(x) ? undefined : x[Symbol.iterator];
+  }
+  function isConstructor(x) {
+    return isCallable(x);
+  }
+  function createIteratorResultObject(value, done) {
+    return {
+      value: value,
+      done: done
+    };
+  }
+  function maybeDefine(object, name, descr) {
+    if (!(name in object)) {
+      Object.defineProperty(object, name, descr);
+    }
+  }
+  function maybeDefineMethod(object, name, value) {
+    maybeDefine(object, name, {
+      value: value,
+      configurable: true,
+      enumerable: false,
+      writable: true
+    });
+  }
+  function maybeDefineConst(object, name, value) {
+    maybeDefine(object, name, {
+      value: value,
+      configurable: false,
+      enumerable: false,
+      writable: false
+    });
+  }
+  function maybeAddFunctions(object, functions) {
+    for (var i = 0; i < functions.length; i += 2) {
+      var name = functions[i];
+      var value = functions[i + 1];
+      maybeDefineMethod(object, name, value);
+    }
+  }
+  function maybeAddConsts(object, consts) {
+    for (var i = 0; i < consts.length; i += 2) {
+      var name = consts[i];
+      var value = consts[i + 1];
+      maybeDefineConst(object, name, value);
+    }
+  }
+  function maybeAddIterator(object, func, Symbol) {
+    if (!Symbol || !Symbol.iterator || object[Symbol.iterator])
+      return;
+    if (object['@@iterator'])
+      func = object['@@iterator'];
+    Object.defineProperty(object, Symbol.iterator, {
+      value: func,
+      configurable: true,
+      enumerable: false,
+      writable: true
+    });
+  }
+  var polyfills = [];
+  function registerPolyfill(func) {
+    polyfills.push(func);
+  }
+  function polyfillAll(global) {
+    polyfills.forEach(function(f) {
+      return f(global);
+    });
+  }
+  return {
+    get toObject() {
+      return toObject;
+    },
+    get toUint32() {
+      return toUint32;
+    },
+    get isObject() {
+      return isObject;
+    },
+    get isCallable() {
+      return isCallable;
+    },
+    get isNumber() {
+      return isNumber;
+    },
+    get toInteger() {
+      return toInteger;
+    },
+    get toLength() {
+      return toLength;
+    },
+    get checkIterable() {
+      return checkIterable;
+    },
+    get isConstructor() {
+      return isConstructor;
+    },
+    get createIteratorResultObject() {
+      return createIteratorResultObject;
+    },
+    get maybeDefine() {
+      return maybeDefine;
+    },
+    get maybeDefineMethod() {
+      return maybeDefineMethod;
+    },
+    get maybeDefineConst() {
+      return maybeDefineConst;
+    },
+    get maybeAddFunctions() {
+      return maybeAddFunctions;
+    },
+    get maybeAddConsts() {
+      return maybeAddConsts;
+    },
+    get maybeAddIterator() {
+      return maybeAddIterator;
+    },
+    get registerPolyfill() {
+      return registerPolyfill;
+    },
+    get polyfillAll() {
+      return polyfillAll;
+    }
+  };
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/Map.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/Map.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      isObject = $__0.isObject,
+      registerPolyfill = $__0.registerPolyfill;
+  var $__1 = System.get("traceur-runtime@0.0.93/src/runtime/frozen-data.js"),
+      deleteFrozen = $__1.deleteFrozen,
+      getFrozen = $__1.getFrozen,
+      setFrozen = $__1.setFrozen;
+  var $__11 = $traceurRuntime,
+      createPrivateSymbol = $__11.createPrivateSymbol,
+      getPrivate = $__11.getPrivate,
+      hasNativeSymbol = $__11.hasNativeSymbol,
+      setPrivate = $__11.setPrivate;
+  var $__12 = Object,
+      defineProperty = $__12.defineProperty,
+      getOwnPropertyDescriptor = $__12.getOwnPropertyDescriptor,
+      hasOwnProperty = $__12.hasOwnProperty,
+      isExtensible = $__12.isExtensible;
+  var deletedSentinel = {};
+  var counter = 1;
+  var hashCodeName = createPrivateSymbol();
+  function getHashCodeForObject(obj) {
+    return getPrivate(obj, hashCodeName);
+  }
+  function getOrSetHashCodeForObject(obj) {
+    var hash = getHashCodeForObject(obj);
+    if (!hash) {
+      hash = counter++;
+      setPrivate(obj, hashCodeName, hash);
+    }
+    return hash;
+  }
+  function lookupIndex(map, key) {
+    if (typeof key === 'string') {
+      return map.stringIndex_[key];
+    }
+    if (isObject(key)) {
+      if (!isExtensible(key)) {
+        return getFrozen(map.frozenData_, key);
+      }
+      var hc = getHashCodeForObject(key);
+      if (hc === undefined) {
+        return undefined;
+      }
+      return map.objectIndex_[hc];
+    }
+    return map.primitiveIndex_[key];
+  }
+  function initMap(map) {
+    map.entries_ = [];
+    map.objectIndex_ = Object.create(null);
+    map.stringIndex_ = Object.create(null);
+    map.primitiveIndex_ = Object.create(null);
+    map.frozenData_ = [];
+    map.deletedCount_ = 0;
+  }
+  var Map = function() {
+    function Map() {
+      var $__14,
+          $__15;
+      var iterable = arguments[0];
+      if (!isObject(this))
+        throw new TypeError('Map called on incompatible type');
+      if (hasOwnProperty.call(this, 'entries_')) {
+        throw new TypeError('Map can not be reentrantly initialised');
+      }
+      initMap(this);
+      if (iterable !== null && iterable !== undefined) {
+        var $__7 = true;
+        var $__8 = false;
+        var $__9 = undefined;
+        try {
+          for (var $__5 = void 0,
+              $__4 = (iterable)[Symbol.iterator](); !($__7 = ($__5 = $__4.next()).done); $__7 = true) {
+            var $__13 = $__5.value,
+                key = ($__14 = $__13[Symbol.iterator](), ($__15 = $__14.next()).done ? void 0 : $__15.value),
+                value = ($__15 = $__14.next()).done ? void 0 : $__15.value;
+            {
+              this.set(key, value);
+            }
+          }
+        } catch ($__10) {
+          $__8 = true;
+          $__9 = $__10;
+        } finally {
+          try {
+            if (!$__7 && $__4.return != null) {
+              $__4.return();
+            }
+          } finally {
+            if ($__8) {
+              throw $__9;
+            }
+          }
+        }
+      }
+    }
+    return ($traceurRuntime.createClass)(Map, {
+      get size() {
+        return this.entries_.length / 2 - this.deletedCount_;
+      },
+      get: function(key) {
+        var index = lookupIndex(this, key);
+        if (index !== undefined) {
+          return this.entries_[index + 1];
+        }
+      },
+      set: function(key, value) {
+        var index = lookupIndex(this, key);
+        if (index !== undefined) {
+          this.entries_[index + 1] = value;
+        } else {
+          index = this.entries_.length;
+          this.entries_[index] = key;
+          this.entries_[index + 1] = value;
+          if (isObject(key)) {
+            if (!isExtensible(key)) {
+              setFrozen(this.frozenData_, key, index);
+            } else {
+              var hash = getOrSetHashCodeForObject(key);
+              this.objectIndex_[hash] = index;
+            }
+          } else if (typeof key === 'string') {
+            this.stringIndex_[key] = index;
+          } else {
+            this.primitiveIndex_[key] = index;
+          }
+        }
+        return this;
+      },
+      has: function(key) {
+        return lookupIndex(this, key) !== undefined;
+      },
+      delete: function(key) {
+        var index = lookupIndex(this, key);
+        if (index === undefined) {
+          return false;
+        }
+        this.entries_[index] = deletedSentinel;
+        this.entries_[index + 1] = undefined;
+        this.deletedCount_++;
+        if (isObject(key)) {
+          if (!isExtensible(key)) {
+            deleteFrozen(this.frozenData_, key);
+          } else {
+            var hash = getHashCodeForObject(key);
+            delete this.objectIndex_[hash];
+          }
+        } else if (typeof key === 'string') {
+          delete this.stringIndex_[key];
+        } else {
+          delete this.primitiveIndex_[key];
+        }
+        return true;
+      },
+      clear: function() {
+        initMap(this);
+      },
+      forEach: function(callbackFn) {
+        var thisArg = arguments[1];
+        for (var i = 0; i < this.entries_.length; i += 2) {
+          var key = this.entries_[i];
+          var value = this.entries_[i + 1];
+          if (key === deletedSentinel)
+            continue;
+          callbackFn.call(thisArg, value, key, this);
+        }
+      },
+      entries: $traceurRuntime.initGeneratorFunction(function $__16() {
+        var i,
+            key,
+            value;
+        return $traceurRuntime.createGeneratorInstance(function($ctx) {
+          while (true)
+            switch ($ctx.state) {
+              case 0:
+                i = 0;
+                $ctx.state = 12;
+                break;
+              case 12:
+                $ctx.state = (i < this.entries_.length) ? 8 : -2;
+                break;
+              case 4:
+                i += 2;
+                $ctx.state = 12;
+                break;
+              case 8:
+                key = this.entries_[i];
+                value = this.entries_[i + 1];
+                $ctx.state = 9;
+                break;
+              case 9:
+                $ctx.state = (key === deletedSentinel) ? 4 : 6;
+                break;
+              case 6:
+                $ctx.state = 2;
+                return [key, value];
+              case 2:
+                $ctx.maybeThrow();
+                $ctx.state = 4;
+                break;
+              default:
+                return $ctx.end();
+            }
+        }, $__16, this);
+      }),
+      keys: $traceurRuntime.initGeneratorFunction(function $__17() {
+        var i,
+            key,
+            value;
+        return $traceurRuntime.createGeneratorInstance(function($ctx) {
+          while (true)
+            switch ($ctx.state) {
+              case 0:
+                i = 0;
+                $ctx.state = 12;
+                break;
+              case 12:
+                $ctx.state = (i < this.entries_.length) ? 8 : -2;
+                break;
+              case 4:
+                i += 2;
+                $ctx.state = 12;
+                break;
+              case 8:
+                key = this.entries_[i];
+                value = this.entries_[i + 1];
+                $ctx.state = 9;
+                break;
+              case 9:
+                $ctx.state = (key === deletedSentinel) ? 4 : 6;
+                break;
+              case 6:
+                $ctx.state = 2;
+                return key;
+              case 2:
+                $ctx.maybeThrow();
+                $ctx.state = 4;
+                break;
+              default:
+                return $ctx.end();
+            }
+        }, $__17, this);
+      }),
+      values: $traceurRuntime.initGeneratorFunction(function $__18() {
+        var i,
+            key,
+            value;
+        return $traceurRuntime.createGeneratorInstance(function($ctx) {
+          while (true)
+            switch ($ctx.state) {
+              case 0:
+                i = 0;
+                $ctx.state = 12;
+                break;
+              case 12:
+                $ctx.state = (i < this.entries_.length) ? 8 : -2;
+                break;
+              case 4:
+                i += 2;
+                $ctx.state = 12;
+                break;
+              case 8:
+                key = this.entries_[i];
+                value = this.entries_[i + 1];
+                $ctx.state = 9;
+                break;
+              case 9:
+                $ctx.state = (key === deletedSentinel) ? 4 : 6;
+                break;
+              case 6:
+                $ctx.state = 2;
+                return value;
+              case 2:
+                $ctx.maybeThrow();
+                $ctx.state = 4;
+                break;
+              default:
+                return $ctx.end();
+            }
+        }, $__18, this);
+      })
+    }, {});
+  }();
+  defineProperty(Map.prototype, Symbol.iterator, {
+    configurable: true,
+    writable: true,
+    value: Map.prototype.entries
+  });
+  function needsPolyfill(global) {
+    var $__13 = global,
+        Map = $__13.Map,
+        Symbol = $__13.Symbol;
+    if (!Map || !$traceurRuntime.hasNativeSymbol() || !Map.prototype[Symbol.iterator] || !Map.prototype.entries) {
+      return true;
+    }
+    try {
+      return new Map([[]]).size !== 1;
+    } catch (e) {
+      return false;
+    }
+  }
+  function polyfillMap(global) {
+    if (needsPolyfill(global)) {
+      global.Map = Map;
+    }
+  }
+  registerPolyfill(polyfillMap);
+  return {
+    get Map() {
+      return Map;
+    },
+    get polyfillMap() {
+      return polyfillMap;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Map.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/Set.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/Set.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      isObject = $__0.isObject,
+      registerPolyfill = $__0.registerPolyfill;
+  var Map = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Map.js").Map;
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+  var Set = function() {
+    function Set() {
+      var iterable = arguments[0];
+      if (!isObject(this))
+        throw new TypeError('Set called on incompatible type');
+      if (hasOwnProperty.call(this, 'map_')) {
+        throw new TypeError('Set can not be reentrantly initialised');
+      }
+      this.map_ = new Map();
+      if (iterable !== null && iterable !== undefined) {
+        var $__8 = true;
+        var $__9 = false;
+        var $__10 = undefined;
+        try {
+          for (var $__6 = void 0,
+              $__5 = (iterable)[Symbol.iterator](); !($__8 = ($__6 = $__5.next()).done); $__8 = true) {
+            var item = $__6.value;
+            {
+              this.add(item);
+            }
+          }
+        } catch ($__11) {
+          $__9 = true;
+          $__10 = $__11;
+        } finally {
+          try {
+            if (!$__8 && $__5.return != null) {
+              $__5.return();
+            }
+          } finally {
+            if ($__9) {
+              throw $__10;
+            }
+          }
+        }
+      }
+    }
+    return ($traceurRuntime.createClass)(Set, {
+      get size() {
+        return this.map_.size;
+      },
+      has: function(key) {
+        return this.map_.has(key);
+      },
+      add: function(key) {
+        this.map_.set(key, key);
+        return this;
+      },
+      delete: function(key) {
+        return this.map_.delete(key);
+      },
+      clear: function() {
+        return this.map_.clear();
+      },
+      forEach: function(callbackFn) {
+        var thisArg = arguments[1];
+        var $__4 = this;
+        return this.map_.forEach(function(value, key) {
+          callbackFn.call(thisArg, key, key, $__4);
+        });
+      },
+      values: $traceurRuntime.initGeneratorFunction(function $__14() {
+        var $__15,
+            $__16;
+        return $traceurRuntime.createGeneratorInstance(function($ctx) {
+          while (true)
+            switch ($ctx.state) {
+              case 0:
+                $__15 = $ctx.wrapYieldStar(this.map_.keys()[Symbol.iterator]());
+                $ctx.sent = void 0;
+                $ctx.action = 'next';
+                $ctx.state = 12;
+                break;
+              case 12:
+                $__16 = $__15[$ctx.action]($ctx.sentIgnoreThrow);
+                $ctx.state = 9;
+                break;
+              case 9:
+                $ctx.state = ($__16.done) ? 3 : 2;
+                break;
+              case 3:
+                $ctx.sent = $__16.value;
+                $ctx.state = -2;
+                break;
+              case 2:
+                $ctx.state = 12;
+                return $__16.value;
+              default:
+                return $ctx.end();
+            }
+        }, $__14, this);
+      }),
+      entries: $traceurRuntime.initGeneratorFunction(function $__17() {
+        var $__18,
+            $__19;
+        return $traceurRuntime.createGeneratorInstance(function($ctx) {
+          while (true)
+            switch ($ctx.state) {
+              case 0:
+                $__18 = $ctx.wrapYieldStar(this.map_.entries()[Symbol.iterator]());
+                $ctx.sent = void 0;
+                $ctx.action = 'next';
+                $ctx.state = 12;
+                break;
+              case 12:
+                $__19 = $__18[$ctx.action]($ctx.sentIgnoreThrow);
+                $ctx.state = 9;
+                break;
+              case 9:
+                $ctx.state = ($__19.done) ? 3 : 2;
+                break;
+              case 3:
+                $ctx.sent = $__19.value;
+                $ctx.state = -2;
+                break;
+              case 2:
+                $ctx.state = 12;
+                return $__19.value;
+              default:
+                return $ctx.end();
+            }
+        }, $__17, this);
+      })
+    }, {});
+  }();
+  Object.defineProperty(Set.prototype, Symbol.iterator, {
+    configurable: true,
+    writable: true,
+    value: Set.prototype.values
+  });
+  Object.defineProperty(Set.prototype, 'keys', {
+    configurable: true,
+    writable: true,
+    value: Set.prototype.values
+  });
+  function needsPolyfill(global) {
+    var $__13 = global,
+        Set = $__13.Set,
+        Symbol = $__13.Symbol;
+    if (!Set || !$traceurRuntime.hasNativeSymbol() || !Set.prototype[Symbol.iterator] || !Set.prototype.values) {
+      return true;
+    }
+    try {
+      return new Set([1]).size !== 1;
+    } catch (e) {
+      return false;
+    }
+  }
+  function polyfillSet(global) {
+    if (needsPolyfill(global)) {
+      global.Set = Set;
+    }
+  }
+  registerPolyfill(polyfillSet);
+  return {
+    get Set() {
+      return Set;
+    },
+    get polyfillSet() {
+      return polyfillSet;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Set.js" + '');
+System.registerModule("traceur-runtime@0.0.93/node_modules/rsvp/lib/rsvp/asap.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/node_modules/rsvp/lib/rsvp/asap.js";
+  var len = 0;
+  function asap(callback, arg) {
+    queue[len] = callback;
+    queue[len + 1] = arg;
+    len += 2;
+    if (len === 2) {
+      scheduleFlush();
+    }
+  }
+  var $__default = asap;
+  var browserGlobal = (typeof window !== 'undefined') ? window : {};
+  var BrowserMutationObserver = browserGlobal.MutationObserver || browserGlobal.WebKitMutationObserver;
+  var isWorker = typeof Uint8ClampedArray !== 'undefined' && typeof importScripts !== 'undefined' && typeof MessageChannel !== 'undefined';
+  function useNextTick() {
+    return function() {
+      process.nextTick(flush);
+    };
+  }
+  function useMutationObserver() {
+    var iterations = 0;
+    var observer = new BrowserMutationObserver(flush);
+    var node = document.createTextNode('');
+    observer.observe(node, {characterData: true});
+    return function() {
+      node.data = (iterations = ++iterations % 2);
+    };
+  }
+  function useMessageChannel() {
+    var channel = new MessageChannel();
+    channel.port1.onmessage = flush;
+    return function() {
+      channel.port2.postMessage(0);
+    };
+  }
+  function useSetTimeout() {
+    return function() {
+      setTimeout(flush, 1);
+    };
+  }
+  var queue = new Array(1000);
+  function flush() {
+    for (var i = 0; i < len; i += 2) {
+      var callback = queue[i];
+      var arg = queue[i + 1];
+      callback(arg);
+      queue[i] = undefined;
+      queue[i + 1] = undefined;
+    }
+    len = 0;
+  }
+  var scheduleFlush;
+  if (typeof process !== 'undefined' && {}.toString.call(process) === '[object process]') {
+    scheduleFlush = useNextTick();
+  } else if (BrowserMutationObserver) {
+    scheduleFlush = useMutationObserver();
+  } else if (isWorker) {
+    scheduleFlush = useMessageChannel();
+  } else {
+    scheduleFlush = useSetTimeout();
+  }
+  return {get default() {
+      return $__default;
+    }};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/Promise.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/Promise.js";
+  var async = System.get("traceur-runtime@0.0.93/node_modules/rsvp/lib/rsvp/asap.js").default;
+  var registerPolyfill = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js").registerPolyfill;
+  var promiseRaw = {};
+  function isPromise(x) {
+    return x && typeof x === 'object' && x.status_ !== undefined;
+  }
+  function idResolveHandler(x) {
+    return x;
+  }
+  function idRejectHandler(x) {
+    throw x;
+  }
+  function chain(promise) {
+    var onResolve = arguments[1] !== (void 0) ? arguments[1] : idResolveHandler;
+    var onReject = arguments[2] !== (void 0) ? arguments[2] : idRejectHandler;
+    var deferred = getDeferred(promise.constructor);
+    switch (promise.status_) {
+      case undefined:
+        throw TypeError;
+      case 0:
+        promise.onResolve_.push(onResolve, deferred);
+        promise.onReject_.push(onReject, deferred);
+        break;
+      case +1:
+        promiseEnqueue(promise.value_, [onResolve, deferred]);
+        break;
+      case -1:
+        promiseEnqueue(promise.value_, [onReject, deferred]);
+        break;
+    }
+    return deferred.promise;
+  }
+  function getDeferred(C) {
+    if (this === $Promise) {
+      var promise = promiseInit(new $Promise(promiseRaw));
+      return {
+        promise: promise,
+        resolve: function(x) {
+          promiseResolve(promise, x);
+        },
+        reject: function(r) {
+          promiseReject(promise, r);
+        }
+      };
+    } else {
+      var result = {};
+      result.promise = new C(function(resolve, reject) {
+        result.resolve = resolve;
+        result.reject = reject;
+      });
+      return result;
+    }
+  }
+  function promiseSet(promise, status, value, onResolve, onReject) {
+    promise.status_ = status;
+    promise.value_ = value;
+    promise.onResolve_ = onResolve;
+    promise.onReject_ = onReject;
+    return promise;
+  }
+  function promiseInit(promise) {
+    return promiseSet(promise, 0, undefined, [], []);
+  }
+  var Promise = function() {
+    function Promise(resolver) {
+      if (resolver === promiseRaw)
+        return;
+      if (typeof resolver !== 'function')
+        throw new TypeError;
+      var promise = promiseInit(this);
+      try {
+        resolver(function(x) {
+          promiseResolve(promise, x);
+        }, function(r) {
+          promiseReject(promise, r);
+        });
+      } catch (e) {
+        promiseReject(promise, e);
+      }
+    }
+    return ($traceurRuntime.createClass)(Promise, {
+      catch: function(onReject) {
+        return this.then(undefined, onReject);
+      },
+      then: function(onResolve, onReject) {
+        if (typeof onResolve !== 'function')
+          onResolve = idResolveHandler;
+        if (typeof onReject !== 'function')
+          onReject = idRejectHandler;
+        var that = this;
+        var constructor = this.constructor;
+        return chain(this, function(x) {
+          x = promiseCoerce(constructor, x);
+          return x === that ? onReject(new TypeError) : isPromise(x) ? x.then(onResolve, onReject) : onResolve(x);
+        }, onReject);
+      }
+    }, {
+      resolve: function(x) {
+        if (this === $Promise) {
+          if (isPromise(x)) {
+            return x;
+          }
+          return promiseSet(new $Promise(promiseRaw), +1, x);
+        } else {
+          return new this(function(resolve, reject) {
+            resolve(x);
+          });
+        }
+      },
+      reject: function(r) {
+        if (this === $Promise) {
+          return promiseSet(new $Promise(promiseRaw), -1, r);
+        } else {
+          return new this(function(resolve, reject) {
+            reject(r);
+          });
+        }
+      },
+      all: function(values) {
+        var deferred = getDeferred(this);
+        var resolutions = [];
+        try {
+          var makeCountdownFunction = function(i) {
+            return function(x) {
+              resolutions[i] = x;
+              if (--count === 0)
+                deferred.resolve(resolutions);
+            };
+          };
+          var count = 0;
+          var i = 0;
+          var $__6 = true;
+          var $__7 = false;
+          var $__8 = undefined;
+          try {
+            for (var $__4 = void 0,
+                $__3 = (values)[Symbol.iterator](); !($__6 = ($__4 = $__3.next()).done); $__6 = true) {
+              var value = $__4.value;
+              {
+                var countdownFunction = makeCountdownFunction(i);
+                this.resolve(value).then(countdownFunction, function(r) {
+                  deferred.reject(r);
+                });
+                ++i;
+                ++count;
+              }
+            }
+          } catch ($__9) {
+            $__7 = true;
+            $__8 = $__9;
+          } finally {
+            try {
+              if (!$__6 && $__3.return != null) {
+                $__3.return();
+              }
+            } finally {
+              if ($__7) {
+                throw $__8;
+              }
+            }
+          }
+          if (count === 0) {
+            deferred.resolve(resolutions);
+          }
+        } catch (e) {
+          deferred.reject(e);
+        }
+        return deferred.promise;
+      },
+      race: function(values) {
+        var deferred = getDeferred(this);
+        try {
+          for (var i = 0; i < values.length; i++) {
+            this.resolve(values[i]).then(function(x) {
+              deferred.resolve(x);
+            }, function(r) {
+              deferred.reject(r);
+            });
+          }
+        } catch (e) {
+          deferred.reject(e);
+        }
+        return deferred.promise;
+      }
+    });
+  }();
+  var $Promise = Promise;
+  var $PromiseReject = $Promise.reject;
+  function promiseResolve(promise, x) {
+    promiseDone(promise, +1, x, promise.onResolve_);
+  }
+  function promiseReject(promise, r) {
+    promiseDone(promise, -1, r, promise.onReject_);
+  }
+  function promiseDone(promise, status, value, reactions) {
+    if (promise.status_ !== 0)
+      return;
+    promiseEnqueue(value, reactions);
+    promiseSet(promise, status, value);
+  }
+  function promiseEnqueue(value, tasks) {
+    async(function() {
+      for (var i = 0; i < tasks.length; i += 2) {
+        promiseHandle(value, tasks[i], tasks[i + 1]);
+      }
+    });
+  }
+  function promiseHandle(value, handler, deferred) {
+    try {
+      var result = handler(value);
+      if (result === deferred.promise)
+        throw new TypeError;
+      else if (isPromise(result))
+        chain(result, deferred.resolve, deferred.reject);
+      else
+        deferred.resolve(result);
+    } catch (e) {
+      try {
+        deferred.reject(e);
+      } catch (e) {}
+    }
+  }
+  var thenableSymbol = '@@thenable';
+  function isObject(x) {
+    return x && (typeof x === 'object' || typeof x === 'function');
+  }
+  function promiseCoerce(constructor, x) {
+    if (!isPromise(x) && isObject(x)) {
+      var then;
+      try {
+        then = x.then;
+      } catch (r) {
+        var promise = $PromiseReject.call(constructor, r);
+        x[thenableSymbol] = promise;
+        return promise;
+      }
+      if (typeof then === 'function') {
+        var p = x[thenableSymbol];
+        if (p) {
+          return p;
+        } else {
+          var deferred = getDeferred(constructor);
+          x[thenableSymbol] = deferred.promise;
+          try {
+            then.call(x, deferred.resolve, deferred.reject);
+          } catch (r) {
+            deferred.reject(r);
+          }
+          return deferred.promise;
+        }
+      }
+    }
+    return x;
+  }
+  function polyfillPromise(global) {
+    if (!global.Promise)
+      global.Promise = Promise;
+  }
+  registerPolyfill(polyfillPromise);
+  return {
+    get Promise() {
+      return Promise;
+    },
+    get polyfillPromise() {
+      return polyfillPromise;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Promise.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/StringIterator.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/StringIterator.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      createIteratorResultObject = $__0.createIteratorResultObject,
+      isObject = $__0.isObject;
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+  var iteratedString = Symbol('iteratedString');
+  var stringIteratorNextIndex = Symbol('stringIteratorNextIndex');
+  var StringIterator = function() {
+    var $__3;
+    function StringIterator() {}
+    return ($traceurRuntime.createClass)(StringIterator, ($__3 = {}, Object.defineProperty($__3, "next", {
+      value: function() {
+        var o = this;
+        if (!isObject(o) || !hasOwnProperty.call(o, iteratedString)) {
+          throw new TypeError('this must be a StringIterator object');
+        }
+        var s = o[iteratedString];
+        if (s === undefined) {
+          return createIteratorResultObject(undefined, true);
+        }
+        var position = o[stringIteratorNextIndex];
+        var len = s.length;
+        if (position >= len) {
+          o[iteratedString] = undefined;
+          return createIteratorResultObject(undefined, true);
+        }
+        var first = s.charCodeAt(position);
+        var resultString;
+        if (first < 0xD800 || first > 0xDBFF || position + 1 === len) {
+          resultString = String.fromCharCode(first);
+        } else {
+          var second = s.charCodeAt(position + 1);
+          if (second < 0xDC00 || second > 0xDFFF) {
+            resultString = String.fromCharCode(first);
+          } else {
+            resultString = String.fromCharCode(first) + String.fromCharCode(second);
+          }
+        }
+        o[stringIteratorNextIndex] = position + resultString.length;
+        return createIteratorResultObject(resultString, false);
+      },
+      configurable: true,
+      enumerable: true,
+      writable: true
+    }), Object.defineProperty($__3, Symbol.iterator, {
+      value: function() {
+        return this;
+      },
+      configurable: true,
+      enumerable: true,
+      writable: true
+    }), $__3), {});
+  }();
+  function createStringIterator(string) {
+    var s = String(string);
+    var iterator = Object.create(StringIterator.prototype);
+    iterator[iteratedString] = s;
+    iterator[stringIteratorNextIndex] = 0;
+    return iterator;
+  }
+  return {get createStringIterator() {
+      return createStringIterator;
+    }};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/String.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/String.js";
+  var createStringIterator = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/StringIterator.js").createStringIterator;
+  var $__1 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      maybeAddFunctions = $__1.maybeAddFunctions,
+      maybeAddIterator = $__1.maybeAddIterator,
+      registerPolyfill = $__1.registerPolyfill;
+  var $toString = Object.prototype.toString;
+  var $indexOf = String.prototype.indexOf;
+  var $lastIndexOf = String.prototype.lastIndexOf;
+  function startsWith(search) {
+    var string = String(this);
+    if (this == null || $toString.call(search) == '[object RegExp]') {
+      throw TypeError();
+    }
+    var stringLength = string.length;
+    var searchString = String(search);
+    var searchLength = searchString.length;
+    var position = arguments.length > 1 ? arguments[1] : undefined;
+    var pos = position ? Number(position) : 0;
+    if (isNaN(pos)) {
+      pos = 0;
+    }
+    var start = Math.min(Math.max(pos, 0), stringLength);
+    return $indexOf.call(string, searchString, pos) == start;
+  }
+  function endsWith(search) {
+    var string = String(this);
+    if (this == null || $toString.call(search) == '[object RegExp]') {
+      throw TypeError();
+    }
+    var stringLength = string.length;
+    var searchString = String(search);
+    var searchLength = searchString.length;
+    var pos = stringLength;
+    if (arguments.length > 1) {
+      var position = arguments[1];
+      if (position !== undefined) {
+        pos = position ? Number(position) : 0;
+        if (isNaN(pos)) {
+          pos = 0;
+        }
+      }
+    }
+    var end = Math.min(Math.max(pos, 0), stringLength);
+    var start = end - searchLength;
+    if (start < 0) {
+      return false;
+    }
+    return $lastIndexOf.call(string, searchString, start) == start;
+  }
+  function includes(search) {
+    if (this == null) {
+      throw TypeError();
+    }
+    var string = String(this);
+    if (search && $toString.call(search) == '[object RegExp]') {
+      throw TypeError();
+    }
+    var stringLength = string.length;
+    var searchString = String(search);
+    var searchLength = searchString.length;
+    var position = arguments.length > 1 ? arguments[1] : undefined;
+    var pos = position ? Number(position) : 0;
+    if (pos != pos) {
+      pos = 0;
+    }
+    var start = Math.min(Math.max(pos, 0), stringLength);
+    if (searchLength + start > stringLength) {
+      return false;
+    }
+    return $indexOf.call(string, searchString, pos) != -1;
+  }
+  function repeat(count) {
+    if (this == null) {
+      throw TypeError();
+    }
+    var string = String(this);
+    var n = count ? Number(count) : 0;
+    if (isNaN(n)) {
+      n = 0;
+    }
+    if (n < 0 || n == Infinity) {
+      throw RangeError();
+    }
+    if (n == 0) {
+      return '';
+    }
+    var result = '';
+    while (n--) {
+      result += string;
+    }
+    return result;
+  }
+  function codePointAt(position) {
+    if (this == null) {
+      throw TypeError();
+    }
+    var string = String(this);
+    var size = string.length;
+    var index = position ? Number(position) : 0;
+    if (isNaN(index)) {
+      index = 0;
+    }
+    if (index < 0 || index >= size) {
+      return undefined;
+    }
+    var first = string.charCodeAt(index);
+    var second;
+    if (first >= 0xD800 && first <= 0xDBFF && size > index + 1) {
+      second = string.charCodeAt(index + 1);
+      if (second >= 0xDC00 && second <= 0xDFFF) {
+        return (first - 0xD800) * 0x400 + second - 0xDC00 + 0x10000;
+      }
+    }
+    return first;
+  }
+  function raw(callsite) {
+    var raw = callsite.raw;
+    var len = raw.length >>> 0;
+    if (len === 0)
+      return '';
+    var s = '';
+    var i = 0;
+    while (true) {
+      s += raw[i];
+      if (i + 1 === len)
+        return s;
+      s += arguments[++i];
+    }
+  }
+  function fromCodePoint(_) {
+    var codeUnits = [];
+    var floor = Math.floor;
+    var highSurrogate;
+    var lowSurrogate;
+    var index = -1;
+    var length = arguments.length;
+    if (!length) {
+      return '';
+    }
+    while (++index < length) {
+      var codePoint = Number(arguments[index]);
+      if (!isFinite(codePoint) || codePoint < 0 || codePoint > 0x10FFFF || floor(codePoint) != codePoint) {
+        throw RangeError('Invalid code point: ' + codePoint);
+      }
+      if (codePoint <= 0xFFFF) {
+        codeUnits.push(codePoint);
+      } else {
+        codePoint -= 0x10000;
+        highSurrogate = (codePoint >> 10) + 0xD800;
+        lowSurrogate = (codePoint % 0x400) + 0xDC00;
+        codeUnits.push(highSurrogate, lowSurrogate);
+      }
+    }
+    return String.fromCharCode.apply(null, codeUnits);
+  }
+  function stringPrototypeIterator() {
+    var o = $traceurRuntime.checkObjectCoercible(this);
+    var s = String(o);
+    return createStringIterator(s);
+  }
+  function polyfillString(global) {
+    var String = global.String;
+    maybeAddFunctions(String.prototype, ['codePointAt', codePointAt, 'endsWith', endsWith, 'includes', includes, 'repeat', repeat, 'startsWith', startsWith]);
+    maybeAddFunctions(String, ['fromCodePoint', fromCodePoint, 'raw', raw]);
+    maybeAddIterator(String.prototype, stringPrototypeIterator, Symbol);
+  }
+  registerPolyfill(polyfillString);
+  return {
+    get startsWith() {
+      return startsWith;
+    },
+    get endsWith() {
+      return endsWith;
+    },
+    get includes() {
+      return includes;
+    },
+    get repeat() {
+      return repeat;
+    },
+    get codePointAt() {
+      return codePointAt;
+    },
+    get raw() {
+      return raw;
+    },
+    get fromCodePoint() {
+      return fromCodePoint;
+    },
+    get stringPrototypeIterator() {
+      return stringPrototypeIterator;
+    },
+    get polyfillString() {
+      return polyfillString;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/String.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/ArrayIterator.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/ArrayIterator.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      toObject = $__0.toObject,
+      toUint32 = $__0.toUint32,
+      createIteratorResultObject = $__0.createIteratorResultObject;
+  var ARRAY_ITERATOR_KIND_KEYS = 1;
+  var ARRAY_ITERATOR_KIND_VALUES = 2;
+  var ARRAY_ITERATOR_KIND_ENTRIES = 3;
+  var ArrayIterator = function() {
+    var $__3;
+    function ArrayIterator() {}
+    return ($traceurRuntime.createClass)(ArrayIterator, ($__3 = {}, Object.defineProperty($__3, "next", {
+      value: function() {
+        var iterator = toObject(this);
+        var array = iterator.iteratorObject_;
+        if (!array) {
+          throw new TypeError('Object is not an ArrayIterator');
+        }
+        var index = iterator.arrayIteratorNextIndex_;
+        var itemKind = iterator.arrayIterationKind_;
+        var length = toUint32(array.length);
+        if (index >= length) {
+          iterator.arrayIteratorNextIndex_ = Infinity;
+          return createIteratorResultObject(undefined, true);
+        }
+        iterator.arrayIteratorNextIndex_ = index + 1;
+        if (itemKind == ARRAY_ITERATOR_KIND_VALUES)
+          return createIteratorResultObject(array[index], false);
+        if (itemKind == ARRAY_ITERATOR_KIND_ENTRIES)
+          return createIteratorResultObject([index, array[index]], false);
+        return createIteratorResultObject(index, false);
+      },
+      configurable: true,
+      enumerable: true,
+      writable: true
+    }), Object.defineProperty($__3, Symbol.iterator, {
+      value: function() {
+        return this;
+      },
+      configurable: true,
+      enumerable: true,
+      writable: true
+    }), $__3), {});
+  }();
+  function createArrayIterator(array, kind) {
+    var object = toObject(array);
+    var iterator = new ArrayIterator;
+    iterator.iteratorObject_ = object;
+    iterator.arrayIteratorNextIndex_ = 0;
+    iterator.arrayIterationKind_ = kind;
+    return iterator;
+  }
+  function entries() {
+    return createArrayIterator(this, ARRAY_ITERATOR_KIND_ENTRIES);
+  }
+  function keys() {
+    return createArrayIterator(this, ARRAY_ITERATOR_KIND_KEYS);
+  }
+  function values() {
+    return createArrayIterator(this, ARRAY_ITERATOR_KIND_VALUES);
+  }
+  return {
+    get entries() {
+      return entries;
+    },
+    get keys() {
+      return keys;
+    },
+    get values() {
+      return values;
+    }
+  };
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/Array.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/Array.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/ArrayIterator.js"),
+      entries = $__0.entries,
+      keys = $__0.keys,
+      jsValues = $__0.values;
+  var $__1 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      checkIterable = $__1.checkIterable,
+      isCallable = $__1.isCallable,
+      isConstructor = $__1.isConstructor,
+      maybeAddFunctions = $__1.maybeAddFunctions,
+      maybeAddIterator = $__1.maybeAddIterator,
+      registerPolyfill = $__1.registerPolyfill,
+      toInteger = $__1.toInteger,
+      toLength = $__1.toLength,
+      toObject = $__1.toObject;
+  function from(arrLike) {
+    var mapFn = arguments[1];
+    var thisArg = arguments[2];
+    var C = this;
+    var items = toObject(arrLike);
+    var mapping = mapFn !== undefined;
+    var k = 0;
+    var arr,
+        len;
+    if (mapping && !isCallable(mapFn)) {
+      throw TypeError();
+    }
+    if (checkIterable(items)) {
+      arr = isConstructor(C) ? new C() : [];
+      var $__6 = true;
+      var $__7 = false;
+      var $__8 = undefined;
+      try {
+        for (var $__4 = void 0,
+            $__3 = (items)[Symbol.iterator](); !($__6 = ($__4 = $__3.next()).done); $__6 = true) {
+          var item = $__4.value;
+          {
+            if (mapping) {
+              arr[k] = mapFn.call(thisArg, item, k);
+            } else {
+              arr[k] = item;
+            }
+            k++;
+          }
+        }
+      } catch ($__9) {
+        $__7 = true;
+        $__8 = $__9;
+      } finally {
+        try {
+          if (!$__6 && $__3.return != null) {
+            $__3.return();
+          }
+        } finally {
+          if ($__7) {
+            throw $__8;
+          }
+        }
+      }
+      arr.length = k;
+      return arr;
+    }
+    len = toLength(items.length);
+    arr = isConstructor(C) ? new C(len) : new Array(len);
+    for (; k < len; k++) {
+      if (mapping) {
+        arr[k] = typeof thisArg === 'undefined' ? mapFn(items[k], k) : mapFn.call(thisArg, items[k], k);
+      } else {
+        arr[k] = items[k];
+      }
+    }
+    arr.length = len;
+    return arr;
+  }
+  function of() {
+    for (var items = [],
+        $__10 = 0; $__10 < arguments.length; $__10++)
+      items[$__10] = arguments[$__10];
+    var C = this;
+    var len = items.length;
+    var arr = isConstructor(C) ? new C(len) : new Array(len);
+    for (var k = 0; k < len; k++) {
+      arr[k] = items[k];
+    }
+    arr.length = len;
+    return arr;
+  }
+  function fill(value) {
+    var start = arguments[1] !== (void 0) ? arguments[1] : 0;
+    var end = arguments[2];
+    var object = toObject(this);
+    var len = toLength(object.length);
+    var fillStart = toInteger(start);
+    var fillEnd = end !== undefined ? toInteger(end) : len;
+    fillStart = fillStart < 0 ? Math.max(len + fillStart, 0) : Math.min(fillStart, len);
+    fillEnd = fillEnd < 0 ? Math.max(len + fillEnd, 0) : Math.min(fillEnd, len);
+    while (fillStart < fillEnd) {
+      object[fillStart] = value;
+      fillStart++;
+    }
+    return object;
+  }
+  function find(predicate) {
+    var thisArg = arguments[1];
+    return findHelper(this, predicate, thisArg);
+  }
+  function findIndex(predicate) {
+    var thisArg = arguments[1];
+    return findHelper(this, predicate, thisArg, true);
+  }
+  function findHelper(self, predicate) {
+    var thisArg = arguments[2];
+    var returnIndex = arguments[3] !== (void 0) ? arguments[3] : false;
+    var object = toObject(self);
+    var len = toLength(object.length);
+    if (!isCallable(predicate)) {
+      throw TypeError();
+    }
+    for (var i = 0; i < len; i++) {
+      var value = object[i];
+      if (predicate.call(thisArg, value, i, object)) {
+        return returnIndex ? i : value;
+      }
+    }
+    return returnIndex ? -1 : undefined;
+  }
+  function polyfillArray(global) {
+    var $__11 = global,
+        Array = $__11.Array,
+        Object = $__11.Object,
+        Symbol = $__11.Symbol;
+    var values = jsValues;
+    if (Symbol && Symbol.iterator && Array.prototype[Symbol.iterator]) {
+      values = Array.prototype[Symbol.iterator];
+    }
+    maybeAddFunctions(Array.prototype, ['entries', entries, 'keys', keys, 'values', values, 'fill', fill, 'find', find, 'findIndex', findIndex]);
+    maybeAddFunctions(Array, ['from', from, 'of', of]);
+    maybeAddIterator(Array.prototype, values, Symbol);
+    maybeAddIterator(Object.getPrototypeOf([].values()), function() {
+      return this;
+    }, Symbol);
+  }
+  registerPolyfill(polyfillArray);
+  return {
+    get from() {
+      return from;
+    },
+    get of() {
+      return of;
+    },
+    get fill() {
+      return fill;
+    },
+    get find() {
+      return find;
+    },
+    get findIndex() {
+      return findIndex;
+    },
+    get polyfillArray() {
+      return polyfillArray;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Array.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/Object.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/Object.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      maybeAddFunctions = $__0.maybeAddFunctions,
+      registerPolyfill = $__0.registerPolyfill;
+  var $__2 = Object,
+      defineProperty = $__2.defineProperty,
+      getOwnPropertyDescriptor = $__2.getOwnPropertyDescriptor,
+      getOwnPropertyNames = $__2.getOwnPropertyNames,
+      keys = $__2.keys;
+  function is(left, right) {
+    if (left === right)
+      return left !== 0 || 1 / left === 1 / right;
+    return left !== left && right !== right;
+  }
+  function assign(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      var props = source == null ? [] : keys(source);
+      var p = void 0,
+          length = props.length;
+      for (p = 0; p < length; p++) {
+        var name = props[p];
+        target[name] = source[name];
+      }
+    }
+    return target;
+  }
+  function mixin(target, source) {
+    var props = getOwnPropertyNames(source);
+    var p,
+        descriptor,
+        length = props.length;
+    for (p = 0; p < length; p++) {
+      var name = props[p];
+      descriptor = getOwnPropertyDescriptor(source, props[p]);
+      defineProperty(target, props[p], descriptor);
+    }
+    return target;
+  }
+  function polyfillObject(global) {
+    var Object = global.Object;
+    maybeAddFunctions(Object, ['assign', assign, 'is', is, 'mixin', mixin]);
+  }
+  registerPolyfill(polyfillObject);
+  return {
+    get is() {
+      return is;
+    },
+    get assign() {
+      return assign;
+    },
+    get mixin() {
+      return mixin;
+    },
+    get polyfillObject() {
+      return polyfillObject;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Object.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/Number.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/Number.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      isNumber = $__0.isNumber,
+      maybeAddConsts = $__0.maybeAddConsts,
+      maybeAddFunctions = $__0.maybeAddFunctions,
+      registerPolyfill = $__0.registerPolyfill,
+      toInteger = $__0.toInteger;
+  var $abs = Math.abs;
+  var $isFinite = isFinite;
+  var $isNaN = isNaN;
+  var MAX_SAFE_INTEGER = Math.pow(2, 53) - 1;
+  var MIN_SAFE_INTEGER = -Math.pow(2, 53) + 1;
+  var EPSILON = Math.pow(2, -52);
+  function NumberIsFinite(number) {
+    return isNumber(number) && $isFinite(number);
+  }
+  function isInteger(number) {
+    return NumberIsFinite(number) && toInteger(number) === number;
+  }
+  function NumberIsNaN(number) {
+    return isNumber(number) && $isNaN(number);
+  }
+  function isSafeInteger(number) {
+    if (NumberIsFinite(number)) {
+      var integral = toInteger(number);
+      if (integral === number)
+        return $abs(integral) <= MAX_SAFE_INTEGER;
+    }
+    return false;
+  }
+  function polyfillNumber(global) {
+    var Number = global.Number;
+    maybeAddConsts(Number, ['MAX_SAFE_INTEGER', MAX_SAFE_INTEGER, 'MIN_SAFE_INTEGER', MIN_SAFE_INTEGER, 'EPSILON', EPSILON]);
+    maybeAddFunctions(Number, ['isFinite', NumberIsFinite, 'isInteger', isInteger, 'isNaN', NumberIsNaN, 'isSafeInteger', isSafeInteger]);
+  }
+  registerPolyfill(polyfillNumber);
+  return {
+    get MAX_SAFE_INTEGER() {
+      return MAX_SAFE_INTEGER;
+    },
+    get MIN_SAFE_INTEGER() {
+      return MIN_SAFE_INTEGER;
+    },
+    get EPSILON() {
+      return EPSILON;
+    },
+    get isFinite() {
+      return NumberIsFinite;
+    },
+    get isInteger() {
+      return isInteger;
+    },
+    get isNaN() {
+      return NumberIsNaN;
+    },
+    get isSafeInteger() {
+      return isSafeInteger;
+    },
+    get polyfillNumber() {
+      return polyfillNumber;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Number.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/fround.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/fround.js";
+  var $isFinite = isFinite;
+  var $isNaN = isNaN;
+  var $__1 = Math,
+      LN2 = $__1.LN2,
+      abs = $__1.abs,
+      floor = $__1.floor,
+      log = $__1.log,
+      min = $__1.min,
+      pow = $__1.pow;
+  function packIEEE754(v, ebits, fbits) {
+    var bias = (1 << (ebits - 1)) - 1,
+        s,
+        e,
+        f,
+        ln,
+        i,
+        bits,
+        str,
+        bytes;
+    function roundToEven(n) {
+      var w = floor(n),
+          f = n - w;
+      if (f < 0.5)
+        return w;
+      if (f > 0.5)
+        return w + 1;
+      return w % 2 ? w + 1 : w;
+    }
+    if (v !== v) {
+      e = (1 << ebits) - 1;
+      f = pow(2, fbits - 1);
+      s = 0;
+    } else if (v === Infinity || v === -Infinity) {
+      e = (1 << ebits) - 1;
+      f = 0;
+      s = (v < 0) ? 1 : 0;
+    } else if (v === 0) {
+      e = 0;
+      f = 0;
+      s = (1 / v === -Infinity) ? 1 : 0;
+    } else {
+      s = v < 0;
+      v = abs(v);
+      if (v >= pow(2, 1 - bias)) {
+        e = min(floor(log(v) / LN2), 1023);
+        f = roundToEven(v / pow(2, e) * pow(2, fbits));
+        if (f / pow(2, fbits) >= 2) {
+          e = e + 1;
+          f = 1;
+        }
+        if (e > bias) {
+          e = (1 << ebits) - 1;
+          f = 0;
+        } else {
+          e = e + bias;
+          f = f - pow(2, fbits);
+        }
+      } else {
+        e = 0;
+        f = roundToEven(v / pow(2, 1 - bias - fbits));
+      }
+    }
+    bits = [];
+    for (i = fbits; i; i -= 1) {
+      bits.push(f % 2 ? 1 : 0);
+      f = floor(f / 2);
+    }
+    for (i = ebits; i; i -= 1) {
+      bits.push(e % 2 ? 1 : 0);
+      e = floor(e / 2);
+    }
+    bits.push(s ? 1 : 0);
+    bits.reverse();
+    str = bits.join('');
+    bytes = [];
+    while (str.length) {
+      bytes.push(parseInt(str.substring(0, 8), 2));
+      str = str.substring(8);
+    }
+    return bytes;
+  }
+  function unpackIEEE754(bytes, ebits, fbits) {
+    var bits = [],
+        i,
+        j,
+        b,
+        str,
+        bias,
+        s,
+        e,
+        f;
+    for (i = bytes.length; i; i -= 1) {
+      b = bytes[i - 1];
+      for (j = 8; j; j -= 1) {
+        bits.push(b % 2 ? 1 : 0);
+        b = b >> 1;
+      }
+    }
+    bits.reverse();
+    str = bits.join('');
+    bias = (1 << (ebits - 1)) - 1;
+    s = parseInt(str.substring(0, 1), 2) ? -1 : 1;
+    e = parseInt(str.substring(1, 1 + ebits), 2);
+    f = parseInt(str.substring(1 + ebits), 2);
+    if (e === (1 << ebits) - 1) {
+      return f !== 0 ? NaN : s * Infinity;
+    } else if (e > 0) {
+      return s * pow(2, e - bias) * (1 + f / pow(2, fbits));
+    } else if (f !== 0) {
+      return s * pow(2, -(bias - 1)) * (f / pow(2, fbits));
+    } else {
+      return s < 0 ? -0 : 0;
+    }
+  }
+  function unpackF32(b) {
+    return unpackIEEE754(b, 8, 23);
+  }
+  function packF32(v) {
+    return packIEEE754(v, 8, 23);
+  }
+  function fround(x) {
+    if (x === 0 || !$isFinite(x) || $isNaN(x)) {
+      return x;
+    }
+    return unpackF32(packF32(Number(x)));
+  }
+  return {get fround() {
+      return fround;
+    }};
+});
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/Math.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/Math.js";
+  var jsFround = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/fround.js").fround;
+  var $__1 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      maybeAddFunctions = $__1.maybeAddFunctions,
+      registerPolyfill = $__1.registerPolyfill,
+      toUint32 = $__1.toUint32;
+  var $isFinite = isFinite;
+  var $isNaN = isNaN;
+  var $__3 = Math,
+      abs = $__3.abs,
+      ceil = $__3.ceil,
+      exp = $__3.exp,
+      floor = $__3.floor,
+      log = $__3.log,
+      pow = $__3.pow,
+      sqrt = $__3.sqrt;
+  function clz32(x) {
+    x = toUint32(+x);
+    if (x == 0)
+      return 32;
+    var result = 0;
+    if ((x & 0xFFFF0000) === 0) {
+      x <<= 16;
+      result += 16;
+    }
+    ;
+    if ((x & 0xFF000000) === 0) {
+      x <<= 8;
+      result += 8;
+    }
+    ;
+    if ((x & 0xF0000000) === 0) {
+      x <<= 4;
+      result += 4;
+    }
+    ;
+    if ((x & 0xC0000000) === 0) {
+      x <<= 2;
+      result += 2;
+    }
+    ;
+    if ((x & 0x80000000) === 0) {
+      x <<= 1;
+      result += 1;
+    }
+    ;
+    return result;
+  }
+  function imul(x, y) {
+    x = toUint32(+x);
+    y = toUint32(+y);
+    var xh = (x >>> 16) & 0xffff;
+    var xl = x & 0xffff;
+    var yh = (y >>> 16) & 0xffff;
+    var yl = y & 0xffff;
+    return xl * yl + (((xh * yl + xl * yh) << 16) >>> 0) | 0;
+  }
+  function sign(x) {
+    x = +x;
+    if (x > 0)
+      return 1;
+    if (x < 0)
+      return -1;
+    return x;
+  }
+  function log10(x) {
+    return log(x) * 0.434294481903251828;
+  }
+  function log2(x) {
+    return log(x) * 1.442695040888963407;
+  }
+  function log1p(x) {
+    x = +x;
+    if (x < -1 || $isNaN(x)) {
+      return NaN;
+    }
+    if (x === 0 || x === Infinity) {
+      return x;
+    }
+    if (x === -1) {
+      return -Infinity;
+    }
+    var result = 0;
+    var n = 50;
+    if (x < 0 || x > 1) {
+      return log(1 + x);
+    }
+    for (var i = 1; i < n; i++) {
+      if ((i % 2) === 0) {
+        result -= pow(x, i) / i;
+      } else {
+        result += pow(x, i) / i;
+      }
+    }
+    return result;
+  }
+  function expm1(x) {
+    x = +x;
+    if (x === -Infinity) {
+      return -1;
+    }
+    if (!$isFinite(x) || x === 0) {
+      return x;
+    }
+    return exp(x) - 1;
+  }
+  function cosh(x) {
+    x = +x;
+    if (x === 0) {
+      return 1;
+    }
+    if ($isNaN(x)) {
+      return NaN;
+    }
+    if (!$isFinite(x)) {
+      return Infinity;
+    }
+    if (x < 0) {
+      x = -x;
+    }
+    if (x > 21) {
+      return exp(x) / 2;
+    }
+    return (exp(x) + exp(-x)) / 2;
+  }
+  function sinh(x) {
+    x = +x;
+    if (!$isFinite(x) || x === 0) {
+      return x;
+    }
+    return (exp(x) - exp(-x)) / 2;
+  }
+  function tanh(x) {
+    x = +x;
+    if (x === 0)
+      return x;
+    if (!$isFinite(x))
+      return sign(x);
+    var exp1 = exp(x);
+    var exp2 = exp(-x);
+    return (exp1 - exp2) / (exp1 + exp2);
+  }
+  function acosh(x) {
+    x = +x;
+    if (x < 1)
+      return NaN;
+    if (!$isFinite(x))
+      return x;
+    return log(x + sqrt(x + 1) * sqrt(x - 1));
+  }
+  function asinh(x) {
+    x = +x;
+    if (x === 0 || !$isFinite(x))
+      return x;
+    if (x > 0)
+      return log(x + sqrt(x * x + 1));
+    return -log(-x + sqrt(x * x + 1));
+  }
+  function atanh(x) {
+    x = +x;
+    if (x === -1) {
+      return -Infinity;
+    }
+    if (x === 1) {
+      return Infinity;
+    }
+    if (x === 0) {
+      return x;
+    }
+    if ($isNaN(x) || x < -1 || x > 1) {
+      return NaN;
+    }
+    return 0.5 * log((1 + x) / (1 - x));
+  }
+  function hypot(x, y) {
+    var length = arguments.length;
+    var args = new Array(length);
+    var max = 0;
+    for (var i = 0; i < length; i++) {
+      var n = arguments[i];
+      n = +n;
+      if (n === Infinity || n === -Infinity)
+        return Infinity;
+      n = abs(n);
+      if (n > max)
+        max = n;
+      args[i] = n;
+    }
+    if (max === 0)
+      max = 1;
+    var sum = 0;
+    var compensation = 0;
+    for (var i = 0; i < length; i++) {
+      var n = args[i] / max;
+      var summand = n * n - compensation;
+      var preliminary = sum + summand;
+      compensation = (preliminary - sum) - summand;
+      sum = preliminary;
+    }
+    return sqrt(sum) * max;
+  }
+  function trunc(x) {
+    x = +x;
+    if (x > 0)
+      return floor(x);
+    if (x < 0)
+      return ceil(x);
+    return x;
+  }
+  var fround,
+      f32;
+  if (typeof Float32Array === 'function') {
+    f32 = new Float32Array(1);
+    fround = function(x) {
+      f32[0] = Number(x);
+      return f32[0];
+    };
+  } else {
+    fround = jsFround;
+  }
+  function cbrt(x) {
+    x = +x;
+    if (x === 0)
+      return x;
+    var negate = x < 0;
+    if (negate)
+      x = -x;
+    var result = pow(x, 1 / 3);
+    return negate ? -result : result;
+  }
+  function polyfillMath(global) {
+    var Math = global.Math;
+    maybeAddFunctions(Math, ['acosh', acosh, 'asinh', asinh, 'atanh', atanh, 'cbrt', cbrt, 'clz32', clz32, 'cosh', cosh, 'expm1', expm1, 'fround', fround, 'hypot', hypot, 'imul', imul, 'log10', log10, 'log1p', log1p, 'log2', log2, 'sign', sign, 'sinh', sinh, 'tanh', tanh, 'trunc', trunc]);
+  }
+  registerPolyfill(polyfillMath);
+  return {
+    get clz32() {
+      return clz32;
+    },
+    get imul() {
+      return imul;
+    },
+    get sign() {
+      return sign;
+    },
+    get log10() {
+      return log10;
+    },
+    get log2() {
+      return log2;
+    },
+    get log1p() {
+      return log1p;
+    },
+    get expm1() {
+      return expm1;
+    },
+    get cosh() {
+      return cosh;
+    },
+    get sinh() {
+      return sinh;
+    },
+    get tanh() {
+      return tanh;
+    },
+    get acosh() {
+      return acosh;
+    },
+    get asinh() {
+      return asinh;
+    },
+    get atanh() {
+      return atanh;
+    },
+    get hypot() {
+      return hypot;
+    },
+    get trunc() {
+      return trunc;
+    },
+    get fround() {
+      return fround;
+    },
+    get cbrt() {
+      return cbrt;
+    },
+    get polyfillMath() {
+      return polyfillMath;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/Math.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/WeakMap.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/WeakMap.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/frozen-data.js"),
+      deleteFrozen = $__0.deleteFrozen,
+      getFrozen = $__0.getFrozen,
+      hasFrozen = $__0.hasFrozen,
+      setFrozen = $__0.setFrozen;
+  var $__1 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      isObject = $__1.isObject,
+      registerPolyfill = $__1.registerPolyfill;
+  var $__4 = Object,
+      defineProperty = $__4.defineProperty,
+      getOwnPropertyDescriptor = $__4.getOwnPropertyDescriptor,
+      isExtensible = $__4.isExtensible;
+  var $__5 = $traceurRuntime,
+      createPrivateSymbol = $__5.createPrivateSymbol,
+      deletePrivate = $__5.deletePrivate,
+      getPrivate = $__5.getPrivate,
+      hasNativeSymbol = $__5.hasNativeSymbol,
+      hasPrivate = $__5.hasPrivate,
+      setPrivate = $__5.setPrivate;
+  var $TypeError = TypeError;
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+  var sentinel = {};
+  var WeakMap = function() {
+    function WeakMap() {
+      this.name_ = createPrivateSymbol();
+      this.frozenData_ = [];
+    }
+    return ($traceurRuntime.createClass)(WeakMap, {
+      set: function(key, value) {
+        if (!isObject(key))
+          throw new $TypeError('key must be an object');
+        if (!isExtensible(key)) {
+          setFrozen(this.frozenData_, key, value);
+        } else {
+          setPrivate(key, this.name_, value);
+        }
+        return this;
+      },
+      get: function(key) {
+        if (!isObject(key))
+          return undefined;
+        if (!isExtensible(key)) {
+          return getFrozen(this.frozenData_, key);
+        }
+        return getPrivate(key, this.name_);
+      },
+      delete: function(key) {
+        if (!isObject(key))
+          return false;
+        if (!isExtensible(key)) {
+          return deleteFrozen(this.frozenData_, key);
+        }
+        return deletePrivate(key, this.name_);
+      },
+      has: function(key) {
+        if (!isObject(key))
+          return false;
+        if (!isExtensible(key)) {
+          return hasFrozen(this.frozenData_, key);
+        }
+        return hasPrivate(key, this.name_);
+      }
+    }, {});
+  }();
+  function needsPolyfill(global) {
+    var $__7 = global,
+        WeakMap = $__7.WeakMap,
+        Symbol = $__7.Symbol;
+    if (!WeakMap || !hasNativeSymbol()) {
+      return true;
+    }
+    try {
+      var o = {};
+      var wm = new WeakMap([[o, false]]);
+      return wm.get(o);
+    } catch (e) {
+      return false;
+    }
+  }
+  function polyfillWeakMap(global) {
+    if (needsPolyfill(global)) {
+      global.WeakMap = WeakMap;
+    }
+  }
+  registerPolyfill(polyfillWeakMap);
+  return {
+    get WeakMap() {
+      return WeakMap;
+    },
+    get polyfillWeakMap() {
+      return polyfillWeakMap;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/WeakMap.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/WeakSet.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/WeakSet.js";
+  var $__0 = System.get("traceur-runtime@0.0.93/src/runtime/frozen-data.js"),
+      deleteFrozen = $__0.deleteFrozen,
+      getFrozen = $__0.getFrozen,
+      setFrozen = $__0.setFrozen;
+  var $__1 = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js"),
+      isObject = $__1.isObject,
+      registerPolyfill = $__1.registerPolyfill;
+  var $__4 = Object,
+      defineProperty = $__4.defineProperty,
+      isExtensible = $__4.isExtensible;
+  var $__5 = $traceurRuntime,
+      createPrivateSymbol = $__5.createPrivateSymbol,
+      deletePrivate = $__5.deletePrivate,
+      getPrivate = $__5.getPrivate,
+      hasNativeSymbol = $__5.hasNativeSymbol,
+      hasPrivate = $__5.hasPrivate,
+      setPrivate = $__5.setPrivate;
+  var $TypeError = TypeError;
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
+  var WeakSet = function() {
+    function WeakSet() {
+      this.name_ = createPrivateSymbol();
+      this.frozenData_ = [];
+    }
+    return ($traceurRuntime.createClass)(WeakSet, {
+      add: function(value) {
+        if (!isObject(value))
+          throw new $TypeError('value must be an object');
+        if (!isExtensible(value)) {
+          setFrozen(this.frozenData_, value, value);
+        } else {
+          setPrivate(value, this.name_, true);
+        }
+        return this;
+      },
+      delete: function(value) {
+        if (!isObject(value))
+          return false;
+        if (!isExtensible(value)) {
+          return deleteFrozen(this.frozenData_, value);
+        }
+        return deletePrivate(value, this.name_);
+      },
+      has: function(value) {
+        if (!isObject(value))
+          return false;
+        if (!isExtensible(value)) {
+          return getFrozen(this.frozenData_, value) === value;
+        }
+        return hasPrivate(value, this.name_);
+      }
+    }, {});
+  }();
+  function needsPolyfill(global) {
+    var $__7 = global,
+        WeakSet = $__7.WeakSet,
+        Symbol = $__7.Symbol;
+    if (!WeakSet || !hasNativeSymbol()) {
+      return true;
+    }
+    try {
+      var o = {};
+      var wm = new WeakSet([[o]]);
+      return !wm.has(o);
+    } catch (e) {
+      return false;
+    }
+  }
+  function polyfillWeakSet(global) {
+    if (needsPolyfill(global)) {
+      global.WeakSet = WeakSet;
+    }
+  }
+  registerPolyfill(polyfillWeakSet);
+  return {
+    get WeakSet() {
+      return WeakSet;
+    },
+    get polyfillWeakSet() {
+      return polyfillWeakSet;
+    }
+  };
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/WeakSet.js" + '');
+System.registerModule("traceur-runtime@0.0.93/src/runtime/polyfills/polyfills.js", [], function() {
+  "use strict";
+  var __moduleName = "traceur-runtime@0.0.93/src/runtime/polyfills/polyfills.js";
+  var polyfillAll = System.get("traceur-runtime@0.0.93/src/runtime/polyfills/utils.js").polyfillAll;
+  polyfillAll(Reflect.global);
+  var setupGlobals = $traceurRuntime.setupGlobals;
+  $traceurRuntime.setupGlobals = function(global) {
+    setupGlobals(global);
+    polyfillAll(global);
+  };
+  return {};
+});
+System.get("traceur-runtime@0.0.93/src/runtime/polyfills/polyfills.js" + '');
 
-})(typeof window != 'undefined' ? window : global)
-/* (['mainModule'], function(System) {
-  System.register(...);
-}); */
+System = curSystem; })();
+!function(e){function r(e,r,o){return 4===arguments.length?t.apply(this,arguments):void n(e,{declarative:!0,deps:r,declare:o})}function t(e,r,t,o){n(e,{declarative:!1,deps:r,executingRequire:t,execute:o})}function n(e,r){r.name=e,e in p||(p[e]=r),r.normalizedDeps=r.deps}function o(e,r){if(r[e.groupIndex]=r[e.groupIndex]||[],-1==v.call(r[e.groupIndex],e)){r[e.groupIndex].push(e);for(var t=0,n=e.normalizedDeps.length;n>t;t++){var a=e.normalizedDeps[t],u=p[a];if(u&&!u.evaluated){var d=e.groupIndex+(u.declarative!=e.declarative);if(void 0===u.groupIndex||u.groupIndex<d){if(void 0!==u.groupIndex&&(r[u.groupIndex].splice(v.call(r[u.groupIndex],u),1),0==r[u.groupIndex].length))throw new TypeError("Mixed dependency cycle detected");u.groupIndex=d}o(u,r)}}}}function a(e){var r=p[e];r.groupIndex=0;var t=[];o(r,t);for(var n=!!r.declarative==t.length%2,a=t.length-1;a>=0;a--){for(var u=t[a],i=0;i<u.length;i++){var s=u[i];n?d(s):l(s)}n=!n}}function u(e){return x[e]||(x[e]={name:e,dependencies:[],exports:{},importers:[]})}function d(r){if(!r.module){var t=r.module=u(r.name),n=r.module.exports,o=r.declare.call(e,function(e,r){if(t.locked=!0,"object"==typeof e)for(var o in e)n[o]=e[o];else n[e]=r;for(var a=0,u=t.importers.length;u>a;a++){var d=t.importers[a];if(!d.locked)for(var i=0;i<d.dependencies.length;++i)d.dependencies[i]===t&&d.setters[i](n)}return t.locked=!1,r},r.name);t.setters=o.setters,t.execute=o.execute;for(var a=0,i=r.normalizedDeps.length;i>a;a++){var l,s=r.normalizedDeps[a],c=p[s],v=x[s];v?l=v.exports:c&&!c.declarative?l=c.esModule:c?(d(c),v=c.module,l=v.exports):l=f(s),v&&v.importers?(v.importers.push(t),t.dependencies.push(v)):t.dependencies.push(null),t.setters[a]&&t.setters[a](l)}}}function i(e){var r,t=p[e];if(t)t.declarative?c(e,[]):t.evaluated||l(t),r=t.module.exports;else if(r=f(e),!r)throw new Error("Unable to load dependency "+e+".");return(!t||t.declarative)&&r&&r.__useDefault?r["default"]:r}function l(r){if(!r.module){var t={},n=r.module={exports:t,id:r.name};if(!r.executingRequire)for(var o=0,a=r.normalizedDeps.length;a>o;o++){var u=r.normalizedDeps[o],d=p[u];d&&l(d)}r.evaluated=!0;var c=r.execute.call(e,function(e){for(var t=0,n=r.deps.length;n>t;t++)if(r.deps[t]==e)return i(r.normalizedDeps[t]);throw new TypeError("Module "+e+" not declared as a dependency.")},t,n);c&&(n.exports=c),t=n.exports,t&&t.__esModule?r.esModule=t:r.esModule=s(t)}}function s(r){if(r===e)return r;var t={};if("object"==typeof r||"function"==typeof r)if(g){var n;for(var o in r)(n=Object.getOwnPropertyDescriptor(r,o))&&h(t,o,n)}else{var a=r&&r.hasOwnProperty;for(var o in r)(!a||r.hasOwnProperty(o))&&(t[o]=r[o])}return t["default"]=r,h(t,"__useDefault",{value:!0}),t}function c(r,t){var n=p[r];if(n&&!n.evaluated&&n.declarative){t.push(r);for(var o=0,a=n.normalizedDeps.length;a>o;o++){var u=n.normalizedDeps[o];-1==v.call(t,u)&&(p[u]?c(u,t):f(u))}n.evaluated||(n.evaluated=!0,n.module.execute.call(e))}}function f(e){if(D[e])return D[e];if("@node/"==e.substr(0,6))return y(e.substr(6));var r=p[e];if(!r)throw"Module "+e+" not present.";return a(e),c(e,[]),p[e]=void 0,r.declarative&&h(r.module.exports,"__esModule",{value:!0}),D[e]=r.declarative?r.module.exports:r.esModule}var p={},v=Array.prototype.indexOf||function(e){for(var r=0,t=this.length;t>r;r++)if(this[r]===e)return r;return-1},g=!0;try{Object.getOwnPropertyDescriptor({a:0},"a")}catch(m){g=!1}var h;!function(){try{Object.defineProperty({},"a",{})&&(h=Object.defineProperty)}catch(e){h=function(e,r,t){try{e[r]=t.value||t.get.call(e)}catch(n){}}}}();var x={},y="undefined"!=typeof System&&System._nodeRequire||"undefined"!=typeof require&&require.resolve&&"undefined"!=typeof process&&require,D={"@empty":{}};return function(e,n,o){return function(a){a(function(a){for(var u={_nodeRequire:y,register:r,registerDynamic:t,get:f,set:function(e,r){D[e]=r},newModule:function(e){return e}},d=0;d<n.length;d++)(function(e,r){r&&r.__esModule?D[e]=r:D[e]=s(r)})(n[d],arguments[d]);o(u);var i=f(e[0]);if(e.length>1)for(var d=1;d<e.length;d++)f(e[d]);return i.__useDefault?i["default"]:i})}}}("undefined"!=typeof self?self:global)
 
-(['lib/init'], function(System) {
+(["1"], [], function($__System) {
 
+!function(){var t=$__System;if("undefined"!=typeof window&&"undefined"!=typeof document&&window.location)var s=location.protocol+"//"+location.hostname+(location.port?":"+location.port:"");t.set("@@cjs-helpers",t.newModule({getPathVars:function(t){var n,o=t.lastIndexOf("!");n=-1!=o?t.substr(0,o):t;var e=n.split("/");return e.pop(),e=e.join("/"),"file:///"==n.substr(0,8)?(n=n.substr(7),e=e.substr(7),isWindows&&(n=n.substr(1),e=e.substr(1))):s&&n.substr(0,s.length)===s&&(n=n.substr(s.length),e=e.substr(s.length)),{filename:n,dirname:e}}}))}();
+!function(e){function n(e,n){e=e.replace(l,"");var r=e.match(s),i=(r[1].split(",")[n]||"require").replace(p,""),t=c[i]||(c[i]=new RegExp(u+i+a,"g"));t.lastIndex=0;for(var o,f=[];o=t.exec(e);)f.push(o[2]||o[3]);return f}function r(e,n,i,t){if("object"==typeof e&&!(e instanceof Array))return r.apply(null,Array.prototype.splice.call(arguments,1,arguments.length-1));if("string"==typeof e&&"function"==typeof n&&(e=[e]),!(e instanceof Array)){if("string"==typeof e){var f=o.get(e);return f.__useDefault?f["default"]:f}throw new TypeError("Invalid require")}for(var l=[],u=0;u<e.length;u++)l.push(o["import"](e[u],t));Promise.all(l).then(function(e){n&&n.apply(null,e)},i)}function i(i,t,l){"string"!=typeof i&&(l=t,t=i,i=null),t instanceof Array||(l=t,t=["require","exports","module"].splice(0,l.length)),"function"!=typeof l&&(l=function(e){return function(){return e}}(l)),void 0===t[t.length-1]&&t.pop();var u,a,s;-1!=(u=f.call(t,"require"))&&(t.splice(u,1),i||(t=t.concat(n(l.toString(),u)))),-1!=(a=f.call(t,"exports"))&&t.splice(a,1),-1!=(s=f.call(t,"module"))&&t.splice(s,1);var p={name:i,deps:t,execute:function(n,i,f){for(var p=[],c=0;c<t.length;c++)p.push(n(t[c]));f.uri=f.id,f.config=function(){},-1!=s&&p.splice(s,0,f),-1!=a&&p.splice(a,0,i),-1!=u&&p.splice(u,0,function(e,i,t){return"string"==typeof e&&"function"!=typeof i?n(e):r.call(o,e,i,t,f.id)});var d=l.apply(-1==a?e:i,p);return"undefined"==typeof d&&f&&(d=f.exports),"undefined"!=typeof d?d:void 0}};if(i)d.anonDefine||d.isBundle?(d.anonDefine&&d.anonDefine.name&&o.registerDynamic(d.anonDefine.name,d.anonDefine.deps,!1,d.anonDefine.execute),d.anonDefine=null):d.anonDefine=p,d.isBundle=!0,o.registerDynamic(i,p.deps,!1,p.execute);else{if(d.anonDefine)throw new TypeError("Multiple defines for anonymous module");d.anonDefine=p}}function t(n){d.anonDefine=null,d.isBundle=!1;var r=e.module,t=e.exports,o=e.define;return e.module=void 0,e.exports=void 0,e.define=i,function(){e.define=o,e.module=r,e.exports=t}}var o=$__System,f=Array.prototype.indexOf||function(e){for(var n=0,r=this.length;r>n;n++)if(this[n]===e)return n;return-1},l=/(\/\*([\s\S]*?)\*\/|([^:]|^)\/\/(.*)$)/gm,u="(?:^|[^$_a-zA-Z\\xA0-\\uFFFF.])",a="\\s*\\(\\s*(\"([^\"]+)\"|'([^']+)')\\s*\\)",s=/\(([^\)]*)\)/,p=/^\s+|\s+$/g,c={};i.amd={};var d={isBundle:!1,anonDefine:null};o.set("@@amd-helpers",o.newModule({createDefine:t,require:r,define:i,lastModule:d})),o.amdDefine=i,o.amdRequire=r}("undefined"!=typeof self?self:global);
+$__System.register("2", [], function() { return { setters: [], execute: function() {} } });
 
-System.register("components/header.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("3", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<nav class=\"#3e2723 brown darken-4\" role=\"navigation\">\n  <div class=\"nav-wrapper container\">\n    <a id=\"logo-container\" href=\"/#home\" class=\"brand-logo\">\n      <span><img class=\"responsive-img\" src=\"img/WhiteSaveMe_Logo_VF.png\"></span>\n      </a>\n    <ul class=\"right hide-on-med-and-down\">\n      <li each=\"{ opts.siteMenu }\"><a href=\"#{ slug }\">{ name }</a></li>\n    </ul>\n\n    <ul id=\"nav-mobile\" class=\"side-nav\">\n      <li each=\"{ opts.siteMenu }\"><a href=\"#{ slug }\">{ name }</a></li>\n    </ul>\n    <a href=\"#\" data-activates=\"nav-mobile\" class=\"button-collapse\"><i class=\"mdi-navigation-menu\"></i></a>\n  </div>\n</nav>\n";
@@ -370,8 +3742,9 @@ System.register("components/header.html!github:systemjs/plugin-text@0.0.2", [], 
   return module.exports;
 });
 
-System.register("components/footer.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("4", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<footer class=\"page-footer #795548 brown\">\n  <div class=\"container\">\n\t<div class=\"row\">\n      <div class=\"col s10 m6 l6\">\n        <h5 class=\"white-text\">Our solution</h5>\n\n        <p class=\"grey-text text-lighten-4\">We match the privileged and the under-privileged in a sustainable and profitable way that fully achieves the coveted and elusive triple bottom line: people, profit, planet.</p>\n\t  </div>\n\t<div class=\"col s6 m3 l3\">\n    <h5 class=\"white-text\">Learn more</h5>\n    <ul>\n    <li><a class=\"white-text\" href=\"#how\">how it works</a></li>\n    <li><a class=\"white-text\" href=\"#story\">our story</a></li>\n    <li><a class=\"white-text\" href=\"#faq\">FAQs</a></li>\n    <li><a class=\"white-text\" href=\"#partners\">partners</a></li>\n    <li><a class=\"white-text\" href=\"#terms\">terms</a></li>\n    </ul>\n    </div>\n\n    <div class=\"col s6 m3 l3\">\n    <h5 class=\"white-text\">Connect</h5>\n       <ul>\n         <li><a class=\"white-text\" href=\"http://facebook.com/whitesaveme\">facebook</a></li>\n         <li><a class=\"white-text\" href=\"http://twitter.com/whitesaveme\">twitter</a></li>\n         <li><a class=\"white-text\" href=\"#contact\">contact us</a></li>\n         <li><a class=\"white-text\" href=\"#release\">press release</a></li>\n       </ul>\n    </div>\n   </div>\n\n\n   <div class=\"row\">\n   \t\t<div class=\"col l2 m2 s4\">\n\t\t<img class=\"responsive-img\" src=\"img/whitesave_awards-01.png\">\n    \t</div>\n        <div class=\"col l2 m2 s4\">\n\t\t<img class=\"responsive-img\" src=\"img/whitesave_awards-02.png\">\n     \t</div>\n   </div>\n </div>\n\n <div class=\"footer-copyright\">\n    <div class=\"container\">\n      WhiteSave.me <a class=\"#3e2723\" href=\"#statement\">Artistic Statement</a>\n    </div>\n </div>\n</footer>\n";
@@ -379,8 +3752,9 @@ System.register("components/footer.html!github:systemjs/plugin-text@0.0.2", [], 
   return module.exports;
 });
 
-System.register("pages/about.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("5", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col m12 s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"m12 title\">Check your privilege!</h2>\n      </span>\n    </div>\n  </div>\n</div>\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n\n      <div class=\"row\">\n        <div class=\"col m12 s12 light\">\n          <p></p><div class=\"rich-text\"><h4>How It Works</h4>\n            <hr><h5>No more feeling guilty! Our innovative solution uses tech to expand and deliver privilege where it’s needed most&mdash;and everyone wins!</h5>\n\n          </div>\n        </div>\n      </div>\n\n      <div class=\"row\">\n        <div class=\"col s4 m4 l3\">\n          <a href=\"#call\" id=\"download-button\" class=\"btn-large waves-effect waves-#000000 black\">Try it now!</a>\n        </div>\n        <div class=\"col s8 m8 l9\">\n          <h5><strong>White</strong>Save.me beta free trial.</h5>\n          <p class=\"light\">Our beta version connects a White Savior and a Savee via video chat. It’s simple, easy, and impactful. What’s more, your first session is free if you <a href=\"http://whitesave.me/#call\"><strong>try it now!</strong></a></p>\n        </div>\n      </div>\n\n      <h6>Just follow these 6 steps and you’re on your way to delivering or accessing privilege!</h6>\n\n      <div class=\"section\">\n        <h5>STEP 1: Click on <a href=\"http://whitesave.me/#call\"><strong>Try it now!</strong></a> and get ready to chat!</h5>\n        <p class=\"light\">This will launch the <strong>White</strong>Save.me app and your web cam. Make sure your lighting is adequate so that the <strong>White</strong>Save.me algorithm can correctly determine your Whiteness (avoid backlighting and extremely dim rooms). By clicking <a href=\"http://whitesave.me/#call\">here</a> to start your session, you are agreeing with our <a href=\"#terms\">terms and conditions.</a><br>\n\n        </p>\n      </div>\n      <div class=\"divider\"></div>\n      <div class=\"section\">\n        <h5>STEP 2: Turn on your camera!</h5>\n        <p class=\"light\">Allow <strong>White</strong>Save.me to access your device’s camera. (See our <a href=\"#faq\">FAQs</a> for our privacy policy, aimed at protecting White Saviors and Premium Model customers).</p>\n      </div>\n      <div class=\"divider\"></div>\n      <div class=\"section\">\n        <h5>STEP 3: Determining Whiteness.</h5>\n        <p class=\"light\">The camera will start, and our patented “White or Not White” facial color detection software&trade; will determine your Whiteness. (Visit our <a href=\"#faq\">FAQ</a> page if you do not agree with the results).</p>\n      </div>\n      <div class=\"divider\"></div>\n      <div class=\"section\">\n        <h5>STEP 4: Get matched! Start giving or getting privilege!</h5>\n        <p class=\"light\">Based on your results, we will automatically match you via video chat with a partner to begin delivering privilege (if you are White) or accessing privilege (if you are Not White).<br><br>\n        Savees can ask for help and Saviors provide special White insight on how to resolve lack of privilege in ways that avoid uncomfortable discussions, protests, or the possibility of a revolution. <strong>White</strong>Save.me goes further than a “like” and delivers real results without disrupting the status quo.<br><br>\n        End your chat at any time. If a Savior gets bored trying to resolve a problem or realizes it's beyond his capacity or a Savee has already gotten the same advice from a different Savior, just move to the next person or end the chat session altogether.</p>\n      </div>\n      <div class=\"divider\"></div>\n      <div class=\"section\">\n        <h5>STEP 5: Rate your experience.</h5>\n        <p class=\"light\">As a Savee, you can give your Savior 1 to 5 “Savior Stars” based on the quality of advice. Saviors can reward Savees with “Savee Stars” based on the worthiness of their problems and how likely it seems that the Savee will work hard and be motivated.</p>\n      </div>\n      <div class=\"divider\"></div>\n      <div class=\"section\">\n        <h5>STEP 6: Sign up for the pricing model that’s best for you and download the app!</h5>\n        <p class=\"light\">Following your session, decide whether the <a href=\"#pricing\"> Free, Basic or Premium Model </a> is best for you, and create your account. If you are accessing from our list of Third World Countries, we will automatically sign you up for the Free model, based on your location.</p>\n      </div>\n    </div>\n  </div>\n</div>\n";
@@ -388,8 +3762,9 @@ System.register("pages/about.html!github:systemjs/plugin-text@0.0.2", [], true, 
   return module.exports;
 });
 
-System.register("pages/pricing.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("6", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col m12 s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"m12 title\">Privilege Everyone Can Afford.</h2>\n      </span>\n    </div>\n  </div>\n</div>\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n\n      <div class=\"row\">\n        <div class=\"col m12 s12 light\">\n          <p></p><div class=\"rich-text\"><h4>Our pricing model</h4>\n            <hr><h5>Our different levels of service enable anyone to use the service.</h5>\n            <p class=\"light\">From the poor and underprivileged in the Third World (Freemium), to underprivileged people of color in the First World (Basic Model), to non-White people anywhere who have succeeded despite skin color (Premium Model) but who could still use a hand up.<a href=\"http://whitesave.me/#call\"> <strong> Try it now</strong></a> and your first session is on us!\n            </p>\n\n\n          </div>\n        </div>\n      </div>\n\n\n\n      <div class=\"section\">\n        <div class=\"row\">\n          <div class=\"col s12 m4\">\n            <div class=\"card\">\n              <div class=\"card-image\">\n                <img src=\"/img/services-square-4.jpg\">\n              </div>\n              <div class=\"card-content\">\n                <span class=\"card-title black-text\">FREEMIUM</span>\n                <p class=\"light\">For our least privileged users (Savees) in the Third World, we offer an SMS-based Freemium model.<br><br>\n                Many of our least privileged users cannot speak English, so our solution integrates Google Translate, enabling Saviors and Savees to easily converse via SMS to share problems and expert privileged advice despite any global language, culture or life experience barriers.<br><br>\n                Working through our Non Profit Champion, <a href=\"https://www.facebook.com/WorldAidCorps\">World Aid Corps</a>, we engage with the most excluded people in the most far off places of the Third World, reaching those with the biggest problems and the least capacity to resolve them. SMS provides us a quick and easy way to reach our beneficiaries in any language. After all, there are more mobile phones than toilets now, according to the World Bank, so reaching the poorest of the poor is no longer an issue! <br><br>\n                Our White Saviors provide their life-saving advice and deliver privilege with the touch of a button! Ending global poverty and lack of White privilege has never been so quick and easy.<br><br>\n                <strong>Free</strong></p>\n              </div>\n            </div>\n          </div>\n\n\n          <div class=\"col s12 m4\">\n            <div class=\"card\">\n              <div class=\"card-image\">\n                <img src=\"/img/services-square-5.jpg\">\n              </div>\n              <div class=\"card-content\">\n                <span class=\"card-title black-text\">BASIC</span>\n                <p class=\"light\">Our Basic Model is designed for those Savees who are not privileged themselves but are surrounded by the privilege of others. <br><br>\n                Basic users (Savees) can access a White Savior via SMS, video chat or voice. Say a non-White person is being pulled over by the police and needs some rapid advice on how to avoid being shot, beaten or choked to death. A quick click launches the app, and the non-White Savee can access any available White Savior, who will provide tips on the right attitude and the best way to leave the situation alive and unharmed. <br><br>\n                In dire situations, Basic users can quickly upgrade to the Premium Model and have a White Savior delivered to them in person to serve as an intermediary, a witness, a role model or to otherwise accompany them.<br><br>\n                The app works best on Android phones. Our Skype API allows us to provide service in multiple languages.<br><br>\n                Video chat allows the Savee to hand the phone over to an authority figure for White Savior intermediation services. <a href=\"http://whitesave.me/#call\"><strong>Try it now and your first session is free!</strong></a>\n                <br><br>\n                <strong>All for $9/month, or just $99 for a full year!<br>**SPECIAL OFFER** Click “I agree to take advice from a White woman” during registration and pay only 77% of the price. Discount code: PAYGAP.</strong></p>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"col s12 m4\">\n            <div class=\"card\">\n              <div class=\"card-image\">\n                <img src=\"/img/services-square-2.jpg\">\n              </div>\n              <div class=\"card-content\">\n                <span class=\"card-title black-text\">PREMIUM</span>\n                <p class=\"light\">Even successful non-White people need a hand at some point. Our premium service is for the non-White Savee who has ‘made it,’ but still needs personal advice or White Savior intervention from time-to-time.<br><br>\n                Say a non-White Savee is up for a promotion and wonders if race will be a factor. As a Premium Model Savee, he or she can call on a White Savior to personally accompany him or her out for drinks with the boss, join a high level meeting, or simply put in a good word and offer a strong handshake and a few slaps on the back.<br><br>\n\n                A White Savior is also useful for non-White female Savees who need someone to mansplain what their superiors are saying. The Premium Model allows for White mansplaining in real-time through almost any channel, including in person (Mansplaining not available with our ‘Advice from a White Woman’ discount).<br><br>\n                In an emergency situation, Premium Model customers can request a White Savior who will arrive directly to them. Using <a href=\"http://whitesave.me/#partners\">Buber's</a> patented disruptive transportation model and based on their highly successful kitten delivery service, we’ll ensure that the White Savior who is closest to the Savee will arrive quickly. Using geolocation, the Savee can track the Savior’s location and arrival time right on the device.<a href=\"http://whitesave.me/#call\"><strong>Try it now and your first session is free!</strong></a>\n                <br><br>\n                <strong>All for $29/month or just $299 a year for a 2 year subscription!<br>**SPECIAL OFFER** Click “I agree to take advice from a White woman” during registration and pay only 77% of the price. Discount code: PAYGAP.\n                </strong>\n                </p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n    </div>\n  </div>\n</div>\n";
@@ -397,8 +3772,9 @@ System.register("pages/pricing.html!github:systemjs/plugin-text@0.0.2", [], true
   return module.exports;
 });
 
-System.register("pages/call.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("7", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col m12 s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Connect with someone now!</h2>\n      </span>\n    </div>\n  </div>\n</div>\n<div class=\"section no-pad-bot\">\n  <div class=\"container\">\n    <div class=\"row\" id=\"whiteness\">\n      <div class=\"col l12 m12 s12\">\n        <div class=\"card brown darken-1\">\n          <div class=\"card-content white-text\">\n            <span class=\"card-title\">Determining Whiteness</span>\n            <p>Please allow <strong>white</strong>save.me to access your camera.</p>\n            <p>Our patented facial color recognition software&#8482; will determine your whiteness.\n            Based on your results we will link you with a White Savior or a non-White Savee via a chat session.\n            You can end the chat session at any time. By starting your video session, you are agreeing with our <a href=\"#terms\">terms and conditions.</a></p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col s9 m9 l8\">\n        <div class=\"card\">\n          <div class=\"card-image\">\n            <video id=\"peerVideo\" poster=\"img/loader.gif\" style=\"width:100%; height:auto\"></video>\n            <span class=\"card-title\">Video</span>\n          </div>\n        </div>\n      </div>\n      <div class=\"col s3 m3 l4\">\n        <div class=\"card\">\n          <div class=\"card-image\">\n            <canvas id=\"inputCanvas\" class=\"responsive-img\" width=\"260\" height=\"180\" style=\"width:100%; height:auto\"></canvas>\n          </div>\n          <div class=\"card-content\" id=\"white\">\n            <p>&nbsp;</p>\n          </div>\n          <div class=\"card-action\">\n            <a class=\"waves-effect waves-light btn\" onclick=\"javascript:window.wsmStream.stop()\" href=\"#home\">Quit Video Call</a>\n          </div>\n        </div>\n      </div>\n    </div>\n    <canvas id=\"outputCanvas\" class=\"responsive-img\" width=\"280\" height=\"200\" style=\"display:none\"></canvas>\n    <video id=\"inputVideo\" autoplay muted loop style=\"display:none\"></video>\n  </div>\n</div>\n";
@@ -406,8 +3782,9 @@ System.register("pages/call.html!github:systemjs/plugin-text@0.0.2", [], true, f
   return module.exports;
 });
 
-System.register("pages/success.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("8", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col m12 s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Saving one person at a time, at scale and for profit.</h2>\n      </span>\n    </div>\n  </div>\n</div>\n\n<!-- Success Stories Section -->\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n        <div class=\"col m12 s12 light\">\n          <p></p><div class=\"rich-text\"><h4>Success Stories</h4>\n            <hr><h5>Our fast growth has changed the lives of thousands. Below are just a few stories in which our highly qualified White Saviors have helped underprivileged Savees get ahead.</h5>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <blockquote>\"I absolutely love WhiteSave.me. I can hop on for a second, do some social good real quick, then get back to finding stuff to paraphrase in my books!\" <br><em>Malcolm Fadwell, author</em> </blockquote>\n\n\n    <div class=\"section\">\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/savior_bill.jpg\" alt=\"Bill\" class=\"circle responsive-img\" >\n            </div>\n              <div class=\"col s10\">\n                <span class=\"black-text\">\n                  “It was really great delivering some privilege through <strong>White</strong>Save.me. I’ve always felt that these people just need to be more motivated and hardworking and they’ll get ahead. <br><br>When I read that only 1% of CEOs are Black, I made sure to do a little research on Mark Zuckerberg so I could talk to some of these inner city kids about him. I'm pretty sure he didn't finish college, and look at him now&mdash;he fast tracked it right to the top. So I got to thinking&mdash;if we just teach these kids to code, they’ll be starting companies in no time. Or they can go work in Silicon Valley. Heck, by the time these kids graduate from high school in a few years, those Left Coast hippies will probably be open to hiring Blacks for tech jobs. <br><br>Right now most of these kids have this fantasy that they’ll grow up to be famous rappers or ball players. It’s a lot more realistic to think about being the next Mark Zuckerberg or Bill Gates, because that requires a real skill - coding.”\n                  <br><br><em>Bill helped inner-city kids see that becoming a billionaire through coding and entrepreneurship is a lot more realistic than doing it via professional sports or rap music.</em>\n                </span>\n              </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0001.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n              <div class=\"col s10\">\n                <span class=\"black-text\">\n                  “I had a job in tech but was hitting an invisible ceiling as a Latina. A friend told me about <strong>White</strong>Save.me’s Premium Model where you can get a personal White savior in the flesh. I signed up and got connected with Trevor. <br><br>Once everyone saw us hanging out during my lunch break, they started including us in their happy hour invitations. He advised me to read “Lean In” and hang a poster of Sheryl Sandberg near my desk. Trevor doesn’t know anything about tech, but he really enjoyed explaining how tech works and telling me how to behave so that upper management would notice I was in the room without feeling threatened by my capacities. He advised me to look less Latina, be sure I never seemed angry, and dress more conservatively so I wouldn’t be seen as too sexy to be taken seriously. He also told me to stop speaking Spanish to my family on the phone during work hours, and let me tell you, that worked wonders in this company! <br><br>After following Trevor's advice, I moved up in the company. They even asked me to head up the “Diversity Working Group” this year, now that I don't seem quite so \"diverse.\" It's pretty amazing what a little advice from a White guy can do. I gotta say, Trevor was right, even though I didn't want to believe it.\"\n                  <br><br><em>Maria Luisa (Mary Louise), age 28, started being more White-like and got a promotion by using our Premium Model service, all because of Trevor.</em>\n                </span>\n              </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0002.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n              <div class=\"col s10\">\n                <span class=\"black-text\">\n                  “I got pregnant when I was 19 and really didn’t know what to do because the guy I was with left town. My mom already worked a lot and I didn’t think she could afford to help me take care of a baby. A friend told me about <strong>White</strong>Save.me. <br><br>I was able to connect with Hunter on my cellphone. As soon as I started telling him about my situation, he interrupted and said I was really overthinking things. He explained that most of his feminist friends are really into having babies on their own, and I should stop making such a big deal out of it. Hunter said his female friends would actually prefer to have their freedom and not get married. He also told me about an app that helps you to track your monthly cycle. <br><br>It doesn’t matter if the Planned Parenthood clinics are shut down now, he said, tech allows women today to manage their fertility on their own. To be honest, I’m not really buying it.”\n                  <br><br><em>Hunter explained to Shanaya, age 20, how to embrace the freedom and feminism of being a single mom.</em>\n                </span>\n              </div>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0003.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n              <div class=\"col s10\">\n                <span class=\"black-text\">\n                  “I was just chilling with my friends when somebody got the idea to go get some provisions. Nobody was around to drive us, so we decided to risk it and walk over to the store. We were just crossing the street when this cop came by and started hassling us for no reason. I had my phone with the <strong>White</strong>Save.me app on it. So I just tapped it to get hold of the next available White guy. <br><br>We ended up getting Bruce. He told us to be extra polite and allow the cops to stop and search us without a struggle even though we hadn’t done anything&mdash;after all we were a pack of Black kids just walking around without a legitimate destination, aside from going to the store to get food. He said we probably looked like typical thugs up to no good. Bruce told me to just put my hands up and let the cops see my phone with his face on the video, so they knew he was with us, and that I didn’t have a gun. Then he said to just hand my phone over and let him do the talking. <br><br>The thing about <strong>White</strong>Save.me is that it was like Bruce was right there. He talked to the cops and they let us go with a warning as long as we went back to the house and kept Bruce on the phone with us till we got there! Who knows what might have happened to us if we didn't have Bruce with us.”\n\n                  <br><br><em>With Bruce’s help and our Basic Model, Jayden, age 17, avoided arrest while walking in his own neighborhood.</em>\n                </span>\n              </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/Saved_Profiles_0006.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n              <div class=\"col s10\">\n                <span class=\"black-text\">\n                  “We were having trouble with our cassava and maize crops this year over here in Kabete, Kenya, due to a serious drought. The organization that comes by here regularly to snap photos of us, World Aid Corps, told us about a new project called <strong>White</strong>Save.me where subsistence farmers like us can get farming advice from White men in the United States through our mobile phones. <br><br>My brother and I pooled our money to cover the airtime costs to text in some questions about how to manage when there is a severe drought. We got some advice from Topher who’s living in New York City. He told us about some kind of plants that his eco-friendly community gardening group is experimenting with and which grow on the side of tall buildings. He suggested that perhaps we could do the same. <br><br>We don’t have tall buildings here, and it’s quite expensive and difficult to find the type of equipment which Topher mentioned. But we enjoyed greeting someone living in the United States and we wish him well.\n                  <br><br><em>Nderu, age 41, learned how to avoid slow onset disaster in rural Kenya with innovative hydroponic crops through a Freemium SMS chat with Topher in Brooklyn, New York.</em>\n                </span>\n              </div>\n          </div>\n        </div>\n      </div>\n\n\n      <div class=\"col s12 m6 l6\">\n        <div class=\"card-panel hoverable orange lighten-5 z-depth-1\">\n          <div class=\"row\">\n            <div class=\"col s2\">\n              <img src=\"img/savior_john.jpg\" alt=\"\" class=\"circle responsive-img\" >\n            </div>\n              <div class=\"col s10\">\n                <span class=\"black-text\">\n                  “I talked with James, whose son kept getting suspended for being late to middle school. He was really at a loss about how to handle it. I told him that first off, he should join the PTA so he can be more involved in his son's school. I don’t have kids of my own, but my sister really appreciates my advice on raising hers, so I figure I'm pretty good at providing orientation to people on parenting. <br><br> I also told James that personal responsibility is really important for getting ahead. I feel he really needs to make James Junior responsible for getting himself to school on his own whether his parents are home or not. If you ask me, James and his wife are also avoiding personal responsibility for their kid's education by working so many jobs and not being home for him. It's a two-way street here.  <br><br>I told James it was a pretty clear cut case of lack of responsibility all around. James disagreed with me, and even though he seemed really articulate when we spoke, I guess concepts like personal responsibiity can be hard to explain to some people when they're not part of the culture. I hope he'll reflect a little on it, so he'll see I'm right.\n                  <br><br><em>Through our Basic Model, John gave James, age 32, valuable insight into the importance of personal responsibility.</em>\n                </span>\n              </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n\n\n  </div>\n</div>\n";
@@ -415,8 +3792,9 @@ System.register("pages/success.html!github:systemjs/plugin-text@0.0.2", [], true
   return module.exports;
 });
 
-System.register("pages/story.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("9", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col m12 s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Tech is our hammer. Social problems are the nails! </h2>\n      </span>\n    </div>\n  </div>\n</div>\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n        <div class=\"col m12 s12 light\">\n          <div class=\"rich-text\"><h4>Our Story</h4>\n            <hr><h5>Innovation and good intentions are the key! We are unlocking the door and ending inequality through smart, game-changing, and scalable design ideas.</h5>\n\n          </div>\n        </div>\n      </div>\n      <blockquote>\"Armed with some technology, a skewed understanding of other people's realities, and the urge to feel good while doing good and making a profit from it, anyone can make a difference!\" <br> <em>Jason Brussell, social media for social good guru </em></blockquote>\n    </div>\n  </div>\n\n\n  <p class=\"light\"><strong>White</strong>Save.me founders Dmytri, Jake, and Lulu met while backpacking the Inca trail as part of the “Unnecessary Innovating in the Mountains” gathering in 2013. We soon realized that lack of innovative thinking was a problem the world over, as were inequality and lack of privilege for non-White people. Following a weekend of post-it notes, some experimental Ayahuasca, and lots of cold brew coffee, <strong>White</strong>Save.me was born.</p>\n  <p  class=\"light\"><strong>White</strong>Save.me is the solution the world's been waiting for. A simple app that lets White guys take advantage of their down-time to deliver privilege to the underprivileged right through their devices. Our hundreds of <a href=\"#success\">Success Stories</a> from Saviors and Savees all over the world prove that it’s working.</p>\n\n\n\n\n\n\n\n\n\n\n\n  <div class=\"section\">\n\n    <div class=\"row\">\n      <div class=\"col m12 s12\">\n        <div class=\"rich-text\"><h4>Founders</h4>\n          <p class=\"light\">Our fresh and extensive experience in marketing, innovative technology solutions, backpacking around, and the social good sector make us uniquely placed to extract the value of privilege from one target demographic and deliver it to another, all the while tapping into available revenue from small pockets of cash that the underprivileged currently have but don’t invest wisely.\n          Our team’s tried and true “Innovate Now, Ask Questions Later” approach has proven both lucrative and widely scalable by successful start-ups and entrenched tech billionaires cum faux do-gooders everywhere! Get in touch today if you'd like us to create a simple, engaging, innovative, life-saving, game-changing, story-telling, award-winning, profitable, scalable, viral social good solution for <strong>your</strong> favorite complex social problem!</p></div>\n      </div>\n    </div>\n\n\n    <div class=\"row\">\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/dmytri.jpg\">\n          <h5 class=\"center\">dmytri</h5>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/linda.jpg\">\n          <h5 class=\"center\">lulu</h5>\n\n        </div>\n      </div>\n\n      <div class=\"col s12 m4 l4\">\n        <div class=\"icon-block\">\n          <img class=\"circle responsive-img\" src=\"img/juan.jpg\">\n          <h5 class=\"center\">jake</h5>\n\n        </div>\n      </div>\n\n\n    </div>\n\n  </div>\n\n\n</div>\n";
@@ -424,8 +3802,9 @@ System.register("pages/story.html!github:systemjs/plugin-text@0.0.2", [], true, 
   return module.exports;
 });
 
-System.register("pages/partners.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("a", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col m12 s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Silver bullet solutions with gold quality partners </h2>\n      </span>\n    </div>\n  </div>\n</div>\n\n<div class=\"container\">\n  <div class=\"section no-pad-bot\" id=\"index-banner\">\n    <div class=\"col m12 s12\">\n      <div class=\"row\">\n        <div class=\"col m12 s12 light\">\n          <div class=\"rich-text\"><h4>Our Partners</h4>\n            <hr><h5>Our Public-Private Partnerships equal scale, profit and social good.</h5>\n\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"rich-text\"><h4>Private Sector Partners</h4></div>\n\n  <div class=\"col s12 m6 l6\">\n    <div class=\"card-panel hoverable z-depth-1\">\n      <div class=\"row\">\n        <div class=\"col s4 l2\">\n          <img src=\"img/RCoK-01.png\" alt=\"Random Chats of Kindness\" class=\"responsive-img\" >\n        </div>\n          <div class=\"col s8 l10\">\n            <span class=\"black-text\">\n              Random Chats of Kindness is our partner for “Random Chats of Privilege,” as we like to call our model. This unique software model allows us to connect Saviors and Savees quickly and conveniently to deliver privilege through cutting edge video.\n\n\n\n\n            </span>\n          </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"col s12 m6 l6\">\n    <div class=\"card-panel hoverable z-depth-1\">\n      <div class=\"row\">\n        <div class=\"col s4 l2\">\n          <img src=\"img/Buber-01.png\" alt=\"Buber\" class=\"responsive-img\" >\n        </div>\n          <div class=\"col s8 l10\">\n            <span class=\"black-text\">\n              Delivering kittens to the workplace and partnering with multilateral organizations to support women's empowerment was one thing, but Buber was looking to help out in a way that would really make a difference while also improving the company's reputation. Buber and <strong>White</strong>Save.me, have partnered up to process Savee support requests through Buber’s patented disruptive transportation system and deliver Saviors in the flesh to the underprivileged, who can track the location of their savior while they wait. (Premium Plan required. NYC pilot, pending global expansion).\n\n\n            </span>\n          </div>\n      </div>\n    </div>\n  </div>\n\n\n\n\n  <div class=\"rich-text\"><h4>Non-Profit Champions</h4></div>\n\n  <div class=\"col s12 m6 l6\">\n    <div class=\"card-panel hoverable z-depth-1\">\n      <div class=\"row\">\n        <div class=\"col s4 l2\">\n          <img src=\"img/partners_world-aid-corps.jpg\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n        </div>\n          <div class=\"col s8 l10\">\n            <span class=\"black-text\"> Non profit partners are eager to\n              develop public-private partnerships, use technology, and link\n              with social enterprises in order to appear innovative. Our non\n              profit champion, <a href=\"https://www.facebook.com/WorldAidCorps\">World Aid Corps,</a>\n              brings us access to the global base of the underprivileged\n              pyramid, where rapid scale at minimal cost enables quick growth\n              and revenue for our investors and shareholders.<br><br> By\n              leveraging trust that communities place in WAC we will work at\n              large scale to encourage community members to contribute small\n              amounts of their hard-earned income to access white privilege,\n              thereby enabling individuals in poverty-stricken areas to move\n              away from primitive community-based socio-economic models of\n              development towards modern, consumer-based digital development\n              and global economies.<br><br> If your non profit organization\n              would like to help us reach the base of the pyramid so that we\n              can extract small amounts of revenue at scale in parts of the\n              world where both markets and governments have historically\n              failed to ensure people’s basic human rights, please reach out\n              to us via <a href=\"http://twitter.com/whitesaveme\">Twitter</a>\n              or <a href=\"#contact\">email.</a>\n            </span>\n          </div>\n      </div>\n    </div>\n  </div>\n\n\n\n  <br><br>\n\n</div>\n";
@@ -433,8 +3812,9 @@ System.register("pages/partners.html!github:systemjs/plugin-text@0.0.2", [], tru
   return module.exports;
 });
 
-System.register("pages/faq.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("b", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n\t<div class=\"col m12 s12\">\n    \t<div class=\"container\">\n        <span class=\"brown-text text-darken-4\">\n          <h2 class=\"title\">Still have questions?</h2>\n        </span>\n     </div>\n   </div>\n</div>\n\n<div class=\"container\">\n\n    \t<div class=\"row\">\n        \t<div class=\"col m12 s12 light\">\n            <p></p><div class=\"rich-text\"><h4>Frequently Asked Questions (FAQs)</h4>\n                <hr><h5>Would you like to learn more or do you have questions about our work?</h5>\n               \t<p class=\"light\">Take a look at our FAQs below, as they may provide the answers you're looking for. If you don't find what you need, please reach out to us via <a href=\"http://twitter.com/whitesaveme\">Twitter</a> or <a href=\"#contact\">email</a> and our interns will be happy to respond.</p>\n\n                </div>\n            </div>\n         </div>\n\n\n\n\n  <div class=\"section\">\n    <h5>Why do you need access to my camera?</h5>\n    <p class=\"light\">We need access to your camera in order to determine whether you are White or not. Once we’ve determined your Whiteness (or non-Whiteness) through our patented facial color recognition software&#8482; you will be connected to a Savior or a Savee to begin your life-changing video chat. We do not share any of the images that we collect.</p>\n  </div>\n\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>How does the White-not White algorithm work?</h5>\n    <p class=\"light\">Our patented innovative facial color recognition software determines what color you are based on a custom skintone recognition algorithm. Our solution provides a highly accurate reading every time for enhanced security and privacy.</p>\n  </div>\n\n\n <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why does it say I’m not White? I’m definitely White.</h5>\n    <p class=\"light\">While you may think you are White, computers and algorithms developed by those in the field of innovative technology are likely more equipped than the average person to detect aspects of Whiteness or non-Whiteness with absolutely no bias. Our software requires an ideal setting in order for maximum performance. Sometimes mistakes happen, but this is not a problem for the majority.</p>\n  </div>\n\n\n\n   <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why does it say I’m White? I’m definitely not White.</h5>\n    <p class=\"light\">While you may think you are not White, computers and algorithms developed by those in the field of innovative technology are likely more equipped than the average person to detect aspects of Whiteness or non-Whiteness with absolutely no bias. Our software requires an ideal setting in order for maximum performance. Sometimes mistakes happen, but this is not a problem for the majority.</p>\n  </div>\n\n<div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why do you assume that White people have privilege?</h5>\n    <p class=\"light\">Buzzfeed and other media sources have reported that White privilege is a “thing.”</p>\n  </div>\n\n\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Why is there a discount for advice from White women?</h5>\n    <p class=\"light\">We all know that women are only worth 77% of men, based on the average pay gap between women and men in the US, so it’s only fair that our services offer a discounted rate for advice from White women.</p>\n  </div>\n\n  <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>What makes you think that White men can offer worthwhile advice to non-White people?</h5>\n    <p class=\"light\">White men have been running the world for centuries and have a lot of experience doing things within the system. It’s only logical that they have the inside scoop on how to succeed in that system. White men run the vast majority of US corporations, foundations, start-ups and nonprofit organizations, so clearly they know how to create socio-economic change as well as how to do projects that develop underprivileged countries and neighborhoods. They’re specially equipped to determine where investments should go to enable non-White communities to thrive. And White men want to help. Our app offers them a way to do that directly, and for people of color to access White men directly for immediate guidance and support.</p>\n  </div>\n\n   <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>What do you do with my data? Do you share it?</h5>\n    <p class=\"light\">Don’t worry - if you are White and you volunteer your advice and share your privilege, the app is free for you, and we will not share any of your data with third parties. We will also not share data from our Premium users. We do share the data of our Basic and Freemium users so that we can be sure to provide useful targeted advertisements for products and services that will best meet their needs and purchasing habits. Big data analysis of the most common problems that our Savees face will enable us to seek investors and advertisers who can help us keep our services low in cost for those who need it the most all the while allowing corporations and small local businesses to prey on them so that we can make our app sustainable and profitable.</p>\n  </div>\n\n\n <div class=\"divider\"></div>\n  <div class=\"section\">\n    <h5>Is this site for real?</h5>\n    <p class=\"light\">We hope it's clear that this site is satire. It aims to make people reflect on White privilege, digital saviorism, the danger of biased algorithms and binary approaches, the ridiculousness of simple solutions to deep-seated problems, and the folly that techno-utopian fixes can address issues like poverty, inequality and exclusion without addressing power imbalances and the entrenched historical privilege of certain individuals, institutions, and nations. Many thanks to <a href=\"http://artahack.io/\">Art-A-Hack</a> for their interest in the idea and to our (White and non-White!) testers and advisors for their orientation, comments, suggestions and input on the site! Read our <a href=\"http://whitesave.me/#statement/\">Artist Statement</a> for more information.</p>\n  </div>\n\n</div>\n";
@@ -442,8 +3822,9 @@ System.register("pages/faq.html!github:systemjs/plugin-text@0.0.2", [], true, fu
   return module.exports;
 });
 
-System.register("pages/home.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("c", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"section no-pad-bot\" id=\"index-banner\">\n\n  <div class=\"container\">\n    <br><br><br>\n    <div class=\"row card-panel valign-container brown lighten-2 white-text\">\n      <div class=\"center valign col s12\">\n        <h1 class=\"header center\">The App That Delivers Privilege</h1>\n      </div>\n      <div class=\"center valign col s12 m6 l5\">\n        <div class=\"video-container\">\n          <iframe width=\"420\" height=\"315\" src=\"https://www.youtube.com/embed/jAt9XyTOLGc\" frameborder=\"0\" allowfullscreen></iframe>\n        </div>\n      </div>\n      <div class=\"center valign col s12 m6 l7\">\n        <p class=\"col s12 light flow-text\"><strong>White</strong>Save.me enables White men to help non-Whites to succeed in life without disrupting existing systems and long-standing traditions.</p>\n        <div class=\"row\">\n          <div class=\"col s6 right-align\">\n            <a href=\"#how\" class=\"btn-large waves-effect waves-#000000 black\">Learn More</a>\n          </div>\n          <div class=\"row\">\n            <div class=\"col s6 left-align\">\n              <a href=\"#call\" class=\"btn-large waves-effect waves-#000000 black\">Try it Now*</a>\n              <p>* web cam required</p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n\n    <br><br>\n\n    <div class=\"divider\"></div>\n\n    <!--   Icon Section   -->\n\n    <div class=\"section\">\n      <div class=\"row\">\n        <div class=\"col s12 m4\">\n          <div class=\"card\">\n            <div class=\"card-image\">\n              <a href=\"#how\"><img src=\"/img/white-save-1.jpg\"></a>\n            </div>\n            <div class=\"card-content\">\n              <p><strong>Lack of privilege getting you down?</strong><br>\n              The privilege you need is just a tap away.</p>\n            </div>\n          </div>\n        </div>\n\n\n        <div class=\"col s12 m4\">\n          <div class=\"card\">\n            <div class=\"card-image\">\n              <a href=\"#how\"><img src=\"/img/white-save-2.jpg\"></a>\n            </div>\n            <div class=\"card-content\">\n              <p><strong>Connect with a white guy.</strong><br>\n              Get privileged, life-saving advice.</p>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"col s12 m4\">\n          <div class=\"card\">\n            <div class=\"card-image\">\n              <a href=\"#how\"><img src=\"/img/white-save-3.jpg\"></a>\n            </div>\n            <div class=\"card-content\">\n              <p><strong>Problem solved!</strong><br>\n              Privilege delivered, and you can move on.\n\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n\n\n\n\n    </div>\n    <br><br>\n\n  </div>\n</div>\n";
@@ -451,8 +3832,9 @@ System.register("pages/home.html!github:systemjs/plugin-text@0.0.2", [], true, f
   return module.exports;
 });
 
-System.register("pages/contact.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("d", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Get in touch with us!</h2>\n      </span>\n    </div>\n  </div>\n</div>\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col s12\">\n      <div><h4>We'd love your comments and feedback.</h4>\n        <hr>\n        <h5>Let us know what you thought of the site at <a href=\"mailto:help@whitesave.me\">help@whitesave.me</a>.</h5>\n      </div>\n    </div>\n  </div>\n</div>\n";
@@ -460,8 +3842,9 @@ System.register("pages/contact.html!github:systemjs/plugin-text@0.0.2", [], true
   return module.exports;
 });
 
-System.register("pages/terms.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("e", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col m12 s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Simple and useful</h2>\n      </span>\n    </div>\n  </div>\n</div>\n\n<div class=\"container\">\n\n  <div class=\"row\">\n    <div class=\"col m12 s12 light\">\n      <p></p><div class=\"rich-text\"><h4>Terms and conditions for <strong>White</strong>Save.Me</h4>\n        <hr><h5>By using this site you agree to the following terms and conditions.</h5>\n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"section\">\n    <p> Effective Date: 07/02/2015 </p>\n    <p>Welcome to WhiteSave.me&#8482; (the “Web site”) and its affiliates (collectively,\"\"we,\" and \"us\"). WhiteSave.me provides the services on this Web site (collectively, \"Services\") to you subject to the following Terms of Use (\"Terms\"). </p>\n    <p>1) Acceptance of Terms of Use </p>\n    <p>Please carefully read the following Terms before using the Web site. By accessing and using the Web site or Services, or the content displayed on, posted to, transmitted, streamed, or distributed or otherwise made available on or through the Web site, including without limitation, User Materials and Submissions (collectively, \"Content\"), you acknowledge that you have read, understood and agree to be bound by these Terms which form an agreement that is effective as if you had signed it. If at any time you do not agree to these Terms, please do not access or use the Web site or any of its Content or Services. YOU MUST BE AT LEAST 13 YEARS OF AGE TO VIEW, ACCESS, OR USE THIS WEB SITE, CONTENT OR SERVICES. IF YOU ARE UNDER 13 YEARS OF AGE, YOU ARE NOT PERMITTED TO ACCESS THIS WEB SITE, CONTENT OR SERVICES FOR ANY REASON. YOUR ACCESS TO, USE OF, AND BROWSING OF THE WEB SITE AND ITS CONTENTS AND SERVICES ARE SUBJECT TO ALL TERMS CONTAINED HEREIN AND ALL APPLICABLE LAWS AND REGULATIONS. BY VIEWING, USING, OR ACCESSING THIS WEB SITE, YOU REPRESENT AND WARRANT THAT YOU ARE AT LEAST 18 YEARS OF AGE AND YOU AGREE TO BE BOUND BY THESE TERMS. IF YOU ARE UNDER THE AGE OF 13 YOU MAY NOT USE, VIEW, OR ACCESS THIS WEBSITE, YOUR PERMISSION TO USE, VIEW, OR ACCESS THE WEB SITE, CONTENT OR SERVICES IS AUTOMATICALLY AND IMMEDIATELY REVOKED. <strong>YOU MUST DISCONTINUE USE OF THIS WEB SITE IMMEDIATELY. PLEASE ALSO LEAVE THE WEBSITE IF YOU DO NOT AGREE TO BE BOUND BY THESE TERMS.</strong>&nbsp;</p>\n    <p>These Terms may be revised or updated from time to time. Accordingly, you should check the Terms regularly for updates. You can determine when the Terms were last revised by referring to the \"Last Revised\" legend that will be located at the top of this page. Any changes in these Terms take effect upon posting and will only apply to use of the Web site, Content, or Services after that date. Each time you access, use or browse the Web site, Content, or Services you signify your acceptance of the then-current Terms. </p>\n    <p>2) Permitted Users of Web site The Web site, Content, or Services are solely directed to persons at least 13 years of age. If you are under the age of 13 you may not use, view, or access this Website and you must leave this Web site immediately. If you are at least 13 years of age and agree to these Terms, you are permitted to use, view, and access this Website, Content, or Services. If you do not agree to be bound by these Terms, you should not and are not permitted to use, view, and access this Website, Content, or Services and you must immediately discontinue your use of the Website. By viewing this site, you agree that such viewing and reading does not violate the laws or standards imposed by your town, city, state or country. We are not responsible or liable for any content, communication, or other use or access of the Web site, Content, or Services by users of this Web site in violation of these Terms. </p>\n    <p>WhiteSave.me and the Web site do not knowingly collect information from children under age 13. If you are under age 13, you are not permitted to use the Web site and must exit immediately. If you are under age 13, you are not permitted to submit any personally identifiable information to the Web site. If you provide information to WhiteSave.me through the Web site or any other part of the Web site, Content, or Services you represent to WhiteSave.me that you are 13 years of age or older. </p>\n    <p>3) Permitted Use of Web site The Content (other than Submissions which are governed by paragraph 3 of Section 8(d)), Web site, and Services are the sole and exclusive property of WhiteSave.me and/or its licensors. You agree not to reproduce, republish, upload, post, duplicate, modify, copy, alter, distribute, create derivative works from, sell, resell, transmit, transfer, display, perform, license, assign or publish, or exploit for any commercial purpose, any portion of the Web site, Content or Services other than as expressly authorized by WhiteSave.me in writing, including without limitation, posting or transmitting any advertising, sponsorships, or promotions on, in or through the Service, Website, or Content. Use of the Web site or the Content or Services in any way not expressly permitted by these Terms is prohibited, and may be actionable under United States or international law. You agree not to access the Website, Content or Services through any technology or means other than the video streaming pages of the Service itself or other explicitly authorized means WhiteSave.me may designate. You agree not to use or launch any automated system, including without limitation, \"robots,\" \"spiders,\" or \"offline readers,\" that accesses the Website, Content, or Service. WhiteSave.me reserves the right to remove or suspend access to the Website, Content, or Services without prior notice. </p>\n    <p>You may not duplicate, publish, display, modify, alter, distribute, perform, reproduce, copy, sell, resell, exploit, or create derivative works from any part of the Web site or the Content or Services unless expressly authorized by WhiteSave.me in writing or as expressly set forth herein. You agree that you will not remove, obscure, or modify any acknowledgements, credits or legal, intellectual property or proprietary notices, or marks, or logos contained on the Web site or in the Content or Services. You agree not to collect or harvest any personally identifiable information, from the Service, nor to use the communication systems provided by the Service (e.g., comments) for any commercial solicitation purposes. You agree not to solicit, for commercial purposes, any users of the Service or Web site. In your use of the Web site, Content or Service, you will comply with all applicable laws, regulations, rules, decrees, and ordinances. </p>\n    <p>You understand that when using the Service, you will be exposed to Content from a variety of sources, and that WhiteSave.me is not responsible for the accuracy, usefulness, safety, or intellectual property rights of or relating to such Content. You further understand and acknowledge that you may be exposed to Content that is inaccurate, offensive, indecent, objectionable, sexually explicit, or that contains nudity, and you agree to waive, and hereby do waive, any legal or equitable rights or remedies you have or may have against WhiteSave.me with respect thereto. Our community reporting system does it's best to filter out non adult users of the site. You should still be aware that you may encounter someone under the age of 18 that has not yet been filtered. If you do please report them immediately by clicking report. Exposing yourself to children is a serious crime and we are working closely with law enforcement to help them find and prosecute those responsible. Special terms may apply to some products or Services offered on the Web site, or to any sweepstakes, contests, or promotions that may be offered on the Web site. Such special terms (which may include official rules and expiration dates) may be posted in connection with the applicable product, service, sweepstakes, contest, promotion, feature or activity. By entering such sweepstakes or contests or participating in such promotions you will become subject to those terms or rules. We urge you to read the applicable terms or rules, which are linked from the particular activity, and to review our Privacy Policy which, in addition to these Terms, governs any information you submit in connection with such sweepstakes, contests and promotions. Any such special terms or rules are in addition to these Terms and, in the event of a conflict, any such terms shall prevail over these Terms. </p>\n    <p>4) Privacy Policy Please review the Privacy Policy at /privacy/ for the Web site. By using or visiting this Website or the Content or Services, you signify your agreement to the Privacy Policy. If you do not agree with the Privacy Policy at /privacy/, you are not authorized to use the Web site. The terms of the Privacy Policy are incorporated herein by this reference. </p>\n    <p>5) Account Password and Security The Web site may contain features that require registration (e.g., when you register for an account or a contest). You agree to provide accurate, current and complete information about yourself as prompted. If you provide any information that is inaccurate, not current or incomplete, or WhiteSave.me has reasonable grounds to suspect that such information is inaccurate, not current or incomplete, WhiteSave.me may remove or de-register you from this Web site or contest, at its sole discretion. WhiteSave.me reserves the right to take appropriate steps against any person or entity that intentionally provides false or misleading information to gain access to portions of the Web site that would otherwise be denied. At the time you register for online account access, you may be required to select a username and password to be used in conjunction with your account. You are responsible for maintaining the confidentiality of your password, if any, and are fully responsible for all uses of your password and transactions conducted in your account, whether by you or others. You agree to (a) log out of your account at the end of each session; (b) keep your password confidential and not share it with anyone else; and (c) immediately notify WhiteSave.me of any unauthorized use of your password or account or any other breach of security. WhiteSave.me is authorized to act on instructions received through use of your password, and is not liable for any loss or damage arising from your failure to comply with this Section. You agree not to circumvent, disable or otherwise interfere with security-related features of the Service or features that prevent or restrict use or copying of any Content or enforce limitations on use of the Service or the Content therein. </p>\n    <p>6) Proprietary Rights You acknowledge and agree that, as between WhiteSave.me and you, all right, title, and interest in and to the Web site, Content, and Services including without limitation any patents, copyrights, trademarks, trade secrets, inventions, know-how, and all other intellectual property rights are owned exclusively by WhiteSave.me or its licensors, are valid and enforceable, and are protected by United States intellectual property laws and other applicable laws. Any attempt to use, redistribute, reverse engineer, or redesign the information, code, videos, textual or visual materials, graphics, or modules contained on the Web site for any other purpose is prohibited. WhiteSave.me and its licensors reserve all rights not expressly granted in and to the Website, Service and the Content. </p>\n    <p>Copyright: As between you and WhiteSave.me, you acknowledge and agree that all Content and Services included in the Web site, such as text, graphics, logos, icons, videos, images, media, data, audio, visual, animation, software and other information and materials, is the copyright and property of WhiteSave.me or its content suppliers and protected by U.S. and international copyright laws. Permission is granted to electronically copy and print hard copy portions of the Web site or Content for the sole purpose of using the Web site as a personal internal resource or otherwise for its intended purposes, provided that all hard copies contain all copyrights and trademarks, and other applicable intellectual property and proprietary marks and notices. Any other use, including the reproduction, modification, distribution, transmission, republication, display or performance, of the Website, Content, or Services are strictly prohibited. </p>\n    <p>Trademarks: The trademarks, service marks, logos, slogans, trade names and trade dress used on the Web site are proprietary to WhiteSave.me or its licensors. Without limiting the foregoing, \"WhiteSave.me\" is the trademark of WhiteSave.me. Unauthorized use of any trademark of WhiteSave.me may be a violation of federal or state trademark laws. Any third party names or trademarks referenced in the Web site do not constitute or imply affiliation, endorsement or recommendation by WhiteSave.me, or of WhiteSave.me by the third parties. </p>\n    <p>7) Your Indemnity of WhiteSave.me YOU AGREE TO INDEMNIFY, DEFEND AND HOLD WHITESAVE.ME, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, REPRESENTATIVES, SUBSIDIARIES, AFFILIATES, LICENSORS, PARTNERS, SERVICE PROVIDERS AND OTHERS ACTING IN CONCERT WITH IT, HARMLESS FROM ANY LOSSES, LIABILITIES, CLAIMS, DAMAGES, OBLIGATIONS, DEMANDS, COSTS OR DEBTS, AND EXPENSES INCLUDING WITHOUT LIMITATION REASONABLE ATTORNEYS' FEES, MADE BY YOU OR ON YOUR BEHALF OR BY ANY THIRD PARTY DUE TO OR ARISING OUT OF (A) YOUR CONNECTION, POSTING, OR SUBMISSION TO OR USE OF THE WEB SITE OR THE CONTENT OR SERVICES OR SUBMISSION; (B) YOUR VIOLATION OF THESE TERMS, ANY APPLICABLE LAWS, OR THE RIGHTS OF WhiteSave.me OR ANY THIRD PARTY, INCLUDING WITHOUT LIMITATION ANY COPYRIGHT, PROPERTY, OR PRIVACY RIGHT; OR (C) ANY CLAIM THAT YOUR SUBMISSION CAUSED DAMAGE TO A THIRD PARTY. </p>\n    <p>8) User Generated Content </p>\n    <p>a) Communications Services: The Web site may contain areas for you to leave comments or feedback, chat areas, blogs, bulletin board services, focus groups, forums, sweepstakes, contests, games, communities, calendars, and/or other message or communication facilities designed to enable you and others to communicate with WhiteSave.me and other users of the Web site (collectively, \"Communication Services\"). The opinions expressed in the Communication Services reflect solely the opinion(s) of the participants and may not reflect the opinion(s) of WhiteSave.me. You acknowledge that your submissions to the Web site may be or become available to others. You agree only to post, send and receive messages and materials that are in accordance with these Terms and related to the particular Communication Service. </p>\n    <p>b) Prohibited Actions: You agree that the following actions are prohibited and constitute a material breach of these Terms. This list is not meant to be exhaustive, and WhiteSave.me reserves the right to determine what types of conduct it considers to be inappropriate use of the Web site. In the case of inappropriate use, WhiteSave.me or its designee may take such measures as it determines in its sole discretion. By way of example, and not as a limitation, you agree that when using the Web site, Content, Services or a Communication Service, you will not: 1) Use the Web site, Content or Services for any purpose or to take any actions in violation of local, state, national, or international laws, regulations, codes, or rules. 2) Violate any code of conduct or other guidelines which may be applicable for any particular Communication Service. 3) Take any action that imposes an unreasonable or disproportionately large load on the Web site's infrastructure or otherwise in a manner that may adversely affect performance of the Web site or restrict or inhibit any other user from using and enjoying the Communication Services or the Web site. 4) Use the Web site for unauthorized framing of or linking to, or access via automated devices, bots, agents, scraping, scripts, intelligent search or any similar means of access to the Content or Services. 5) Aggregate, copy, duplicate, publish, or make available any of the Content or Services or any other materials or information available from the Web site to third parties outside the Web site in any manner or any other materials or information available from the Web site. 6) Defame, bully, abuse, harass, stalk, demean, threaten or discriminate against others or otherwise violate the rights (such as rights of privacy and publicity) of others or reveal another user’s personal information e.g. hate speech. 7) Publish, post, upload, distribute or disseminate any defamatory, infringing, or unlawful topic, name, material, content, video, image, audio, caption, or information e.g. animal abuse, drug or substance abuse, accidents, dead bodies and similar items. You are not permitted to provide a Submission that contains graphic or gratuitous violence (on yourself or others) or shows yourself or someone else getting hurt, attacked, or humiliated. 8) Upload or download files that contain software or other material protected by intellectual property laws or other laws, unless you own or control the rights, titles, or interests thereto or have received all necessary consents or rights. 9) Upload or transmit files that contain viruses, corrupted files, or any other similar software or programs that may damage the operation of another's computer. 10) Use the Web site to make available unsolicited advertising or promotional materials, spam, pyramid schemes, chain letters, or similar forms of unauthorized advertising or solicitation or conduct or forward surveys. 11) Harvest or otherwise collect information about others, including email addresses, without their consent. 12) Download any file or material posted by another user of a Communication Service that you know, or reasonably should know, cannot be legally distributed in such manner. 13) Falsify or delete any author attributions, legal or other notices, or proprietary designations or labels of origin or source. 14) Restrict or inhibit any other user from using and enjoying the Communication Services. 15) Engage in any other action that, in the judgment of WhiteSave.me, exposes it or any third party to potential liability or detriment of any type. </p>\n    <p>If you use, view, or access this Web site in contravention of these Terms, or if you have repeatedly violated these Terms or a third party's copyright, we reserve the right to terminate the permissions or rights granted to you by WhiteSave.me and we reserve all of our rights under this Agreement, at law and in equity. </p>\n    <p>c) User Materials: Any and all content, comments, views, information, data, text, video, image, captions, music, sound, graphics, photos, software, code, audio, sound, music, audio visual combinations, interactive features, feedback, documentation, photographs, discussions, news, articles, messages, postings, listings, and other materials, viewed on, accessed through, displayed on, posted to, transmitted, streamed, or distributed or otherwise made available through the Web site, Services or the Communication Services by users or other third parties (\"User Materials\") are strictly those of the person from which such User Materials originated, who is solely responsible for its content. Use of or reliance on User Materials is entirely at your own risk and WhiteSave.me expressly disclaims any and all liability in connection with User Materials. WhiteSave.me does not validate, monitor, or endorse any User Materials of any user or other licensor, or any opinion, recommendation, or advice expressed therein nor vouch for their reliability. Under no circumstances will WhiteSave.me or its suppliers or agents be liable in any way for any User Materials. </p>\n    <p>You acknowledge and agree that WhiteSave.me may or may not pre-screen or monitor User Materials, but that it and its designees have the right (but not the obligation) in their sole discretion to pre-screen, monitor, refuse, delete, move, remove, suspend, block, and/or restrict access to the Website and any Content or User Materials that are available via the Web site. You understand that by using the Web site, you may be exposed to User Materials that you may consider offensive or objectionable or that may contain nudity or adult oriented or sexually explicit material. Some of the Content on this Web site may offend you. If you think that the Content violates these Terms, then \"tag\" or \"flag\" the video stream you're watching to submit it for review by us. You agree that you must evaluate, and bear all risks associated with, the use or exposure to any User Materials posted by others. </p>\n    <p>Without limiting the foregoing, WhiteSave.me and its designees have the right to temporarily or permanently remove, delete, block, suspend or restrict your account or access to the Website or any Content or User Materials on the Website that violate these Terms or are otherwise objectionable, or offensive in WhiteSave.me sole discretion, including without limitation removing or substituting other words for foul or inappropriate language. You agree WhiteSave.me shall have no liability for such removal, deletion, blocking, suspension, or restriction or any of the actions taken pursuant to this Section. </p>\n    <p>You further acknowledge and agree that you will not rely on this Web site or any Content or Services available on or through the Web site. We are not responsible for any errors or omissions in the User Materials or hyperlinks embedded therein or for any results obtained from the use of such information. Under no circumstances will WhiteSave.me or its suppliers or agents be liable for any loss or damage caused by your reliance on such User Materials. </p>\n    <p>Except as otherwise expressly permitted under copyright law or as otherwise expressly set forth herein, you will not copy, redistribute, retransmits, publish or commercially exploit the downloaded Content without the express permission of WhiteSave.me and the copyright owner. You may not sell, lease or rent access to or use of the Web site or its Services. You shall not use this Web site or any Content or Services at any time for any purpose that is unlawful or prohibited by these Terms and other conditions and notices on the Web site and shall comply with all applicable local, state, federal, national or international statutes, rules, regulations, ordinances, decrees, laws, codes, orders, regulations, or treaties of any government or regulatory body of any jurisdiction. You shall not use the Web site in any manner that could damage, disable, impair or interfere with any other user's use of the Web site or Services or Content. You may not attempt to gain unauthorized access to the Web site through hacking or any other unauthorized means. You may not attempt to obtain or obtain any Content or Services through any means not intentionally made available to you through the Web site. </p>\n    <p>d) Submissions: You are solely responsible for the User Materials that you post, display, share, stream, email, transmit or otherwise make available via the Web site or Services (\"Submission\"). All Submissions are subject to these Terms and you agree that you will not submit any Submission that is in violation of these Terms. You understand that WhiteSave.me does not guarantee any confidentiality with respect to any Submissions you submit. WhiteSave.me is under no obligation to post or use any Submission and may remove, delete, block, suspend, terminate, or restrict access to any Submission at any time in its sole discretion. You acknowledge and agree that WhiteSave.me is entitled to remove, delete, block, suspend, terminate, or restrict your Submission or account or your access to the Website, Content, or Services permanently or temporarily and without prior notice, if WhiteSave.me deems that you have been, or you have been identified by other users to be (either once or repeatedly), offensive in your Submission or if your use of the Website, Services, or Content violates these Terms. For the avoidance of doubt, if your Submission is \"skipped,\" \"flagged,\" \"reported\" or \"tagged\" by other users either once or repeatedly for the foregoing reasons, then we reserve the rights to perform the foregoing actions. You agree WhiteSave.me shall have no liability for such removal, deletion, blocking, suspension, termination, or restriction or any of the actions taken pursuant to this Section. Violations of the Terms of Use may result in a warning notification or termination of your account. If you violate these Terms we reserve the right to temporarily or permanently terminate your account or terminate or block your access to the Website, Content, or Services. </p>\n    <p>By making a Submission, you represent and warrant that your Submission is true, your own original work, and does not infringe any other person's or entity's rights, and that you and any other person mentioned or shown in your Submission release any and all claims concerning WhiteSave.me or its designees' use, posting, copying, modification, transmission, or distribution of the Submission or any part thereof. You represent and warrant that you own all right, title, and interest, including copyright, to your Submission, and hold all necessary licenses or releases concerning the contents of your Submission and consents and rights to use, post, copy, modify, distribute, stream, or transmit your Submission. You agree that you are solely responsible for you own Submission and the consequences of submitting and streaming, transmitting, displaying or publishing your Submission on the Service. You must evaluate and bear all risks associated with your disclosure of any Submission. </p>\n    <p>By making a Submission, you grant WhiteSave.me and its licensees, assignees and designees an irrevocable, assignable, transferable, fully sub-licensable (through multiple levels of sublicensees), perpetual, world-wide, royalty-free, fully paid-up, non-exclusive right and license, in their sole discretion, to use, distribute, stream, reproduce, post, modify, copy, combine, adapt, publish, translate, rent, lease, sell, resell, perform or display (whether publicly or otherwise), make available online or electronically transmit, and perform, and create derivative works of your Submission (in whole or in part), along with your name or any part thereof and city/town/country of residency, in WhiteSave.me’s discretion, on the Web site or elsewhere, and to use, copy, adapt, distribute, or incorporate all or any part of your Submission into other advertising, promotion, research, analysis or other materials in any format or medium or channels now known or later developed. You hereby waive any right to inspect such use and any claims based on title, privacy, confidentiality, publicity, defamation, misappropriation, intellectual property or similar claims for any use of your Submission. You also hereby grant each user of the Website, Content and Service a non-exclusive license to view, use, and access your Submission through the Website as permitted through the functionality of the Service and under these Terms. </p>\n    <p>9) Notice and Procedures for Making Claims of Copyright or Intellectual Property Infringement WhiteSave.me may, in appropriate circumstances and at its sole discretion, disable and/or terminate use of the Website, Content, or Services by users who infringe the intellectual property of others. If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated, please provide WhiteSave.me’s Copyright Agent a Notice containing the following information: 1) an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest; 2) a description of the copyrighted work or other intellectual property that you claim has been infringed; 3) a description of where the material that you claim is infringing is located on the Web site (providing URL(s) in the body of an email is the best way to help WhiteSave.me locate content quickly); 4) your name, address, telephone number, and email address; 5) a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law; 6) a statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner's behalf. </p>\n    <p>If you believe in good faith that a notice of copyright infringement has been wrongly filed by WhiteSave.me against you, the DMCA permits you to send WhiteSave.me a counter-notice. </p>\n    <p>Notices and counter-notices must meet the then-current statutory requirements imposed by the DMCA; see http://www.copyright.gov/ for details. Notices of claims of copyright or other intellectual property infringement and counter-notices should be sent to WhiteSave.me Copyright Agent who can be reached in the following ways: </p>\n    <p>Mailing Address: help@whitesave.me </p>\n    <p>Make sure you know whether the Content that you have seen on WhiteSave.me infringes your copyright. If you are not certain what your rights are, or whether your copyright has been infringed, you should check with a legal adviser first. Be aware that there may be adverse legal consequences in your country if you make a false or bad faith allegation of copyright infringement by using this process. Please also note that the information provided in this legal notice may be forwarded to the person who provided the allegedly infringing Content. </p>\n    <p>10) Links Links to Other Websites and Search Results: The Web site may contain links to websites operated by other parties. The Web site provides these links to other websites as a convenience, and your use of these sites is at your own risk. The linked sites are not under the control of WhiteSave.me which is not responsible for the content available on third party sites. Such links do not imply endorsement of information or material on any other site and WhiteSave.me disclaims all liability with regard to your access to, use of or transactions with such linked websites. You acknowledge and agree that WhiteSave.me shall not be responsible or liable, directly or indirectly, for any damage, loss or other claim caused or alleged to be caused by or in connection with, access to, use of or reliance on the Website or any Content or Services available on or through any other site or resource. </p>\n    <p>Links to the Web site: You may link another website to the Web site subject to the following linking policy: (i) the appearance, position and other aspects of any link may not be such as to damage or dilute the reputation of WhiteSave.me or the Web site; (ii) the appearance, position and other attributes of the link may not create the false appearance that your site, business, organization or entity is sponsored by, endorsed by, affiliated with, or associated with WhiteSave.me or the Web site; (iii) when selected by a user, the link must display the Web site on full-screen and not within a \"frame\" on the linking website; and (iv) WhiteSave.me reserves the right to revoke its consent to the link at any time and in its sole discretion. </p>\n    <p>11) Modifications to Web site WhiteSave.me reserves the right at any time and from time to time to modify, suspend, block, terminate, or discontinue, temporarily or permanently, the Web site, Content, or Services, or any portion thereof, with or without notice. You agree that WhiteSave.me will not be liable to you or to any third party for any modification, suspension, blocking, termination, or discontinuance of the Web site, Content, or Services. </p>\n    <p>12) Suspension and Termination Rights WhiteSave.me reserves the right, at its sole discretion, immediately and without notice, to suspend or terminate your access to the Web site, Content, or Services or any part thereof for any reason, including without limitation any breach by you of these Terms. You agree that WhiteSave.me shall not be liable to you or any third party for any such suspension or termination. </p>\n    <p>13) Disclaimer THE WEB SITE AND CONTENT AND THE INFORMATION, SERVICES, PRODUCTS, SWEEPSTAKES, CONTESTS, DRAWINGS, OR OTHER ACTIVITIES OFFERED, CONTAINED IN OR ADVERTISED ON THE WEB SITE, INCLUDING WITHOUT LIMITATION TEXT, VIDEO, GRAPHICS AND LINKS, ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY LAW, AND ITS LICENSORS, SUPPLIERS AND RELATED PARTIES DISCLAIM ALL REPRESENTATIONS AND WARRANTIES, EXPRESS OR IMPLIED, WITH RESPECT TO THE WEBSITE AND CONTENT, INFORMATION, SERVICES, PRODUCTS AND MATERIALS AVAILABLE ON OR THROUGH THE WEBSITE, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, FREEDOM FROM COMPUTER VIRUS AND IMPLIED WARRANTIES ARISING FROM COURSE OF DEALING OR COURSE OF PERFORMANCE. YOUR USE OF THE WEB SITE OR ANY CONTENT OR SERVICES ARE ENTIRELY AT YOUR OWN RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WhiteSave.me EXCLUDES ALL WARRANTIES, CONDITIONS, TERMS OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THIS WEB SITE'S CONTENT OR THE CONTENT OF ANY WEB SITES LINKED TO THIS WEB SITE AND ASSUMES NO LIABILITY OR RESPONSIBILITY FOR ANY (I) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT, (II) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF OUR SERVICES, (III) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL, CONFIDENTIAL AND/OR FINANCIAL INFORMATION STORED THEREIN, (IV) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OUR SERVICES, (IV) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH OUR SERVICES BY ANY THIRD PARTY, AND/OR (V) ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR SUBMISSION OR THE USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES OR WEBSITE. WhiteSave.me DOES NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH THE SERVICES OR ANY HYPERLINKED SERVICES OR FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND WhiteSave.me WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION OR COMMUNICATION BETWEEN YOU AND ANY OTHER USER OR THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE. </p>\n    <p>Without limiting the foregoing, you are responsible for taking all necessary precautions to insure that any Content, Services, or access to the Web site is free of viruses or other harmful code. </p>\n    <p>14) Limitation on Liability: TO THE MAXIMUM EXTENT PERMITTED BY LAW, WhiteSave.me AND ITS RELATED PARTIES DISCLAIM ALL LIABILITY, WHETHER BASED IN CONTRACT, TORT (INCLUDING WITHOUT LIMITATION NEGLIGENCE), STRICT LIABILITY OR ANY OTHER THEORY ARISING OUT OF OR IN CONNECTION WITH THE WEB SITE, USE, INABILITY TO USE OR PERFORMANCE OF THE INFORMATION, CONTENT, SERVICES, PRODUCTS AND MATERIALS AVAILABLE FROM OR THROUGH THE WEB SITE. IN NO EVENT SHALL WhiteSave.me, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS OR ANY OF ITS AFFILIATED ENTITIES OR SUPPLIERS BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL, EXEMPLARY OR CONSEQUENTIAL LOSSES, EXPENSES, OR DAMAGES, EVEN IF THESE PERSONS AND ENTITIES HAVE BEEN PREVIOUSLY ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OR THE EXISTENCE OF ANY LIMITED REMEDY. WITHOUT LIMITING THE FOREGOING, THE MAXIMUM AGGREGATE LIABILITY OF WhiteSave.me ARISING OUT OF OR IN CONNECTION WITH THESE TERMS OR THE WEB SITE OR THE CONTENT, INFORMATION, MATERIALS, PRODUCTS OR SERVICES ON OR THROUGH THE WEBSITES SHALL NOT EXCEED FIFTY DOLLARS (U.S.) </p>\n    <p>YOU SPECIFICALLY ACKNOWLEDGE THAT WhiteSave.me SHALL NOT BE LIABLE FOR CONTENT OR THE DEFAMATORY, INDECENT, OFFENSIVE, OBSCENE, SEXUALLY EXPLICIT, PORNOGRAPHIC, NUDE, OR ILLEGAL CONDUCT OR CONTENT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU. </p>\n    <p>Exclusions and Limitations: Because some jurisdictions do not allow limitations on how long an implied warranty lasts, or the exclusion or limitation of liability for consequential or incidental damages, the above limitations may not apply to you. This Limitation of Liability shall be to the maximum extent permitted by applicable law. </p>\n    <p>15) Notice Required by California Law Pursuant to California Civil Code Section 1789.3, users are entitled to the following specific consumer rights notice: The name, address and telephone number of the provider of this Web site is WhiteSave.me 244 5th Ave. New York, NY 10001, 8005555555. Complaints regarding this Web site, or the Content or Services or requests to receive further information regarding use of this Web site or the Content or Services may be sent to the above address or to help@whitesave.me The Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs may be contacted in writing at 1625 North Market Boulevard, Suite S202, Sacramento, CA 95834 or by telephone at (916) 574-7950 or (800) 952-5210. </p>\n    <p>16) Governing Law and Disputes These Terms shall be governed by, and will be construed under, the laws of the State of California, U.S.A., without regard to choice of law principles. You irrevocably agree to the exclusive jurisdiction by the federal and state courts located in Santa Clara County, California, U.S.A., to settle any dispute which may arise out of, under, or in connection with these Terms, as the most convenient and appropriate for the resolution of disputes concerning these Terms. ANY CAUSE OF ACTION OR CLAIM YOU MAY HAVE WITH RESPECT TO THESE TERMS, THE WEB SITE OR THE CONTENT OR SERVICES MUST BE COMMENCED WITHIN SIX (6) MONTHS AFTER THE CLAIM OR CAUSE OF ACTION ARISES OR SUCH CLAIM OR CAUSE OF ACTION SHALL BE BARRED. The Web site is controlled within the United States of America and directed to individuals residing in the United States. Those who choose to access the Web site from locations outside of the United States do so on their own initiative, and are responsible for compliance with local laws if and to the extent local laws are applicable. WhiteSave.me does not represent that the Web site, Content, or Services are appropriate outside the United States of America. WhiteSave.me reserves the right to limit the availability of the Website to any person, geographic area or jurisdiction at any time in its sole discretion. </p>\n    <p>17) Force Majeure WhiteSave.me shall not be liable for any delay or failure to perform resulting from causes outside its reasonable control or unforeseen circumstances such as acts of nature or God, fire, flood, earthquake, accidents, strikes, war, terrorism, governmental act, failure of or interruption in common carriers (including without limitation Internet service providers and web hosting providers) or utilities, or shortages of transportation facilities, fuel, energy, labor or materials. </p>\n    <p>18) Ability To Accept Terms of Service You represent and warrant that you are either at least 18 years of age (or for jurisdictions in which 18 years old is not the age of majority to legally enter into binding contracts, at least such age of majority for your jurisdiction), or an emancipated minor, or possess legal parental or guardian consent, and are fully able and competent to enter into the terms, conditions, obligations, affirmations, representations, and warranties set forth in these Terms, and to abide by and comply with these Terms. You acknowledge that we have given you a reasonable opportunity to review these Terms and that you have agreed to them. </p>\n    <p>19) Miscellaneous These Terms and the Privacy Policy and any other legal notices published by WhiteSave.me set forth the entire understanding and agreement between you and WhiteSave.me with respect to the subject matter hereof. If any provision of the Terms or the Privacy Policy is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of the Terms or the Privacy Policy shall remain in full force and effect. Headings are for reference only and in no way define, limit, construe or describe the scope or extent of such section. WhiteSave.me's failure to act with respect to any failure by you or others to comply with these Terms or the Privacy Policy does not waive its right to act with respect to subsequent or similar failures. You may not assign, transfer, sublicense or delegate these Terms or the Privacy Policy or your rights or obligations under these Terms or the Privacy Policy without the prior written consent of WhiteSave.me, but same may be assigned by WhiteSave.me without restriction. Any assignment, transfer, sublicense, or delegation in violation of this provision shall be null and void. There are no third party beneficiaries to these Terms or the Privacy Policy. </p>\n    <p>20) Questions? Please direct any questions you may have about these Terms, technical questions or problems with the Web site, or report a violation of these Terms, or comments or suggestions to our support team. </p>\n  </div>\n\n\n\n\n\n</div>\n";
@@ -469,8 +3852,9 @@ System.register("pages/terms.html!github:systemjs/plugin-text@0.0.2", [], true, 
   return module.exports;
 });
 
-System.register("pages/statement.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("f", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Artistic Statement</h2>\n      </span>\n    </div>\n  </div>\n</div>\n<div class=\"container\">\n  <div class=\"flow-text\">\n    <p>We were brought together as a team through the <a href=\"http://artahack.io/\">Art-A-Hack</a> initiative.</p>\n\n    <p>Our project is “Imbalances in Tech.” We want to push people to reflect on digital saviorism, the danger of biased algorithms and binary approaches, the ridiculousness of simple solutions to complex deep-seated problems, and the folly that techno-utopian fixes can address issues like poverty, inequality and exclusion without addressing power imbalances and the entrenched historical privilege of certain individuals, institutions, and nations.</p>\n\n    <p>To explore those topics, we chose to focus on a complex, historical, systemic and touchy issue – white privilege – because it is highlighted by and a strong driver of all of the above.</p>\n\n    <p>We created a real/fake tech start-up with a business model, an app, a cheesy self-centered founders' story, and everything else that a real start up aimed at “doing social good” typically has. We used the language bandied about by those in tech and social good – focusing our fake start up on ‘doing good while making a profit.’ We purposely centered our fake app on white people and their user experiences, and set it up so that non-white people would foot the bill through both cash, data mining and targeted advertising.</p>\n\n    <p>The app enables white men to ‘deliver privilege’ to the less privileged. We chose this language because ‘delivering privilege’ is just about as impossible as ‘delivering development’ or ‘delivering democracy’ through tech applications. We created a special discount for getting advice from white women - 77% of the price of a white man - to reflect the current pay gap between men and women.</p>-\n\n    <p>In order for someone to participate in the WhiteSave.me experience, they need to first prove their qualification to be a White Savior through the “whiteness detector,” which is based on a faulty algorithm. It uses a video camera to determine whether a person is white or not white. The algorithm is both simplistic and biased. It’s also often wrong. Once the algorithm determines if a person is white or not, the person is matched with a 'White Savior' or a non-white ‘Savee’. The White Savior provides privileged answers to the Savee’s lack-of-privilege-related questions through SMS, voice, video or in person (depending on how much the Savee is willing to pay).</p>\n\n    <p>We created a satire because because satire can be deep and cutting, and it often makes people think while they laugh nervously (or sometimes hysterically). We want people to look at this site and feel unsure if it’s real or not. We want people to feel uncomfortable with both imbalances in tech and with white privilege. We want some people to see themselves in the caricatures and reflect on the 'solutions' they design. People of Color are normally well aware of the issues we highlight, but often white people shy away from talking about them or they talk about them in a way that puts whiteness at the center, reconfirming white privilege. Our site purposely puts white people at the center in an over the top way, as commentary on this tendency. We also provide no real benefit to 'Savees.' We wanted to call out projects that are designed to make donors and volunteers feel good about themselves without actually making an impact on those who are supposedly benefiting from generosity and aid. The 'build it and they will come' model for Savees is also purposeful. All our outreach and the site itself is aimed at White Saviors, whereas the business model relies entirely on Savees' willingness to pay for a service that will not actually provide them with any benefit.</p>\n\n    <p>Through the project, we highlight how technological quick fix solutions are Band Aids that do nothing to resolve deep historical and institutionalized inequalities and biases. Tech often serves to distract people from these deeper issues and potential longer-term changes that will necessarily touch issues of power and require change by and in those who hold power. Through the “white or not” algorithm, we show how tech, as a binary tool, does not do a good job with nuances and complex issues. We also use the algorithm to comment on the false idea that race is binary, or that it even biologically exists.</p>\n\n    <p>From the start of the idea, we’ve consulted and shared the project with a diverse group of advisors and testers (white and not white) for orientation, criticism, commentary and other feedback. We felt this was especially important given that the three of us are white. We've taken the feedback and incorporated it into the site. We wanted to avoid offending People of Color, while we did want to call out white people of all political persuasions for overt and unconscious bias. One commenter pointed out our own white privilege in creating this site, saying that a person of color would seem too angry by creating a site like this. Others cautioned us about offending or shocking white people, or creating feelings of guilt and stress in them. One person suggested that we might be targeted and harmed by white supremacists. We hope that is not true. Through the creation of the website and the fake app, we were able to explore and comment on imbalances in tech and how they reflect the world’s wider imbalances in blatant ways as well as through subtler microaggressions. We welcome any additional feedback, especially in areas where our own overt or unconscious biases are showing in ways that we ignore.</p>\n\n    <p>We are not against technology. We are not against people helping or providing mentorship. However, we do think the use of technology in social good and social change needs to be deeply thought about with a very critical eye. The so-called ‘solutions’ need to be complex and deep, and they need to address issues of power. Tech itself needs to be more diverse and inclusive, as does \"do-gooding.\"</p>\n\n    <p>We hope the project will generate discussion and reflection and we welcome and comments or feedback.</p>\n\n      <p>We also note that we conceived and created WhiteSave.me with full autonomy. We received no funding or other type of benefit except for lunch, meeting space and moral support from the Art-a-Hack team and our fellow Art-a-Hackers during the four Mondays that we worked together. The organizations listed below have covered (or plan to provide support for) some of the costs to host and run WhiteSave.me. We take full responsibility for the project and its content. It does not represent the views of Art-A-Hack, any of Art-A-Hack's sponsors, or any of our individual employers past, present or future.</p>\n\n    <p>Juan, Dmytri and Linda<br>\n    WhiteSave.me<br>\n    The Imbalances in Tech Team at Art-A-Hack<br>\n    Contact us: <a href=\"mailto:help@whitesave.me\">help@whitesave.me</a></p>\n  </div>\n\n<div class=\"section\">\n  <div class=\"rich-text\"><h4>Sponsors</h4></div>\n\n  <div class=\"col s12 m6 l6\">\n    <div class=\"card-panel hoverable z-depth-1\">\n      <div class=\"row\">\n        <div class=\"col s4 m2 l2\">\n          <img src=\"img/sponsor_evil-genius-logo.png\" alt=\"Evil Genius Publishing\" class=\"responsive-img\" >\n        </div>\n          <div class=\"col s8 m10 l10\">\n            <span class=\"black-text\">\n              Evil Genius Publishing is a micro-publisher focused on the humanitarian aid industry. Our goal is to publish books that actual aid workers actually want to read (as opposed to the vast majority of what’s written for the aid world which is absurdly dry, dull, boring, verbose, over-written, pretentious, self-important, and otherwise inaccessible to mere mortals like most of us). We are also passionate about providing opportunity for those who otherwise lack access to “formal” publishing spaces, including local aid workers and the recipients of aid programs, commonly known as “beneficiaries.”\n\n\n            </span>\n          </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"col s12 m6 l6\">\n    <div class=\"card-panel hoverable z-depth-1\">\n      <div class=\"row\">\n        <div class=\"col s4 m2 l2\">\n          <a href=\"http://telekommunisten.net\"><img src=\"img/sponsor_telekommunisten.jpg\" alt=\"Telekommunisten\" class=\"responsive-img\" ></a>\n        </div>\n          <div class=\"col s8 m10 l10\">\n            <span class=\"black-text\">\n              The Telekommunist Manifesto is an exploration of class conflict and property, born from a realization of the primacy of economic capacity in social struggles. Emphasis is placed on the distribution of productive assets and their output. The interpretation here is always tethered to an understanding that wealth and power are intrinsically linked, and only through the for- mer can the latter be achieved. As a collective of intellectual workers, the work of Telekommunisten is very much rooted in the free software and free culture communities. However, a central premise of this Manifesto is that engaging in software development and the production of immaterial cultural works is not enough. The communization of immaterial property alone cannot change the distribution of material productive assets, and therefore cannot eliminate exploitation; only the self-organization of production by workers can.\n\n\n            </span>\n          </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n</div>\n";
@@ -478,8 +3862,9 @@ System.register("pages/statement.html!github:systemjs/plugin-text@0.0.2", [], tr
   return module.exports;
 });
 
-System.register("pages/release.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
+$__System.registerDynamic("10", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
       __define = global.define;
   global.define = undefined;
   module.exports = "<div class=\"page-intro orange lighten-5 white-text row\">\n  <div class=\"col s12\">\n    <div class=\"container\">\n      <span class=\"brown-text text-darken-4\">\n        <h2 class=\"title\">Press Release</h2>\n      </span>\n    </div>\n  </div>\n</div>\n<div class=\"container\">\n      <iframe class=\"right\" width=\"420\" height=\"315\" src=\"https://www.youtube.com/embed/jAt9XyTOLGc\" frameborder=\"0\" allowfullscreen></iframe>\n      <div class=\"flow-text\"><h4><a href=\"http://whitesave.me\">Announcing <strong>White</strong>Save.me</a></h4>\n<p><a href=\"http://whitesave.me\"><strong>White</strong>Save.me</a> is a revolutionary new platform that enables White Saviors to\ndeliver privilege to non-Whites whenever and wherever they need it with the\nsimple tap of a finger.</p>\n\n<p>Today’s White guy is increasingly told “check your privilege.” He often asks\nhimself “What am I supposed to do about my privilege? It’s not my fault I was\nborn white! And really, I’m not a bad person!”</p>\n\n<p>Until now, there has been no simple way for a White guy to be proactive in\naddressing the issue of his privilege. He’s been told that he benefits from\nbiased institutions and that his privilege is related to historically\nentrenched power structures. He’s told to be an ally but advised to take a back seat and follow the lead\nfrom people of color. Unfortunately this is all complex and time\nconsuming, and addressing privilege in this way is hard work.</p>\n\n<p>We need to address the issue of White\nprivilege now however - we can't wait. Changing attitudes, institutions, policies and structures takes\na long time, and we can’t expect White men or our current systems to\ngo through deep changes in order to address privilege and inequality at the\nroots. What we can do is leapfrog over what would normally require decades of\ngrassroots social organizing, education, policy change, and behavior change and put the\nsolution to White privilege directly into White men’s hands so that everyone\ncan get back to enjoying the American dream.</p>\n\n<p><a href=\"http://whitesave.me\"><strong>White</strong>Save.me</a> – an innovative solution that enables White men to quickly and\neasily deliver privilege to the underprivileged, requiring only a few minutes\nof downtime, at their discretion and convenience.</p>\n\n<p>Though not everyone realizes it, White privilege affects a large number of\nWhite people, regardless of their age or political persuasion. What most White people want is a simple way to share their privilege while also keeping it fully intact. Our research has confirmed that\nmost White people would be willing to spend a few minutes every now and then sharing their privilege, as long as it does not require too much effort.</p>\n\n<p><a href=\"http://whitesave.me\"><strong>White</strong>Save.me</a> is a revolutionary and innovative way of addressing this issue.\n(<a href=\"http://whitesave.me/#story\">Read Our Story</a> here to learn more about our discovery moments!) We’ve designed\na simple web and mobile platform that enables White men to quickly and easily\ndeliver a little bit of their excess privilege to non-Whites, all through a\nsimple and streamlined digital interface. Liberal Whites can assuage\nguilt and concern about their own privilege with the tap of a finger.\nConservatives can feel satisfied that they have passed along good values to\nnon-Whites. Libertarians can prove through direct digital action that tech can\nresolve complex issues without government intervention and via the free\nmarket. And non-White people of any economic status, all over the world, will\nbenefit from immediate access to White privilege directly through their\ndevices. Everyone wins – with no messy disruption of the status quo!</p>\n\n<h3 id=\"how-it-works\">How it Works</h3>\n\n<p>Visit our “<a href=\"http://whitesave.me/#how\">how it works</a>” page for more information, or simply “<a href=\"http://whitesave.me/#call\">try it now</a>” and\nyour first privilege delivery session is on us!  Our patented Facial Color\nRecognition Algorithm (™) will determine whether you qualify as a White Savior,\nbased on your skin color. (Alternatively it will classify you as a non-White\n‘Savee’). Once we determine your Whiteness, you’ll be automatically connected\nvia live video with a Savee who is lacking in White privilege so that you can\nshare some of your good sense and privileged counsel with him or her, or\nperiodically alleviate your guilt by offering advice and a one-off session of\nhelping someone who is less privileged.</p>\n\n<p>Our smart business model guarantees <a href=\"http://whitesave.me\"><strong>White</strong>Save.me</a> will be around for as long as\nit's needed, and that we can continue innovating with technology to iterate new\nsolutions as technology advances. <a href=\"http://whitesave.me\"><strong>White</strong>Save.me</a> is free for White Saviors to\ndeliver privilege, and non-Whites can choose from our Third World Freemium\nModel (free), our Basic Model ($9/month), or our Premium Model ($29/month). To\ngenerate additional revenue, our scientific analysis of non-White user data\nwill enable us to place targeted advertisements that allow investors and\npartners to extract value from the Base of the Pyramid. Non-Profit partners are\nencouraged to engage <a href=\"http://whitesave.me\"><strong>White</strong>Save.me</a> as their tech partner for funding proposals,\nthereby appearing innovative and guaranteeing successful grant revenue.</p>\n\n<p>See our <a href=\"http://whitesave.me/#faq\">FAQs</a> for additional information and check out our <a href=\"http://whitesave.me/#success\">Success Stories</a> for\nmore on how <a href=\"http://whitesave.me\"><strong>White</strong>Save.me</a>, in just its first few months, has helped hundreds to\ndeliver privilege all over the world.</p>\n\n<p><a href=\"http://whitesave.me/#call\">Try It Now</a> and you’ll be immediately on your way to delivering privilege\nthrough our quick and easy digital solution!</p>\n\n<p>Contact <a href=\"mailto:help@whitesave.me\">help@whitesave.me</a> for more information.</p>\n  </div>\n</div>\n";
@@ -488,14 +3873,12 @@ System.register("pages/release.html!github:systemjs/plugin-text@0.0.2", [], true
 });
 
 (function() {
-function define(){};  define.amd = {};
+var _removeDefine = $__System.get("@@amd-helpers").createDefine();
 (function(root, factory) {
   if (typeof exports === 'object') {
     module.exports = factory();
   } else if (typeof define === 'function' && define.amd) {
-    System.register("lib/vendor/headtrackr", [], false, function(__require, __exports, __module) {
-      return (factory).call(this);
-    });
+    define("11", [], factory);
   } else {
     root.headtrackr = factory();
   }
@@ -18095,16 +21478,16 @@ function define(){};  define.amd = {};
   };
   return headtrackr;
 }));
+
+_removeDefine();
 })();
 (function() {
-function define(){};  define.amd = {};
+var _removeDefine = $__System.get("@@amd-helpers").createDefine();
 (function(e) {
   if (typeof exports === "object" && typeof module !== "undefined") {
     module.exports = e();
   } else if (typeof define === "function" && define.amd) {
-    System.register("lib/vendor/simplepeer.min", [], false, function(__require, __exports, __module) {
-      return (e).call(this);
-    });
+    define("12", [], e);
   } else {
     var t;
     if (typeof window !== "undefined") {
@@ -18174,7 +21557,7 @@ function define(){};  define.amd = {};
         var a = 0;
         e[0].replace(/%[a-z%]/g, function(e) {
           if ("%%" === e)
-            return ;
+            return;
           i++;
           if ("%c" === e) {
             a = i;
@@ -18323,10 +21706,10 @@ function define(){};  define.amd = {};
       function f(e) {
         e = "" + e;
         if (e.length > 1e4)
-          return ;
+          return;
         var t = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(e);
         if (!t)
-          return ;
+          return;
         var r = parseFloat(t[1]);
         var f = (t[2] || "ms").toLowerCase();
         switch (f) {
@@ -18382,7 +21765,7 @@ function define(){};  define.amd = {};
       }
       function l(e, t, r) {
         if (e < t)
-          return ;
+          return;
         if (e < t * 1.5)
           return Math.floor(e / t) + " " + r;
         return Math.ceil(e / t) + " " + r + "s";
@@ -18704,7 +22087,7 @@ function define(){};  define.amd = {};
           if (e.sdp) {
             t._pc.setRemoteDescription(new t._wrtc.RTCSessionDescription(e), function() {
               if (t.destroyed)
-                return ;
+                return;
               if (t._pc.remoteDescription.type === "offer")
                 t._createAnswer();
             }, t._onError.bind(t));
@@ -18739,7 +22122,7 @@ function define(){};  define.amd = {};
         l.prototype._destroy = function(e, t) {
           var r = this;
           if (r.destroyed)
-            return ;
+            return;
           if (t)
             r.once("close", t);
           r._debug("destroy (error: %s)", e && e.message);
@@ -18813,10 +22196,10 @@ function define(){};  define.amd = {};
         l.prototype._createOffer = function() {
           var e = this;
           if (e.destroyed)
-            return ;
+            return;
           e._pc.createOffer(function(t) {
             if (e.destroyed)
-              return ;
+              return;
             t.sdp = e.sdpTransform(t.sdp);
             e._pc.setLocalDescription(t, h, e._onError.bind(e));
             var r = function() {
@@ -18836,10 +22219,10 @@ function define(){};  define.amd = {};
         l.prototype._createAnswer = function() {
           var e = this;
           if (e.destroyed)
-            return ;
+            return;
           e._pc.createAnswer(function(t) {
             if (e.destroyed)
-              return ;
+              return;
             t.sdp = e.sdpTransform(t.sdp);
             e._pc.setLocalDescription(t, h, e._onError.bind(e));
             var r = function() {
@@ -18859,7 +22242,7 @@ function define(){};  define.amd = {};
         l.prototype._onIceConnectionStateChange = function() {
           var e = this;
           if (e.destroyed)
-            return ;
+            return;
           var t = e._pc.iceGatheringState;
           var r = e._pc.iceConnectionState;
           e._debug("iceConnectionStateChange %s %s", t, r);
@@ -18887,7 +22270,7 @@ function define(){};  define.amd = {};
           var e = this;
           e._debug("maybeReady pc %s channel %s", e._pcReady, e._channelReady);
           if (e.connected || e._connecting || !e._pcReady || !e._channelReady)
-            return ;
+            return;
           e._connecting = true;
           if (typeof window !== "undefined" && !!window.mozRTCPeerConnection) {
             e._pc.getStats(null, function(e) {
@@ -18942,7 +22325,7 @@ function define(){};  define.amd = {};
             }
             e._interval = setInterval(function() {
               if (!e._cb || !e._channel || e._channel.bufferedAmount > e._maxBufferedAmount)
-                return ;
+                return;
               e._debug("ending backpressure: bufferedAmount %d", e._channel.bufferedAmount);
               var t = e._cb;
               e._cb = null;
@@ -18957,14 +22340,14 @@ function define(){};  define.amd = {};
         l.prototype._onSignalingStateChange = function() {
           var e = this;
           if (e.destroyed)
-            return ;
+            return;
           e._debug("signalingStateChange %s", e._pc.signalingState);
           e.emit("signalingStateChange", e._pc.signalingState);
         };
         l.prototype._onIceCandidate = function(e) {
           var t = this;
           if (t.destroyed)
-            return ;
+            return;
           if (e.candidate && t.trickle) {
             t.emit("signal", {candidate: {
                 candidate: e.candidate.candidate,
@@ -18979,7 +22362,7 @@ function define(){};  define.amd = {};
         l.prototype._onChannelMessage = function(e) {
           var t = this;
           if (t.destroyed)
-            return ;
+            return;
           var r = e.data;
           t._debug("read: %d bytes", r.byteLength || r.length);
           if (r instanceof ArrayBuffer) {
@@ -18995,7 +22378,7 @@ function define(){};  define.amd = {};
         l.prototype._onChannelOpen = function() {
           var e = this;
           if (e.connected || e.destroyed)
-            return ;
+            return;
           e._debug("on channel open");
           e._channelReady = true;
           e._maybeReady();
@@ -19003,21 +22386,21 @@ function define(){};  define.amd = {};
         l.prototype._onChannelClose = function() {
           var e = this;
           if (e.destroyed)
-            return ;
+            return;
           e._debug("on channel close");
           e._destroy();
         };
         l.prototype._onAddStream = function(e) {
           var t = this;
           if (t.destroyed)
-            return ;
+            return;
           t._debug("on add stream");
           t.emit("stream", e.stream);
         };
         l.prototype._onError = function(e) {
           var t = this;
           if (t.destroyed)
-            return ;
+            return;
           t._debug("error %s", e.message || e);
           t._destroy(e);
         };
@@ -19968,9 +23351,9 @@ function define(){};  define.amd = {};
         if (r < t)
           throw new RangeError("end < start");
         if (r === t)
-          return ;
+          return;
         if (this.length === 0)
-          return ;
+          return;
         if (t < 0 || t >= this.length)
           throw new RangeError("start out of bounds");
         if (r < 0 || r > this.length)
@@ -20609,7 +23992,7 @@ function define(){};  define.amd = {};
       var a = false;
       function o() {
         if (a) {
-          return ;
+          return;
         }
         a = true;
         var e;
@@ -20695,7 +24078,7 @@ function define(){};  define.amd = {};
         }
         function f() {
           if (this.allowHalfOpen || this._writableState.ended)
-            return ;
+            return;
           r.nextTick(this.end.bind(this));
         }
         function u(e, t) {
@@ -21245,7 +24628,7 @@ function define(){};  define.amd = {};
             if (t.decoder)
               i = t.decoder.write(i);
             if (!i || !t.objectMode && !i.length)
-              return ;
+              return;
             var a = n.push(i);
             if (!a) {
               r = true;
@@ -21880,13 +25263,13 @@ function define(){};  define.amd = {};
         var o = false;
         function s() {
           if (o)
-            return ;
+            return;
           o = true;
           e.end();
         }
         function f() {
           if (o)
-            return ;
+            return;
           o = true;
           if (typeof e.destroy === "function")
             e.destroy();
@@ -21968,7 +25351,7 @@ function define(){};  define.amd = {};
             break;
           default:
             this.write = s;
-            return ;
+            return;
         }
         this.charBuffer = new n(6);
         this.charReceived = 0;
@@ -22061,19 +25444,11 @@ function define(){};  define.amd = {};
     }, {buffer: 13}]
   }, {}, [])("/");
 });
-})();
-System.register("components/pages.html!github:systemjs/plugin-text@0.0.2", [], true, function(require, exports, module) {
-  var global = System.global,
-      __define = global.define;
-  global.define = undefined;
-  module.exports = "<x-header></x-header>\n<x-main></x-main>\n<div class=\"container row\">\n  <div class=\"share-button right\"></div>\n</div>\n<br><br>\n<script async=\"async\" src=\"lib/vendor/share.min.js\"></script>\n<script>\nvar share = new Share(\".share-button\", {\n  title: \"WhiteSave.me\",\n  description: \"WhiteSave.me - delivering privilege with the tap of a finger.\",\n  image: \"phttp://whitesave.me/img/wsm.jpg\"\n});\n</script>\n<x-footer></x-footer>\n";
-  global.define = __define;
-  return module.exports;
-});
 
-System.register("lib/call", ["lib/vendor/simplepeer.min"], function($__export) {
+_removeDefine();
+})();
+$__System.register("13", ["12"], function($__export) {
   "use strict";
-  var __moduleName = "lib/call";
   var SimplePeer;
   return {
     setters: [function($__m) {
@@ -22093,7 +25468,7 @@ System.register("lib/call", ["lib/vendor/simplepeer.min"], function($__export) {
             initiator: initiator,
             stream: stream
           };
-          if (typeof config === 'object') {
+          if ((typeof config === 'undefined' ? 'undefined' : $traceurRuntime.typeof(config)) === 'object') {
             options['config'] = config;
           }
           var peer = new SimplePeer(options);
@@ -22114,9 +25489,8 @@ System.register("lib/call", ["lib/vendor/simplepeer.min"], function($__export) {
   };
 });
 
-System.register("lib/start", ["lib/vendor/headtrackr", "lib/call"], function($__export) {
+$__System.register("14", ["11", "13"], function($__export) {
   "use strict";
-  var __moduleName = "lib/start";
   var headtrackr,
       call;
   return {
@@ -22241,9 +25615,8 @@ System.register("lib/start", ["lib/vendor/headtrackr", "lib/call"], function($__
   };
 });
 
-System.register("lib/layout", ["components/header.html!github:systemjs/plugin-text@0.0.2", "components/footer.html!github:systemjs/plugin-text@0.0.2", "pages/about.html!github:systemjs/plugin-text@0.0.2", "pages/pricing.html!github:systemjs/plugin-text@0.0.2", "pages/call.html!github:systemjs/plugin-text@0.0.2", "pages/success.html!github:systemjs/plugin-text@0.0.2", "pages/story.html!github:systemjs/plugin-text@0.0.2", "pages/partners.html!github:systemjs/plugin-text@0.0.2", "pages/faq.html!github:systemjs/plugin-text@0.0.2", "pages/home.html!github:systemjs/plugin-text@0.0.2", "pages/contact.html!github:systemjs/plugin-text@0.0.2", "pages/terms.html!github:systemjs/plugin-text@0.0.2", "pages/statement.html!github:systemjs/plugin-text@0.0.2", "pages/release.html!github:systemjs/plugin-text@0.0.2", "lib/start"], function($__export) {
+$__System.register("15", ["3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "10", "14"], function($__export) {
   "use strict";
-  var __moduleName = "lib/layout";
   var xHeader,
       xFooter,
       siteMap,
@@ -22362,9 +25735,18 @@ System.register("lib/layout", ["components/header.html!github:systemjs/plugin-te
   };
 });
 
-System.register("lib/init", ["whitesaveme.css!github:systemjs/plugin-css@0.1.13", "lib/layout", "components/pages.html!github:systemjs/plugin-text@0.0.2"], function($__export) {
+$__System.registerDynamic("16", [], true, function($__require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  module.exports = "<x-header></x-header>\n<x-main></x-main>\n<div class=\"container row\">\n  <div class=\"share-button right\"></div>\n</div>\n<br><br>\n<script async=\"async\" src=\"lib/vendor/share.min.js\"></script>\n<script>\nvar share = new Share(\".share-button\", {\n  title: \"WhiteSave.me\",\n  description: \"WhiteSave.me - delivering privilege with the tap of a finger.\",\n  image: \"phttp://whitesave.me/img/wsm.jpg\"\n});\n</script>\n<x-footer></x-footer>\n";
+  global.define = __define;
+  return module.exports;
+});
+
+$__System.register("1", ["2", "15", "16"], function($__export) {
   "use strict";
-  var __moduleName = "lib/init";
   var layout,
       xPages;
   return {
@@ -22386,8 +25768,11 @@ System.register("lib/init", ["whitesaveme.css!github:systemjs/plugin-css@0.1.13"
   };
 });
 
-System.register('whitesaveme.css!github:systemjs/plugin-css@0.1.13', [], false, function() {});
+System.register('whitesaveme.css!github:systemjs/plugin-css@0.1.13.js', [], false, function() {});
 (function(c){var d=document,a='appendChild',i='styleSheet',s=d.createElement('style');s.type='text/css';d.getElementsByTagName('head')[0][a](s);s[i]?s[i].cssText=c:s[a](d.createTextNode(c));})
 ("html{overflow-y:scroll;overflow-x:hidden}x-header{position:fixed;top:0;width:100%;z-index:999}#main{padding-top:55px}.icon-block{padding:0 15px}.slider .indicators .indicator-item.active{background-color:#000}nav{height:65px;line-height:65px}a{color:#f57c00}.title{font-size:2rem;font-weight:300;font-stretch:condensed;text-transform:capitalize;text-align:center}");
+})
+(function(factory) {
+  factory();
 });
 //# sourceMappingURL=build.js.map

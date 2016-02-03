@@ -7,15 +7,14 @@
   "main": "app.js",
   "scripts": {
     "test": "standard && htmlhint site/",
-    "postinstall": "jspm install && ./build.sh"
+    "postinstall": "./build.sh"
   },
   "dependencies": {
     "jspm": "^0.16.26",
     "koa": "^0.21.0",
     "koa-cors": "0.0.16",
     "koa-static": "^1.4.9",
-    "socket.io": "^1.3.5",
-    "uglify": "^0.1.5"
+    "socket.io": "^1.3.5"
   },
   "devDependencies": {
     "htmlhint": "^0.9.7",
