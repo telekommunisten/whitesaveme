@@ -17,8 +17,12 @@ export default function (stream, white) {
     } */
     var peer = new SimplePeer(options)
     peer.on('signal', function (data) {
-      console.log('signal sent')
-      socket.emit('signal', JSON.stringify(data))
+      try {
+        socket.emit('signal', JSON.stringify(data))
+        console.log('signal sent')
+      catch (e) {
+        console.log('signal emit failed with', e)
+      }
     })
     peer.on('stream', function (stream) {
       console.log('stream recieved')
@@ -27,10 +31,9 @@ export default function (stream, white) {
       video.play()
     })
     socket.on('signal', function (data) {
-      console.log('signal recieved')
       try {
         peer.signal(data)
-        console.log('peer signal succeeded')
+        console.log('peer signal recieved')
       } catch (e) {
         console.log('peer signal failed with', e)
       }
