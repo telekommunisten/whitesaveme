@@ -28,7 +28,12 @@ export default function (stream, white) {
     })
     socket.on('signal', function (data) {
       console.log('signal recieved')
-      peer.signal(data)
+      try {
+        peer.signal(data)
+        console.log('peer signal succeeded')
+      } catch (e) {
+        console.log('peer signal failed with', e)
+      }
     })
   })
 }
