@@ -5,6 +5,32 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+  bundles: {
+    "build.js": [
+      "lib/init.js",
+      "lib/layout.js",
+      "whitesaveme.css!github:systemjs/plugin-css@0.1.13.js",
+      "components/pages.html!github:systemjs/plugin-text@0.0.2.js",
+      "lib/start.js",
+      "components/header.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/about.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/pricing.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/call.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/success.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/story.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/partners.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/faq.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/home.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/contact.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/terms.html!github:systemjs/plugin-text@0.0.2.js",
+      "components/footer.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/statement.html!github:systemjs/plugin-text@0.0.2.js",
+      "pages/release.html!github:systemjs/plugin-text@0.0.2.js",
+      "lib/call.js",
+      "lib/vendor/headtrackr.js",
+      "lib/vendor/simplepeer.min.js"
+    ]
+  },
 
   map: {
     "clean-css": "npm:clean-css@3.3.3",
