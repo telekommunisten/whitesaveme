@@ -1,1 +1,1 @@
-window.socketUrl = 'http://whitesave.me'
+window.socketUrl = 'https://whitesave.me'
